@@ -1,0 +1,342 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resources
+@model UserProfileDetails
+
+@{
+    ViewBag.Title = ViewResource.UserProfile_Details_Title_Text;
+}
+
+<section id="detailAdvancedForm">
+    <table class="Main">
+        <tbody>
+            <tr>
+                <td colspan="2" class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    @Html.DisplayNameFor(model => model.UserName):
+                                    <b>@Html.DisplayFor(model => model.UserName)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.Role):
+                                    <b>@Html.DisplayFor(model => model.Role)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 1.5em; font-weight: bold;" colspan="2">
+                                    @Html.DisplayFor(model => model.Title)
+                                    @Html.DisplayFor(model => model.LastName)
+                                    @Html.DisplayFor(model => model.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.LyonessId):
+                                    <b>@Html.DisplayFor(model => model.LyonessId)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    @Html.DisplayNameFor(model => model.City):
+                                    <b>@Html.DisplayFor(model => model.City)</b>
+                                </td>
+                                <td style="width: 30%">
+                                    @Html.DisplayNameFor(model => model.District):
+                                    <b>@Html.DisplayFor(model => model.District.Title)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.LastAccessed):
+                                    <b>@Html.DisplayFor(model => model.LastAccessed)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="title">@ViewResource.Global_ContactsTitle_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.PhoneNumber1):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.PhoneNumberPrefix1.Title) @Html.DisplayFor(m => m.PhoneNumber1)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.PhoneNumber2):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.PhoneNumberPrefix2.Title) @Html.DisplayFor(m => m.PhoneNumber2)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.Email1):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.Email1)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.Email2):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.Email2)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.Skype):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.Skype)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="title">@ViewResource.Global_BillingInformationTitle_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rawHtml">@Html.Raw(Model.BillingInformation)</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="title">@ViewResource.Global_GoogleCalendarTitle_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GoogleCredentialsJson):
+                                </th>
+                                <td style="width: 800px; display: block; overflow: auto;">
+                                    @Html.DisplayFor(model => model.GoogleCredentialsJson)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GoogleCalendarId):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(model => model.GoogleCalendarId)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="6">
+                                    <span class="title">@ViewResource.Global_ApplicationAccessTitle_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ClaAccessAmountWithCurrency):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(model => model.ClaAccessAmountWithCurrency)
+                                </td>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ClaAccessYearlyAccesWithCurrency):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(model => model.ClaAccessYearlyAccesWithCurrency)
+                                </td>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ClaAccessExpired):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(model => model.ClaAccessExpired)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="BoxStatus">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="title">@ViewResource.Global_QuotaAndStatisticsUser_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.RegistredPeopleQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.RegistredPeopleQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.RegistredPeopleQuotaLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.RegistredPeopleQuotaLastMonth)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.PremiumPartnersQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.PremiumPartnersQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.PremiumPartnersQuotaLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.PremiumPartnersQuotaLastMonth)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.BuyersQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.BuyersQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.ContactedPeopleCount):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.ContactedPeopleCount)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.ContactedPeopleCountLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.ContactedPeopleCountLastMonth)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td class="BoxStatus">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="title">@ViewResource.Global_StatusTitle_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.PremiumMembershipGranted):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.PremiumMembershipGranted)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.AccessGranted):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.AccessGranted)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.MspCoach):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.MspCoach)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.Ca):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.Ca)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.Presenting):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.Presenting)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="BoxStatus-last">
+                    @Html.DisplayNameFor(model => model.Tasks):<br />
+                    <div class="rawHtml">@Html.Raw(Model.Tasks)</div>
+                </td>
+                <td class="BoxStatus-last">
+                    @Html.DisplayNameFor(model => model.Note):<br />
+                    <div class="rawHtml">@Html.Raw(Model.Note)</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        @if (!Model.IsPoliciesAccepted)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Global_HplEditTitle_Text, "Edit", new { id = Model.UserId })</li>                            
+                        }
+                        <li>@(Model.Active ? Html.ActionLink(ViewResource.UserProfile_HplLockTitle_Text, "Locked", new { id = Model.UserId }) : Html.ActionLink(ViewResource.UserProfile_HplUnlockTitle_Text, "Unlocked", new { id = Model.UserId }))</li>
+                        @if (ViewBag.IsAdmin)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Global_HplDeleteTitle_Text, "Delete", new { id = Model.UserId })</li>
+                        }
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToUserProfileIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,81 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resources
+@model MeetingBusinessInfoDetail
+
+@{
+    ViewBag.Title = ViewResource.Meeting_BusinessInfoArchiveDetails_Title_Text;
+}
+
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+@Html.Partial("_BusinessInfoDetails")
+
+<h2>@ViewResource.Global_MeetingListAttendees_Text</h2>
+
+<section id="List">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_FirstName_Name
+                </th>
+                <th class="@ViewBag.LastNameSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_LastName_Name, "BusinessInfoArchiveDetails", new { sortOrder = ViewBag.LastNameSortParam })
+                </th>
+                <th>
+                    @FieldResource.Meeting_Residence_Name
+                </th>
+                <th class="@ViewBag.LyonessIdSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_LyonessId_Name, "BusinessInfoArchiveDetails", new { sortOrder = ViewBag.LyonessIdSortParam })
+                </th>
+                <th>
+                    @FieldResource.Meeting_Leader_Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.MeetingAttendees.Any())
+            {
+                <tr>
+                    <td colspan="5">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model.MeetingAttendees)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(mi => i.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LyonessId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Leader)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplPrintAttendeesTitle_Text, "BusinessInfoPrintDetail", new { id = Model.MeetingId }, new { target = "_blank" })</li>
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, "BusinessInfoArchiveIndex")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,52 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.Import
+
+@{
+    ViewBag.Title = ViewResource.PeopleContact_Import_Title_Text;
+}
+
+@using (Html.BeginForm("Import", "PeopleContact", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>@ViewResource.PeopleContact_Import_Legend_Text</legend>
+        <ol>
+            <li>
+                <label class="required" for="File">@FieldResource.Global_ImportFile_Name:</label>
+                <input type="file" name="File" style="width: 600px;" />
+            </li>
+        </ol>
+        
+        <table id="confirmPolicies">
+            <tbody>
+                <tr>
+                    <th>@Html.LabelFor(m => m.ConfirmTermsAndConditions, new { @class = "required" })</th>
+                    <td>@Html.CheckBoxFor(m => m.ConfirmTermsAndConditions, new { @class = "ConfirmTermsAndConditions" })</td>
+                </tr>
+                <tr>
+                    <th>@Html.LabelFor(m => m.ConfirmPersonalData, new { @class = "required" })</th>
+                    <td>@Html.CheckBoxFor(m => m.ConfirmPersonalData, new { @class = "ConfirmPersonalData" })</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <input type="submit" value="@ViewResource.Global_BtnImportTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToPeopleContactIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

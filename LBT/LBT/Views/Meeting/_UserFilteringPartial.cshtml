@@ -1,0 +1,15 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.FilteringPartialModelView
+
+@foreach (string key in Model.RouteValueDictionary.Keys)
+{
+    <input type="hidden" name="@key" value="@Model.RouteValueDictionary[key]"/>
+}
+
+<section id="@Model.SectionId">
+    <div class="float-left">
+        <div>
+            @ViewResource.Global_FilterByUser_Text: @Html.DropDownList("FilteredUserId", null, new { @onchange = "$('form#filter').submit();" })
+        </div>
+    </div>
+</section>

@@ -1,0 +1,75 @@
+﻿@using LBT.ModelViews
+@using LBT.Resources
+@model PagedList.IPagedList<BankAccountHistoryClaAccessIndex>
+
+@{
+    ViewBag.Title = ViewResource.BankAccountHistory_ClaAccessIndex_Title_Text;
+}
+
+@using (Html.BeginForm("ClaAccessIndex", "BankAccountHistory", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { ActionName = "ClaAccessIndex", List = Model })
+}
+
+<section id="Classification">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_Date_Name
+                </th>
+                <th>
+                    @FieldResource.BankAccount_BankAccountType_Name
+                </th>
+                <th>
+                    @FieldResource.Global_Currency_Name
+                </th>
+                <th>
+                    @FieldResource.BankAccountHistory_Vs_Name
+                </th>
+                <th>
+                    @FieldResource.BankAccountHistory_Ammount_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="6">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td class="item-title">
+                        @Html.DisplayFor(m => i.Date)
+                    </td>
+                    <td class="item-title">
+                        @Html.DisplayFor(m => i.BankAccount.BankAccountTypeLocalizedAcronym)
+                    </td>
+                    <td class="item-title">
+                        @Html.DisplayFor(m => i.CurrencyType)
+                    </td>
+                    <td class="item-title">
+                        @Html.DisplayFor(m => i.Vs)
+                    </td>
+                    <td class="item-title">
+                        @Html.DisplayFor(m => i.Ammount) @Html.DisplayFor(m => i.Currency)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("ClaAccessEdit", new { id = i.BankAccountHistoryId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                        <a href="@Url.Action("ClaAccessDetails", new { id = i.BankAccountHistoryId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                        <a href="@Url.Action("ClaAccessDelete", new { id = i.BankAccountHistoryId })" title="@ViewResource.Global_HplDeleteTitle_Text"><span class="lbt-icon30-delete"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@using (Html.BeginForm("ClaAccessIndex", "BankAccountHistory", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { SectionId = "Paging2", ActionName = "ClaAccessIndex", List = Model })
+}

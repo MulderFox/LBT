@@ -1,0 +1,41 @@
+﻿@*@using LBT.Resource
+@using LBT.Resources
+@model LBT.Models.SharedMSPContact
+
+@{
+    ViewBag.Title = "Smazat sdílení kontaktů MSP";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>@ViewResource.Global_DeleteConfirmationQuestion_Text</p>
+
+<fieldset>
+    <legend>Sdílení kontaktů MSP</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ToUser.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ToUser.UserName)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ToUser.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ToUser.FirstName)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ToUser.LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ToUser.LastName)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" autofocus value="Smazat" /> |
+        @Html.ActionLink("Návrat na seznam sdílení kontaktů MSP", "Index")
+    </p>
+}*@

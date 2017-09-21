@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountModelView_ConfirmDeleteAccount_Name" xml:space="preserve">
+    <value>Souhlas s odstraněním účtu a již zadaných kontaktů</value>
+  </data>
+  <data name="Account_ConfirmPassword_Name" xml:space="preserve">
+    <value>Potvrdit nové heslo</value>
+  </data>
+  <data name="Account_NewPassword_Name" xml:space="preserve">
+    <value>Nové heslo</value>
+  </data>
+  <data name="Account_OldPassword_Name" xml:space="preserve">
+    <value>Současné heslo</value>
+  </data>
+  <data name="Account_Password_Name" xml:space="preserve">
+    <value>Heslo</value>
+  </data>
+  <data name="Account_RememberMe_Name" xml:space="preserve">
+    <value>Přihlásit se trvale?</value>
+  </data>
+  <data name="Global_City_Name" xml:space="preserve">
+    <value>Obec</value>
+  </data>
+  <data name="Global_ConfirmOwnPersonalData_Name" xml:space="preserve">
+    <value>Souhlas se zpracováním svých osobních údajů</value>
+  </data>
+  <data name="Global_ConfirmTermsAndConditions_Name" xml:space="preserve">
+    <value>Souhlas s obchodními podmínkami</value>
+  </data>
+  <data name="Global_Currency_Name" xml:space="preserve">
+    <value>Měna</value>
+  </data>
+  <data name="Global_District_Name" xml:space="preserve">
+    <value>Okres</value>
+  </data>
+  <data name="Global_Email1_Name" xml:space="preserve">
+    <value>Email 1</value>
+  </data>
+  <data name="Global_Email2_Name" xml:space="preserve">
+    <value>Email 2</value>
+  </data>
+  <data name="Global_FirstName_Name" xml:space="preserve">
+    <value>Jméno</value>
+  </data>
+  <data name="Global_LastName_Name" xml:space="preserve">
+    <value>Příjmení</value>
+  </data>
+  <data name="Global_LyonessId_Name" xml:space="preserve">
+    <value>Lyoness ID</value>
+  </data>
+  <data name="Global_Note_Name" xml:space="preserve">
+    <value>Poznámka</value>
+  </data>
+  <data name="Global_PhoneNumber1_Name" xml:space="preserve">
+    <value>Mobilní telefon</value>
+  </data>
+  <data name="Global_PhoneNumber2_Name" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="Global_PremiumMembershipGranted_Name" xml:space="preserve">
+    <value>Datum Premium členství</value>
+  </data>
+  <data name="Global_Role_Name" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="Global_Skype_Name" xml:space="preserve">
+    <value>Skype</value>
+  </data>
+  <data name="Global_Tasks_Name" xml:space="preserve">
+    <value>Úkoly</value>
+  </data>
+  <data name="User_Title_Name" xml:space="preserve">
+    <value>Titul</value>
+  </data>
+  <data name="UserProfile_Ca_Name" xml:space="preserve">
+    <value>CA - Commercial Assistant</value>
+  </data>
+  <data name="UserProfile_ClaAccessAmount_Name" xml:space="preserve">
+    <value>Konto</value>
+  </data>
+  <data name="UserProfile_ClaAccessExpired_Name" xml:space="preserve">
+    <value>Datum vypršení přístupu</value>
+  </data>
+  <data name="UserProfile_ClaAccessYearlyAccess_Name" xml:space="preserve">
+    <value>Roční poplatek za přístup</value>
+  </data>
+  <data name="UserProfile_GoogleCalendarId_Name" xml:space="preserve">
+    <value>Google Calendar ID</value>
+  </data>
+  <data name="UserProfile_GoogleCredentialsJson_Name" xml:space="preserve">
+    <value>Google Credentials JSON</value>
+  </data>
+  <data name="UserProfile_IsEventsPrivate_Name" xml:space="preserve">
+    <value>Soukromé události</value>
+  </data>
+  <data name="UserProfile_LastAccessed_Name" xml:space="preserve">
+    <value>Datum posledního přístupu</value>
+  </data>
+  <data name="UserProfile_MspCoach_Name" xml:space="preserve">
+    <value>MSP Coach</value>
+  </data>
+  <data name="UserProfile_Presenting_Name" xml:space="preserve">
+    <value>Prezentující</value>
+  </data>
+  <data name="UserProfile_ReminderTime_Name" xml:space="preserve">
+    <value>Čas upozornění</value>
+  </data>
+  <data name="UserProfile_SmsEmail_Name" xml:space="preserve">
+    <value>SMS-mail</value>
+  </data>
+  <data name="UserProfile_UseGoogleCalendar_Name" xml:space="preserve">
+    <value>Používat Google kalendář</value>
+  </data>
+  <data name="UserProfile_UserMail_Name" xml:space="preserve">
+    <value>Odesílat emaily</value>
+  </data>
+  <data name="UserProfile_UserName_Name" xml:space="preserve">
+    <value>Přihlašovací jméno</value>
+  </data>
+  <data name="UserProfile_UseSms_Name" xml:space="preserve">
+    <value>Odesílat SMS</value>
+  </data>
+  <data name="BankAccount_AccountId_Name" xml:space="preserve">
+    <value>BÚ</value>
+  </data>
+  <data name="BankAccount_BankAccountType_Name" xml:space="preserve">
+    <value>Typ bankovního účtu</value>
+  </data>
+  <data name="BankAccount_BankAccountUsers_Name" xml:space="preserve">
+    <value>Uživatelé používající účet</value>
+  </data>
+  <data name="BankAccount_Owner_Name" xml:space="preserve">
+    <value>Majitel účtu</value>
+  </data>
+  <data name="BankAccount_Token_Name" xml:space="preserve">
+    <value>Token účtu</value>
+  </data>
+  <data name="BankAccount_ValidTo_Name" xml:space="preserve">
+    <value>Platnost do</value>
+  </data>
+  <data name="Global_Title_Name" xml:space="preserve">
+    <value>Název</value>
+  </data>
+  <data name="BankAccountHistory_Ammount_Name" xml:space="preserve">
+    <value>Částka</value>
+  </data>
+  <data name="BankAccountHistory_Exchange_Name" xml:space="preserve">
+    <value>Protiúčet</value>
+  </data>
+  <data name="BankAccountHistory_Ks_Name" xml:space="preserve">
+    <value>KS</value>
+  </data>
+  <data name="BankAccountHistory_Ss_Name" xml:space="preserve">
+    <value>SS</value>
+  </data>
+  <data name="BankAccountHistory_Vs_Name" xml:space="preserve">
+    <value>VS</value>
+  </data>
+  <data name="Global_Date_Name" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="Currency_ExchangeRateToCZK_Name" xml:space="preserve">
+    <value>Převodní kurz vůči CZK</value>
+  </data>
+  <data name="AccountModelView_ConfirmContacts_Name" xml:space="preserve">
+    <value>Potvrzuji, že mám povolení ke zpracování osobních údajů od historicky zadaných kontaktů</value>
+  </data>
+  <data name="Global_ConfirmPersonalData_Name" xml:space="preserve">
+    <value>Potvrzuji, že mám povolení ke zpracování osobních údajů od zadaného kontaktu/zadaných kontaktů</value>
+  </data>
+  <data name="Meeting_FinishTime_Name" xml:space="preserve">
+    <value>Do</value>
+  </data>
+  <data name="Meeting_MeetingType_Name" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="Meeting_StartTime_Name" xml:space="preserve">
+    <value>Od</value>
+  </data>
+  <data name="Meeting_AddressLine1_Name" xml:space="preserve">
+    <value>Ulice</value>
+  </data>
+  <data name="Meeting_Capacity_Name" xml:space="preserve">
+    <value>Celková kapacita</value>
+  </data>
+  <data name="Meeting_FreeCapacity_Name" xml:space="preserve">
+    <value>Volná kapacita</value>
+  </data>
+  <data name="Meeting_Lecturer_Name" xml:space="preserve">
+    <value>Přednášející</value>
+  </data>
+  <data name="Meeting_MainLeader_Name" xml:space="preserve">
+    <value>Hlavní leader</value>
+  </data>
+  <data name="Meeting_MeetingKind_Name" xml:space="preserve">
+    <value>Cílová skupina</value>
+  </data>
+  <data name="Meeting_Organizer_Name" xml:space="preserve">
+    <value>Organizátor</value>
+  </data>
+  <data name="Meeting_SecondaryLeader_Name" xml:space="preserve">
+    <value>Druhý leader</value>
+  </data>
+  <data name="Meeting_Day_Name" xml:space="preserve">
+    <value>Den</value>
+  </data>
+  <data name="Meeting_Leader_Name" xml:space="preserve">
+    <value>Leader</value>
+  </data>
+  <data name="Meeting_Residence_Name" xml:space="preserve">
+    <value>Bydliště</value>
+  </data>
+  <data name="Meeting_Time_Name" xml:space="preserve">
+    <value>Čas</value>
+  </data>
+  <data name="Meeting_IsMeetingPrivate_Name" xml:space="preserve">
+    <value>Soukromá akce</value>
+  </data>
+  <data name="Meeting_SecondaryOrganizer_Name" xml:space="preserve">
+    <value>Druhý organizátor</value>
+  </data>
+  <data name="Meeting_Sign_Name" xml:space="preserve">
+    <value>Přihlásit</value>
+  </data>
+  <data name="Meeting_Unsign_Name" xml:space="preserve">
+    <value>Odhlásit</value>
+  </data>
+  <data name="Meeting_Type_Name" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="Global_BankAccount_Name" xml:space="preserve">
+    <value>Bankovní účet</value>
+  </data>
+  <data name="Meeting_PaidAmmount_Name" xml:space="preserve">
+    <value>Zaplacená částka</value>
+  </data>
+  <data name="Meeting_Price_Name" xml:space="preserve">
+    <value>Cena</value>
+  </data>
+  <data name="Meeting_RegisterDeadline_Name" xml:space="preserve">
+    <value>Poslední den rezervace</value>
+  </data>
+  <data name="Meeting_SpecificSymbol_Name" xml:space="preserve">
+    <value>Specifický symbol</value>
+  </data>
+  <data name="Meeting_BringYourOwn_Name" xml:space="preserve">
+    <value>Potřebné s sebou</value>
+  </data>
+  <data name="Meeting_DateFinishTime_Name" xml:space="preserve">
+    <value>Datum do</value>
+  </data>
+  <data name="Meeting_DateStartTime_Name" xml:space="preserve">
+    <value>Datum od</value>
+  </data>
+  <data name="Meeting_InvitationCardUrl_Name" xml:space="preserve">
+    <value>Pozvánka</value>
+  </data>
+  <data name="Contact_Potential_Name" xml:space="preserve">
+    <value>Potenciál</value>
+  </data>
+  <data name="MeetingAttendee_BankAccountHistoryNote_Name" xml:space="preserve">
+    <value>Poznámka z bankovního účtu</value>
+  </data>
+  <data name="Contact_BusinessInfoParticipated_Name" xml:space="preserve">
+    <value>Business Info</value>
+  </data>
+  <data name="Contact_ContactDead_Name" xml:space="preserve">
+    <value>Neaktivní kontakt</value>
+  </data>
+  <data name="Contact_FirstContacted_Name" xml:space="preserve">
+    <value>Datum oslovení</value>
+  </data>
+  <data name="Contact_MobileApplicationInstalledAndTrained_Name" xml:space="preserve">
+    <value>Instalace a školení mob. apl.</value>
+  </data>
+  <data name="Contact_Presented_Name" xml:space="preserve">
+    <value>Datum 1. schůzky</value>
+  </data>
+  <data name="Contact_Registrated_Name" xml:space="preserve">
+    <value>Datum registrace</value>
+  </data>
+  <data name="Contact_TeamMeetingParticipated_Name" xml:space="preserve">
+    <value>Setkání týmu</value>
+  </data>
+  <data name="Global_AccessGranted_Name" xml:space="preserve">
+    <value>Datum přístupu do CLA</value>
+  </data>
+  <data name="PeopleContact_AbleToPurchase_Name" xml:space="preserve">
+    <value>Umí nakupovat</value>
+  </data>
+  <data name="PeopleContact_AutoCashback_Name" xml:space="preserve">
+    <value>Auto Cashback</value>
+  </data>
+  <data name="PeopleContact_LoyaltySystemExplained_Name" xml:space="preserve">
+    <value>Vysvětlení věrnostního systému</value>
+  </data>
+  <data name="PeopleContact_MoneyToPurchaseAccountSended_Name" xml:space="preserve">
+    <value>Zaslání peněz na nákupní konto</value>
+  </data>
+  <data name="PeopleContact_OwnUnitsContained_Name" xml:space="preserve">
+    <value>Má své jednotky</value>
+  </data>
+  <data name="PeopleContact_SecondContacted_Name" xml:space="preserve">
+    <value>Datum 2. telefonátu</value>
+  </data>
+  <data name="PeopleContact_SecondMeeting_Name" xml:space="preserve">
+    <value>Datum 2. schůzky</value>
+  </data>
+  <data name="PeopleContact_SecondTrackingEmailSent_Name" xml:space="preserve">
+    <value>2. dosledovací email odeslán</value>
+  </data>
+  <data name="PeopleContact_ShoppingPlanBackSet_Name" xml:space="preserve">
+    <value>Nastavení shopping plánu</value>
+  </data>
+  <data name="PeopleContact_ThirdMeeting_Name" xml:space="preserve">
+    <value>Datum 3. schůzky</value>
+  </data>
+  <data name="PeopleContact_TrackingEmailSent_Name" xml:space="preserve">
+    <value>Dosledovací email odeslán</value>
+  </data>
+  <data name="Global_ImportFile_Name" xml:space="preserve">
+    <value>Soubor pro import</value>
+  </data>
+  <data name="Global_Email_Name" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Global_PhoneNumber1Short_Name" xml:space="preserve">
+    <value>Mobil</value>
+  </data>
+  <data name="PhoneNumberPrefix_ExportablePrefix_Name" xml:space="preserve">
+    <value>Exportovatelný prefix</value>
+  </data>
+  <data name="PhoneNumberPrefix_MatchRegex_Name" xml:space="preserve">
+    <value>Regulární výraz pro porovnání s importovanými daty</value>
+  </data>
+  <data name="PhoneNumberPrefix_ReplaceRegex_Name" xml:space="preserve">
+    <value>Regulární výraz pro odstranění předvolby</value>
+  </data>
+  <data name="SharedContact_ToUserId_Name" xml:space="preserve">
+    <value>Nasdílet s</value>
+  </data>
+  <data name="Global_BuyersQuota_Name" xml:space="preserve">
+    <value>Kvóta počtu s jednotkami (nakupujících)</value>
+  </data>
+  <data name="Global_ContactedPeopleCountLastMonth_Name" xml:space="preserve">
+    <value>Počet kontaktovaných za měsíc</value>
+  </data>
+  <data name="Global_ContactedPeopleCount_Name" xml:space="preserve">
+    <value>Počet kontaktovaných</value>
+  </data>
+  <data name="Global_PremiumPartnersQuotaLastMonth_Name" xml:space="preserve">
+    <value>Kvóta PP za měsíc</value>
+  </data>
+  <data name="Global_PremiumPartnersQuota_Name" xml:space="preserve">
+    <value>Kvóta PP</value>
+  </data>
+  <data name="Global_RegistredPeopleQuotaLastMonth_Name" xml:space="preserve">
+    <value>Kvóta registrací za měsíc</value>
+  </data>
+  <data name="Global_RegistredPeopleQuota_Name" xml:space="preserve">
+    <value>Kvóta registrací</value>
+  </data>
+  <data name="Team_MemberIds_Name" xml:space="preserve">
+    <value>Členové týmu</value>
+  </data>
+  <data name="Team_Owner_Name" xml:space="preserve">
+    <value>Vlastník týmu</value>
+  </data>
+  <data name="TopTen_ActualCareerStage_Name" xml:space="preserve">
+    <value>Aktuální KS</value>
+  </data>
+  <data name="TopTen_AdditionalTraining_Name" xml:space="preserve">
+    <value>Další školení</value>
+  </data>
+  <data name="TopTen_ConductingMeetings_Name" xml:space="preserve">
+    <value>Vedení Porad</value>
+  </data>
+  <data name="TopTen_DownlineUser_Name" xml:space="preserve">
+    <value>Downline uživatel</value>
+  </data>
+  <data name="TopTen_LastContact_Name" xml:space="preserve">
+    <value>Poslední kontakt</value>
+  </data>
+  <data name="TopTen_LongTermCareerGoal_Name" xml:space="preserve">
+    <value>Kariérní dlouhodobý cíl</value>
+  </data>
+  <data name="TopTen_Od1_Name" xml:space="preserve">
+    <value>OD I</value>
+  </data>
+  <data name="TopTen_Od2_Name" xml:space="preserve">
+    <value>OD II</value>
+  </data>
+  <data name="TopTen_Rhetoric_Name" xml:space="preserve">
+    <value>Rétorika</value>
+  </data>
+  <data name="TopTen_ShorTermCareerGoal_Name" xml:space="preserve">
+    <value>Kariérní krátkodobý cíl</value>
+  </data>
+  <data name="TopTen_Sns_Name" xml:space="preserve">
+    <value>SNS</value>
+  </data>
+  <data name="TopTen_Status_Name" xml:space="preserve">
+    <value>TYP</value>
+  </data>
+  <data name="TopTen_TeamLeadershipping_Name" xml:space="preserve">
+    <value>Vedení Týmu</value>
+  </data>
+  <data name="TopTen_TrainingBiPresentation_Name" xml:space="preserve">
+    <value>Tréning BI-Prezentace</value>
+  </data>
+  <data name="TopTen_TrainingPhone_Name" xml:space="preserve">
+    <value>Tréning telefonát</value>
+  </data>
+  <data name="TopTen_TrainingStLecture_Name" xml:space="preserve">
+    <value>Tréning ST-Přednášky</value>
+  </data>
+  <data name="TopTen_TrainingVideo_Name" xml:space="preserve">
+    <value>Tréning video</value>
+  </data>
+  <data name="TopTen_Role_Name" xml:space="preserve">
+    <value>Funkce</value>
+  </data>
+  <data name="Global_SecondBankAccount_Name" xml:space="preserve">
+    <value>Druhý bankovní účet</value>
+  </data>
+  <data name="BankAccount_SecondAccountId_Name" xml:space="preserve">
+    <value>Druhý BÚ</value>
+  </data>
+  <data name="UserProfile_PeopleContactCount_Name" xml:space="preserve">
+    <value>Kontaktů</value>
+  </data>
+  <data name="UserProfile_LCID_Name" xml:space="preserve">
+    <value>Jazyk</value>
+  </data>
+  <data name="Meeting_WebinarUrl_Name" xml:space="preserve">
+    <value>URL Webináře</value>
+  </data>
+  <data name="Meeting_FillCapacity_Name" xml:space="preserve">
+    <value>Počet přihlášených</value>
+  </data>
+  <data name="UserProfile_AutomaticLogoutInterval_Name" xml:space="preserve">
+    <value>Interval automatického odhlášení</value>
+  </data>
+  <data name="BankAccount_IBAN_Name" xml:space="preserve">
+    <value>IBAN</value>
+  </data>
+  <data name="BankAccount_SWIFT_Name" xml:space="preserve">
+    <value>SWIFT</value>
+  </data>
+  <data name="Global_Address_Name" xml:space="preserve">
+    <value>Adresa</value>
+  </data>
+  <data name="Global_DIC_Name" xml:space="preserve">
+    <value>DIČ</value>
+  </data>
+  <data name="Global_ICO_Name" xml:space="preserve">
+    <value>IČO</value>
+  </data>
+  <data name="Global_PSC_Name" xml:space="preserve">
+    <value>PSČ</value>
+  </data>
+  <data name="Global_BillingInformation_Name" xml:space="preserve">
+    <value>Fakturační údaje</value>
+  </data>
+  <data name="Video_File_Name" xml:space="preserve">
+    <value>Soubor videa</value>
+  </data>
+  <data name="Video_VideoUsers_Name" xml:space="preserve">
+    <value>Zpřístupněné uživatelům</value>
+  </data>
+  <data name="PeopleContact_FullName_Name" xml:space="preserve">
+    <value>Jméno kontaktu</value>
+  </data>
+  <data name="Global_Video_Name" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="Global_EmailBody_Name" xml:space="preserve">
+    <value>Tělo emailu příjemce</value>
+  </data>
+  <data name="Global_EmailSubject_Name" xml:space="preserve">
+    <value>Předmět emailu příjemce</value>
+  </data>
+  <data name="Video_AllUsers_Name" xml:space="preserve">
+    <value>všichni uživatelé</value>
+  </data>
+  <data name="Video_EmailSenderBody_Name" xml:space="preserve">
+    <value>Tělo emailu odesílatele</value>
+  </data>
+  <data name="Video_Duration_Name" xml:space="preserve">
+    <value>Délka záznamu v sekundách</value>
+  </data>
+  <data name="Global_Order_Name" xml:space="preserve">
+    <value>Pořadí</value>
+  </data>
+  <data name="ManualType_Title_Name" xml:space="preserve">
+    <value>Typ návodu</value>
+  </data>
+  <data name="Manual_IsAccessForAuthGuest_Name" xml:space="preserve">
+    <value>Je návod dostupný i pro hosta?</value>
+  </data>
+  <data name="Manual_IsDownloadable_Name" xml:space="preserve">
+    <value>Je návod stažitelný?</value>
+  </data>
+  <data name="Manual_File_Name" xml:space="preserve">
+    <value>Soubor návodu</value>
+  </data>
+</root>

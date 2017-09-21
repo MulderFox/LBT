@@ -1,0 +1,22 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.ManualPlayer
+
+@{
+    ViewBag.Title = ViewResource.Manual_PlayerVideo_Title_Text;
+}
+
+<h2 style="text-align: center;">@Html.DisplayFor(m => m.Title)</h2>
+<div style="text-align: center; margin-top: 1em;">
+    <video id="videoElementID" width="800" controls="true" autoplay preload="false">
+        <source src="@Model.PlayerDataUrl" type="@Model.MimeContentType">
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#videoElementID').bind('contextmenu', function () { return false; });
+        });
+    </script>
+}

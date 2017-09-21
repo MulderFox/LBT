@@ -1,0 +1,33 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.BulkMailCreate
+
+@{
+    ViewBag.Title = ViewResource.BulkMail_Create_Title_Text;
+}
+
+<p class="message-success">@ViewBag.StatusMessage</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>@ViewResource.BulkMail_Form_Legend_Text</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Subject, new { @class = "required" })
+                @Html.EditorFor(m => m.Subject)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Body, new { @class = "required" })
+                @ViewResource.BulkMail_BodyHint_Text<br />
+                @Html.TextAreaFor(m => m.Body, new { @rows = "10" })
+            </li>
+            <li>
+                @ViewResource.BulkMail_RecipientsInfo_Text<br />
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnSendTitle_Text" />
+    </fieldset>
+}

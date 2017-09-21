@@ -1,0 +1,200 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.PeopleContactDetails
+
+@{
+    ViewBag.Title = ViewResource.PeopleContact_PrintDetails_Title_Text;
+}
+
+<section id="detailAdvancedFormPrint">
+    <div class="float-left" style="font-size: 1.4em; margin-right: 50px;">
+        @ViewResource.PeopleContact_PrintDetails_ContactListHeader_Text
+    </div>
+    <div class="float-left" style="font-size: 0.8em;">
+        @ViewResource.PeopleContact_PrintDetails_MeetingOrder_Text:<br />
+        @ViewResource.PeopleContact_PrintDetails_Week_Text:
+    </div>
+    <div class="clear-fix"></div>
+    <table class="Main">
+        <tbody>
+            <tr>
+                <td class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th class="Data">@Html.DisplayNameFor(model => model.LastName), @Html.DisplayNameFor(model => model.FirstName)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(model => model.LyonessId)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@FieldResource.Global_PhoneNumber1Short_Name</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@FieldResource.Global_Email_Name</th>
+                            </tr>
+                            <tr>
+                                <td class="DataBox">
+                                    @Html.DisplayFor(model => model.Title)
+                                    @Html.DisplayFor(model => model.LastName)
+                                    @Html.DisplayFor(model => model.FirstName)
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @Html.DisplayFor(model => model.LyonessIdPrintDetailView)
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @Html.DisplayFor(model => model.PhoneNumberPrefix1.Title)
+                                    @Html.DisplayFor(model => model.PhoneNumber1)
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBoxSmall">
+                                    @Html.DisplayFor(model => model.Email1PrintDetailView)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th class="Data">@Html.Raw(ViewResource.PeopleContact_PrintDetails_FirstContacted_Text)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.Raw(ViewResource.PeopleContact_PrintDetails_Presented_Text)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.Raw(ViewResource.PeopleContact_PrintDetails_TrackingEmailSent_Text)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.Raw(ViewResource.PeopleContact_PrintDetails_SecondContacted_Text)</th>
+                            </tr>
+                            <tr>
+                                <td class="DataBox">
+                                    @Html.DisplayFor(model => model.FirstContactedPrintDetailView)
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @Html.DisplayFor(model => model.PresentedPrintDetailView)
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @if (Model.TrackingEmailSent)
+                                    {
+                                        <span class="lbt-icon30-ok"></span>
+                                    }
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @Html.DisplayFor(model => model.SecondContactedPrintDetailView)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="DataDescription">@Html.Raw(ViewResource.PeopleContact_PrintDetails_FirstMeetingDate_Text)</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataDescription">@Html.Raw(ViewResource.PeopleContact_PrintDetails_BiParticipation_Text)</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataDescription">@Html.Raw(ViewResource.PeopleContact_PrintDetails_HoldTheInterest_Text)</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataDescription">@Html.Raw(ViewResource.PeopleContact_PrintDetails_SecondMeetingDate_Text)</td>
+                            </tr>
+                            <tr>
+                                <td class="DataLabel">@Html.Raw(ViewResource.PeopleContact_PrintDetails_NotesTheCall_Text):</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataLabel">@Html.Raw(ViewResource.PeopleContact_PrintDetails_NotesTheFirstMeeting_Text):</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataLabel">@Html.Raw(ViewResource.PeopleContact_PrintDetails_EmailContent_Text):</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataLabel">@Html.Raw(ViewResource.PeopleContact_PrintDetails_NotesTheCall_Text):</td>
+                            </tr>
+                            <tr>
+                                <td class="DataBoxTextArea">&nbsp;</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBoxTextArea">&nbsp;</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBoxTextArea">&nbsp;</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBoxTextArea">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="Box-last">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th class="Data">@Html.Raw(ViewResource.PeopleContact_PrintDetails_SecondMeeting_Text)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.Raw(ViewResource.PeopleContact_PrintDetails_BiParticipated_Text)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.Raw(ViewResource.PeopleContact_PrintDetails_ThirdMeeting_Text)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.Raw(ViewResource.PeopleContact_PrintDetails_TeamMeetingParticipated_Text)</th>
+                            </tr>
+                            <tr>
+                                <td class="DataBox">
+                                    @Html.DisplayFor(model => model.SecondMeetingPrintDetailView)
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @Html.DisplayFor(model => model.BusinessInfoParticipatedPrintDetailView)
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @Html.DisplayFor(model => model.ThirdMeetingPrintDetailView)
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @Html.DisplayFor(model => model.TeamMeetingParticipatedPrintDetailView)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="DataDescription">@Html.Raw(ViewResource.PeopleContact_PrintDetails_WithLyonessPartner_Text)</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataDescription">&nbsp;</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataDescription">&nbsp;</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataDescription">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="DataDescription">@Html.Raw(ViewResource.PeopleContact_PrintDetails_Registration_Text)</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataDescription">@Html.Raw(ViewResource.PeopleContact_PrintDetails_TeamMeetingParticipation_Text)</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataDescription">@Html.Raw(ViewResource.PeopleContact_PrintDetails_LoyaltyBenefits_Text)</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataDescription">@Html.Raw(ViewResource.PeopleContact_PrintDetails_Decision_Text)</td>
+                            </tr>
+                            <tr>
+                                <td class="DataLabel">@Html.Raw(ViewResource.PeopleContact_PrintDetails_NotesAndTasks_Text):</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataLabel">@Html.Raw(ViewResource.PeopleContact_PrintDetails_NotesAndBi_Text):</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataLabel">@Html.Raw(ViewResource.PeopleContact_PrintDetails_NotesAndTasks_Text):</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataLabel">@Html.Raw(ViewResource.PeopleContact_PrintDetails_Result_Text):</td>
+                            </tr>
+                            <tr>
+                                <td class="DataBoxTextArea">&nbsp;</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBoxTextArea">&nbsp;</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBoxTextArea">&nbsp;</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBoxTextArea">@Html.Raw(ViewResource.PeopleContact_PrintDetails_NotesTheResult_Text)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            window.print();
+        });
+    </script>
+}

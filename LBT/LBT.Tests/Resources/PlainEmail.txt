@@ -1,0 +1,50 @@
+
+
+Pìkný den,
+
+systém CLA Vám rezervoval místo na akci Název akce do 18. 03. 2015.
+Pokud do té doby neobdržíme platbu podle níže uvedených instrukcí, bude rezervace zrušena.
+
++ DETAIL AKCE
+  ===========
+  Název: Název akce
+  Od: 31.03.2015 10:10:00
+  Do: 31.03.2015 11:00:00
+  Obec: Praha 9
+  Ulice: Pod Harfou
+  Organizátor: Èervený Leoš
+  Pøednášející: asdf
+  
+  Potøebné s sebou:
+
+Text, tuèné, kurzíva.
+Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. 
+
+  Poznámka:
+
+Text, tuèné, kurzíva.
+Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. Dlouhý blok textu. 
+
+
+Pokud je akce placená, prosím proveïte platbu podle následujících údajù:
+
++ PLATEBNÍ ÚDAJE
+  ==============
+  Úèet: 123456/0800
+  Specifický symbol: 78
+  Variabilní symbol: 420999999
+  Cena: 3 CZK.
+  Poznámka pro pøíjemce: Vaše kontaktní telefonní èíslo.
+
+
+Dìkujeme a tìšíme se na setkání.
+
+S pozdravem,
+
+CLA System.
+
+---
+
+Tento email byl vygenerován automaticky. Neodpovídejte prosím na tento email.
+
+

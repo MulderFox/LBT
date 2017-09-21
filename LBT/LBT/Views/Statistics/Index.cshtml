@@ -1,0 +1,285 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.StatisticsIndex
+
+@{
+    ViewBag.Title = ViewResource.Statistics_Index_Title_Text;
+}
+
+<section id="detailAdvancedForm">
+    <table class="Main">
+        <tbody>
+            <tr>
+                <td class="BoxStatus">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="title">@ViewResource.Global_QuotaAndStatisticsUser_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Owner.RegistredPeopleQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Owner.RegistredPeopleQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Owner.RegistredPeopleQuotaLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Owner.RegistredPeopleQuotaLastMonth)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Owner.PremiumPartnersQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Owner.PremiumPartnersQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Owner.PremiumPartnersQuotaLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Owner.PremiumPartnersQuotaLastMonth)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Owner.BuyersQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Owner.BuyersQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Owner.ContactedPeopleCount):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Owner.ContactedPeopleCount)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Owner.ContactedPeopleCountLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Owner.ContactedPeopleCountLastMonth)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td class="BoxStatus">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="title">@ViewResource.Global_QuotaAndStatisticsDownline_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Downline.RegistredPeopleQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Downline.RegistredPeopleQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Downline.RegistredPeopleQuotaLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Downline.RegistredPeopleQuotaLastMonth)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Downline.PremiumPartnersQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Downline.PremiumPartnersQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Downline.PremiumPartnersQuotaLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Downline.PremiumPartnersQuotaLastMonth)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Downline.BuyersQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Downline.BuyersQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Downline.ContactedPeopleCount):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Downline.ContactedPeopleCount)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.Downline.ContactedPeopleCountLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.Downline.ContactedPeopleCountLastMonth)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="BoxStatus">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="title">@ViewResource.Global_QuotaAndStatisticsLeaderDownline_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.LeaderDownline.RegistredPeopleQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.LeaderDownline.RegistredPeopleQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.LeaderDownline.RegistredPeopleQuotaLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.LeaderDownline.RegistredPeopleQuotaLastMonth)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.LeaderDownline.PremiumPartnersQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.LeaderDownline.PremiumPartnersQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.LeaderDownline.PremiumPartnersQuotaLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.LeaderDownline.PremiumPartnersQuotaLastMonth)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.LeaderDownline.BuyersQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.LeaderDownline.BuyersQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.LeaderDownline.ContactedPeopleCount):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.LeaderDownline.ContactedPeopleCount)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.LeaderDownline.ContactedPeopleCountLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.LeaderDownline.ContactedPeopleCountLastMonth)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td class="BoxStatus">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="title">@ViewResource.Global_QuotaAndStatisticsAll_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.All.RegistredPeopleQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.All.RegistredPeopleQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.All.RegistredPeopleQuotaLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.All.RegistredPeopleQuotaLastMonth)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.All.PremiumPartnersQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.All.PremiumPartnersQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.All.PremiumPartnersQuotaLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.All.PremiumPartnersQuotaLastMonth)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.All.BuyersQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.All.BuyersQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.All.ContactedPeopleCount):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.All.ContactedPeopleCount)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(mi => mi.All.ContactedPeopleCountLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(mi => mi.All.ContactedPeopleCountLastMonth)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

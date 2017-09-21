@@ -1,0 +1,43 @@
+﻿@using LBT.Resources
+@model LBT.Models.Currency
+
+@{
+    ViewBag.Title = ViewResource.Currency_Edit_Title_Text;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(m => m.CurrencyId)
+
+    <fieldset>
+        <legend>@ViewResource.Currency_Form_Legend_Text</legend>
+        <ol>
+            <li>
+                <b>@Html.DisplayNameFor(m => m.CurrencyType):</b>
+                @Html.DisplayFor(m => m.CurrencyType)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ExchangeRateToCZK, new { @class = "required" })
+                @Html.TextBoxFor(m => m.ExchangeRateToCZK)
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToCurrencyIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

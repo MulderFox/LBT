@@ -1,0 +1,95 @@
+﻿@using LBT.ModelViews
+@using LBT.Resources
+@model CheckBillingInformation
+
+@{
+    ViewBag.Title = ViewResource.Account_CheckBillingInformation_Title_Text;
+}
+
+<p>
+    @Html.Raw(ViewResource.Account_CheckBillingInformation_Message_Text)
+</p>
+
+<h1>@ViewResource.Account_CheckBillingInformation_BillingInformationTitle_Text</h1>
+
+<section id="createForm">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        @Html.HiddenFor(m => m.UserId)
+
+        <fieldset>
+            <legend>@ViewResource.Global_UserLegend_Text</legend>
+            <table class="Main">
+                <tbody>
+                    <tr>
+                        <td class="Box-last">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.FirstName, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.FirstName)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.LastName, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.LastName)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.Address, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.TextAreaFor(m => m.Address, new { @rows = "5" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.City, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.City)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.PSC, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.PSC)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.DIC):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.DIC)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.ICO):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.ICO)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+        </fieldset>
+    }
+</section>

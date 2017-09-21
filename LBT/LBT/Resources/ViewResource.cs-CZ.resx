@@ -1,0 +1,1988 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account_AccountWasDeleted_Text" xml:space="preserve">
+    <value>Účet byl úspěšně smazán.</value>
+    <comment>/Account/Login</comment>
+  </data>
+  <data name="Account_AdminAccountProtection_Text" xml:space="preserve">
+    <value>Nejvyšší administrátorský účet nelze smazat!</value>
+    <comment>/Account/Login</comment>
+  </data>
+  <data name="Account_CannotContinue_Text" xml:space="preserve">
+    <value>Momentálně není možné používat CLA. Zkuste se prosím znovu přihlásit později.</value>
+    <comment>/Account/Login</comment>
+  </data>
+  <data name="Account_ChangePasswordSuccess_Text" xml:space="preserve">
+    <value>Heslo bylo změněno.</value>
+    <comment>/Account/Manage</comment>
+  </data>
+  <data name="Account_CheckPolicies_Message_Text" xml:space="preserve">
+    <value>Vítejte v systému CLA. Pro další pokračování prosím odsouhlaste &lt;a href="/Store/Všeobecné obchodní podmínky CLA.pdf" target="_blank"&gt;Všeobecné obchodní podmínky CLA&lt;/a&gt; a použití Vašich osobních údajů dle obchodních podmínek.</value>
+    <comment>/Account/CheckPolicies</comment>
+  </data>
+  <data name="Account_CheckPolicies_PersonalDataTitle_Text" xml:space="preserve">
+    <value>Osobní údaje</value>
+    <comment>/Account/CheckPolicies</comment>
+  </data>
+  <data name="Account_CheckPolicies_PrivacyAgreementLegend_Text" xml:space="preserve">
+    <value>Souhlas s obchodními podmínkami</value>
+    <comment>/Account/CheckPolicies</comment>
+  </data>
+  <data name="Account_CheckPolicies_Title_Text" xml:space="preserve">
+    <value>Vítejte v CLA</value>
+    <comment>/Account/CheckPolicies</comment>
+  </data>
+  <data name="Account_DeleteAccount_ConfirmDeleteAccountQuestion_Text" xml:space="preserve">
+    <value>Opravdu chcete odstranit svůj účet včetně kontaktů a dalších nastavení?</value>
+    <comment>/Account/DeleteAccount</comment>
+  </data>
+  <data name="Account_DeleteAccount_ConfirmMessage_Text" xml:space="preserve">
+    <value>Prosím potvrďte kompletní odstranění Vašeho účtu včetně kontaktů a dalších nastavení.</value>
+    <comment>/Account/DeleteAccount</comment>
+  </data>
+  <data name="Account_DeleteAccount_Legend_Text" xml:space="preserve">
+    <value>Souhlas s odstraněním účtu a již zadaných kontaktů</value>
+    <comment>/Account/DeleteAccount</comment>
+  </data>
+  <data name="Account_DeleteAccount_Title_Text" xml:space="preserve">
+    <value>Odstranění účtu</value>
+    <comment>/Account/DeleteAccount</comment>
+  </data>
+  <data name="Account_Login_BtnSignInTitle_Text" xml:space="preserve">
+    <value>Přihlásit se</value>
+    <comment>/Account/Login</comment>
+  </data>
+  <data name="Account_Login_HplPasswordRecoveryTitle_Text" xml:space="preserve">
+    <value>Obnovit heslo</value>
+    <comment>/Account/Login</comment>
+  </data>
+  <data name="Account_Login_Title_Text" xml:space="preserve">
+    <value>Přihlášení</value>
+    <comment>/Account/Login</comment>
+  </data>
+  <data name="Account_Manage_BtnChangePasswordTitle_Text" xml:space="preserve">
+    <value>Změnit heslo</value>
+    <comment>/Account/Login</comment>
+  </data>
+  <data name="Account_Manage_Legend_Text" xml:space="preserve">
+    <value>Formulář pro změnu hesla</value>
+    <comment>/Account/Manage</comment>
+  </data>
+  <data name="Account_Manage_LoggedAs_Text" xml:space="preserve">
+    <value>Jste přihlášeni jako</value>
+    <comment>/Account/Manage</comment>
+  </data>
+  <data name="Account_Manage_Title_Text" xml:space="preserve">
+    <value>Změna hesla</value>
+    <comment>/Account/Manage</comment>
+  </data>
+  <data name="Account_NewPasswordWasSent_Text" xml:space="preserve">
+    <value>Nově vygenerované heslo bylo úspěšně odesláno na uživatelův email.</value>
+    <comment>/Account/PasswordRecovery</comment>
+  </data>
+  <data name="Account_PasswordRecovery_Information_Text" xml:space="preserve">
+    <value>Pro obnovu hesla vložte přihlašovací jméno. Obnovené heslo Vám bude zasláno na registrovaný email.</value>
+    <comment>/Account/PasswordRecovery</comment>
+  </data>
+  <data name="Account_PasswordRecovery_Title_Text" xml:space="preserve">
+    <value>Obnova hesla</value>
+    <comment>/Account/PasswordRecovery</comment>
+  </data>
+  <data name="Account_Register_Title_Text" xml:space="preserve">
+    <value>Nový uživatel</value>
+    <comment>/Account/Register</comment>
+  </data>
+  <data name="Account_RemoveLoginSuccess_Text" xml:space="preserve">
+    <value>Externí přihlášení bylo zrušeno.</value>
+    <comment>/Account/Manage</comment>
+  </data>
+  <data name="Account_SetPasswordSuccess_Text" xml:space="preserve">
+    <value>Heslo bylo nastaveno.</value>
+    <comment>/Account/Manage</comment>
+  </data>
+  <data name="Account_Settings_Title_Text" xml:space="preserve">
+    <value>Upravit profil</value>
+    <comment>/Account/Settings</comment>
+  </data>
+  <data name="Account_Settings_YourLyonessId_Text" xml:space="preserve">
+    <value>Vaše Lyoness ID (bez tří nul, např. 420123456)</value>
+    <comment>/Account/Settings</comment>
+  </data>
+  <data name="AuthCallback_IndexAsync_Message_Text" xml:space="preserve">
+    <value>&lt;p&gt;Během zpracování požadavku na přístup do Google API nastala chyba.&lt;/p&gt;
+&lt;p&gt;Popis chyby: {0}&lt;/p&gt;
+&lt;p&gt;Kontaktujte prosím administrátora systému.&lt;/p&gt;</value>
+    <comment>Google Calendar Authentication Failed</comment>
+  </data>
+  <data name="AuthCallback_IndexAsync_Title_Text" xml:space="preserve">
+    <value>Chyba v přístupu do Google API</value>
+    <comment>Google Calendar Authentication Failed</comment>
+  </data>
+  <data name="BankAccountHistory_ClaAccessDelete_Title_Text" xml:space="preserve">
+    <value>Smazat nepřiřazenou platbu za přístup</value>
+    <comment>/BankAccountHistory/ClaAccessDelete</comment>
+  </data>
+  <data name="BankAccountHistory_ClaAccessDetails_Title_Text" xml:space="preserve">
+    <value>Detail nepřiřazené platby za přístup</value>
+    <comment>/BankAccountHistory/ClaAccessDetails</comment>
+  </data>
+  <data name="BankAccountHistory_ClaAccessEdit_Title_Text" xml:space="preserve">
+    <value>Upravit nepřiřazenou platbu za přístup</value>
+    <comment>/BankAccountHistory/ClaAccessEdit</comment>
+  </data>
+  <data name="BankAccountHistory_ClaAccessIndex_Title_Text" xml:space="preserve">
+    <value>Nepřiřazené platby za přístup</value>
+    <comment>/BankAccountHistory/ClaAccessIndex</comment>
+  </data>
+  <data name="BankAccountHistory_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat nepřiřazenou platbu</value>
+    <comment>/BankAccountHistory/Delete</comment>
+  </data>
+  <data name="BankAccountHistory_Details_Title_Text" xml:space="preserve">
+    <value>Detail nepřiřazené platby</value>
+    <comment>/BankAccountHistory/Details</comment>
+  </data>
+  <data name="BankAccountHistory_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit nepřiřazenou platbu</value>
+    <comment>/BankAccountHistory/Edit</comment>
+  </data>
+  <data name="BankAccountHistory_FormAccess_Legend_Text" xml:space="preserve">
+    <value>Nepřiřazená platba za přístup</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="BankAccountHistory_Form_Legend_Text" xml:space="preserve">
+    <value>Nepřiřazená platba</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="BankAccountHistory_Index_HplMeetingDetailsTitle_Text" xml:space="preserve">
+    <value>Detail akce</value>
+    <comment>/BankAccountHistory/Index</comment>
+  </data>
+  <data name="BankAccountHistory_Index_Title_Text" xml:space="preserve">
+    <value>Nepřiřazené platby</value>
+    <comment>/BankAccountHistory/Index</comment>
+  </data>
+  <data name="BankAccountHistory_MeetingPaymentWasConverted_Text" xml:space="preserve">
+    <value>Na účtu {0} byla očekávána platba ve měně {1}, ale přišla platba ve měně {2}, která byla konvertována do požadované měny.
+VS platby: {3}
+Poznámka platby: {4}</value>
+    <comment>Mail (process payments)</comment>
+  </data>
+  <data name="BankAccount_AccountPaymentInfo_Text" xml:space="preserve">
+    <value>Účet: {0}</value>
+    <comment>Mail (Access payments)</comment>
+  </data>
+  <data name="BankAccount_AmmountPaymentInfo_Text" xml:space="preserve">
+    <value>Cena: {0:N0} {1}.</value>
+    <comment>Mail (Access payments)</comment>
+  </data>
+  <data name="BankAccount_Create_Title_Text" xml:space="preserve">
+    <value>Vytvořit bankovní účet</value>
+    <comment>/BankAccount/Create</comment>
+  </data>
+  <data name="BankAccount_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat bankovní účet</value>
+    <comment>/BankAccount/Delete</comment>
+  </data>
+  <data name="BankAccount_Details_Title_Text" xml:space="preserve">
+    <value>Detail bankovního účtu</value>
+    <comment>/BankAccount/Details</comment>
+  </data>
+  <data name="BankAccount_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit bankovní účet</value>
+    <comment>/BankAccount/Edit</comment>
+  </data>
+  <data name="BankAccount_Form_Legend_Text" xml:space="preserve">
+    <value>Bankovní účet</value>
+    <comment>/BankAccount/Create</comment>
+  </data>
+  <data name="BankAccount_Index_Title_Text" xml:space="preserve">
+    <value>Bankovní účty</value>
+    <comment>/BankAccount/Index</comment>
+  </data>
+  <data name="BankAccount_SaveOnlyUsers_Text" xml:space="preserve">
+    <value>Došlo pouze k aktualizaci uživatelů používajících bankovní účet a Tokenu s platností, protože se tento účet už používá na akcích.</value>
+    <comment>/BankAccount/Edit</comment>
+  </data>
+  <data name="BankAccount_VsPaymentInfo_Text" xml:space="preserve">
+    <value>Variabilní symbol: {0}</value>
+    <comment>Mail (Access payments)</comment>
+  </data>
+  <data name="Currency_Create_Title_Text" xml:space="preserve">
+    <value>Vytvořit měnu</value>
+    <comment>/Currency/Create</comment>
+  </data>
+  <data name="Currency_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat měnu</value>
+    <comment>/Currency/Delete</comment>
+  </data>
+  <data name="Currency_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit měnu</value>
+    <comment>/Currency/Edit</comment>
+  </data>
+  <data name="Currency_Form_Legend_Text" xml:space="preserve">
+    <value>Měna</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Currency_Index_Title_Text" xml:space="preserve">
+    <value>Měny</value>
+    <comment>/Currency/Index</comment>
+  </data>
+  <data name="District_Create_Title_Text" xml:space="preserve">
+    <value>Vytvořit okres</value>
+    <comment>/District/Create</comment>
+  </data>
+  <data name="District_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat okres</value>
+    <comment>/District/Delete</comment>
+  </data>
+  <data name="District_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit okres</value>
+    <comment>/District/Edit</comment>
+  </data>
+  <data name="District_Form_Legend_Text" xml:space="preserve">
+    <value>Okres</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="District_Index_Title_Text" xml:space="preserve">
+    <value>Okresy</value>
+    <comment>/District/Index</comment>
+  </data>
+  <data name="Global_ApplicationAccessTitle_Text" xml:space="preserve">
+    <value>Přístupy do aplikace</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_BtnContinueTitle_Text" xml:space="preserve">
+    <value>Pokračovat</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_BtnCreateTitle_Text" xml:space="preserve">
+    <value>Vytvořit</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_BtnDeleteTitle_Text" xml:space="preserve">
+    <value>Smazat</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_BtnEditTitle_Text" xml:space="preserve">
+    <value>Upravit</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_BtnImportTitle_Text" xml:space="preserve">
+    <value>Importovat</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_BtnSaveTitle_Text" xml:space="preserve">
+    <value>Uložit</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_BtnSendTitle_Text" xml:space="preserve">
+    <value>Odeslat</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_BtnValidateTitle_Text" xml:space="preserve">
+    <value>Zvalidovat</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_ContactList_Text" xml:space="preserve">
+    <value>Kontaktní listina</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_ContactsTitle_Text" xml:space="preserve">
+    <value>Kontaktní údaje</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_DeleteConfirmationQuestion_Text" xml:space="preserve">
+    <value>Opravdu chcete smazat tento záznam?</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_FilterByUser_Text" xml:space="preserve">
+    <value>Kontakty uživatele</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_FilterBy_Text" xml:space="preserve">
+    <value>Filtr podle</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_FilterForContactList_Text" xml:space="preserve">
+    <value>Filtr pro kontaktní listinu</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_GoogleCalendarTitle_Text" xml:space="preserve">
+    <value>Google kalendář</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_GoogleCredentialsValidationMessage_Text" xml:space="preserve">
+    <value>Vyčkejte prosím na nové okno pro dokončení validace.&lt;br /&gt;Poté můžete toto modální okno uzavřít a pokračovat v editaci uživatele.</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplAboutTitle_Text" xml:space="preserve">
+    <value>Tým CLA</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplBackTitle_Text" xml:space="preserve">
+    <value>Zpět</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplBackToBankAccountHistoryClaAccessIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam nepřiřazených plateb za přístup</value>
+    <comment>/BankAccountHistory/ClaAccessDelete</comment>
+  </data>
+  <data name="Global_HplBackToBankAccountHistoryIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam nepřiřazených plateb</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplBackToBankAccountIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam bankovních účtů</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplBackToCurrencyIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam měn</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplBackToDistrictIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam okresů</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplBackToMeetingTitleTypeIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam názvů akcí</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplBackToPeopleContactIndex_Text" xml:space="preserve">
+    <value>Návrat na kontaktní listinu</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplBackToPhoneNumberPrefixIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam telefonních předvoleb</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplBackToSharedContactIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam sdílení kontaktů lidí</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplBackToUserProfileIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam uživatelů</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplCreateMeetingTitle_Text" xml:space="preserve">
+    <value>Založit novou akci</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplCreateSharedContactsTitle_Text" xml:space="preserve">
+    <value>Vytvořit nové sdílení</value>
+    <comment>/SharedContacts/Index</comment>
+  </data>
+  <data name="Global_HplCreateTitle2_Text" xml:space="preserve">
+    <value>Vytvořit novou</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplCreateTitle_Text" xml:space="preserve">
+    <value>Vytvořit nový</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplDeleteTitle_Text" xml:space="preserve">
+    <value>Smazat</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplDetailsTitle_Text" xml:space="preserve">
+    <value>Detail</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplEditTitle_Text" xml:space="preserve">
+    <value>Upravit</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplHomeTitle_Text" xml:space="preserve">
+    <value>Domů</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplLockReservationTitle_Text" xml:space="preserve">
+    <value>Uzamknout čas rezervace</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplLoginTitle_Text" xml:space="preserve">
+    <value>Přihlášení</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplManageAccountTitle_Text" xml:space="preserve">
+    <value>Změna hesla</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplMeetingArchiveTitle_Text" xml:space="preserve">
+    <value>Archiv</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplMeetingTitle_Text" xml:space="preserve">
+    <value>Akce</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplNotLinkedPaymentsTitle_Text" xml:space="preserve">
+    <value>Nepřiřazené platby</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplPeopleContactTitle_Text" xml:space="preserve">
+    <value>Kontaktní listina</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplPrintAttendeesTitle_Text" xml:space="preserve">
+    <value>Tisk seznamu</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplPrintListTitle_Text" xml:space="preserve">
+    <value>Tisk seznamu</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplSearchTitle_Text" xml:space="preserve">
+    <value>Hledat</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplSettingsTitle_Text" xml:space="preserve">
+    <value>Nastavení</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplShowAllMeetingsTitle_Text" xml:space="preserve">
+    <value>Zobrazit všechny akce</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplShowAvailableMeetingsTitle_Text" xml:space="preserve">
+    <value>Zobrazit dostupné akce</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplSignTitle_Text" xml:space="preserve">
+    <value>Přihlásit</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplStatisticsTitle_Text" xml:space="preserve">
+    <value>Statistiky</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplTeamsTitle_Text" xml:space="preserve">
+    <value>Týmy</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplTopTenTitle_Text" xml:space="preserve">
+    <value>TOP10</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplUnlockReservationTitle_Text" xml:space="preserve">
+    <value>Odemknout čas rezervace</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplUnsignTitle_Text" xml:space="preserve">
+    <value>Odhlásit</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplUsersTitle_Text" xml:space="preserve">
+    <value>Uživatelé</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_InvitationCardUrlTooltip_Text" xml:space="preserve">
+    <value>Zde prosím vložte URL pozvánky.</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_IsListCutted_Text" xml:space="preserve">
+    <value>Kvůli ochraně systému bylo zobrazeno pouze prvních 1000 záznamů. Prosím upravte filtr tak, abyste se vešli do 1000 záznamů.</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_Logout_Text" xml:space="preserve">
+    <value>Odhlásit</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_MeetingListAttendees_Text" xml:space="preserve">
+    <value>Seznam přihlášených</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_MeetingTitleTypeLegend_Text" xml:space="preserve">
+    <value>Název akce</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_MeetingUserAttendee_Text" xml:space="preserve">
+    <value>Přihlášený majitel kontaktů</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_NoAvailableItems_Text" xml:space="preserve">
+    <value>Momentálně nejsou k dispozici.</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_NoRecord_Text" xml:space="preserve">
+    <value>Žádný záznam.</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_PageCount_Text" xml:space="preserve">
+    <value>Počet záznamů na stránku</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_PageSummary_Text" xml:space="preserve">
+    <value>Stránka {0}. z {1} stránek. Celkem {2} záznamů.</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_PeopleContact_Legend_Text" xml:space="preserve">
+    <value>Kontakt lidí</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_SharedContactsLegend_Title" xml:space="preserve">
+    <value>Sdílený kontakt</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_SignFormLegend_Text" xml:space="preserve">
+    <value>Přihlašovací formulář</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_SignUnsignTitle_Text" xml:space="preserve">
+    <value>Přihlášení/Odhlášení</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_StatusTitle_Text" xml:space="preserve">
+    <value>Status</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_UserLegend_Text" xml:space="preserve">
+    <value>Uživatel</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_Users_Text" xml:space="preserve">
+    <value>Uživatelé</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_VariableSymbolDescription_Text" xml:space="preserve">
+    <value>Vaše Lyoness ID bez tří nul</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_VariableSymbolExample_Text" xml:space="preserve">
+    <value>(Př. 420123456)</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_VariableSymbol_Text" xml:space="preserve">
+    <value>Variabilní symbol</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_Welcome_Text" xml:space="preserve">
+    <value>Vítejte</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Home_About_PageContent_Text" xml:space="preserve">
+    <value>&lt;h4&gt;Soubory ke stažení:&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;a href="/Store/CLA Manual.pdf" target="_blank"&gt;CLA - Stručný návod&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href="/Store/CLA - Registrace účtu Google Calendar.pdf" target="_blank"&gt;Návod na registraci Google kalendáře do CLA&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href="/Store/Všeobecné obchodní podmínky CLA.pdf" target="_blank"&gt;Všeobecné obchodní podmínky CLA&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href="/Store/Vygenerování Tokenu FIO.pdf" target="_blank"&gt;Vygenerování Tokenu FIO&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href="/Store/Platba za CLA v různých měnách.pdf" target="_blank"&gt;Platba za CLA v různých měnách&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</value>
+    <comment>/Home/About</comment>
+  </data>
+  <data name="Home_About_Title_Text" xml:space="preserve">
+    <value>Tým CLA</value>
+    <comment>/Home/About</comment>
+  </data>
+  <data name="Home_Index_ActualTasks_Text" xml:space="preserve">
+    <value>Aktuální úkoly</value>
+    <comment>/Home/Index</comment>
+  </data>
+  <data name="Home_Index_DelayedTasks_Text" xml:space="preserve">
+    <value>Úkoly v prodlení</value>
+    <comment>/Home/Index</comment>
+  </data>
+  <data name="Home_Index_HplInsertDate_Text" xml:space="preserve">
+    <value>Vložit datum</value>
+    <comment>/Home/Index</comment>
+  </data>
+  <data name="Home_Index_NoActualTasks_Text" xml:space="preserve">
+    <value>V současné době nejsou k dispozici žádné aktuální úkoly.</value>
+    <comment>/Home/Index</comment>
+  </data>
+  <data name="Home_Index_NoDelayedTasks_Text" xml:space="preserve">
+    <value>V současné době nejsou k dispozici žádné úkoly v prodlení.</value>
+    <comment>/Home/Index</comment>
+  </data>
+  <data name="Home_Index_Title_Text" xml:space="preserve">
+    <value>Úvodní stránka</value>
+    <comment>/Home/Index</comment>
+  </data>
+  <data name="MeetingAttendee_Details_Title_Text" xml:space="preserve">
+    <value>Detail účastníka akce</value>
+    <comment>/MeetingAttendee/Details</comment>
+  </data>
+  <data name="MeetingAttendee_Edit_Legend_Text" xml:space="preserve">
+    <value>Účastník akce</value>
+    <comment>/MeetingAttendee/Edit</comment>
+  </data>
+  <data name="MeetingAttendee_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit účastníka akce</value>
+    <comment>/MeetingAttendee/Edit</comment>
+  </data>
+  <data name="MeetingTitleType_Create_Title_Text" xml:space="preserve">
+    <value>Vytvořit název akce</value>
+    <comment>/MeetingTitleType/Create</comment>
+  </data>
+  <data name="MeetingTitleType_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat název akce</value>
+    <comment>/MeetingTitleType/Delete</comment>
+  </data>
+  <data name="MeetingTitleType_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit název akce</value>
+    <comment>/MeetingTitleType/Edit</comment>
+  </data>
+  <data name="MeetingTitleType_Index_Title_Text" xml:space="preserve">
+    <value>Názvy akcí</value>
+    <comment>/MeetingTitleType/Index</comment>
+  </data>
+  <data name="Meeting_BusinessInfoArchiveDetails_Title_Text" xml:space="preserve">
+    <value>Detail archivní akce LGS semináře</value>
+    <comment>/Meeting/BusinessInfoArchiveDetails</comment>
+  </data>
+  <data name="Meeting_BusinessInfoArchiveIndex_HplBackTitle_Text" xml:space="preserve">
+    <value>Návrat na akce LGS semináře</value>
+    <comment>/Meeting/BusinessInfoArchiveIndex</comment>
+  </data>
+  <data name="Meeting_BusinessInfoArchiveIndex_Title_Text" xml:space="preserve">
+    <value>Akce - Archiv LGS semináře</value>
+    <comment>/Meeting/BusinessInfoArchiveIndex</comment>
+  </data>
+  <data name="Meeting_BusinessInfoCreate_Title_Text" xml:space="preserve">
+    <value>Vytvořit novou akci LGS semináře</value>
+    <comment>/Meeting/BusinessInfoCreate</comment>
+  </data>
+  <data name="Meeting_BusinessInfoDelete_Title_Text" xml:space="preserve">
+    <value>Smazat akci LGS semináře</value>
+    <comment>/Meeting/BusinessInfoDelete</comment>
+  </data>
+  <data name="Meeting_BusinessInfoDetails_Title_Text" xml:space="preserve">
+    <value>Detail akce LGS semináře</value>
+    <comment>/Meeting/BusinessInfoDetails</comment>
+  </data>
+  <data name="Meeting_BusinessInfoEdit_Title_Text" xml:space="preserve">
+    <value>Upravit akci LGS semináře</value>
+    <comment>/Meeting/BusinessInfoEdit</comment>
+  </data>
+  <data name="Meeting_BusinessInfoIndex_Title_Text" xml:space="preserve">
+    <value>Akce - LGS semináře</value>
+    <comment>/Meeting/BusinessInfoIndex</comment>
+  </data>
+  <data name="Meeting_BusinessInfoPrintDetail_Title_Text" xml:space="preserve">
+    <value>Detail akce LGS semináře</value>
+    <comment>/Meeting/BusinessInfoPrintDetail</comment>
+  </data>
+  <data name="Meeting_BusinessInfoPrintIndex_Title_Text" xml:space="preserve">
+    <value>Akce - LGS semináře</value>
+    <comment>/Meeting/BusinessInfoPrintIndex</comment>
+  </data>
+  <data name="Meeting_BusinessInfoSignUnsign_Title_Text" xml:space="preserve">
+    <value>Přihlášení/Odhlášení na akci LGS semináře</value>
+    <comment>/Meeting/BusinessInfoSignUnsign</comment>
+  </data>
+  <data name="Meeting_BusinessInfo_Legend_Text" xml:space="preserve">
+    <value>Akce LGS semináře</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Meeting_ContactListInfo_Text" xml:space="preserve">
+    <value>Zobrazují se pouze kontakty, které mají vyplněné LyonessId, Email a Mobilní telefon.</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Meeting_Dashboard_NearestBusinessInfo_Text" xml:space="preserve">
+    <value>Nejbližší akce LGS semináře</value>
+    <comment>/Meeting/Dashboard</comment>
+  </data>
+  <data name="Meeting_Dashboard_NearestDavidKotasekTraining_Text" xml:space="preserve">
+    <value>Nejbližší akce Školení Davida Kotáska</value>
+    <comment>/Meeting/Dashboard</comment>
+  </data>
+  <data name="Meeting_Dashboard_NearestMSPEventing_Text" xml:space="preserve">
+    <value>Nejbližší akce MSP Evening</value>
+    <comment>/Meeting/Dashboard</comment>
+  </data>
+  <data name="Meeting_Dashboard_NearestOthers_Text" xml:space="preserve">
+    <value>Nejbližší ostatní akce</value>
+    <comment>/Meeting/Dashboard</comment>
+  </data>
+  <data name="Meeting_Dashboard_NearestTeamMeeting_Text" xml:space="preserve">
+    <value>Nejbližší akce Setkání Týmu</value>
+    <comment>/Meeting/Dashboard</comment>
+  </data>
+  <data name="Meeting_Dashboard_Title_Text" xml:space="preserve">
+    <value>Akce</value>
+    <comment>/Meeting/Dashboard</comment>
+  </data>
+  <data name="Meeting_MspEveningArchiveDetails_Title_Text" xml:space="preserve">
+    <value>Detail archivní akce MSP Evening</value>
+    <comment>/Meeting/MspEveningArchiveDetails</comment>
+  </data>
+  <data name="Meeting_MspEveningArchiveIndex_HplBackTitle_Text" xml:space="preserve">
+    <value>Návrat na akce MSP Evening</value>
+    <comment>/Meeting/MspEveningArchiveIndex</comment>
+  </data>
+  <data name="Meeting_MspEveningArchiveIndex_Title_Text" xml:space="preserve">
+    <value>Akce - Archiv MSP Evening</value>
+    <comment>/Meeting/MspEveningArchiveIndex</comment>
+  </data>
+  <data name="Meeting_MspEveningCreate_Title_Text" xml:space="preserve">
+    <value>Vytvořit novou akci MSP Evening</value>
+    <comment>/Meeting/MspEveningCreate</comment>
+  </data>
+  <data name="Meeting_MspEveningDelete_Title_Text" xml:space="preserve">
+    <value>Smazat akci MSP Evening</value>
+    <comment>/Meeting/MspEveningDelete</comment>
+  </data>
+  <data name="Meeting_MspEveningDetails_Title_Text" xml:space="preserve">
+    <value>Detail akce MSP Evening</value>
+    <comment>/Meeting/MspEveningDetails</comment>
+  </data>
+  <data name="Meeting_MspEveningEdit_Title_Text" xml:space="preserve">
+    <value>Upravit akci MSP Evening</value>
+    <comment>/Meeting/MspEveningEdit</comment>
+  </data>
+  <data name="Meeting_MspEveningIndex_Title_Text" xml:space="preserve">
+    <value>Akce - MSP Evening</value>
+    <comment>/Meeting/MspEveningIndex</comment>
+  </data>
+  <data name="Meeting_MspEveningPrintDetail_Title_Text" xml:space="preserve">
+    <value>Detail akce MSP Evening</value>
+    <comment>/Meeting/MspEveningPrintDetail</comment>
+  </data>
+  <data name="Meeting_MspEveningPrintIndex_Title_Text" xml:space="preserve">
+    <value>Akce - MSP Evening</value>
+    <comment>/Meeting/MspEveningPrintIndex</comment>
+  </data>
+  <data name="Meeting_MspEveningSignUnsign_Title_Text" xml:space="preserve">
+    <value>Přihlášení/Odhlášení na akci MSP Evening</value>
+    <comment>/Meeting/MspEveningSignUnsign</comment>
+  </data>
+  <data name="Meeting_MspEvening_Legend_Text" xml:space="preserve">
+    <value>Akce MSP Evening</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Meeting_OstatniArchiveDetails_Title_Text" xml:space="preserve">
+    <value>Detail archivní akce</value>
+    <comment>/Meeting/OstatniArchiveDetails</comment>
+  </data>
+  <data name="Meeting_OstatniArchiveIndex_HplBackTitle_Text" xml:space="preserve">
+    <value>Návrat na ostatní akce</value>
+    <comment>/Meeting/OstatniArchivIndex</comment>
+  </data>
+  <data name="Meeting_OstatniArchiveIndex_Title_Text" xml:space="preserve">
+    <value>Akce - Archiv Ostatní</value>
+    <comment>/Meeting/OstatniArchivIndex</comment>
+  </data>
+  <data name="Meeting_OstatniCreate_Title_Text" xml:space="preserve">
+    <value>Vytvořit novou akci</value>
+    <comment>/Meeting/OstatniCreate</comment>
+  </data>
+  <data name="Meeting_OstatniDelete_Title_Text" xml:space="preserve">
+    <value>Smazat akci</value>
+    <comment>/Meeting/OstatniDelete</comment>
+  </data>
+  <data name="Meeting_OstatniDetails_SignUnsignTitle_Text" xml:space="preserve">
+    <value>Rezervace/přihlášení z kontaktní listiny</value>
+    <comment>/Meeting/OstatniDetails</comment>
+  </data>
+  <data name="Meeting_OstatniDetails_Title_Text" xml:space="preserve">
+    <value>Detail akce</value>
+    <comment>/Meeting/OstatniDetails</comment>
+  </data>
+  <data name="Meeting_OstatniDetails_UserSignUnsignTitle_Text" xml:space="preserve">
+    <value>Rezervace/přihlášení uživatelů</value>
+    <comment>/Meeting/OstatniDetails</comment>
+  </data>
+  <data name="Meeting_OstatniEdit_Title_Text" xml:space="preserve">
+    <value>Upravit akci</value>
+    <comment>/Meeting/OstatniEdit</comment>
+  </data>
+  <data name="Meeting_OstatniIndex_Title_Text" xml:space="preserve">
+    <value>Ostatní akce</value>
+    <comment>/Meeting/OstatniIndex</comment>
+  </data>
+  <data name="Meeting_OstatniPrintDetail_Title_Text" xml:space="preserve">
+    <value>Detail akce</value>
+    <comment>/Meeting/OstatniPrintDetail</comment>
+  </data>
+  <data name="Meeting_OstatniPrintIndex_Title_Text" xml:space="preserve">
+    <value>Akce</value>
+    <comment>/Meeting/OstatniPrintIndex</comment>
+  </data>
+  <data name="Meeting_OstatniSignUnsign_Title_Text" xml:space="preserve">
+    <value>Rezervace/přihlášení z kontaktní listiny na akci</value>
+    <comment>/Meeting/OstatniSignUnsign</comment>
+  </data>
+  <data name="Meeting_OstatniUserSignUnsign_Title_Text" xml:space="preserve">
+    <value>Rezervace/přihlášení uživatelů na akci</value>
+    <comment>/Meeting/OstatniUserSignUnsign</comment>
+  </data>
+  <data name="Meeting_Ostatni_Legend_Text" xml:space="preserve">
+    <value>Akce</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Meeting_SetkaniTymuArchiveDetails_Title_Text" xml:space="preserve">
+    <value>Detail archivní akce Setkání Týmu</value>
+    <comment>/Meeting/SetkaniTymuArchiveDetails</comment>
+  </data>
+  <data name="Meeting_SetkaniTymuArchiveIndex_HplBackTitle_Text" xml:space="preserve">
+    <value>Návrat na akce Setkání Týmu</value>
+    <comment>/Meeting/SetkaniTymuArchiveIndex</comment>
+  </data>
+  <data name="Meeting_SetkaniTymuArchiveIndex_Title_Text" xml:space="preserve">
+    <value>Akce - Archiv Setkání Týmu</value>
+    <comment>/Meeting/SetkaniTymuArchiveIndex</comment>
+  </data>
+  <data name="Meeting_SetkaniTymuCreate_Title_Text" xml:space="preserve">
+    <value>Vytvořit novou akci Setkání Týmu</value>
+    <comment>/Meeting/SetkaniTymuCreate</comment>
+  </data>
+  <data name="Meeting_SetkaniTymuDelete_Title_Text" xml:space="preserve">
+    <value>Smazat akci Setkání Týmu</value>
+    <comment>/Meeting/SetkaniTymuDelete</comment>
+  </data>
+  <data name="Meeting_SetkaniTymuDetails_Title_Text" xml:space="preserve">
+    <value>Detail akce Setkání Týmu</value>
+    <comment>/Meeting/SetkaniTymuDetails</comment>
+  </data>
+  <data name="Meeting_SetkaniTymuEdit_Title_Text" xml:space="preserve">
+    <value>Upravit akci Setkání Týmu</value>
+    <comment>/Meeting/SetkaniTymuEdit</comment>
+  </data>
+  <data name="Meeting_SetkaniTymuIndex_Title_Text" xml:space="preserve">
+    <value>Akce - Setkání Týmu</value>
+    <comment>/Meeting/SetkaniTymuIndex</comment>
+  </data>
+  <data name="Meeting_SetkaniTymuPrintDetail_Title_Text" xml:space="preserve">
+    <value>Detail akce Setkání Týmu</value>
+    <comment>/Meeting/SetkaniTymuPrintDetail</comment>
+  </data>
+  <data name="Meeting_SetkaniTymuPrintIndex_Title_Text" xml:space="preserve">
+    <value>Akce - Setkání Týmu</value>
+    <comment>/Meeting/SetkaniTymuPrintIndex</comment>
+  </data>
+  <data name="Meeting_SetkaniTymuSignUnsign_Title_Text" xml:space="preserve">
+    <value>Rezervace z kontaktní listiny na akci Setkání Týmu</value>
+    <comment>/Meeting/SetkaniTymuSignUnsign</comment>
+  </data>
+  <data name="Meeting_SetkaniTymuUserSignUnsign_Title_Text" xml:space="preserve">
+    <value>Rezervace uživatelů na akci Setkání Týmu</value>
+    <comment>/Meeting/SetkaniTymuSignUnsign</comment>
+  </data>
+  <data name="Meeting_SetkaniTymu_Legend_Text" xml:space="preserve">
+    <value>Akce Setkání Týmu</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Meeting_SignUnsignTitle_Text" xml:space="preserve">
+    <value>Rezervace z kontaktní listiny</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Meeting_SkoleniDavidaKotaskaArchiveDetails_Title_Text" xml:space="preserve">
+    <value>Detail archivní akce Školení Davida Kotáska</value>
+    <comment>/Meeting/SkoleniDavidaKotaskaArchiveDetails</comment>
+  </data>
+  <data name="Meeting_SkoleniDavidaKotaskaArchiveIndex_HplBackTitle_Text" xml:space="preserve">
+    <value>Návrat na akce Školení Davida Kotáska</value>
+    <comment>/Meeting/SkoleniDavidaKotaskaArchiveIndex</comment>
+  </data>
+  <data name="Meeting_SkoleniDavidaKotaskaArchiveIndex_Title_Text" xml:space="preserve">
+    <value>Akce - Archiv Školení Davida Kotáska</value>
+    <comment>/Meeting/SkoleniDavidaKotaskaArchiveIndex</comment>
+  </data>
+  <data name="Meeting_SkoleniDavidaKotaskaCreate_Title_Text" xml:space="preserve">
+    <value>Vytvořit novou akci Školení Davida Kotáska</value>
+    <comment>/Meeting/SkoleniDavidaKotaskaCreate</comment>
+  </data>
+  <data name="Meeting_SkoleniDavidaKotaskaDelete_Title_Text" xml:space="preserve">
+    <value>Smazat akci Školení Davida Kotáska</value>
+    <comment>/Meeting/SkoleniDavidaKotaskaDelete</comment>
+  </data>
+  <data name="Meeting_SkoleniDavidaKotaskaDetails_Title_Text" xml:space="preserve">
+    <value>Detail akce Školení Davida Kotáska</value>
+    <comment>/Meeting/SkoleniDavidaKotaskaDetails</comment>
+  </data>
+  <data name="Meeting_SkoleniDavidaKotaskaEdit_Title_Text" xml:space="preserve">
+    <value>Upravit akci Školení Davida Kotáska</value>
+    <comment>/Meeting/SkoleniDavidaKotaskaEdit</comment>
+  </data>
+  <data name="Meeting_SkoleniDavidaKotaskaIndex_Title_Text" xml:space="preserve">
+    <value>Akce - Školení Davida Kotáska</value>
+    <comment>/Meeting/SkoleniDavidaKotaskaIndex</comment>
+  </data>
+  <data name="Meeting_SkoleniDavidaKotaskaPrintDetail_Title_Text" xml:space="preserve">
+    <value>Detail akce Školení Davida Kotáska</value>
+    <comment>/Meeting/SkoleniDavidaKotaskaPrintDetail</comment>
+  </data>
+  <data name="Meeting_SkoleniDavidaKotaskaPrintIndex_Title_Text" xml:space="preserve">
+    <value>Akce - Školení Davida Kotáska</value>
+    <comment>/Meeting/SkoleniDavidaKotaskaPrintIndex</comment>
+  </data>
+  <data name="Meeting_SkoleniDavidaKotaskaSignUnsign_Title_Text" xml:space="preserve">
+    <value>Rezervace z kontaktní listiny na akci Školení Davida Kotáska</value>
+    <comment>/Meeting/SkoleniDavidaKotaskaSignUnsign</comment>
+  </data>
+  <data name="Meeting_SkoleniDavidaKotaskaUserSignUnsign_Title_Text" xml:space="preserve">
+    <value>Rezervace uživatelů na akci Školení Davida Kotáska</value>
+    <comment>/Meeting/SkoleniDavidaKotaskaUserSignUnsign</comment>
+  </data>
+  <data name="Meeting_SkoleniDavidaKotaska_Legend_Text" xml:space="preserve">
+    <value>Akce Školení Davida Kotáska</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Meeting_UserSignUnsignTitle_Text" xml:space="preserve">
+    <value>Rezervace uživatelů</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="PeopleContact_Create_Title_Text" xml:space="preserve">
+    <value>Nový kontakt lidí</value>
+    <comment>/PeopleContact/Create</comment>
+  </data>
+  <data name="PeopleContact_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat kontakt lidí</value>
+    <comment>/PeopleContact/Delete</comment>
+  </data>
+  <data name="PeopleContact_Details_Title_Text" xml:space="preserve">
+    <value>Detail kontaktu lidí</value>
+    <comment>/PeopleContact/Details</comment>
+  </data>
+  <data name="PeopleContact_EditTaskEmpty_Message_Text" xml:space="preserve">
+    <value>Tato položka již není více aktivní. Uzavřete prosím okno a obnovte úvodní stránku.</value>
+    <comment>/PeopleContact/EditTaskEmpty</comment>
+  </data>
+  <data name="PeopleContact_EditTaskEmpty_Title_Text" xml:space="preserve">
+    <value>Pokus o splnění úkolu</value>
+    <comment>/PeopleContact/EditTaskEmpty</comment>
+  </data>
+  <data name="PeopleContact_EditTaskSummary_Title_Text" xml:space="preserve">
+    <value>Shrnutí úkolu</value>
+    <comment>/PeopleContact/EditTaskSummary</comment>
+  </data>
+  <data name="PeopleContact_EditTask_Done_Text" xml:space="preserve">
+    <value>Splněno dne</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="PeopleContact_EditTask_Legend_Text" xml:space="preserve">
+    <value>Úkol na kontaktech lidí</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="PeopleContact_EditTask_Title_Text" xml:space="preserve">
+    <value>Úkol</value>
+    <comment>/PeopleContact/EditTask</comment>
+  </data>
+  <data name="PeopleContact_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit kontakt lidí</value>
+    <comment>/PeopleContact/Edit</comment>
+  </data>
+  <data name="PeopleContact_ExportFileName_Text" xml:space="preserve">
+    <value>Kontaktní listina.csv</value>
+    <comment>/PeopleContact/Export</comment>
+  </data>
+  <data name="PeopleContact_GetBusinessInfoParticipatedTask_Text" xml:space="preserve">
+    <value>{0} {1} - Business info ideálně dne {2}.</value>
+    <comment>Homepage (tasks), Mail (tasks)</comment>
+  </data>
+  <data name="PeopleContact_GetSecondContactedTask_Text" xml:space="preserve">
+    <value>{0} {1} - 2. telefonát ideálně dne {2}.</value>
+    <comment>Homepage (tasks), Mail (tasks)</comment>
+  </data>
+  <data name="PeopleContact_GetSecondMeetingTask_Text" xml:space="preserve">
+    <value>{0} {1} - 2. schůzka ideálně dne {2}.</value>
+    <comment>Homepage (tasks), Mail (tasks)</comment>
+  </data>
+  <data name="PeopleContact_GetSecondTrackingEmailSentTask_Text" xml:space="preserve">
+    <value>{0} {1} - Odeslat 2. dosledovací mail.</value>
+    <comment>Homepage (tasks), Mail (tasks)</comment>
+  </data>
+  <data name="PeopleContact_GetThirdMeetingTask_Text" xml:space="preserve">
+    <value>{0} {1} - 3. schůzka ideálně dne {2}.</value>
+    <comment>Homepage (tasks), Mail (tasks)</comment>
+  </data>
+  <data name="PeopleContact_GetTrackingEmailSentTask_Text" xml:space="preserve">
+    <value>{0} {1} - Odeslat dosledovací mail.</value>
+    <comment>Homepage (tasks), Mail (tasks)</comment>
+  </data>
+  <data name="PeopleContact_HplPrintDetailsTitle_Text" xml:space="preserve">
+    <value>Tisk Karty kontaktu</value>
+    <comment>/PeopleContact/Details</comment>
+  </data>
+  <data name="PeopleContact_HplRegisterPeopleContactTitle_Text" xml:space="preserve">
+    <value>Převod na uživatele</value>
+    <comment>/PeopleContact/Details</comment>
+  </data>
+  <data name="PeopleContact_HplStartWorkflowTitle_Text" xml:space="preserve">
+    <value>Spustit dosledování</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="PeopleContact_HplStopWorkflowTitle_Text" xml:space="preserve">
+    <value>Zastavit dosledování</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="PeopleContact_ImportSummary_SuccessImport_Text" xml:space="preserve">
+    <value>Import proběhl v pořádku.</value>
+    <comment>/PeopleContact/ImportSummary</comment>
+  </data>
+  <data name="PeopleContact_ImportSummary_Text" xml:space="preserve">
+    <value>Celkem bylo zpracováno {0} záznamů.
+{1} záznamů bylo přidáno.
+{2} záznamů bylo zaktualizováno.
+{3} záznamů nebylo zpracováno.</value>
+    <comment>/PeopleContact/Import</comment>
+  </data>
+  <data name="PeopleContact_ImportSummary_Title_Text" xml:space="preserve">
+    <value>Výsledek importu kontaktů z Lyconet</value>
+    <comment>/PeopleContact/ImportSummary</comment>
+  </data>
+  <data name="PeopleContact_ImportSummary_UnsuccessImport_Text" xml:space="preserve">
+    <value>Import neproběhl v pořádku.</value>
+    <comment>/PeopleContact/ImportSummary</comment>
+  </data>
+  <data name="PeopleContact_Import_Legend_Text" xml:space="preserve">
+    <value>Import kontaktů z Lyconet</value>
+    <comment>/PeopleContact/Import</comment>
+  </data>
+  <data name="PeopleContact_Import_Title_Text" xml:space="preserve">
+    <value>Import kontaktů z Lyconet</value>
+    <comment>/PeopleContact/Import</comment>
+  </data>
+  <data name="PeopleContact_Index_FormattingLegend_Text" xml:space="preserve">
+    <value>&lt;div class="Legend"&gt;
+            &lt;dl&gt;
+                &lt;dt&gt;Legenda podmíněného formátování:&lt;/dt&gt;
+                &lt;dd&gt;
+                    &lt;span class="ContactDeadFormatting"&gt;Neaktivní kontakt&lt;/span&gt;&lt;br /&gt;
+                    &lt;span class="PremiumMembershipGrantedFormatting"&gt;Premium člen&lt;/span&gt;&lt;br /&gt;
+                    &lt;span class="WorkflowFinishedFormatting"&gt;Dosledování ukončeno&lt;/span&gt;&lt;br /&gt;
+                    &lt;span class="WorkflowRunningFormatting"&gt;Běžicí dosledování&lt;/span&gt;&lt;br /&gt;
+                    &lt;span&gt;Neoslovený kontakt&lt;/span&gt;
+                &lt;/dd&gt;
+            &lt;/dl&gt;
+        &lt;/div&gt;</value>
+    <comment>/PeopleContact/Index</comment>
+  </data>
+  <data name="Global_HplExportTitle_Text" xml:space="preserve">
+    <value>Export</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="PeopleContact_Index_HplHideDeadContactsTitle_Text" xml:space="preserve">
+    <value>Skrýt neaktivní kontakty</value>
+    <comment>/PeopleContact/Index</comment>
+  </data>
+  <data name="PeopleContact_Index_HplHideFormattingTitle_Text" xml:space="preserve">
+    <value>Skrýt podmíněné formátování</value>
+    <comment>/PeopleContact/Index</comment>
+  </data>
+  <data name="PeopleContact_Index_HplImportTitle_Text" xml:space="preserve">
+    <value>Import</value>
+    <comment>/PeopleContact/Index</comment>
+  </data>
+  <data name="PeopleContact_Index_HplMultipleCreateTitle_Text" xml:space="preserve">
+    <value>Hromadné zadání</value>
+    <comment>/PeopleContact/Index</comment>
+  </data>
+  <data name="PeopleContact_Index_HplShareContactsTitle_Text" xml:space="preserve">
+    <value>Nasdílet své kontakty</value>
+    <comment>/PeopleContact/Index</comment>
+  </data>
+  <data name="PeopleContact_Index_HplShowDeadContactsTitle_Text" xml:space="preserve">
+    <value>Zobrazit neaktivní kontakty</value>
+    <comment>/PeopleContact/Index</comment>
+  </data>
+  <data name="PeopleContact_Index_HplShowFormattingTitle_Text" xml:space="preserve">
+    <value>Zobrazit podmíněné formátování</value>
+    <comment>/PeopleContact/Index</comment>
+  </data>
+  <data name="PeopleContact_Index_Title_Text" xml:space="preserve">
+    <value>Kontaktní listina</value>
+    <comment>/PeopleContact/Index</comment>
+  </data>
+  <data name="PeopleContact_MultipleCreate_InpAddRowTitle_Text" xml:space="preserve">
+    <value>Vložit řádek</value>
+    <comment>/PeopleContact/MultipleCreate</comment>
+  </data>
+  <data name="PeopleContact_MultipleCreate_PhoneNumberPrefixShort_Text" xml:space="preserve">
+    <value>Předvolba</value>
+    <comment>/PeopleContact/MultipleCreate</comment>
+  </data>
+  <data name="PeopleContact_MultipleCreate_Title_Text" xml:space="preserve">
+    <value>Hromadné zadání kontaktů</value>
+    <comment>/PeopleContact/MultipleCreate</comment>
+  </data>
+  <data name="PeopleContact_NotProccessedSummary_Text" xml:space="preserve">
+    <value>Analýza nezpracovaných záznamů:
+{0}</value>
+    <comment>/PeopleContact/Import</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_BiParticipated_Text" xml:space="preserve">
+    <value>6. Business Info</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_BiParticipation_Text" xml:space="preserve">
+    <value>CÍL: Zaujmout, účast na BI</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_ContactListHeader_Text" xml:space="preserve">
+    <value>LIST Kontaktu - podklad pro vyplnění do kontaktní listiny</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_Decision_Text" xml:space="preserve">
+    <value>CÍL: Rozhodnutí&lt;br /&gt;&amp;nbsp;</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_EmailContent_Text" xml:space="preserve">
+    <value>Obsah e-mailu</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_FirstContacted_Text" xml:space="preserve">
+    <value>1. Telefonát &lt;small&gt;(D-3 až 4)&lt;/small&gt;</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_FirstMeetingDate_Text" xml:space="preserve">
+    <value>CÍL: Termín 1. schůzky</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_HoldTheInterest_Text" xml:space="preserve">
+    <value>CÍL: Udržet zájem</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_LoyaltyBenefits_Text" xml:space="preserve">
+    <value>CÍL: Věrnostní výhody,&lt;br /&gt;účast na ST, kariéra</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_MeetingOrder_Text" xml:space="preserve">
+    <value>Pořadí schůzky</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_NotesAndBi_Text" xml:space="preserve">
+    <value>Poznámky, dosledování po BI</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_NotesAndTasks_Text" xml:space="preserve">
+    <value>Poznámky, úkoly</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_NotesTheCall_Text" xml:space="preserve">
+    <value>Poznámky k telefonátu</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_NotesTheFirstMeeting_Text" xml:space="preserve">
+    <value>Poznámky k 1. schůzce</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_NotesTheResult_Text" xml:space="preserve">
+    <value>Nakupující:&lt;br /&gt;
+Síť:&lt;br /&gt;
+MSP Coach:&lt;br /&gt;
+Neaktivní:&lt;br /&gt;</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_Presented_Text" xml:space="preserve">
+    <value>2. 1. schůzka &lt;small&gt;(D)&lt;/small&gt;</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_Registration_Text" xml:space="preserve">
+    <value>CÍL: Registrace a stažení aplikace,&lt;br/&gt;účast na BI, umět nakupovat</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_Result_Text" xml:space="preserve">
+    <value>Výsledek</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_SecondContacted_Text" xml:space="preserve">
+    <value>4. 2. telefonát &lt;small&gt;(D+1)&lt;/small&gt;</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_SecondMeetingDate_Text" xml:space="preserve">
+    <value>CÍL: Termín 2. schůzky</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_SecondMeeting_Text" xml:space="preserve">
+    <value>5. 2. schůzka &lt;small&gt;(D+2 až 3)&lt;/small&gt;</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_TeamMeetingParticipated_Text" xml:space="preserve">
+    <value>8. Setkání týmu</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_TeamMeetingParticipation_Text" xml:space="preserve">
+    <value>CÍL: Účast na setkání týmu&lt;br /&gt;&amp;nbsp;</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_ThirdMeeting_Text" xml:space="preserve">
+    <value>7. 3. schůzka &lt;small&gt;(D+5 až 10)&lt;/small&gt;</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_Title_Text" xml:space="preserve">
+    <value>Detail kontaktu</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_TrackingEmailSent_Text" xml:space="preserve">
+    <value>3. Dosledovací e-mail &lt;small&gt;(D)&lt;/small&gt;</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_Week_Text" xml:space="preserve">
+    <value>Týden</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintDetails_WithLyonessPartner_Text" xml:space="preserve">
+    <value>U PARTNERA LYONESS</value>
+    <comment>/PeopleContact/PrintDetails</comment>
+  </data>
+  <data name="PeopleContact_PrintIndex_Title_Text" xml:space="preserve">
+    <value>Kontakty lidí</value>
+    <comment>/PeopleContact/PrintIndex</comment>
+  </data>
+  <data name="PeopleContact_StopWorkflowEmpty_Message_Text" xml:space="preserve">
+    <value>Není možnést provést zastavení dosledování nad vybraným záznamem kontaktu.</value>
+    <comment>/PeopleContact/StopWorkflowEmpty</comment>
+  </data>
+  <data name="PeopleContact_StopWorkflowEmpty_Title_Text" xml:space="preserve">
+    <value>Pokus o zastavení dosledování</value>
+    <comment>/PeopleContact/StopWorkflowEmpty</comment>
+  </data>
+  <data name="PeopleContact_StopWorkflowSummary_Legend_Text" xml:space="preserve">
+    <value>Shrnutí zastavení dosledování kontaktu</value>
+    <comment>/PeopleContact/StopWorkflowSummary</comment>
+  </data>
+  <data name="PeopleContact_StopWorkflowSummary_Title_Text" xml:space="preserve">
+    <value>Shrnutí zastavení dosledování</value>
+    <comment>/PeopleContact/StopWorkflowSummary</comment>
+  </data>
+  <data name="PeopleContact_StopWorkflow_BtnStopTitle_Text" xml:space="preserve">
+    <value>Zastavit</value>
+    <comment>/PeopleContact/StopWorkflow</comment>
+  </data>
+  <data name="PeopleContact_StopWorkflow_Legend_Text" xml:space="preserve">
+    <value>Zastavení dosledování kontaktu</value>
+    <comment>/PeopleContact/StopWorkflow</comment>
+  </data>
+  <data name="PeopleContact_StopWorkflow_Message_Text" xml:space="preserve">
+    <value>Pro zastavení dosledování kontaktu prosím vložte poznámku</value>
+    <comment>/PeopleContact/StopWorkflow</comment>
+  </data>
+  <data name="PeopleContact_StopWorkflow_Title_Text" xml:space="preserve">
+    <value>Zastavení dosledování</value>
+    <comment>/PeopleContact/StopWorkflow</comment>
+  </data>
+  <data name="PeopleContact_WorkflowStopped_Text" xml:space="preserve">
+    <value>ZASTAVENO</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="PeopleContact_WorkflowTitle_Text" xml:space="preserve">
+    <value>Datumy dosledování</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="PhoneNumberPrefix_Create_Title_Text" xml:space="preserve">
+    <value>Vytvořit telefonní předvolbu</value>
+    <comment>/PhoneNumberPrefix/Create</comment>
+  </data>
+  <data name="PhoneNumberPrefix_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat telefonní předvolbu</value>
+    <comment>/PhoneNumberPrefix/Delete</comment>
+  </data>
+  <data name="PhoneNumberPrefix_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit telefonní předvolbu</value>
+    <comment>/PhoneNumberPrefix/Edit</comment>
+  </data>
+  <data name="PhoneNumberPrefix_Index_Title_Text" xml:space="preserve">
+    <value>Telefonní předvolby</value>
+    <comment>/PhoneNumberPrefix/Index</comment>
+  </data>
+  <data name="PhoneNumberPrefix_Legend_Text" xml:space="preserve">
+    <value>Telefonní předvolba</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Settings_Index_BankOperationsHeader_Text" xml:space="preserve">
+    <value>Bankovní operace</value>
+    <comment>/Settings/Index</comment>
+  </data>
+  <data name="Settings_Index_HplBankAccountsTitle_Text" xml:space="preserve">
+    <value>Bankovní účty</value>
+    <comment>/Settings/Index</comment>
+  </data>
+  <data name="Settings_Index_HplCurrenciesTitle_Text" xml:space="preserve">
+    <value>Měny</value>
+    <comment>/Settings/Index</comment>
+  </data>
+  <data name="Settings_Index_HplDistrictsTitle_Text" xml:space="preserve">
+    <value>Okresy</value>
+    <comment>/Settings/Index</comment>
+  </data>
+  <data name="Settings_Index_HplMeetingTitleTypesTitle_Text" xml:space="preserve">
+    <value>Názvy akcí</value>
+    <comment>/Settings/Index</comment>
+  </data>
+  <data name="Settings_Index_HplNotAssignedClaAccessTitle_Text" xml:space="preserve">
+    <value>Nepřiřazené platby za přístup</value>
+    <comment>/Settings/Index</comment>
+  </data>
+  <data name="Settings_Index_HplPhoneNumberPrefixesTitle_Text" xml:space="preserve">
+    <value>Telefonní předvolby</value>
+    <comment>/Settings/Index</comment>
+  </data>
+  <data name="Settings_Index_ListsHeader_Text" xml:space="preserve">
+    <value>Číselníky</value>
+    <comment>/Settings/Index</comment>
+  </data>
+  <data name="Settings_Index_Title_Text" xml:space="preserve">
+    <value>Nastavení aplikace</value>
+    <comment>/Settings/Index</comment>
+  </data>
+  <data name="SharedContacts_Create_Title_Text" xml:space="preserve">
+    <value>Vytvořit nové sdílení kontaktů lidí</value>
+    <comment>/SharedContacts/Create</comment>
+  </data>
+  <data name="SharedContacts_Create_ToUplineUser_Text" xml:space="preserve">
+    <value>upline uživatelem</value>
+    <comment>/SharedContacts/Create</comment>
+  </data>
+  <data name="SharedContacts_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat sdílení kontaktů lidí</value>
+    <comment>/SharedContacts/Delete</comment>
+  </data>
+  <data name="SharedContacts_Index_Title_Text" xml:space="preserve">
+    <value>Sdílené kontakty lidí</value>
+    <comment>/SharedContacts/Index</comment>
+  </data>
+  <data name="SharedContact_Create_ToAnyUser_Text" xml:space="preserve">
+    <value>jakýmkoliv uživatelem</value>
+    <comment>/SharedContacts/Create</comment>
+  </data>
+  <data name="SharedContact_Create_ToDownlineUser_Text" xml:space="preserve">
+    <value>downline uživatelem</value>
+    <comment>/SharedContacts/Create</comment>
+  </data>
+  <data name="UserProfile_GoogleCredentialsJsonValidationSuccess_Text" xml:space="preserve">
+    <value>Validace Google Credentials JSON a spojení s Google API proběhlo úspěšně. Toto okno můžete nyní zavřít.</value>
+    <comment>/Account/Register, /UserProfile/Edit</comment>
+  </data>
+  <data name="Global_QuotaAndStatisticsAll_Text" xml:space="preserve">
+    <value>Kvóty a statistiky všech</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_QuotaAndStatisticsDownline_Text" xml:space="preserve">
+    <value>Kvóty a statistiky Downline</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_QuotaAndStatisticsLeaderDownline_Text" xml:space="preserve">
+    <value>Kvóty a statistiky Downline lídra</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_QuotaAndStatisticsUser_Text" xml:space="preserve">
+    <value>Kvóty a statistiky uživatele</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Statistics_Index_Title_Text" xml:space="preserve">
+    <value>Statistiky uživatele</value>
+    <comment>/Statistics/Index</comment>
+  </data>
+  <data name="Global_HplBackToTeamIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam týmů</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Team_Create_Title_Text" xml:space="preserve">
+    <value>Vytvořit tým</value>
+    <comment>/Team/Create</comment>
+  </data>
+  <data name="Team_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat tým</value>
+    <comment>/Team/Delete</comment>
+  </data>
+  <data name="Team_Details_Title_Text" xml:space="preserve">
+    <value>Detail týmu</value>
+    <comment>/Team/Details</comment>
+  </data>
+  <data name="Team_Legend_Text" xml:space="preserve">
+    <value>Tým</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplBackToTopTenIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam TOP10</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplEditNoteTitle_Text" xml:space="preserve">
+    <value>Upravit poznámku</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_TopTenStatusTitle_Text" xml:space="preserve">
+    <value>TOP10 status</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Team_EditNote_Title_Text" xml:space="preserve">
+    <value>Upravit poznámku týmu</value>
+    <comment>/Team/EditNote</comment>
+  </data>
+  <data name="Team_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit tým</value>
+    <comment>/Team/Edit</comment>
+  </data>
+  <data name="Team_Index_Title_Text" xml:space="preserve">
+    <value>Týmy</value>
+    <comment>/Team/Index</comment>
+  </data>
+  <data name="TopTen_Create_Title_Text" xml:space="preserve">
+    <value>Vytvořit nový TOP10 kontakt</value>
+    <comment>/TopTen/Create</comment>
+  </data>
+  <data name="TopTen_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat TOP10 kontakt</value>
+    <comment>/TopTen/Delete</comment>
+  </data>
+  <data name="TopTen_Details_Title_Text" xml:space="preserve">
+    <value>Detail TOP10 kontaktu</value>
+    <comment>/TopTen/Details</comment>
+  </data>
+  <data name="TopTen_HplPrintDetailsTitle_Text" xml:space="preserve">
+    <value>Tisk karty TOP10 kontaktu</value>
+    <comment>/TopTen/Details</comment>
+  </data>
+  <data name="TopTen_Legend_Text" xml:space="preserve">
+    <value>TOP10 kontakt</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="TopTen_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit TOP10 kontakt</value>
+    <comment>/TopTen/Edit</comment>
+  </data>
+  <data name="TopTen_Index_HplCreateTopTenTitle_Text" xml:space="preserve">
+    <value>Přidat do TOP10</value>
+    <comment>/TopTen/Index</comment>
+  </data>
+  <data name="Global_HplPrintUserIndexTitle_Text" xml:space="preserve">
+    <value>Tisk seznamu uživatelů</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="TopTen_Index_Title_Text" xml:space="preserve">
+    <value>TOP10 Kontaktní listina</value>
+    <comment>/TopTen/Index</comment>
+  </data>
+  <data name="TopTen_PrintDetails_Header_Text" xml:space="preserve">
+    <value>LIST TOP10 Kontaktu - podklad pro vyplnění do kontaktní listiny</value>
+    <comment>/TopTen/PrintDetails</comment>
+  </data>
+  <data name="TopTen_PrintDetails_Title_Text" xml:space="preserve">
+    <value>Detail TOP10 kontaktu</value>
+    <comment>/TopTen/PrintDetails</comment>
+  </data>
+  <data name="TopTen_PrintIndex_Title_Text" xml:space="preserve">
+    <value>TOP10 Kontaktní listina</value>
+    <comment>/TopTen/PrintIndex</comment>
+  </data>
+  <data name="Meeting_PaymentInfoOr_Text" xml:space="preserve">
+    <value>nebo</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplIndexTreeTitle_Text" xml:space="preserve">
+    <value>Stromová struktura</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="UserProfile_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat uživatele</value>
+    <comment>/UserProfile/Delete</comment>
+  </data>
+  <data name="UserProfile_Details_Title_Text" xml:space="preserve">
+    <value>Detail uživatele</value>
+    <comment>/UserProfile/Details</comment>
+  </data>
+  <data name="UserProfile_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit uživatele</value>
+    <comment>/UserProfile/Edit</comment>
+  </data>
+  <data name="UserProfile_HplLockTitle_Text" xml:space="preserve">
+    <value>Zamknout účet</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="UserProfile_HplRegisterAccountTitle_Text" xml:space="preserve">
+    <value>Nový uživatel</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="UserProfile_HplUnlockTitle_Text" xml:space="preserve">
+    <value>Odemknout účet</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="UserProfile_Index_Title_Text" xml:space="preserve">
+    <value>Uživatelé</value>
+    <comment>/UserProfile/Index</comment>
+  </data>
+  <data name="Global_HplIndexTitle_Text" xml:space="preserve">
+    <value>Tabulková struktura</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="UserProfile_BtnLockTitle_Text" xml:space="preserve">
+    <value>Zamknout</value>
+    <comment>/UserProfile/Locked</comment>
+  </data>
+  <data name="UserProfile_BtnUnlockTitle_Text" xml:space="preserve">
+    <value>Odemknout</value>
+    <comment>/UserProfile/Unlocked</comment>
+  </data>
+  <data name="UserProfile_BtnValidateTitle_Text" xml:space="preserve">
+    <value>Validovat</value>
+    <comment>/UserProfile/Validate</comment>
+  </data>
+  <data name="UserProfile_IndexTree_Title_Text" xml:space="preserve">
+    <value>Uživatelé</value>
+    <comment>/UserProfile/IndexTree</comment>
+  </data>
+  <data name="UserProfile_LockConfirmationQuestion_Text" xml:space="preserve">
+    <value>Opravdu chcete zamknout tento účet?</value>
+    <comment>/UserProfile/Locked</comment>
+  </data>
+  <data name="UserProfile_Locked_Title_Text" xml:space="preserve">
+    <value>Zamknout uživatele</value>
+    <comment>/UserProfile/Locked</comment>
+  </data>
+  <data name="UserProfile_PrintIndex_Title_Text" xml:space="preserve">
+    <value>Uživatelé</value>
+    <comment>/UserProfile/PrintIndex</comment>
+  </data>
+  <data name="UserProfile_RefreshStatistics_Title_Text" xml:space="preserve">
+    <value>Občerstvení statistik</value>
+    <comment>/UserProfile/RefreshStatistics</comment>
+  </data>
+  <data name="UserProfile_UnlockConfirmationQuestion_Text" xml:space="preserve">
+    <value>Opravdu chcete odemknout tento účet?</value>
+    <comment>/UserProfile/Unlocked</comment>
+  </data>
+  <data name="UserProfile_Unlocked_Title_Text" xml:space="preserve">
+    <value>Odemknout uživatele</value>
+    <comment>/UserProfile/Unlocked</comment>
+  </data>
+  <data name="UserProfile_Validate_Description_Text" xml:space="preserve">
+    <value>&lt;p&gt;
+        Během validace bude navázáno spojení s Google API za použití Vámi zvoleného autentizačního řetězce.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Během autentizace můžete být vyzváni k potvrzení přístupu aplikace CLA do Vašeho Google API rozhraní. Prosím potvrďte přístup pro úspěšné dokončení validace.
+    &lt;/p&gt;</value>
+    <comment>/UserProfile/Validate</comment>
+  </data>
+  <data name="UserProfile_Validate_Title_Text" xml:space="preserve">
+    <value>Validace přístupu Google API</value>
+    <comment>/UserProfile/Validate</comment>
+  </data>
+  <data name="Meeting_Dashboard_NearestWebinar_Text" xml:space="preserve">
+    <value>Nejbližší akce Webinář</value>
+    <comment>/Meeting/Dashboard</comment>
+  </data>
+  <data name="Meeting_HplWebinarUrlTitle_Text" xml:space="preserve">
+    <value>Webinář</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Meeting_WebinarArchiveDetails_Title_Text" xml:space="preserve">
+    <value>Detail archivní akce Webinář</value>
+    <comment>/Meeting/WebinarArchiveDetails</comment>
+  </data>
+  <data name="Meeting_WebinarArchiveIndex_HplBackTitle_Text" xml:space="preserve">
+    <value>Návrat na akce Webinář</value>
+    <comment>/Meeting/WebinarArchiveIndex</comment>
+  </data>
+  <data name="Meeting_WebinarArchiveIndex_Title_Text" xml:space="preserve">
+    <value>Akce - Archiv Webinář</value>
+    <comment>/Meeting/WebinarArchiveIndex</comment>
+  </data>
+  <data name="Meeting_WebinarCreate_Title_Text" xml:space="preserve">
+    <value>Vytvořit novou akci Webinář</value>
+    <comment>/Meeting/WebinarCreate</comment>
+  </data>
+  <data name="Meeting_WebinarDelete_Title_Text" xml:space="preserve">
+    <value>Smazat akci Webinář</value>
+    <comment>/Meeting/WebinarDelete</comment>
+  </data>
+  <data name="Meeting_WebinarDetails_Title_Text" xml:space="preserve">
+    <value>Detail akce Webinář</value>
+    <comment>/Meeting/WebinarDetails</comment>
+  </data>
+  <data name="Meeting_WebinarEdit_Title_Text" xml:space="preserve">
+    <value>Upravit akci Webinář</value>
+    <comment>/Meeting/WebinarEdit</comment>
+  </data>
+  <data name="Meeting_WebinarIndex_Title_Text" xml:space="preserve">
+    <value>Akce - Webinář</value>
+    <comment>/Meeting/WebinarIndex</comment>
+  </data>
+  <data name="Meeting_WebinarPrintDetail_Title_Text" xml:space="preserve">
+    <value>Detail akce Webinář</value>
+    <comment>/Meeting/WebinarPrintDetail</comment>
+  </data>
+  <data name="Meeting_WebinarPrintIndex_Title_Text" xml:space="preserve">
+    <value>Akce - Webinář</value>
+    <comment>/Meeting/WebinarPrintIndex</comment>
+  </data>
+  <data name="Meeting_WebinarSignUnsign_Title_Text" xml:space="preserve">
+    <value>Přihlášení/Odhlášení na akci Webinář</value>
+    <comment>/Meeting/WebinarSignUnsign</comment>
+  </data>
+  <data name="Meeting_Webinar_Legend_Text" xml:space="preserve">
+    <value>Akce Webinář</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Account_CheckBillingInformation_Title_Text" xml:space="preserve">
+    <value>Vítejte v CLA</value>
+    <comment>/Account/CheckBillingInformation</comment>
+  </data>
+  <data name="Account_CheckBillingInformation_Message_Text" xml:space="preserve">
+    <value>Zkontrolujte prosím své fakturační údaje.</value>
+    <comment>/Account/CheckBillingInformation</comment>
+  </data>
+  <data name="Account_CheckBillingInformation_BillingInformationTitle_Text" xml:space="preserve">
+    <value>Fakturační údaje</value>
+    <comment>/Account/CheckBillingInformation</comment>
+  </data>
+  <data name="Global_BillingInformationTitle_Text" xml:space="preserve">
+    <value>Fakturační údaje</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Settings_Index_HplVideosTitle_Text" xml:space="preserve">
+    <value>Videa</value>
+    <comment>/Settings/Index</comment>
+  </data>
+  <data name="Video_Index_Title_Text" xml:space="preserve">
+    <value>Videa</value>
+    <comment>/Video/Index</comment>
+  </data>
+  <data name="Video_Create_Title_Text" xml:space="preserve">
+    <value>Vytvořit video položku</value>
+    <comment>/Video/Create</comment>
+  </data>
+  <data name="Video_Form_Legend_Text" xml:space="preserve">
+    <value>Video položka</value>
+    <comment>/Video/Create</comment>
+  </data>
+  <data name="Global_HplBackToVideoIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam videí</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Video_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit video položku</value>
+    <comment>/Video/Edit</comment>
+  </data>
+  <data name="Video_FileInfo_Text" xml:space="preserve">
+    <value>Vyberte prosím soubor formátu MP4 do velikosti max. 1 GB. Volný prostor v úložišti: {0} MB.</value>
+    <comment>/Video/Edit, /Video/Create</comment>
+  </data>
+  <data name="Video_Details_Title_Text" xml:space="preserve">
+    <value>Detail video položky</value>
+    <comment>/Video/Details</comment>
+  </data>
+  <data name="Video_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat video položku</value>
+    <comment>/Video/Delete</comment>
+  </data>
+  <data name="PeopleContact_HplSendVideoTitle_Text" xml:space="preserve">
+    <value>Odeslat video</value>
+    <comment>/PeopleContact/Details</comment>
+  </data>
+  <data name="PeopleContact_SendVideo_Title_Text" xml:space="preserve">
+    <value>Odeslat video</value>
+    <comment>/PeopleContact/SendVideo</comment>
+  </data>
+  <data name="Global_SendVideoLegend_Text" xml:space="preserve">
+    <value>Odesílání videa</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="PeopleContact_VideoWasSuccessfullySent_Text" xml:space="preserve">
+    <value>Video bylo úspěšně odesláno.</value>
+    <comment>/Video/Details</comment>
+  </data>
+  <data name="Video_VideoNotFound_Text" xml:space="preserve">
+    <value>Video není dostupné</value>
+    <comment>/Video/Player</comment>
+  </data>
+  <data name="Video_Player_Title_Text" xml:space="preserve">
+    <value>Video</value>
+    <comment>/Video/Player</comment>
+  </data>
+  <data name="Video_EmailBodyHint_Text" xml:space="preserve">
+    <value>Do těla emailu prosím vložte zástupné symboly: {0} - Jméno odesílatele, {1} - Název videa, {2} - Odkaz na video, {3} - Počet hodin platnosti odkazu.</value>
+    <comment>/Video/Create, /Video/Edit</comment>
+  </data>
+  <data name="Video_UserIdsLabel_Text" xml:space="preserve">
+    <value>vybraní uživatelé</value>
+    <comment>/Video/Create, /Video/Edit</comment>
+  </data>
+  <data name="Video_EmailSenderBodyHint_Text" xml:space="preserve">
+    <value>Do těla emailu prosím vložte zástupné symboly: {0} - Jméno kontaktu, {1} - Název videa, {2} - Pravděpodobný čas shlédnutí.</value>
+    <comment>/Video/Create, /Video/Edit</comment>
+  </data>
+  <data name="Video_Details_AllUsers_Text" xml:space="preserve">
+    <value>Všem uživatelům</value>
+    <comment>/Video/Details</comment>
+  </data>
+  <data name="Global_HplBulkMail_Text" xml:space="preserve">
+    <value>Hromadný mail</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="BulkMail_Create_Title_Text" xml:space="preserve">
+    <value>Hromadný mail</value>
+    <comment>/BulkMail/Create</comment>
+  </data>
+  <data name="BulkMail_BodyHint_Text" xml:space="preserve">
+    <value>Tělo emailu bude obaleno hlavičkou (text "Pěkný den") a patičkou ("S pozdravem,....").</value>
+    <comment>/BulkMail/Create</comment>
+  </data>
+  <data name="BulkMail_EmailsWereSent_Text" xml:space="preserve">
+    <value>Emaily byly úspěšně odeslány.</value>
+    <comment>/BulkMail/Create</comment>
+  </data>
+  <data name="BulkMail_Form_Legend_Text" xml:space="preserve">
+    <value>Hromadný mail</value>
+    <comment>/BulkMail/Create</comment>
+  </data>
+  <data name="BulkMail_RecipientsInfo_Text" xml:space="preserve">
+    <value>Email bude odeslán všem uživatelům systému.</value>
+    <comment>/BulkMail/Create</comment>
+  </data>
+  <data name="Settings_Index_HplManualTypesTitle_Text" xml:space="preserve">
+    <value>Typy návodů</value>
+    <comment>/Settings/Index</comment>
+  </data>
+  <data name="ManualType_Index_Title_Text" xml:space="preserve">
+    <value>Typy návodů</value>
+    <comment>/ManualType/Index</comment>
+  </data>
+  <data name="ManualType_Create_Title_Text" xml:space="preserve">
+    <value>Vytvořit typ návodů</value>
+    <comment>/ManualType/Create</comment>
+  </data>
+  <data name="ManualType_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat typ návodů</value>
+    <comment>/ManualType/Delete</comment>
+  </data>
+  <data name="ManualType_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit typ návodů</value>
+    <comment>/ManualType/Edit</comment>
+  </data>
+  <data name="ManualType_Form_Legend_Text" xml:space="preserve">
+    <value>Typ návodů</value>
+    <comment>/ManualType/Create, /ManualType/Edit</comment>
+  </data>
+  <data name="Global_HplBackToManualTypeIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam typů návodů</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Manual_Index_Title_Text" xml:space="preserve">
+    <value>Návody</value>
+    <comment>/Manual/Index</comment>
+  </data>
+  <data name="Settings_Index_HplManualsTitle_Text" xml:space="preserve">
+    <value>Návody</value>
+    <comment>/Settings/Index</comment>
+  </data>
+  <data name="Manual_Create_Title_Text" xml:space="preserve">
+    <value>Vytvořit položku návodu</value>
+    <comment>/Manual/Create</comment>
+  </data>
+  <data name="Manual_FileInfo_Text" xml:space="preserve">
+    <value>Vyberte prosím soubor formátu PDF, MP4, XLSX, DOCX, PPTX a OGG do velikosti max. 1 GB. Volný prostor v úložišti: {0} MB.</value>
+    <comment>/Manual/Create, /Manual/Edit</comment>
+  </data>
+  <data name="Manual_Form_Legend_Text" xml:space="preserve">
+    <value>Manuál</value>
+    <comment>/Manual/Create, /Manual/Edit</comment>
+  </data>
+  <data name="Global_HplBackToManualIndex_Text" xml:space="preserve">
+    <value>Návrat na seznam návodů</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Manual_Delete_Title_Text" xml:space="preserve">
+    <value>Smazat položku návodu</value>
+    <comment>/Manual/Delete</comment>
+  </data>
+  <data name="Manual_Edit_Title_Text" xml:space="preserve">
+    <value>Upravit položku návodu</value>
+    <comment>/Manual/Edit</comment>
+  </data>
+  <data name="Manual_Details_PlayerUrl_Text" xml:space="preserve">
+    <value>Zobrazení manuálu</value>
+    <comment>/Manual/Details</comment>
+  </data>
+  <data name="Manual_Details_Title_Text" xml:space="preserve">
+    <value>Detail položky manuálu</value>
+    <comment>/Manual/Details</comment>
+  </data>
+  <data name="Manual_PlayerUnknown_Message_Text" xml:space="preserve">
+    <value>Neznámý datový typ manuálu. Prosím kontaktujte tým CLA.</value>
+    <comment>/Manual/PlayerUnknown</comment>
+  </data>
+  <data name="Manual_PlayerUnknown_Title_Text" xml:space="preserve">
+    <value>Neznámý typ manuálu</value>
+    <comment>/Manual/PlayerUnknown</comment>
+  </data>
+  <data name="Manual_PlayerVideo_Title_Text" xml:space="preserve">
+    <value>Video manuál</value>
+    <comment>/Manual/PlayerVideo</comment>
+  </data>
+  <data name="Global_ManualsTitle_Text" xml:space="preserve">
+    <value>CL návody</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplSaveTitle_Text" xml:space="preserve">
+    <value>Uložit</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_HplBackToHomeIndex_Text" xml:space="preserve">
+    <value>Zpět na úvodní stránku</value>
+    <comment>/Manual/ManualsByType</comment>
+  </data>
+  <data name="ManualsByType_Index_Title_Text" xml:space="preserve">
+    <value>CL návody</value>
+    <comment>/Manual/ManualsByType</comment>
+  </data>
+  <data name="Global_HplPromoteTitle_Text" xml:space="preserve">
+    <value>Povýšit</value>
+    <comment>/UserProfile/Index, /UserProfile/IndexTree</comment>
+  </data>
+  <data name="UserProfile_UserWasPromoted_Text" xml:space="preserve">
+    <value>Uživatel {0} byl úspěšně povýšen.</value>
+    <comment>/UserProfile/Index, /UserProfile/IndexTree</comment>
+  </data>
+  <data name="Global_HplCloseTitle_Text" xml:space="preserve">
+    <value>Zavřít</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_MoreInfoForUsingCookies_Text" xml:space="preserve">
+    <value>Více informací o ochraně osobních údajů</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Global_UsingCookies_Text" xml:space="preserve">
+    <value>Snažíme se poskytovat služby v co nejvyšší kvalitě, proto naše stránky využívají technologii cookies. Většina internetových prohlížečů je automaticky nastavena tak, aby byly soubory cookies příjímány. Změnu můžete provést v nastavení svého prohlížeče.</value>
+    <comment>All webpages</comment>
+  </data>
+  <data name="Meeting_BusinessInfoDetails_SignUnsignTitle_Text" xml:space="preserve">
+    <value>Přihlášení z kontaktní listiny</value>
+    <comment>/Meeting/BusinessInfoDetails</comment>
+  </data>
+  <data name="Meeting_BusinessInfoDetails_UserSignUnsignTitle_Text" xml:space="preserve">
+    <value>Přihlášení uživatelů</value>
+    <comment>/Meeting/BusinessInfoDetails</comment>
+  </data>
+  <data name="Meeting_BusinessInfoUserSignUnsign_Title_Text" xml:space="preserve">
+    <value>Přihlášení uživatelů na akci</value>
+    <comment>/Meeting/BusinessInfoUserSignUnsign</comment>
+  </data>
+  <data name="Task_Index_Title_Text" xml:space="preserve">
+    <value>Úkoly</value>
+    <comment>/Task/Index</comment>
+  </data>
+  <data name="Global_HplTaskTitle_Text" xml:space="preserve">
+    <value>Úkoly</value>
+    <comment>All webpages</comment>
+  </data>
+</root>

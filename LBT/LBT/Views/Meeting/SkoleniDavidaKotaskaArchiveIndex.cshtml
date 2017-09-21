@@ -1,0 +1,122 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resources
+@model PagedList.IPagedList<MeetingSkoleniDavidaKotaskaIndex>
+
+@{
+    ViewBag.Title = ViewResource.Meeting_SkoleniDavidaKotaskaArchiveIndex_Title_Text;
+}
+
+@using (Html.BeginForm("SkoleniDavidaKotaskaArchiveIndex", "Meeting", FormMethod.Get))
+{
+    @Html.Partial("_FilteringPartial", new FilteringPartialModelView())
+
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { ActionName = "SkoleniDavidaKotaskaArchiveIndex", List = Model })
+}
+
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+<section id="List">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_Title_Name
+                </th>
+                <th class="@ViewBag.CitySortSymbol">
+                    @Html.ActionLink(FieldResource.Global_City_Name, "SkoleniDavidaKotaskaArchiveIndex", new { sortOrder = ViewBag.CitySortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.DateSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_Date_Name, "SkoleniDavidaKotaskaArchiveIndex", new { sortOrder = ViewBag.DateSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th>
+                    @FieldResource.Meeting_Day_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Time_Name
+                </th>
+                <th class="@ViewBag.AddressLine1SortSymbol">
+                    @Html.ActionLink(FieldResource.Meeting_AddressLine1_Name, "SkoleniDavidaKotaskaArchiveIndex", new { sortOrder = ViewBag.AddressLine1SortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.OrganizerSortSymbol">
+                    @Html.ActionLink(FieldResource.Meeting_Organizer_Name, "SkoleniDavidaKotaskaArchiveIndex", new { sortOrder = ViewBag.OrganizerSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th>
+                    @FieldResource.Meeting_Price_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_FreeCapacity_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Lecturer_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="11">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model)
+            {
+                <tr class="SkoleniDavidaKotaskaFormatting">
+                    <td>
+                        @Html.DisplayFor(mi => i.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Day)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Street)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Organizer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.FreeCapacity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Lecturer)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("SkoleniDavidaKotaskaArchiveDetails", new { id = i.MeetingId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@using (Html.BeginForm("SkoleniDavidaKotaskaArchiveIndex", "Meeting", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { SectionId = "Paging2", ActionName = "SkoleniDavidaKotaskaArchiveIndex", List = Model })
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Meeting_SkoleniDavidaKotaskaArchiveIndex_HplBackTitle_Text, "SkoleniDavidaKotaskaIndex")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

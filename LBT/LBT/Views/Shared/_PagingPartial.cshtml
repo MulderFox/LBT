@@ -1,0 +1,23 @@
+﻿@using PagedList.Mvc;
+@using LBT.Resources
+@model LBT.ModelViews.PagingPartialModelView
+
+@foreach (string key in Model.RouteValueDictionary.Keys)
+{
+    <input type="hidden" name="@key" value="@Model.RouteValueDictionary[key]"/>
+}
+
+<section id="@Model.SectionId">
+    <div class="float-left">
+        @Html.PagedListPager(Model.List, page => Url.Action(Model.ActionName, Model.GetRouteValueDictionary(page, ViewBag.CurrentSort, ViewBag.CurrentFilter, ViewBag.CurrentFilterAccording, ViewBag.SelectedFilteredUserId, ViewBag.PageSizeCount)))
+    </div>
+    <div class="float-left center">
+        @String.Format(ViewResource.Global_PageSummary_Text, Model.Page, Model.PageCount, Model.TotalItemCount)
+    </div>
+    <div class="float-right center">
+        <div>
+            @ViewResource.Global_PageCount_Text: @Html.DropDownList("PageSize", null, new { @onchange = "$(this).closest('form').submit();" })
+        </div>
+    </div>
+    <div class="clear-fix"></div>
+</section>

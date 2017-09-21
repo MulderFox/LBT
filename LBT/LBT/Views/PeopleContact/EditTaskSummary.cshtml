@@ -1,0 +1,18 @@
+﻿@using LBT.Resources
+@model LBT.Models.PeopleContactTask
+
+@{
+    ViewBag.Title = ViewResource.PeopleContact_EditTaskSummary_Title_Text;
+}
+
+<section id="detailForm">
+    <fieldset>
+        <legend>@ViewResource.PeopleContact_EditTask_Legend_Text</legend>
+        <p>
+            @Html.DisplayFor(model => model.Text)
+        </p>
+        <p>
+            @ViewResource.PeopleContact_EditTask_Done_Text @Html.DisplayFor(model => model.TextFieldValue)
+        </p>
+    </fieldset>
+</section>

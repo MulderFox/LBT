@@ -1,0 +1,51 @@
+﻿@*@model PagedList.IPagedList<SharedMSPContact>
+@using LBT.Models;
+@using PagedList.Mvc;
+@using LBT.Resources
+
+@{
+    ViewBag.Title = "Sdílené kontakty MSP";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Vytvořit nové sdílení", "Create") | @Html.ActionLink("Návrat na seznam kontaktů MSP", "Index", "MSPContact")
+</p>
+<table>
+    <tr>
+        <th>
+            @FieldResource.UserProfile_UserName_Name
+        </th>
+        <th>
+            @FieldResource.Global_FirstName_Name
+        </th>
+        <th>
+            @FieldResource.Global_LastName_Name
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToUser.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToUser.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToUser.LastName)
+            </td>
+            <td>
+                @Html.ActionLink("Smazat", "Delete", new { id = item.SharedMSPContactId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+Stránka @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber). z @Model.PageCount stránek.
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))*@

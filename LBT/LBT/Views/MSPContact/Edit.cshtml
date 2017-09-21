@@ -1,0 +1,224 @@
+﻿@*@using LBT.Controllers
+@using LBT.Extensions
+@using LBT.Resource
+@using LBT.Resources
+@model LBT.Models.MSPContact
+
+@{
+    ViewBag.Title = "Upravit kontakt MSP";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Kontakt MSP</legend>
+
+        @Html.HiddenFor(model => model.MSPContactId)
+        @Html.HiddenFor(model => model.RegistrarId)
+        @Html.HiddenFor(model => model.Created)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Registrar)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.Registrar.UserName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ICO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ICO)
+            @Html.ValidationMessageFor(model => model.ICO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CompanyName)
+            @Html.ValidationMessageFor(model => model.CompanyName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactPerson)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactPerson)
+            @Html.ValidationMessageFor(model => model.ContactPerson)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DistrictId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DistrictId", ViewResource.DistrictDropDownListTitle)
+            @Html.ValidationMessageFor(model => model.DistrictId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhoneNumberPrefix1Id)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PhoneNumberPrefix1Id")
+            @Html.ValidationMessageFor(model => model.PhoneNumberPrefix1Id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhoneNumber1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PhoneNumber1)
+            @Html.ValidationMessageFor(model => model.PhoneNumber1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhoneNumberPrefix2Id)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PhoneNumberPrefix2Id", ListItemsResource.PhoneNumberPrefix2Id_DropDownListTitle)
+            @Html.ValidationMessageFor(model => model.PhoneNumberPrefix2Id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhoneNumber2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PhoneNumber2)
+            @Html.ValidationMessageFor(model => model.PhoneNumber2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email1)
+            @Html.ValidationMessageFor(model => model.Email1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email2)
+            @Html.ValidationMessageFor(model => model.Email2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstContacted)
+        </div>
+        <div class="editor-field">
+            @Html.CalenderTextBoxFor(model => model.FirstContacted)
+            @Html.ValidationMessageFor(model => model.FirstContacted)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Presented)
+        </div>
+        <div class="editor-field">
+            @Html.CalenderTextBoxFor(model => model.Presented)
+            @Html.ValidationMessageFor(model => model.Presented)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BusinessInfoParticipated)
+        </div>
+        <div class="editor-field">
+            @Html.CalenderTextBoxFor(model => model.BusinessInfoParticipated)
+            @Html.ValidationMessageFor(model => model.BusinessInfoParticipated)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BusinessInfoLocation)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.BusinessInfoLocation)
+            @Html.ValidationMessageFor(model => model.BusinessInfoLocation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TeamMeetingParticipated)
+        </div>
+        <div class="editor-field">
+            @Html.CalenderTextBoxFor(model => model.TeamMeetingParticipated)
+            @Html.ValidationMessageFor(model => model.TeamMeetingParticipated)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TeamMeetingLocation)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.TeamMeetingLocation)
+            @Html.ValidationMessageFor(model => model.TeamMeetingLocation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Registrated)
+        </div>
+        <div class="editor-field">
+            @Html.CalenderTextBoxFor(model => model.Registrated)
+            @Html.ValidationMessageFor(model => model.Registrated)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PremiumMembershipGranted)
+        </div>
+        <div class="editor-field">
+            @Html.CalenderTextBoxFor(model => model.PremiumMembershipGranted)
+            @Html.ValidationMessageFor(model => model.PremiumMembershipGranted)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Potential)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Potential)
+            @Html.ValidationMessageFor(model => model.Potential)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MobileApplicationInstalledAndTrained)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MobileApplicationInstalledAndTrained)
+            @Html.ValidationMessageFor(model => model.MobileApplicationInstalledAndTrained)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactDead)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactDead)
+            @Html.ValidationMessageFor(model => model.ContactDead)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MSPActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MSPActive)
+            @Html.ValidationMessageFor(model => model.MSPActive)
+        </div>
+
+        <p>
+            <input type="submit" value="Uložit" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Návrat na seznam kontaktů MSP", "Index")
+</div>*@

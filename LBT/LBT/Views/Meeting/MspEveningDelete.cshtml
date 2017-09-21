@@ -1,0 +1,56 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.MeetingMspEveningEdit
+
+@{
+    ViewBag.Title = ViewResource.Meeting_MspEveningDelete_Title_Text;
+}
+
+<p>@ViewResource.Global_DeleteConfirmationQuestion_Text</p>
+
+<section id="deleteForm">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+    
+        <fieldset>
+            <legend>@ViewResource.Meeting_MspEvening_Legend_Text</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.City):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.City)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Date):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Date)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" autofocus value="@ViewResource.Global_BtnDeleteTitle_Text" />
+        </fieldset>
+    }
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, "MspEveningIndex")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

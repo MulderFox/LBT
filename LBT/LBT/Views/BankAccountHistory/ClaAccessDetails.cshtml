@@ -1,0 +1,91 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.BankAccountHistoryClaAccess
+
+@{
+    ViewBag.Title = ViewResource.BankAccountHistory_ClaAccessDetails_Title_Text;
+}
+
+<section id="detailAdvancedForm">
+    <table class="Main">
+        <tbody>
+            <tr>
+                <td class="Box-last">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    @Html.DisplayNameFor(m => m.Date):
+                                    <b>@Html.DisplayFor(m => m.Date)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.Ammount):
+                                    <b>@Html.DisplayFor(m => m.Ammount) @Html.DisplayFor(m => m.Currency)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    @Html.DisplayNameFor(m => m.BankAccount.BankAccountTypeLocalizedText):
+                                    <b>@Html.DisplayFor(m => m.BankAccount.BankAccountTypeLocalizedText)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    @Html.DisplayNameFor(m => m.BankAccount.Title):
+                                    <b>@Html.DisplayFor(m => m.BankAccount.Title)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    @Html.DisplayNameFor(m => m.BankAccount.Owner):
+                                    <b>@Html.DisplayFor(m => m.BankAccount.Owner)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    @Html.DisplayNameFor(m => m.Exchange):
+                                    <b>@Html.DisplayFor(m => m.Exchange) / @Html.DisplayFor(m => m.BankCode) (@Html.DisplayFor(m => m.BankName))</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.Ks):
+                                    <b>@Html.DisplayFor(m => m.Ks)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.Ss):
+                                    <b>@Html.DisplayFor(m => m.Ss)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.Vs):
+                                    <b>@Html.DisplayFor(m => m.Vs)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    @Html.DisplayNameFor(m => m.Note):
+                                    <b>@Html.DisplayFor(m => m.Note)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplEditTitle_Text, "ClaAccessEdit", new { id = Model.BankAccountHistoryId })</li>
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToBankAccountHistoryClaAccessIndex_Text, "ClaAccessIndex")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,31 @@
+﻿@using LBT.Resources
+@model LBT.Models.PeopleContactStopWorkflow
+
+@{
+    ViewBag.Title = ViewResource.PeopleContact_StopWorkflow_Title_Text;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>@ViewResource.PeopleContact_StopWorkflow_Legend_Text</legend>
+        <ol>
+            <li>
+                @ViewResource.PeopleContact_StopWorkflow_Message_Text:<br />
+                @Html.TextAreaFor(model => model.Note, new { @rows = "3" })
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.PeopleContact_StopWorkflow_BtnStopTitle_Text" />
+    </fieldset>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            LBT.ApplyTinyMCE();
+        });
+    </script>
+}

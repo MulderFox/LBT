@@ -1,0 +1,64 @@
+﻿@using LBT.Helpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=0.8; maximum-scale=2.0; user-scalable:no;">
+    <title>@ViewBag.Title - CLA</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/PagedList")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <div class="content-wrapper-popup">
+            <div class="float-left">
+                <hgroup class="title">
+                    <h1>@ViewBag.Title</h1>
+                </hgroup>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper-popup main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper-popup">
+            <div class="delimiter">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year Zdeněk Mikeska</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/lbt")
+    <script src="/Scripts/tinymce/tinymce.js?v=4.1.8"></script>
+    @RenderSection("scripts", required: false)
+    
+    <script type="text/javascript">
+        $(function () {
+            @if (ViewBag.LCID != null)
+            {
+                @: LBT.LocalizedResources.LanguageName = "@ViewBag.LCID";
+            }
+            else
+            {
+                @: LBT.LocalizedResources.LanguageName = "@ViewBag.CurrentCultureLCID";
+            }
+        });
+    </script>
+    
+    @JQuery.InitDatePicker()
+</body>
+</html>

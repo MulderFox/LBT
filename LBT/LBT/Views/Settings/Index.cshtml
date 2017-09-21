@@ -1,0 +1,23 @@
+﻿@using LBT.Resources
+
+@{
+    ViewBag.Title = ViewResource.Settings_Index_Title_Text;
+}
+
+<h2>@ViewResource.Settings_Index_ListsHeader_Text</h2>
+
+<ul>
+    <li>@Html.ActionLink(ViewResource.Settings_Index_HplDistrictsTitle_Text, "Index", "District")</li>
+    <li>@Html.ActionLink(ViewResource.Settings_Index_HplPhoneNumberPrefixesTitle_Text, "Index", "PhoneNumberPrefix")</li>
+    <li>@Html.ActionLink(ViewResource.Settings_Index_HplMeetingTitleTypesTitle_Text, "Index", "MeetingTitleType")</li>
+    <li>@Html.ActionLink(ViewResource.Settings_Index_HplBankAccountsTitle_Text, "Index", "BankAccount")</li>
+    <li>@Html.ActionLink(ViewResource.Settings_Index_HplCurrenciesTitle_Text, "Index", "Currency")</li>
+    <li>@Html.ActionLink(ViewResource.Settings_Index_HplVideosTitle_Text, "Index", "Video")</li>
+    <li>@Html.ActionLink(ViewResource.Settings_Index_HplManualTypesTitle_Text, "Index", "ManualType")</li>
+    <li>@Html.ActionLink(ViewResource.Settings_Index_HplManualsTitle_Text, "Index", "Manual")</li>
+</ul>
+
+<h2>@ViewResource.Settings_Index_BankOperationsHeader_Text</h2>
+<ul>
+    <li>@Html.ActionLink(ViewResource.Settings_Index_HplNotAssignedClaAccessTitle_Text, "ClaAccessIndex", "BankAccountHistory")</li>
+</ul>

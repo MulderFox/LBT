@@ -1,0 +1,29 @@
+﻿@using LBT.Resources
+
+@{
+    ViewBag.Title = ViewResource.UserProfile_Validate_Title_Text;
+}
+
+@if (ViewBag.IsError)
+{
+    <p class="message-error">@ViewBag.Message</p>
+}
+else
+{
+    <p class="message-success">@ViewBag.Message</p>
+}
+
+@if (ViewBag.ShowForm)
+{
+    using (Html.BeginForm(new { }))
+    {
+        <input id="googleCredentialsJson" name="googleCredentialsJson" type="hidden" value="@ViewBag.GoogleCredentialsJson" />
+        <input id="googleCalendarId" name="googleCalendarId" type="hidden" value="@ViewBag.GoogleCalendarId" />
+    
+        @Html.Raw(ViewResource.UserProfile_Validate_Description_Text)
+
+        <p>
+            <input type="submit" value="@ViewResource.UserProfile_BtnValidateTitle_Text" />
+        </p>
+    }
+}

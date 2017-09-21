@@ -1,0 +1,296 @@
+﻿LBT 2.1.18.1
+============
+fix: Bugs.
+mod: Přidat IBAN/SWIFT k detailu akce u cizích účtů.
+
+
+LBT 2.1.17.39
+=============
+add: Zobrazení platebních informací po neúspěšném přihlášení po splatnosti.
+fix: Validace velikosti souborů návodů a videa.
+
+
+LBT 2.1.16.38
+=============
+mod: Navýšit Upload videa na 1 GB.
+mod: Změna stránky Homepage.
+
+
+LBT 2.1.15.37
+=============
+mod: Možnost přihlásit uživatele na LGS seminář.
+
+
+LBT 2.1.14.36
+=============
+mod: Změna Business Info => LGS semináře (pouze v akcích).
+mod: Povýšit Setkání týmu v seznamu pod webinář.
+mod: Odstranit LGS semináře z akcí Setkání týmu.
+
+
+LBT 2.1.13.35
+=============
+add: Akceptace používání Cookies.
+fix: Zablokovat zadání Lyoness Id jako '000.000.000.000'.
+
+
+LBT 2.1.13.34
+=============
+fix: Validace přístupu pro Trial uživatele.
+
+LBT 2.1.12.33
+=============
+add: Manuály.
+mod: Rozšířit název Setkání týmu.
+
+LBT 2.1.11.32
+=============
+add: Hromadný mail.
+add: Typy manuálů.
+mod: Zvýraznění mrtvého kontaktu v kontaktní listině.
+
+LBT 2.1.10.31
+=============
+add: Lazy Mail Service - služba pro zpožděné posílání mailů.
+mod: Video - přidání detekce délky videa a možnost zobrazit všem.
+
+LBT 2.1.9.30
+============
+fix: Chyba v editaci akce Setkání týmu.
+mod: Fakturace - přidat IBAN a SWIFT.
+mod: RangeFilePath pro video - ošetření pro Safari.
+mod: Video - přidání předmětu a obsahu mailu ke každému videu.
+
+LBT 2.1.8.29
+============
+add: Akce - Odstranění z archivu.
+add: Offline webinář pro kontakt.
+fix: Validace LyonessID.
+mod: Akce - Validovat délku jména přednášejícího na 20 znaků.
+
+LBT 2.1.7.28
+============
+add: Fakturace.
+add: Platba za CLA v různých měnách.pdf.
+mod: Akce - defaultně soukromé.
+mod: Bankovní účty - IBAN a SWIFT.
+
+LBT 2.1.6.27
+============
+fix: Oprava resetování ClaAccessYearlyAccess.
+mod: Odstranění role User. Zkrácení Trial na 1 měsíc.
+
+LBT 2.1.5.26
+============
+add: Uživatelsky přívětivé zobrazení chyb aplikace.
+fix: ProcessTransactionRequest.
+fix: Validace kapacity u akce Webinář s již přihlášenými uživateli.
+mod: Manuální nastavení automatického odhlášení.
+
+LBT 2.1.4.25
+============
+fix: Akce - Webinář.
+mod: Přístup do archivu akcí všem (kromě uživatelů). Zobrazení akcí podle organizátora, admin vše.
+
+LBT 2.1.3.24
+============
+add: Akce - Webinář.
+
+LBT 2.1.2.23
+============
+fix: Přihlašování.
+mod: Multijazyčnost.
+
+LBT 2.1.1.22
+============
+add: Dva účty na akci.
+fix: Google Calendar API.
+fix: Edit People contact.
+mod: Multijazyčnost.
+
+LBT 2.1.0.21
+============
+add: Platby za přístup.
+add: Multiměnnovost na akcích.
+add: Seznam kontaktů na BI.
+add: Akce - Sekundární leader.
+add: Setkání týmů - číselník názvů.
+add: Týmy.
+add: TOP10 - Editace typu.
+add: WYSIWYG editor pro poznámky a úkoly.
+add: Multijazyčnost.
+add: Rozdělit viditelnost akcí na týmy hlavního a druhého leadera vs. vidět vše + parametr Soukromé pro znemožnění zobrazení ve vidět vše.
+add: Akce Ostatní - přihlášení uživatelů.
+fix: Nezpracovávat platbu, pokud nesouhlasí bankovní účet z nalezenou akcí podle specifického symbolu.
+fix: Přihlašování a obnova hesla.
+fix: Oprava textů.
+mod: Vložit výběr měny při vytváření nového uživatele a změnit logiku převodu měn pro přístup do aplikace na dva způsoby (převádět měny podle kurzu, fixní částky).
+mod: Filtrování akcí podle leadera.
+mod: Přiřazení uživatelů k bankovním účtům.
+mod: Graficky rozlišit vypršení přístupu do CLA.
+mod: Po odsouhlasení obch. podmínek a zpracování osobních údajů může uživatele editovat jen admin.
+mod: Souhlas s obch. podmínkami a zpracování osobních údajů při vytváření/editace kontaktu nebo hromadného zadávání kontaktů.
+del: Po registraci uživatele nenastavovat sdílení kontaktů jeho registrátorovi.
+
+LBT 2.0.8.20
+============
+add: Informace o uplynutí rezervace do mailů.
+add: Řazení účastníků akce podle příjmení a LyonessId.
+
+LBT 2.0.7.19
+============
+fix: U přihlašování na akce zalamovat Poznámku.
+fix: Ignorovat záporné platby na účtech.
+
+LBT 2.0.7.18
+============
+fix: Opravit zpětný odkaz z nepřiřazených plateb na akci Školení Davida Kotáska.
+fix: Odstraněno automatické přihlašování po změně akce.
+mod: Odstranění okdazu Tým CLA pro nepřihlášené.
+mod: Znemožněno měnit cenu akce, pokud je již nějaký účastník přiřazen k akci.
+mod: Možnost zobrazit v seznamu na stránku až 100 záznamů.
+mod: Automaticky vyčistit mezery při zadavání bankovních tokenů.
+mod: Duplikovat mechanismus stránkování nahoře i dole u každého seznamu.
+
+LBT 2.0.6.17
+============
+fix: Akce: Zpřístupnit všechny funkce organizátora i pro druhého organizátora.
+mod: Akce: Název do seznamu Školení Davida Kotáska.
+
+LBT 2.0.6.16
+============
+add: Modul Banka: Systém pro správu 5 bankovních účtů.
+add: Akce: Setkání týmu.
+add: Akce: Školení Davida Kotáska.
+add: Akce: Přihlášení uživatele, který je přihlášen do aplikace.
+add: Akce: Odesílání mailů při přihlášení, odhlášení, registraci a nesprávných platbách.
+add: Akce: Pozvánka pro setkání týmu.
+add: Mail: Text o automatickém emailu. Šablona automatických mailů.
+add: Validace tokenů bankovních účtů na unikátnost.
+add: Akce: Odesílání mailů přihlášení a odhlášení i na organizátora akce.
+add: Akce: Při odhlášení poslat i již zaplacenou částku.
+add: Email prefix podle prostředí.
+add: Akce: Druhý organizátor.
+add: Přesměrování na www.czechlyons.com.
+mod: Akce: Akumulace plateb.
+mod: Akce: Po přijetí částečné platby obnovit rezervaci.
+mod: Akce: Změna ikony pro "zamražení" rezervace.
+mod: Nepřiřazené platby: Přístup jen pro administrátora a majitele akce.
+mod: Nepřiřazené platby: Přiřazovat platby jen do okamžiku začátku akce.
+fix: Časy při vytváření a editaci akcí.
+fix: Ošetření bankovních účtů bez zadaného tokenu.
+fix: Validace datumů a časů u akcí.
+
+LBT 2.0.5.15
+============
+add: Číselník: Názvy akcí
+add: Akce: Ostatní
+
+LBT 2.0.4.14
+============
+add: Import a export kontaktní listiny.
+add: Export Top10.
+add: Akce: MSP Evening.
+add: Nejbližší akce BI a MSP Evening na Dashboard.
+mod: Rozšíření číselníku telefonní předvolby o regulární výrazy na vyhledávání a modifikaci importovaných a exportovaných telefonních čísel.
+mod: Zpřístupnit akce i běžným uživatelům.
+
+LBT 2.0.3.13
+============
+add: Modul Banka: Zpracování došlých plateb.
+add: Akce: Business Info.
+mod: Legenda u zapnutého podmíněného formátování na kontaktní listině.
+mod: Mazání kontaktu i z akcí - aktualizace kapacity akce.
+mod: Stop/Start dosledování i do editace kontaktu.
+
+LBT 2.0.2.12
+============
+mod: Cíle u TOP10 neomezená délka, na detailu zkrátit.
+mod: Tisk detailu TOP10 kontaktu.
+mod: Aktuální KS 1-8 převést na číslo.
+
+LBT 2.0.1.11
+============
+add: Lyoness ID sloupec do TOP10
+fix: Datum na LBT Azure prostředí
+fix: Design CSS
+
+LBT 2.0.1.10
+============
+add: Správa TOP 10 listiny
+
+LBT 2.0.0.9
+===========
+add: Modul Banka: Jádro
+
+LBT 1.0.7.8
+===========
+fix: Špatná kontrola duplicity kontaktů.
+
+LBT 1.0.7.7
+===========
+add: Stránka se statistikami uživatele.
+add: Zastavit workflow se statusem.
+
+LBT 1.0.6.6
+===========
+add: Zobrazit v seznamu uživatelů práva
+add: Úprava menu pro nové číselníky a statistiky, číselníky na nové stránce.
+add: Po vytvoření nového kontaktu a zjištění duplicity posílat pouze e-maily (nepsat nic na obrazovku).
+add: Na seznamu uživatelů (tabulkový i stromový) vyhodit sloupec prem. členství a vložit slopec o počtu kontaktů v kontaktní listině.
+add: Odemknutí a zamknutí účtu uživatele probíhá přes potvrzovací stránku jako u smazání uživatele.
+add: V detailu kontaktu tlačítko na převod na uživatele => nasměrovat na Přidat uživatele s předvyplněnými údaji o kontaktu.
+add: Přepínač zobrazení a design formátování (podmíněné formátování).
+add: Kontaktní listina - přepínač ON/OFF podmíněné formátování, přepínač ON/OFF mrtvé kontakty.
+add: Hromadné zadávání kontaktů.
+fix: Při sdílení kontaktů je špatně seznam pro Upline uživatele.
+fix: Po detailu kontaktu i uživatelů zpět na stejné místo v seznamu.
+fix: Ověřit, když někdo zadá již potřetí stejný kontakt, tak musí LBT informovat všechny 3 uživatele o duplicitě.
+fix: Nelze odstranit sdílení kontaktů.
+fix: Kvóta registrací za měsíc ukázala 600%.
+
+LBT 1.0.5.5
+===========
+add: Uživatelé - vedle filtru vpravo přepínač mezi stránkou současnou a stránkou se stromovou strukturou.
+add: Uživatelé (stromová struktura) - odstranit filtr. Stromová struktura může být jen odsazení Title o dvě mezery na každou úroveň.
+fix: Registrace uživatele má validovat unikátnost Login a Mobilní telefon.
+
+LBT 1.0.4.4
+===========
+add: Mazat uživatele může jen admin, leader může jen zablokovat.
+add: V registračním mailu doplnit odkaz na LBT.
+add: Pokud je kontakt mrtvý, tak přerušit zobrazování workflow (na homepage i odesílání mailů).
+add: Když leader vytvoří nového uživatele, tak ať se mu automaticky nasdílí jeho kontakty.
+add: Nastavení kalendáře: Posílat upozornění (ANO/NE), čas upozornění (čas), soukromí (soukromé/veřejné).
+add: Umožnit kdykoliv změnit datum u workflow kontaktu lidí. Po změně datumu vrátit workflow a odstranit následující datumy. Události v kalendáři se ponechávají bezezměny a nové se generují znovu.
+add: Přidat sdílené kontakty - 3 DropDownListy: 1. Upline (uživatelé stromově nad akt. uživatelem), 2. Downline (uživatelé pod akt. uživatelem), 3. stávající (všichni). Radio button na přepínání DDL (default Upline). Nesmí se v seznamu vyskytovat již přidaní uživatelé.
+fix: Logo a nadpis zarovnat do stejné linky (řádku)
+fix: Oddělit stránku editaci uživatele a nastavení profilu.
+fix: Jako leader měním uživateli jen e-mail. Po odeslání se vypíše chyba, že není vyplněno uživatelské jméno. Zkontrolovat to i u vlastního nastavení.
+fix: V seznamu uživatelů nesmí být přihlášený uživatel.
+fix: Roli může měnit jen admin a leader může měnit jen své uživatele.
+fix: Po změně přihlašovacího jména v nastavení profilu se musí uživatel automaticky odhlásit. (Přihlašovací jméno není možné měnit!)
+mod: Nahradit slovo LBT za CLA (nelze měnit název domény!)
+mod: Při smazání uživatele posunout jeho uživatele nahoru (stromově) a všechny ostatní vazby v databázi smazat.
+
+LBT 1.0.3.3
+===========
+add: Všechny datumy do Workflow kontaktu lidí nesmí jít do budoucnosti.
+add: Na Homepage u úkolů zobrazit ikonku na detail kontatku.
+add: Počet špatných hesel při přihlášení zvýšit na 5 a informovat, kolik ještě mi zbývá pokusů.
+add: 10 minut bez aktivity uživatele se provede automatické odhlášení. 2 minuty před odhlášením informovat uživatele o budoucím odhlášení.
+fix: Leader se po uložení změnil na uživatele. Roli může měnit jen administrátor.
+fix: Nesmí být možné měnit přihlašovací jméno uživatele.
+fix: Rozpadlý design na iPadu.
+fix: Když se do Poznámky nebo Úkolů vloží dlouhý text bez mezer, tak nesmí roztahovat stránku.
+fix: Datumy zadávat ve formátu DD.MM.YYYY.
+fix: Nasdílet kontakty - řadit abecedně podle Title.
+fix: Zjistit, proč nejde smazat aljona.cervena (viz mail na seznam).
+fix: Nefunguje odesílání mailů pro denní kontrolu úkolů.
+mod: Souhrn u položek v kalendáři musí obsahovat kromě úkolu i příjmení a jméno kontaktu.
+mod: Odstranění odkazu Kontakty.
+mod: Nové logo vložit na všechny stránky, kromě modálních oken a pro tisk.
+
+LBT 1.0.0.0
+===========
+add: Skeleton a hlavní funkce webu.

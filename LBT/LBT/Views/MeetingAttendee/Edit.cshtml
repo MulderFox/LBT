@@ -1,0 +1,79 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.MeetingAttendeeEdit
+
+@{
+    ViewBag.Title = ViewResource.MeetingAttendee_Edit_Title_Text;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>@ViewResource.MeetingAttendee_Edit_Legend_Text</legend>
+        @Html.HiddenFor(model => model.MeetingAttendeeId)
+        <ol>
+            <li>@FieldResource.Global_FirstName_Name: <b>
+                    @if (Model.AttendeeId.HasValue)
+                    {
+                        @Html.DisplayFor(model => model.Attendee.FirstName)
+                        @:
+                        @Html.DisplayFor(model => model.Attendee.LastName)
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(model => model.UserAttendee.FirstName)
+                        @:
+                        @Html.DisplayFor(model => model.UserAttendee.LastName)
+                    }
+                </b>
+            </li>
+            <li>
+                @FieldResource.Global_LyonessId_Name:
+                <b>
+                    @(Model.AttendeeId.HasValue ? Html.DisplayFor(model => model.Attendee.LyonessId) : Html.DisplayFor(model => model.UserAttendee.LyonessId))
+                </b>
+            </li>
+            <li>
+                <dl>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.BankAccountHistoryNote):
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.BankAccountHistoryNote)
+                    </dd>
+                </dl>
+
+            </li>
+            <li>
+                @Html.LabelFor(model => model.Note)
+                @Html.TextAreaFor(model => model.Note, new { @rows = "10" })
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, (string)ViewBag.ReturnAction, (string)ViewBag.ReturnController, new { id = ViewBag.ActionId }, null)</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            LBT.ApplyTinyMCE();
+        });
+    </script>
+}

@@ -1,0 +1,16 @@
+﻿@using LBT.Resources
+@model LBT.Models.PeopleContactStopWorkflow
+
+@{
+    ViewBag.Title = ViewResource.PeopleContact_StopWorkflowSummary_Title_Text;
+}
+
+<section id="detailForm">
+    <fieldset>
+        <legend>@ViewResource.PeopleContact_StopWorkflowSummary_Legend_Text</legend>
+        <p>
+            @Html.DisplayNameFor(model => model.Note):
+        </p>
+        <div class="rawHtml">@Html.Raw(Model.Note)</div>
+    </fieldset>
+</section>

@@ -1,0 +1,75 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resources
+@model IEnumerable<TopTenIndex>
+
+@{
+    ViewBag.Title = ViewResource.TopTen_PrintIndex_Title_Text;
+}
+
+<h1>@ViewBag.Title</h1>
+<section id="UserProfiles">
+    <table>
+        <tr>
+            <th>
+                @FieldResource.Global_FirstName_Name
+            </th>
+            <th>
+                @FieldResource.Global_LastName_Name
+            </th>
+            <th>
+                @FieldResource.TopTen_Status_Name
+            </th>
+            <th>
+                @FieldResource.TopTen_LastContact_Name
+            </th>
+            <th>
+                @FieldResource.TopTen_ActualCareerStage_Name
+            </th>
+            <th>
+                @FieldResource.Global_Role_Name
+            </th>
+            <th>
+                @FieldResource.Global_LyonessId_Name
+            </th>
+        </tr>
+
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(mi => i.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => i.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => i.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => i.LastContact)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => i.ActualCareerStage)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => i.Role)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => i.LyonessId)
+                </td>
+            </tr>
+        }
+    </table>
+</section>
+
+<p>
+    @ViewBag.IsListCuttedMessage
+</p>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            window.print();
+        });
+    </script>
+}

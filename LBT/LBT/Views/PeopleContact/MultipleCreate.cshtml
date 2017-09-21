@@ -1,0 +1,118 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.MultiplePeopleContacts
+
+@{
+    ViewBag.Title = ViewResource.PeopleContact_MultipleCreate_Title_Text;
+}
+
+<section id="createForm">
+    @Html.ValidationSummary()
+    <table class="Main">
+        <tbody>
+            <tr>
+                <td class="Box">
+                    <table style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th>@FieldResource.Global_LastName_Name</th>
+                                <th>@FieldResource.Global_FirstName_Name</th>
+                                <th>@FieldResource.Global_City_Name</th>
+                                <th>@ViewResource.PeopleContact_MultipleCreate_PhoneNumberPrefixShort_Text</th>
+                                <th>@FieldResource.Global_PhoneNumber1_Name</th>
+                                <th>@FieldResource.Global_Email1_Name</th>
+                                <th>@FieldResource.Global_Skype_Name</th>
+                            </tr>
+                        </thead>
+                        <tbody id="multipleForm">
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7">
+                                    <input class="lbt-icon30-plus" style="margin: 2px 0 0 0; padding: 0;" type="image" src="/Images/none.png" alt="@ViewResource.PeopleContact_MultipleCreate_InpAddRowTitle_Text" title="@ViewResource.PeopleContact_MultipleCreate_InpAddRowTitle_Text" onclick="LBT.MultipleCreateAddRow(); return false;" />
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+
+
+    </table>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.MultiplePeopleContactsJson)
+
+        <table id="confirmPolicies">
+            <tbody>
+                <tr>
+                    <th>@Html.LabelFor(m => m.ConfirmTermsAndConditions, new { @class = "required" })</th>
+                    <td>@Html.CheckBoxFor(m => m.ConfirmTermsAndConditions, new { @class = "ConfirmTermsAndConditions" })</td>
+                </tr>
+                <tr>
+                    <th>@Html.LabelFor(m => m.ConfirmPersonalData, new { @class = "required" })</th>
+                    <td>@Html.CheckBoxFor(m => m.ConfirmPersonalData, new { @class = "ConfirmPersonalData" })</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+    }
+</section>
+
+<section id="rowTemplate" class="hidden">
+    <table>
+        <tbody id="hiddenRowTemplate">
+            <tr>
+                <td>
+                    <input name="LastName" type="text" value="" />
+                </td>
+                <td>
+                    <input name="FirstName" type="text" value="" />
+                </td>
+                <td>
+                    <input name="City" type="text" value="" />
+                </td>
+                <td>
+                    @Html.DropDownList("PhoneNumberPrefix1Id")
+                </td>
+                <td>
+                    <input name="PhoneNumber1" type="text" value="" />
+                </td>
+                <td>
+                    <input name="Email1" type="text" value="" />
+                </td>
+                <td>
+                    <input name="Skype" type="text" value="" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToPeopleContactIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            LBT.MultipleCreateAddRow();
+            LBT.MultipleCreateFillData();
+            $("form").bind("submit", function () { return LBT.MultipleCreateOnSubmit(); });
+        });
+    </script>
+}

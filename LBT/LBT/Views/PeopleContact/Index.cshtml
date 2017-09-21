@@ -1,0 +1,151 @@
+﻿@using LBT.Controllers
+@using LBT.ModelViews
+@using LBT.Resources
+@model PagedList.IPagedList<PeopleContactIndex>
+
+@{
+    ViewBag.Title = ViewResource.PeopleContact_Index_Title_Text;
+}
+
+@using (Html.BeginForm("Index", "PeopleContact", FormMethod.Get))
+{
+    @Html.Partial("_PeopleContactFilteringPartial", new FilteringPartialModelView())
+
+    @Html.Partial("_PagingPartial", new PagingPartialModelView {List = Model})        
+}
+
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+<section id="PeopleContacts">
+    <table>
+        <thead>
+            <tr>
+                <th class="@ViewBag.FirstNameSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_FirstName_Name, "Index", new { sortOrder = ViewBag.FirstNameSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.LastNameSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_LastName_Name, "Index", new { sortOrder = ViewBag.LastNameSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.CitySortSymbol" style="width: 100px;">
+                    @Html.ActionLink(FieldResource.Global_City_Name, "Index", new { sortOrder = ViewBag.CitySortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.PhoneNumber1SortSymbol">
+                    @Html.ActionLink(FieldResource.Global_PhoneNumber1_Name, "Index", new { sortOrder = ViewBag.PhoneNumber1SortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.Email1SortSymbol">
+                    @Html.ActionLink(FieldResource.Global_Email1_Name, "Index", new { sortOrder = ViewBag.Email1SortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.SkypeSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_Skype_Name, "Index", new { sortOrder = ViewBag.SkypeSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.PotentialSortSymbol">
+                    @Html.ActionLink(FieldResource.Contact_Potential_Name, "Index", new { sortOrder = ViewBag.PotentialSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="IndexButton">
+                    @if (ViewBag.ShowFormatting)
+                    {
+                        <a href="@Url.Action("Index", new { commandArgument = PeopleContactController.CommandArgument.HideFormatting, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })" title="@ViewResource.PeopleContact_Index_HplHideFormattingTitle_Text"><span class="lbt-icon30-showformatting"></span></a>                
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Index", new { commandArgument = PeopleContactController.CommandArgument.ShowFormatting, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })" title="@ViewResource.PeopleContact_Index_HplShowFormattingTitle_Text"><span class="lbt-icon30-hideformatting"></span></a>                
+                    }
+
+                    &nbsp;
+
+                    @if (ViewBag.HideDeathContacts)
+                    {
+                        <a href="@Url.Action("Index", new { commandArgument = PeopleContactController.CommandArgument.ShowDeathContacts, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })" title="@ViewResource.PeopleContact_Index_HplShowDeadContactsTitle_Text"><span class="lbt-icon30-hidedeadcontacts"></span></a>                
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Index", new { commandArgument = PeopleContactController.CommandArgument.HideDeathContacts, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })" title="@ViewResource.PeopleContact_Index_HplHideDeadContactsTitle_Text"><span class="lbt-icon30-showdeadcontacts"></span></a>                
+                    }
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="8">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model)
+            {
+                <tr class="@if (ViewBag.ShowFormatting || i.ContactDead)
+                           {
+                               @i.FormattingClass
+                           }">
+                    <td>
+                        @Html.DisplayFor(mi => i.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.PhoneNumberPrefix1.Title)
+                        @Html.DisplayFor(mi => i.PhoneNumber1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Email1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Skype)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Potential)
+                    </td>
+                    <td class="buttons">
+                        @if (ViewBag.IsRegistrar)
+                        {
+                            <a href="@Url.Action("Edit", new { id = i.PeopleContactId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                        }
+                        <a href="@Url.Action("Details", new { id = i.PeopleContactId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                        @if (ViewBag.IsRegistrar)
+                        {
+                            <a href="@Url.Action("Delete", new { id = i.PeopleContactId })" title="@ViewResource.Global_HplDeleteTitle_Text"><span class="lbt-icon30-delete"></span></a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @using (Html.BeginForm("Index", "PeopleContact", FormMethod.Get))
+    {
+        @Html.Partial("_PagingPartial", new PagingPartialModelView {SectionId = "Paging2", List = Model})    
+    }
+
+    @if (ViewBag.ShowFormatting)
+    {
+        @Html.Raw(ViewResource.PeopleContact_Index_FormattingLegend_Text)
+    }
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplCreateTitle_Text, "Create")</li>
+                        <li>@Html.ActionLink(ViewResource.PeopleContact_Index_HplMultipleCreateTitle_Text, "MultipleCreate")</li>
+                        <li>@Html.ActionLink(ViewResource.PeopleContact_Index_HplShareContactsTitle_Text, "Index", "SharedContacts")</li>
+                        <li>@Html.ActionLink(ViewResource.Global_HplPrintListTitle_Text, "PrintIndex", new { sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId }, new { target = "_blank" })</li>
+                        @if (ViewBag.ShowImportExport)
+                        {
+                            <li>@Html.ActionLink(ViewResource.PeopleContact_Index_HplImportTitle_Text, "Import")</li>
+                            <li>@Html.ActionLink(ViewResource.Global_HplExportTitle_Text, "Export")</li>                            
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+

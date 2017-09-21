@@ -1,0 +1,146 @@
+﻿@using LBT.Helpers
+@using LBT.Resources
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=0.8; maximum-scale=2.0; user-scalable:no;">
+    <title>@ViewBag.Title - CLA</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/PagedList")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <div class="site-title">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img src="../../Images/logo.png" style="border: 0;" /></a>
+
+                </div>
+            </div>
+            <div class="float-left">
+                <hgroup class="title">
+                    <h1>@ViewBag.Title</h1>
+                </hgroup>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
+            </div>
+        </div>
+    </header>
+    <div id="navigation">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu">
+                        <li>@Html.ActionLink(ViewResource.Global_HplHomeTitle_Text, "Index", "Home", new { ViewBag.LCID }, null)</li>
+                        @if (ViewBag.IsAuthenticatedButNotGuest)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Global_HplTaskTitle_Text, "Index", "Task")</li>
+                            <li>@Html.ActionLink(ViewResource.Global_HplPeopleContactTitle_Text, "Index", "PeopleContact")</li>
+                            <li>@Html.ActionLink(ViewResource.Global_HplMeetingTitle_Text, "Dashboard", "Meeting")</li>
+                            <li>@Html.ActionLink(ViewResource.Global_HplTeamsTitle_Text, "Index", "Team")</li>
+                        }
+                        @if (ViewBag.IsAdmin || ViewBag.IsLeader)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Global_HplUsersTitle_Text, "Index", "UserProfile")</li>                              
+                        }
+                        @if (ViewBag.IsAuthenticatedButNotGuest)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Global_HplStatisticsTitle_Text, "Index", "Statistics")</li>
+                        }
+                        @if (ViewBag.IsAdmin || ViewBag.IsLeader)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Global_HplTopTenTitle_Text, "Index", "TopTen")</li>                              
+                        }
+                        @if (ViewBag.IsAdmin)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Global_HplBulkMail_Text, "Create", "BulkMail")</li>
+                            <li>@Html.ActionLink(ViewResource.Global_HplSettingsTitle_Text, "Index", "Settings")</li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+            <div class="float-right">
+                @if (ViewBag.IsAuthenticatedButNotGuest)
+                {
+                    <nav>
+                        <ul class="menu">
+                            <li>@Html.ActionLink(ViewResource.Global_HplAboutTitle_Text, "About", "Home")</li>
+                        </ul>
+                    </nav>
+                }
+            </div>
+        </div>
+    </div>
+    @RenderSection("navigation2", required: false)
+    @RenderSection("controlPanel", required: false)
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            <div id="alertElement" class="message-info" style="margin-top: 1em; display: none;"></div>
+            @RenderBody()
+        </section>
+
+        <div id="cookie-info">
+            <div class="container">
+                <div class="text">
+                    <p><strong>@ViewResource.Global_UsingCookies_Text <a title="@ViewResource.Global_MoreInfoForUsingCookies_Text" href="/Store/Všeobecné obchodní podmínky CLA.pdf" target="_blank">@ViewResource.Global_MoreInfoForUsingCookies_Text</a></strong>.</p>
+                </div>
+                <a class="cookieButtonClose" href="#" title="@ViewResource.Global_HplCloseTitle_Text"><span class="lbt-icon30-delete"></span></a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="delimiter">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year Zdeněk Mikeska</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/lbt")
+
+    <script src="/Scripts/tinymce/tinymce.js?v=4.1.8"></script>
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        $(function () {
+            @if (ViewBag.LCID != null)
+            {
+                @: LBT.LocalizedResources.LanguageName = "@ViewBag.LCID";
+            }
+            else
+            {
+                @: LBT.LocalizedResources.LanguageName = "@ViewBag.CurrentCultureLCID";
+                                    }
+            
+            @if (ViewBag.IsUserAutomaticLogoutIntervalSet)
+            {
+                @: var urlAccountLogin = '@Url.Action("Login", "Account")';
+                                        @: LBT.AutomaticLogout(urlAccountLogin, @ViewBag.UserAutomaticLogoutInterval);
+            }
+
+            var isUsingCookiesClosedCookieKey = "@LBT.Helpers.Cookie.IsUsingCookiesClosed";
+            LBT.InitUsingCookiesInfo(isUsingCookiesClosedCookieKey);
+        });
+
+        @Html.Raw(ViewBag.AdditionalScripts)
+    </script>
+
+    @JQuery.InitDatePicker()
+</body>
+</html>

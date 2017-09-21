@@ -1,0 +1,367 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resources
+@model TopTenDetails
+
+@{
+    ViewBag.Title = ViewResource.TopTen_Details_Title_Text;
+}
+
+<section id="detailAdvancedForm">
+    <table class="Main">
+        <tbody>
+            <tr>
+                <td colspan="2" class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="font-size: 1.5em; font-weight: bold;" colspan="2">
+                                    @Html.DisplayFor(model => model.ToUser.Title)
+                                    @Html.DisplayFor(model => model.ToUser.LastName)
+                                    @Html.DisplayFor(model => model.ToUser.FirstName)
+                                </td>
+                                <td style="vertical-align: bottom;">
+                                    @Html.DisplayNameFor(model => model.ToUser.LyonessId):
+                                    <b>@Html.DisplayFor(model => model.ToUser.LyonessId)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    @Html.DisplayNameFor(model => model.ToUser.City):
+                                    <b>@Html.DisplayFor(model => model.ToUser.City)</b>
+                                </td>
+                                <td style="width: 30%">
+                                    @Html.DisplayNameFor(model => model.ToUser.District):
+                                    <b>@Html.DisplayFor(model => model.ToUser.District.Title)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.ToUser.LastAccessed):
+                                    <b>@Html.DisplayFor(model => model.ToUser.LastAccessed)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.LastContact):
+                                    <b>@Html.DisplayFor(model => model.LastContact)</b>
+                                </td>
+                                <td>&nbsp;
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.ToUser.ClaAccessExpired):
+                                    <b>@Html.DisplayFor(model => model.ToUser.ClaAccessExpired)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="6">
+                                    <span class="title">@ViewResource.Global_ContactsTitle_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ToUser.PhoneNumber1):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(model => model.ToUser.PhoneNumberPrefix1.Title) @Html.DisplayFor(model => model.ToUser.PhoneNumber1)
+                                </td>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ToUser.Email1):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(model => model.ToUser.Email1)
+                                </td>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ToUser.Skype):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(model => model.ToUser.Skype)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ToUser.PhoneNumber2):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(model => model.ToUser.PhoneNumberPrefix2.Title) @Html.DisplayFor(model => model.ToUser.PhoneNumber2)
+                                </td>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ToUser.Email2):
+                                </th>
+                                <td colspan="3">
+                                    @Html.DisplayFor(model => model.ToUser.Email2)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="6">
+                                    <span class="title">@ViewResource.Global_TopTenStatusTitle_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6">
+                                    @Html.DisplayNameFor(model => model.ShortTermCareerGoalDetailView):
+                                    <b>@Html.DisplayFor(model => model.ShortTermCareerGoalDetailView)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6">
+                                    @Html.DisplayNameFor(model => model.LongTermCareerGoalDetailView):
+                                    <b>@Html.DisplayFor(model => model.LongTermCareerGoalDetailView)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.TrainingPhone):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.TrainingPhone)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.Od1):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.Od1)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.Sns):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.Sns)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.TrainingVideo):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.TrainingVideo)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.Od2):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.Od2)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.AdditionalTraining):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.AdditionalTraining)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.TrainingBiPresentation):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.TrainingBiPresentation)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.Rhetoric):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.Rhetoric)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.Status):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.Status)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.TrainingStLecture):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.TrainingStLecture)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.TeamLeadershipping):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.TeamLeadershipping)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.ActualCareerStage):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.ActualCareerStage)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.ConductingMeetings):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.ConductingMeetings)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.RoleLocalized):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.RoleLocalized)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="BoxStatus">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="title">@ViewResource.Global_QuotaAndStatisticsUser_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.ToUser.RegistredPeopleQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.ToUser.RegistredPeopleQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.ToUser.RegistredPeopleQuotaLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.ToUser.RegistredPeopleQuotaLastMonth)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.ToUser.PremiumPartnersQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.ToUser.PremiumPartnersQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.ToUser.PremiumPartnersQuotaLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.ToUser.PremiumPartnersQuotaLastMonth)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.ToUser.BuyersQuota):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.ToUser.BuyersQuota)%</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.ToUser.ContactedPeopleCount):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.ToUser.ContactedPeopleCount)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.ToUser.ContactedPeopleCountLastMonth):
+                                </td>
+                                <td style="text-align: right;">
+                                    <b>@Html.DisplayFor(model => model.ToUser.ContactedPeopleCountLastMonth)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td class="BoxStatus">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="title">@ViewResource.Global_StatusTitle_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.ToUser.PremiumMembershipGranted):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.ToUser.PremiumMembershipGranted)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.ToUser.AccessGranted):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.ToUser.AccessGranted)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.ToUser.MspCoach):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.ToUser.MspCoach)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(model => model.ToUser.Ca):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(model => model.ToUser.Ca)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="BoxStatus-last">
+                    @Html.DisplayNameFor(model => model.Tasks):<br />
+                    <div class="rawHtml">@Html.Raw(Model.Tasks)</div>
+                </td>
+                <td class="BoxStatus-last">
+                    @Html.DisplayNameFor(model => model.Note):<br />
+                    <div class="rawHtml">@Html.Raw(Model.Note)</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplEditTitle_Text, "Edit", new { id = Model.TopTenId })</li>
+                        <li>@Html.ActionLink(ViewResource.Global_HplDeleteTitle_Text, "Delete", new { id = Model.TopTenId })</li>
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, "Index")</li>
+                        <li>@Html.ActionLink(ViewResource.TopTen_HplPrintDetailsTitle_Text, "PrintDetails", new { id = Model.TopTenId }, new { target = "_blank" })</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

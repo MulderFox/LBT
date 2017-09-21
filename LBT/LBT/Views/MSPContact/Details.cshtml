@@ -1,0 +1,184 @@
+﻿@*@model LBT.Models.MSPContact
+
+@{
+    ViewBag.Title = "Detail kontaktu MSP";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<fieldset>
+    <legend>Kontakt MSP</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Registrar)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Registrar.UserName)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.ICO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ICO)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.CompanyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyName)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.ContactPerson)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactPerson)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Address)
+    </div>
+    <div class="display-field-pre">@Html.DisplayFor(model => model.Address)</div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.District)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.District.Title)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.PhoneNumberPrefix1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhoneNumberPrefix1.Title)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.PhoneNumber1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhoneNumber1)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.PhoneNumberPrefix2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhoneNumberPrefix2.Title)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.PhoneNumber2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhoneNumber2)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Email1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email1)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Email2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email2)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Created)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Created)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.FirstContacted)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstContacted)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Presented)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Presented)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.BusinessInfoParticipated)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BusinessInfoParticipated)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.BusinessInfoLocation)
+    </div>
+    <div class="display-field-pre">@Html.DisplayFor(model => model.BusinessInfoLocation)</div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.TeamMeetingParticipated)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TeamMeetingParticipated)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.TeamMeetingLocation)
+    </div>
+    <div class="display-field-pre">@Html.DisplayFor(model => model.TeamMeetingLocation)</div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Registrated)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Registrated)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.PremiumMembershipGranted)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PremiumMembershipGranted)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Potential)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Potential)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.MobileApplicationInstalledAndTrained)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MobileApplicationInstalledAndTrained)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.ContactDead)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactDead)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.MSPActive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MSPActive)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Upravit", "Edit", new { id = Model.MSPContactId }) |
+    @Html.ActionLink("Návrat na seznam kontaktů MSP", "Index")
+</p>*@

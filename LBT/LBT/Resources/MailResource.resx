@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountController_PasswordRecovery_Subject" xml:space="preserve">
+    <value>Změna hesla</value>
+  </data>
+  <data name="AccountController_PasswordRecovery_TextBody" xml:space="preserve">
+    <value>právě Vám bylo změněno heslo do systému CLA. Pokud jste o změnu nežádali, prosím kontaktujte správce systému CLA. Pro přihlášení do systému CLA použijte prosím následující heslo:
+Heslo: {0}
+
+Prosím, přihlašte se do systému CLA a změňte si své heslo.</value>
+  </data>
+  <data name="AccountController_Register_Subject" xml:space="preserve">
+    <value>Registrace účtu</value>
+  </data>
+  <data name="AccountController_Register_TextBody" xml:space="preserve">
+    <value>právě Vám byl vytvořen účet v systému CLA. Pro přihlášení do systému CLA použijte prosím následující údaje:
+Přihlašovací jméno: {0}
+Heslo: {1}
+
+Prosím, přihlašte se do systému CLA a změňte si své heslo.
+
+Pro přihlášení do CLA použijte následující odkaz:
+{2}</value>
+  </data>
+  <data name="Mail_AutomaticMailTextBodyTemplate" xml:space="preserve">
+    <value>Pěkný den,
+
+{0}
+
+S pozdravem,
+
+CLA System.
+
+---
+
+Tento email byl vygenerován automaticky. Neodpovídejte prosím na tento email.</value>
+  </data>
+  <data name="Calendar_InsertEvents_Subject" xml:space="preserve">
+    <value>Chyba v odesílání událostí do Google Calendar</value>
+  </data>
+  <data name="Calendar_InsertEvents_TextBody" xml:space="preserve">
+    <value>během odesílání událostí do Vašeho kalendáře došlo k chybě. Prosím zkontrolujte nastavení Google Calendar.</value>
+  </data>
+  <data name="MeetingController_OrganizerContactPaymentIsHigh_TextBody" xml:space="preserve">
+    <value>zaznamenali jsme vysokou platbu pro přihlášení kontaktu {0} na akci {1}.
+
++ DETAIL AKCE
+  ===========
+{2}
+
++ PLATEBNÍ ÚDAJE
+  ==============
+{3}
+
+Celková odeslaná částka: {4} Kč.
+
+Děkujeme za pochopení.</value>
+  </data>
+  <data name="MeetingController_OrganizerContactPaymentIsLow_TextBody" xml:space="preserve">
+    <value>zaznamenali jsme nedostatečnou platbu kontaktu {0} pro přihlášení na akci {1}.
+
++ DETAIL AKCE
+  ===========
+{2}
+
+Prosím zkontrolujte platební údaje.
+
++ PLATEBNÍ ÚDAJE
+  ==============
+{3}
+
+Celková odeslaná částka: {4} Kč.
+
+Děkujeme za pochopení.</value>
+  </data>
+  <data name="MeetingController_OrganizerPaymentIsHigh_TextBody" xml:space="preserve">
+    <value>zaznamenali jsme vysokou platbu pro přihlášení uživatele {0} na akci {1}.
+
++ DETAIL AKCE
+  ===========
+{2}
+
++ PLATEBNÍ ÚDAJE
+  ==============
+{3}
+
+Celková odeslaná částka: {4} Kč.
+
+Děkujeme za pochopení.</value>
+  </data>
+  <data name="MeetingController_OrganizerPaymentIsLow_TextBody" xml:space="preserve">
+    <value>zaznamenali jsme nedostatečnou platbu pro přihlášení uživatele {0} na akci {1}.
+
++ DETAIL AKCE
+  ===========
+{2}
+
++ PLATEBNÍ ÚDAJE
+  ==============
+{3}
+
+Celková odeslaná částka: {4} Kč.
+
+Děkujeme za pochopení.</value>
+  </data>
+  <data name="MeetingController_OrganizerUnsignedContactWithPaidAmmount_TextBody" xml:space="preserve">
+    <value>kontakt {0} byl odhlášen z akce {1}.
+
++ DETAIL AKCE
+  ===========
+{2}
+
+Na tuto akci již poslal(a) celkem {3} Kč.</value>
+  </data>
+  <data name="MeetingController_OrganizerUnsignedWithPaidAmmount_TextBody" xml:space="preserve">
+    <value>uživatel {0} byl odhlášen z akce {1}.
+
++ DETAIL AKCE
+  ===========
+{2}
+
+Na tuto akci již poslal(a) celkem {3} Kč.</value>
+  </data>
+  <data name="MeetingController_OwnerPaymentIsHigh_TextBody" xml:space="preserve">
+    <value>zaznamenali jsme vysokou platbu Vašeho kontaktu {0} pro přihlášení na akci {1}.
+
++ DETAIL AKCE
+  ===========
+{2}
+
+Prosím zkontrolujte platební údaje.
+
++ PLATEBNÍ ÚDAJE
+  ==============
+{3}
+
+Celková odeslaná částka: {4} Kč.
+
+Děkujeme za pochopení.</value>
+  </data>
+  <data name="MeetingController_OwnerPaymentIsLow_TextBody" xml:space="preserve">
+    <value>zaznamenali jsme nedostatečnou platbu Vašeho kontaktu {0} pro přihlášení na akci {1}.
+
++ DETAIL AKCE
+  ===========
+{2}
+
+Prosím zkontrolujte platební údaje.
+
++ PLATEBNÍ ÚDAJE
+  ==============
+{3}
+
+Celková odeslaná částka: {4} Kč.
+
+Děkujeme za pochopení.</value>
+  </data>
+  <data name="MeetingController_OwnerRegisteredContact_TextBody" xml:space="preserve">
+    <value>systém CLA přihlásil Váš kontakt {0} na akci {1}.
+
++ DETAIL AKCE
+  ===========
+{2}
+
+Děkujeme a těšíme se na setkání.</value>
+  </data>
+  <data name="MeetingController_OwnerSignedContact_TextBody" xml:space="preserve">
+    <value>systém CLA rezervoval místo Vašemu kontaktu {0} na akci {1} do {2}.
+Pokud do té doby neobdržíme platbu podle níže uvedených instrukcí, bude rezervace zrušena.
+
++ DETAIL AKCE
+  ===========
+{3}
+
+Pokud je akce placená, prosím proveďte platbu podle následujících údajů:
+
++ PLATEBNÍ ÚDAJE
+  ==============
+{4}
+
+Děkujeme a těšíme se na setkání.</value>
+  </data>
+  <data name="MeetingController_OwnerUnsignedContactWithPaidAmmount_TextBody" xml:space="preserve">
+    <value>Váš kontakt {0} byl odhlášen z akce {1}.
+
++ DETAIL AKCE
+  ===========
+{2}
+
+Na tuto akci již poslal(a) celkem {3} Kč. Pro finanční vyrovnání prosím kontaktujte organizátora akce.</value>
+  </data>
+  <data name="MeetingController_OwnerUnsignedContact_TextBody" xml:space="preserve">
+    <value>Váš kontakt {0} byl odhlášen z akce {1}.
+
++ DETAIL AKCE
+  ===========
+{2}</value>
+  </data>
+  <data name="MeetingController_PaymentIsHigh_Subject" xml:space="preserve">
+    <value>Vysoká platba</value>
+  </data>
+  <data name="MeetingController_PaymentIsHigh_TextBody" xml:space="preserve">
+    <value>zaznamenali jsme vysokou platbu pro přihlášení na akci {0}.
+
++ DETAIL AKCE
+  ===========
+{1}
+
++ PLATEBNÍ ÚDAJE
+  ==============
+{2}
+
+Celková odeslaná částka: {3} Kč.
+
+Děkujeme za pochopení.</value>
+  </data>
+  <data name="MeetingController_PaymentIsLow_Subject" xml:space="preserve">
+    <value>Nedostatečná platba</value>
+  </data>
+  <data name="MeetingController_PaymentIsLow_TextBody" xml:space="preserve">
+    <value>zaznamenali jsme nedostatečnou platbu pro přihlášení na akci {0}.
+
++ DETAIL AKCE
+  ===========
+{1}
+
+Prosím zkontrolujte platební údaje.
+
++ PLATEBNÍ ÚDAJE
+  ==============
+{2}
+
+Celková odeslaná částka: {3} Kč.
+
+Děkujeme za pochopení.</value>
+  </data>
+  <data name="MeetingController_Registered_Subject" xml:space="preserve">
+    <value>Přihlášení na akci</value>
+  </data>
+  <data name="MeetingController_Registered_TextBody" xml:space="preserve">
+    <value>byl(a) jste úspěšně přihlášen(a) na akci {0}.
+
++ DETAIL AKCE
+  ===========
+{1}
+
+Děkujeme a těšíme se na setkání.</value>
+  </data>
+  <data name="MeetingController_Signed_Subject" xml:space="preserve">
+    <value>Rezervace na akci</value>
+  </data>
+  <data name="MeetingController_Signed_TextBody" xml:space="preserve">
+    <value>systém CLA Vám rezervoval místo na akci {0} do {1}.
+Pokud do té doby neobdržíme platbu podle níže uvedených instrukcí, bude rezervace zrušena.
+
++ DETAIL AKCE
+  ===========
+{2}
+
+Pokud je akce placená, prosím proveďte platbu podle následujících údajů:
+
++ PLATEBNÍ ÚDAJE
+  ==============
+{3}
+
+Děkujeme a těšíme se na setkání.</value>
+  </data>
+  <data name="MeetingController_UnsignedWithPaidAmmount_TextBody" xml:space="preserve">
+    <value>byl(a) jste odhlášen(a) z akce {0}.
+
++ DETAIL AKCE
+  ===========
+{1}
+
+Na tuto akci jste již poslal(a) celkem {2} Kč. Pro finanční vyrovnání prosím kontaktujte organizátora akce.</value>
+  </data>
+  <data name="MeetingController_Unsigned_Subject" xml:space="preserve">
+    <value>Odhlášení z akce</value>
+  </data>
+  <data name="MeetingController_Unsigned_TextBody" xml:space="preserve">
+    <value>byl(a) jste odhlášen(a) z akce {0}.
+
++ DETAIL AKCE
+  ===========
+{1}</value>
+  </data>
+  <data name="MeetingModelView_MeetingDetail_Text" xml:space="preserve">
+    <value>Název: {0}
+Od: {1}
+Do: {2}
+Obec: {3}
+Ulice: {4}
+Organizátor: {5}
+Přednášející: {6}
+
+Potřebné s sebou:
+{7}
+
+Poznámka:
+{8}</value>
+  </data>
+  <data name="MeetingModelView_NoPaymentInfo_Text" xml:space="preserve">
+    <value>Pro tento typ akce nejsou žádné platební údaje.</value>
+  </data>
+  <data name="MeetingModelView_PaymentInfo_Text" xml:space="preserve">
+    <value>Účet: {0}
+IBAN: {1}
+SWIFT: {2}
+Specifický symbol: {3}
+Variabilní symbol: {4}
+Cena: {5:N0} {6}.
+Poznámka pro příjemce: Vaše kontaktní telefonní číslo.</value>
+  </data>
+  <data name="PeopleContactController_ProcessDuplicityAndGetStatusMessage_IsNotRegistrated_TextBody" xml:space="preserve">
+    <value>CLA nalezlo novou duplicitu kontaktů s Vaším kontaktem: {0} {1}. Váš kontakt ještě není registrován.</value>
+  </data>
+  <data name="PeopleContactController_ProcessDuplicityAndGetStatusMessage_IsRegistrated_TextBody" xml:space="preserve">
+    <value>CLA nalezlo novou duplicitu kontaktů s Vaším kontaktem: {0} {1}. Váš kontakt je již registrován.</value>
+  </data>
+  <data name="PeopleContactController_ProcessDuplicityAndGetStatusMessage_Subject" xml:space="preserve">
+    <value>Duplicita kontaktu lidí</value>
+  </data>
+  <data name="TaskSchedulerController_AccessPaymentAccepted_Subject" xml:space="preserve">
+    <value>Navýšení konta pro přístup</value>
+  </data>
+  <data name="TaskSchedulerController_AccessPaymentAccepted_TextBody" xml:space="preserve">
+    <value>právě jsme Vám navýšili konto pro přístup do aplikace o {0:N2} {1} na částku {2:N2} {1}.</value>
+  </data>
+  <data name="TaskSchedulerController_ExecuteCheckTasks_NoTasks" xml:space="preserve">
+    <value>V současné době nejsou k dispozici žádné úkoly.</value>
+  </data>
+  <data name="TaskSchedulerController_ExecuteCheckTasks_Subject" xml:space="preserve">
+    <value>Úkoly</value>
+  </data>
+  <data name="TaskSchedulerController_ExecuteCheckTasks_TextBody" xml:space="preserve">
+    <value>v systému CLA máte následující úkoly.
+
+Aktuální úkoly:
+{0}
+Úkoly v prodlení:
+{1}
+Pro přihlášení do CLA použijte následující odkaz:
+{2}</value>
+  </data>
+  <data name="TaskSchedulerController_FoundConvertedAmountForAccess_Subject" xml:space="preserve">
+    <value>Provedena konverze měn pro přístup do aplikace</value>
+  </data>
+  <data name="TaskSchedulerController_FoundConvertedAmountForAccess_TextBody" xml:space="preserve">
+    <value>došlo k automatické konverzi měn.
+
+{0}</value>
+  </data>
+  <data name="TaskSchedulerController_FoundConvertedAmountForMeeting_Subject" xml:space="preserve">
+    <value>Provedena konverze měn pro akci</value>
+  </data>
+  <data name="TaskSchedulerController_FoundConvertedAmountForMeeting_TextBody" xml:space="preserve">
+    <value>došlo k automatické konverzi měn.
+
+{0}</value>
+  </data>
+  <data name="TaskSchedulerController_NotificationAccessBlock_Subject" xml:space="preserve">
+    <value>Omezení přístupu do aplikace</value>
+  </data>
+  <data name="TaskSchedulerController_NotificationAccessBlock_TextBody" xml:space="preserve">
+    <value>právě Vám byl odebrán přístup do aplikace. Prosím prodlužte si Váš přístup podle následujících platebních informací.
+
+{0}</value>
+  </data>
+  <data name="TaskSchedulerController_NotificationAccessExpiration_Subject" xml:space="preserve">
+    <value>Upozornění expirace přístupu do aplikace</value>
+  </data>
+  <data name="TaskSchedulerController_NotificationAccessExpiration_TextBody" xml:space="preserve">
+    <value>dne {0:dd.MM.yyyy} Vám vyprší přístup do aplikace. Prosím prodlužte si Váš přístup podle následujících platebních informací.
+
+{1}</value>
+  </data>
+  <data name="TaskSchedulerController_NotificationAccessUnblock_Subject" xml:space="preserve">
+    <value>Povolení přístupu do aplikace</value>
+  </data>
+  <data name="TaskSchedulerController_NotificationAccessUnblock_TextBody" xml:space="preserve">
+    <value>právě Vám byl povolen přístup do aplikace.</value>
+  </data>
+  <data name="UserProfileController_AttendeeWasRemoved_Subject" xml:space="preserve">
+    <value>Odhlášení kontaktu z akce</value>
+  </data>
+  <data name="UserProfileController_AttendeeWasRemoved_TextBody" xml:space="preserve">
+    <value>právě byl Váš kontakt {0} odebrán z akce {1}. Prosím kontaktujte organizátora akce.
+
+Detail akce: {2}</value>
+  </data>
+  <data name="UserProfileController_Locked_Subject" xml:space="preserve">
+    <value>Zablokování účtu</value>
+  </data>
+  <data name="UserProfileController_Locked_TextBody" xml:space="preserve">
+    <value>právě Vám byl zablokován účet v systému CLA. Pro jeho odblokování prosím kontaktujte svého lídra nebo administrátora systému.</value>
+  </data>
+  <data name="UserProfileController_MainLeaderChanged_Subject" xml:space="preserve">
+    <value>Změna hlavního leadera</value>
+  </data>
+  <data name="UserProfileController_MainLeaderChanged_TextBody" xml:space="preserve">
+    <value>právě jste se stal hlavním leaderem akce {0}.
+
+Detail akce: {1}</value>
+  </data>
+  <data name="UserProfileController_OrganizerChanged_Subject" xml:space="preserve">
+    <value>Změna organizátora</value>
+  </data>
+  <data name="UserProfileController_OrganizerChanged_TextBody" xml:space="preserve">
+    <value>právě jste se stal organizátorem akce {0}.
+
+Detail akce: {1}</value>
+  </data>
+  <data name="UserProfileController_SecondaryLeaderChanged_Subject" xml:space="preserve">
+    <value>Změna druhého leadera</value>
+  </data>
+  <data name="UserProfileController_SecondaryLeaderChanged_TextBody" xml:space="preserve">
+    <value>právě jste se stal druhým leaderem akce {0}.
+
+Detail akce: {1}</value>
+  </data>
+  <data name="UserProfileController_Unlocked_Subject" xml:space="preserve">
+    <value>Odblokování účtu</value>
+  </data>
+  <data name="UserProfileController_Unlocked_TextBody" xml:space="preserve">
+    <value>právě Vám byl odblokován účet v systému CLA. Nyní se opět můžete přihlásit.</value>
+  </data>
+  <data name="UserProfileController_UserAttendeeWasRemoved_Subject" xml:space="preserve">
+    <value>Odhlášení z akce</value>
+  </data>
+  <data name="UserProfileController_UserAttendeeWasRemoved_TextBody" xml:space="preserve">
+    <value>právě jste byl odebrán z akce {0}. Prosím kontaktujte organizátora akce.
+
+Detail akce: {1}</value>
+  </data>
+  <data name="TaskSchedulerController_Invoice_Message" xml:space="preserve">
+    <value>V příloze posíláme fakturu za přístup do aplikace CLA.</value>
+  </data>
+  <data name="TaskSchedulerController_Invoice_Subject" xml:space="preserve">
+    <value>Faktura za přístup do aplikace</value>
+  </data>
+  <data name="TaskSchedulerController_SendLazyMails_Subject" xml:space="preserve">
+    <value>Video bylo přehráno</value>
+  </data>
+</root>

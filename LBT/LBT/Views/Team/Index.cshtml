@@ -1,0 +1,75 @@
+﻿@using LBT.ModelViews
+@using LBT.Resources
+@model PagedList.IPagedList<TeamIndex>
+
+@{
+    ViewBag.Title = ViewResource.Team_Index_Title_Text;
+}
+
+@using (Html.BeginForm("Index", "Team", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView {List = Model})
+}
+
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+<section class="List">
+    <table>
+        <thead>
+            <tr>
+                <th class="@ViewBag.TitleSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_Title_Name, "Index", new { sortOrder = ViewBag.TitleSortParam, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="2">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(mi => i.Title)
+                    </td>
+                    <td class="buttons">
+                        @if (i.AllowEdit)
+                        {
+                            <a href="@Url.Action("Edit", new { id = i.TeamId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>                            
+                        }
+                        <a href="@Url.Action("Details", new { id = i.TeamId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                        <a href="@Url.Action("EditNote", new { id = i.TeamId })" title="@ViewResource.Global_HplEditNoteTitle_Text"><span class="lbt-icon30-editnote"></span></a>
+                        @if (i.AllowEdit)
+                        {
+                            <a href="@Url.Action("Delete", new { id = i.TeamId })" title="@ViewResource.Global_HplDeleteTitle_Text"><span class="lbt-icon30-delete"></span></a>                            
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @using (Html.BeginForm("Index", "Team", FormMethod.Get))
+    {
+        @Html.Partial("_PagingPartial", new PagingPartialModelView{SectionId = "Paging2", List = Model})
+    }
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplCreateTitle_Text, "Create")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

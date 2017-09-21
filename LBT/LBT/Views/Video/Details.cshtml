@@ -1,0 +1,71 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.VideoDetails
+
+@{
+    ViewBag.Title = ViewResource.Video_Details_Title_Text;
+}
+
+<fieldset>
+    <legend>@ViewResource.Video_Form_Legend_Text</legend>
+    <ol>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.Title):</b>
+            @Html.DisplayFor(m => m.Title)
+        </li>
+        <li style="text-align: center;">
+            <video width="800" controls="true" autoplay preload="false">
+                <source src="@Model.VideoUrl" type="@Model.VideoContentType">
+                Your browser does not support HTML5 video.
+            </video>
+        </li>
+        <li>
+            <b>@FieldResource.Video_Duration_Name:</b>
+            @Html.DisplayFor(m => m.VideoDuration)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.EmailSubject):</b>
+            @Html.DisplayFor(m => m.EmailSubject)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.EmailBody):</b><br />
+            <span class="rawHtml">@Html.DisplayFor(m => m.EmailBody)</span>
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.EmailSenderBody):</b><br />
+            <span class="rawHtml">@Html.DisplayFor(m => m.EmailSenderBody)</span>
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.VideoUsers):</b><br />
+            @if(Model.AllUsers)
+            {
+                @ViewResource.Video_Details_AllUsers_Text
+            }
+            else if(!Model.VideoUsers.Any())
+            {
+                @ViewResource.Global_NoRecord_Text
+            }
+
+            @foreach(var i in Model.VideoUsers)
+            {
+                @i<br />
+            }
+        </li>
+    </ol>
+</fieldset>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(@ViewResource.Global_HplEditTitle_Text, "Edit", new { id = Model.VideoId })</li>
+                        <li>@Html.ActionLink(@ViewResource.Global_HplDeleteTitle_Text, "Delete", new { id = Model.VideoId })</li>
+                        <li>@Html.ActionLink(@ViewResource.Global_HplBackToVideoIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

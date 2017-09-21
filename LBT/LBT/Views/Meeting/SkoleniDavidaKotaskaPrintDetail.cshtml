@@ -1,0 +1,84 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resource
+@using LBT.Resources
+@model MeetingSkoleniDavidaKotaskaDetail
+
+@{
+    ViewBag.Title = ViewResource.Meeting_SkoleniDavidaKotaskaPrintDetail_Title_Text;
+}
+
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+@Html.Partial("_SkoleniDavidaKotaskaDetails")
+
+<h2>@ViewResource.Global_MeetingListAttendees_Text</h2>
+
+<section id="List">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_FirstName_Name
+                </th>
+                <th>
+                    @FieldResource.Global_LastName_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Residence_Name
+                </th>
+                <th>
+                    @FieldResource.Global_LyonessId_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_PaidAmmount_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Leader_Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.MeetingAttendees.Any())
+            {
+                <tr>
+                    <td colspan="6">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model.MeetingAttendees)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(mi => i.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LyonessId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.PaidAmmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Leader)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+<p>
+    @ViewBag.IsListCuttedMessage
+</p>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            window.print();
+        });
+    </script>
+}

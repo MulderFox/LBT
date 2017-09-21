@@ -1,0 +1,16 @@
+delete from MeetingAttendee;
+delete from Meeting;
+delete from TopTen;
+delete from BankAccountHistory;
+delete from BankAccount;
+delete from [Statistics];
+delete from SharedMSPContact;
+delete from SharedContact;
+delete from MSPContact;
+delete from PeopleContact;
+delete from webpages_Membership;
+delete from webpages_UsersInRoles;
+delete from webpages_Roles;
+delete from UserProfile;
+delete from PhoneNumberPrefix;
+delete from District;

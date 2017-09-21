@@ -1,0 +1,77 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resources
+@model PagedList.IPagedList<SharedContactsIndex>
+
+@{
+    ViewBag.Title = ViewResource.SharedContacts_Index_Title_Text;
+}
+
+@using (Html.BeginForm("Index", "SharedContacts", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { List = Model })    
+}
+
+<section id="SharedContacts">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_LyonessId_Name
+                </th>
+                <th>
+                    @FieldResource.Global_LastName_Name
+                </th>
+                <th>
+                    @FieldResource.Global_FirstName_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="4">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td class="item-title">
+                        @Html.DisplayFor(mi => i.ToUser.LyonessId)
+                    </td>
+                    <td class="item-title">
+                        @Html.DisplayFor(mi => i.ToUser.LastName)
+                    </td>
+                    <td class="item-title">
+                        @Html.DisplayFor(mi => i.ToUser.FirstName)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("Delete", new { id = i.SharedContactId })" title="@ViewResource.Global_BtnDeleteTitle_Text"><span class="lbt-icon30-delete"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@using (Html.BeginForm("Index", "SharedContacts", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { SectionId = "Paging2", List = Model })    
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplCreateSharedContactsTitle_Text, "Create")</li>
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToSharedContactIndex_Text, "Index", "PeopleContact")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

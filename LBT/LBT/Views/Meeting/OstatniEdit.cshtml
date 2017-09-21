@@ -1,0 +1,196 @@
+﻿@using LBT.Extensions
+@using LBT.Resources
+@model LBT.ModelViews.MeetingOstatniEdit
+
+@{
+    ViewBag.Title = ViewResource.Meeting_OstatniEdit_Title_Text;
+}
+
+<section id="createForm">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        @Html.HiddenFor(model => model.MeetingId)
+        @Html.HiddenFor(model => model.OrganizerId)
+
+        <fieldset>
+            <legend>@ViewResource.Meeting_Ostatni_Legend_Text</legend>
+            <table class="Main">
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="Box">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.MeetingTitleTypeId, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.DropDownList("MeetingTitleTypeId", ListItemsResource.MeetingTitleType_DropDownListTitle)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(m => m.Date, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.CalenderTextBoxFor(model => model.Date)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(model => model.StartTime, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.EditorFor(model => model.StartTime)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(model => model.FinishTime, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.EditorFor(model => model.FinishTime)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.City, new { @class = "required" }):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.EditorFor(model => model.City)
+                                        </td>
+                                        <th colspan="2">
+                                            @Html.LabelFor(m => m.MeetingKind, new { @class = "required" }):
+                                        </th>
+                                        <td colspan="2">
+                                            @ListItemsResource.MeetingKind_Public
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.AddressLine1, new { @class = "required" }):
+                                        </th>
+                                        <td colspan="7">
+                                            @Html.EditorFor(model => model.AddressLine1)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.Capacity, new { @class = "required" }):
+                                        </th>
+                                        <td colspan="7">
+                                            @Html.EditorFor(model => model.Capacity)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.BankAccountId):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.DropDownList("BankAccountId", ListItemsResource.BankAccount_DropDownListTitle)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(model => model.Price):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.EditorFor(model => model.Price)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.SecondBankAccountId):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.DropDownList("SecondBankAccountId", ListItemsResource.BankAccount_DropDownListTitle)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(model => model.SecondPrice):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.EditorFor(model => model.SecondPrice)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.Lecturer, new { @class = "required" }):
+                                        </th>
+                                        <td colspan="2">
+                                            @Html.EditorFor(model => model.Lecturer)
+                                        </td>
+                                        <th colspan="2">
+                                            @Html.LabelFor(model => model.RegisterDeadline):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.CalenderTextBoxFor(model => model.RegisterDeadline)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.MainLeaderId, new { @class = "required" }):
+                                        </th>
+                                        <td colspan="2">
+                                            @Html.DropDownList("MainLeaderId", ListItemsResource.MainLeader_DropDownListTitle)
+                                        </td>
+                                        <th colspan="2">
+                                            @Html.LabelFor(model => model.SecondaryLeaderId):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.DropDownList("SecondaryLeaderId", ListItemsResource.SecondaryLeader_DropDownListTitle)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.SecondaryOrganizerId):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.DropDownList("SecondaryOrganizerId", ListItemsResource.SecondaryOrganizer_DropDownListTitle)
+                                        </td>
+                                        <td colspan="4">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.Private):
+                                        </th>
+                                        <td colspan="7">
+                                            @Html.CheckBoxFor(model => model.Private)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.Note, new { @class = "required" }):<br />                                            
+                                        </th>
+                                        <td colspan="7">
+                                            @Html.TextAreaFor(model => model.Note, new { @rows = "10" })
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+        </fieldset>
+    }
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, "OstatniIndex")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            LBT.ApplyTinyMCE();
+        });
+    </script>
+}

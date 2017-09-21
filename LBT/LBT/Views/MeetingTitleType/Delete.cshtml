@@ -1,0 +1,56 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.MeetingTitleTypeDetails
+
+@{
+    ViewBag.Title = ViewResource.MeetingTitleType_Delete_Title_Text;
+}
+
+<p>@ViewResource.Global_DeleteConfirmationQuestion_Text</p>
+
+<section id="deleteForm">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+    
+        <fieldset>
+            <legend>@ViewResource.Global_MeetingTitleTypeLegend_Text</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Title)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MeetingTypeCzechText):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.MeetingTypeCzechText)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" autofocus value="@ViewResource.Global_BtnDeleteTitle_Text" />
+        </fieldset>
+    }
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToMeetingTitleTypeIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

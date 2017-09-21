@@ -1,0 +1,60 @@
+﻿@using LBT.ModelViews
+@using LBT.Resources
+@model ManualDashboard
+
+@{
+    ViewBag.Title = ViewResource.Home_Index_Title_Text;
+}
+
+<section id="manualTypes">
+    @foreach (ManualDashboard.ManualTypeItem manualTypeItem in Model.ManualTypeItems)
+    {
+        <div class="@manualTypeItem.CssClass">
+            <span class="ManualTypesTitle">@Html.ActionLink(manualTypeItem.ManualType.Title, "ManualsByType", "Manual", new { id = manualTypeItem.ManualType.Id }, null)</span>
+            <ul class="ManualTypesList">
+                @if (!manualTypeItem.Manuals.Any())
+                {
+                    <li><span class="ManualTypesManualTitle">@ViewResource.Global_NoRecord_Text</span></li>
+                }
+                @foreach (ManualDashboard.Manual manual in manualTypeItem.Manuals)
+                {
+                    <li><span class="ManualTypesManualTitle">@manual.Title</span>
+
+                        @if (manual.CanRead)
+                        {
+                            <a href="@Url.Action("PlayerToken", "Manual", new { token = manual.Token })" target="_blank" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                        }
+
+                        @if (manual.CanDownload)
+                        {
+                            <a href="@Url.Action("DownloadToken", "Manual", new { token = manual.Token })" title="@ViewResource.Global_HplSaveTitle_Text"><span class="lbt-icon30-save"></span></a>
+                        }
+                    </li>
+                }
+                @if (manualTypeItem.IsMore)
+                {
+                    <li><span class="ManualTypesManualTitle">. . .</span></li>
+                }
+            </ul>
+        </div>
+    }
+</section>
+
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        @foreach (ManualDashboard.ManualType manualType in Model.ManualTypes)
+                        {
+                            <li>@Html.ActionLink(manualType.Title, "ManualsByType", "Manual", new { id = manualType.Id }, null)</li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

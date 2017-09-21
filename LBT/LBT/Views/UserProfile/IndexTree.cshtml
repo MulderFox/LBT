@@ -1,0 +1,145 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resources
+@model PagedList.IPagedList<UserProfileIndexTree>
+
+@{
+    ViewBag.Title = ViewResource.UserProfile_IndexTree_Title_Text;
+}
+
+@using (Html.BeginForm("IndexTree", "UserProfile", FormMethod.Get))
+{
+    @Html.Partial("_FilteringPartial", new FilteringPartialModelView { ShowFiltering = false, ShowSwitchToIndex = true })
+
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { List = Model, ActionName = "IndexTree" })
+}
+
+<p class="message-success">@ViewBag.SuccessMessage</p>
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+<section id="UserProfiles">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_LastName_Name
+                </th>
+                <th>
+                    @FieldResource.Global_FirstName_Name
+                </th>
+                <th style="width: 100px;">
+                    @FieldResource.Global_City_Name
+                </th>
+                <th style="width: 100px;">
+                    @FieldResource.Global_LyonessId_Name
+                </th>
+                <th>
+                    @FieldResource.Global_PhoneNumber1_Name
+                </th>
+                <th>
+                    @FieldResource.Global_Email1_Name
+                </th>
+                <th>
+                    @FieldResource.Global_Role_Name
+                </th>
+                <th>
+                    @FieldResource.UserProfile_PeopleContactCount_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="8">@ViewResource.Global_NoRecord_Text.</td>
+                </tr>
+            }
+            @foreach (var i in Model)
+            {
+                <tr class="@i.FormattingClass">
+                    <td>
+                        @i.UserLevelView
+                        @Html.DisplayFor(mi => i.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.CityIndexView)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LyonessId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.PrimaryPhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Email1IndexView)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.RoleAcronym)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.PeopleContactCount)
+                    </td>
+                    <td class="buttons">
+                        @if (i.UserId != ViewBag.UserId && i.IsEditable)
+                        {
+                            <a href="@Url.Action("Edit", new { id = i.UserId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>                            
+                        }
+                        @if (i.UserId != ViewBag.UserId)
+                        {
+                            <a href="@Url.Action("Details", new { id = i.UserId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                        }
+                        @if (i.UserId != ViewBag.UserId && i.IsPromotable)
+                        {
+                            <a href="@Url.Action("Promote", new { id = i.UserId, returnUrl = "IndexTree" })" title="@ViewResource.Global_HplPromoteTitle_Text"><span class="lbt-icon30-promote"></span></a>
+                        }
+                        @if (i.UserId != ViewBag.UserId && ViewBag.IsAdmin)
+                        {
+                            <a href="@Url.Action("Delete", new { id = i.UserId })" title="@ViewResource.Global_HplDeleteTitle_Text"><span class="lbt-icon30-delete"></span></a>
+                        }
+                        @if (i.UserId != ViewBag.UserId && i.Active)
+                        {
+                            <a href="@Url.Action("Locked", new { id = i.UserId })" title="@ViewResource.UserProfile_HplLockTitle_Text"><span class="lbt-icon30-unlock"></span></a>
+                        }
+                        @if (i.UserId != ViewBag.UserId && !i.Active)
+                        {
+                            <a href="@Url.Action("Unlocked", new { id = i.UserId })" title="@ViewResource.UserProfile_HplUnlockTitle_Text"><span class="lbt-icon30-lock"></span></a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@using (Html.BeginForm("IndexTree", "UserProfile", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { SectionId = "Paging2", List = Model, ActionName = "IndexTree" })
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.UserProfile_HplRegisterAccountTitle_Text, "Register", "Account")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        function SwitchToIndex() {
+            var switchToUserProfileIndexTreeCookieKey = '@LBT.Helpers.Cookie.SwitchToUserProfileIndexTreeCookieKey';
+            var isDefaultView = false;
+            LBT.SwitchToIndexTree(switchToUserProfileIndexTreeCookieKey, isDefaultView);
+        }
+    </script>
+}

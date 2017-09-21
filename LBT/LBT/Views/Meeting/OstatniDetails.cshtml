@@ -1,0 +1,131 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resources
+@model MeetingOstatniDetail
+
+@{
+    ViewBag.Title = ViewResource.Meeting_OstatniDetails_Title_Text;
+}
+
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+@Html.Partial("_OstatniDetails")
+
+<h2>@ViewResource.Global_MeetingListAttendees_Text</h2>
+
+<section id="List">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_FirstName_Name
+                </th>
+                <th class="@ViewBag.LastNameSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_LastName_Name, "OstatniDetails", new { sortOrder = ViewBag.LastNameSortParam })
+                </th>
+                <th>
+                    @FieldResource.Meeting_Residence_Name
+                </th>
+                <th class="@ViewBag.LyonessIdSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_LyonessId_Name, "OstatniDetails", new { sortOrder = ViewBag.LyonessIdSortParam })
+                </th>
+                <th>
+                    @FieldResource.Meeting_PaidAmmount_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Leader_Name
+                </th>
+                <th>&nbsp;
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.MeetingAttendees.Any())
+            {
+                <tr>
+                    <td colspan="7">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model.MeetingAttendees)
+            {
+                <tr class="@i.FormattingClass">
+                    <td>
+                        @Html.DisplayFor(mi => i.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LyonessId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.PaidAmmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Leader)
+                    </td>
+                    <td class="buttons">
+                        @if (Model.AccessEdit)
+                        {
+                            <a href="@Url.Action("Edit", "MeetingAttendee", new { id = i.MeetingAttendeeId, returnController = "Meeting", returnAction = "OstatniDetails" })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                        }
+                        @if (i.AccessUnsign)
+                        {
+                            <a class="delete" href="@Url.Action("OstatniDeleteAttendee", new { id = i.MeetingAttendeeId })" title="@ViewResource.Global_HplDeleteTitle_Text"><span class="lbt-icon30-delete"></span></a>
+                        }
+                        @if (i.AccessLocking)
+                        {
+                            if (i.IsReservationLocked)
+                            {
+                            <a href="@Url.Action("OstatniUnlockAttendee", new { id = i.MeetingAttendeeId })" title="@ViewResource.Global_HplUnlockReservationTitle_Text"><span class="lbt-icon30-freeze"></span></a>                                 
+                            }
+                            else
+                            {
+                            <a href="@Url.Action("OstatniLockAttendee", new { id = i.MeetingAttendeeId })" title="@ViewResource.Global_HplLockReservationTitle_Text"><span class="lbt-icon30-freeze"></span></a>                                 
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        @if (Model.AccessSignUnsign)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Meeting_OstatniDetails_SignUnsignTitle_Text, "OstatniSignUnsign", new { id = Model.MeetingId })</li>       
+                            <li>@Html.ActionLink(ViewResource.Meeting_OstatniDetails_UserSignUnsignTitle_Text, "OstatniUserSignUnsign", new { id = Model.MeetingId })</li>                     
+                        }
+                        @if (Model.AccessEdit)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Global_HplEditTitle_Text, "OstatniEdit", new { id = Model.MeetingId })</li>                            
+                        }
+                        <li>@Html.ActionLink(ViewResource.Global_HplPrintAttendeesTitle_Text, "OstatniPrintDetail", new { id = Model.MeetingId, sortOrder = ViewBag.CurrentSort }, new { target = "_blank" })</li>
+                        @if (Model.AccessEdit)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Global_HplNotLinkedPaymentsTitle_Text, "Index", "BankAccountHistory", new { meetingId = Model.MeetingId }, null)</li>
+                        }
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, "OstatniIndex")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            LBT.ConfirmUnsignUser();
+        });
+    </script>
+}

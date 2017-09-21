@@ -1,0 +1,17 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.SignUnsignFilteringPartialModelView
+
+@foreach (string key in Model.RouteValueDictionary.Keys)
+{
+    <input type="hidden" name="@key" value="@Model.RouteValueDictionary[key]"/>
+}
+
+<section class="@Model.SectionClass">
+    <div class="float-left">
+        <div>
+            @ViewResource.Global_FilterForContactList_Text: @Html.DropDownList("SearchStringAccording") : @Html.TextBox("SearchString", ViewBag.CurrentFilter as String)
+            <input type="submit" value="@ViewResource.Global_HplSearchTitle_Text" style="font-size: 0.9em;" />
+        </div>
+    </div>
+    <div class="clear-fix"></div>
+</section>

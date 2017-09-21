@@ -1,0 +1,34 @@
+﻿@*@using LBT.Resource
+@model LBT.Models.SharedMSPContact
+
+@{
+    ViewBag.Title = "Vytvořit nové sdílení kontaktů MSP";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Sdílení kontaktů MSP</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ToUserId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ToUserId", ViewResource.UserDropDownListTitle)
+            @Html.ValidationMessageFor(model => model.ToUserId)
+        </div>
+
+        <p>
+            <input type="submit" value="Vytvořit" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Návrat na seznam sdílení kontaktů MSP", "Index")
+</div>*@

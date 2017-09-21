@@ -1,0 +1,29 @@
+﻿@using LBT.Extensions
+@using LBT.Resources
+@model LBT.Models.PeopleContactTask
+
+@{
+    ViewBag.Title = ViewResource.PeopleContact_EditTask_Title_Text;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>@ViewResource.PeopleContact_EditTask_Legend_Text</legend>
+
+        @Html.HiddenFor(model => model.FieldName)
+        @Html.HiddenFor(model => model.PeopleContactId)
+        @Html.HiddenFor(model => model.RegistrarId)
+
+        <ol>
+            <li>
+                @Html.DisplayFor(model => model.Text)<br />
+                <b>@ViewResource.PeopleContact_EditTask_Done_Text:</b> @Html.CalenderTextBoxFor(model => model.FieldValue)
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+    </fieldset>
+}

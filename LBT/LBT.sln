@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBT", "LBT\LBT.csproj", "{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{D03A9A73-FBD4-402A-8A1F-4BB127A74F42}"
+	ProjectSection(SolutionItems) = preProject
+		lib\ASPONE-binX.509-DER.cer = lib\ASPONE-binX.509-DER.cer
+		lib\ASPONE-PKCS.p7b = lib\ASPONE-PKCS.p7b
+		lib\ASPONE-X.509 base64.cer = lib\ASPONE-X.509 base64.cer
+		lib\Microsoft.Threading.Tasks.Extensions.Desktop.dll = lib\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBT.Tests", "LBT.Tests\LBT.Tests.csproj", "{6B666BA3-0253-425D-A442-FF45C244C298}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBT.HackingWeb", "LBT.HackingWeb\LBT.HackingWeb.csproj", "{01B9865F-C86A-4F68-A409-2E6F3AEE644F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Dev|Any CPU = Dev|Any CPU
+		Dev|x86 = Dev|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}.Debug|x86.ActiveCfg = Debug|x86
+		{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}.Debug|x86.Build.0 = Debug|x86
+		{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}.Dev|Any CPU.ActiveCfg = Dev|Any CPU
+		{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}.Dev|Any CPU.Build.0 = Dev|Any CPU
+		{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}.Dev|x86.ActiveCfg = Dev|Any CPU
+		{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}.Dev|x86.Build.0 = Dev|Any CPU
+		{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}.Release|x86.ActiveCfg = Release|Any CPU
+		{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}.Release|x86.Build.0 = Release|Any CPU
+		{6B666BA3-0253-425D-A442-FF45C244C298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B666BA3-0253-425D-A442-FF45C244C298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B666BA3-0253-425D-A442-FF45C244C298}.Debug|x86.ActiveCfg = Debug|x86
+		{6B666BA3-0253-425D-A442-FF45C244C298}.Debug|x86.Build.0 = Debug|x86
+		{6B666BA3-0253-425D-A442-FF45C244C298}.Dev|Any CPU.ActiveCfg = Dev|Any CPU
+		{6B666BA3-0253-425D-A442-FF45C244C298}.Dev|Any CPU.Build.0 = Dev|Any CPU
+		{6B666BA3-0253-425D-A442-FF45C244C298}.Dev|x86.ActiveCfg = Dev|Any CPU
+		{6B666BA3-0253-425D-A442-FF45C244C298}.Dev|x86.Build.0 = Dev|Any CPU
+		{6B666BA3-0253-425D-A442-FF45C244C298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B666BA3-0253-425D-A442-FF45C244C298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B666BA3-0253-425D-A442-FF45C244C298}.Release|x86.ActiveCfg = Release|Any CPU
+		{6B666BA3-0253-425D-A442-FF45C244C298}.Release|x86.Build.0 = Release|Any CPU
+		{01B9865F-C86A-4F68-A409-2E6F3AEE644F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01B9865F-C86A-4F68-A409-2E6F3AEE644F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01B9865F-C86A-4F68-A409-2E6F3AEE644F}.Debug|x86.ActiveCfg = Debug|x86
+		{01B9865F-C86A-4F68-A409-2E6F3AEE644F}.Debug|x86.Build.0 = Debug|x86
+		{01B9865F-C86A-4F68-A409-2E6F3AEE644F}.Dev|Any CPU.ActiveCfg = Dev|Any CPU
+		{01B9865F-C86A-4F68-A409-2E6F3AEE644F}.Dev|Any CPU.Build.0 = Dev|Any CPU
+		{01B9865F-C86A-4F68-A409-2E6F3AEE644F}.Dev|x86.ActiveCfg = Dev|Any CPU
+		{01B9865F-C86A-4F68-A409-2E6F3AEE644F}.Dev|x86.Build.0 = Dev|Any CPU
+		{01B9865F-C86A-4F68-A409-2E6F3AEE644F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01B9865F-C86A-4F68-A409-2E6F3AEE644F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01B9865F-C86A-4F68-A409-2E6F3AEE644F}.Release|x86.ActiveCfg = Release|Any CPU
+		{01B9865F-C86A-4F68-A409-2E6F3AEE644F}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

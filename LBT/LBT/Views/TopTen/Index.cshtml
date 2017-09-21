@@ -1,0 +1,108 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resources
+@model PagedList.IPagedList<TopTenIndex>
+
+@{
+    ViewBag.Title = ViewResource.TopTen_Index_Title_Text;
+}
+
+@using (Html.BeginForm("Index", "TopTen", FormMethod.Get))
+{
+    @Html.Partial("_FilteringPartial", new FilteringPartialModelView())
+
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { List = Model })
+}
+
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+<section id="TopTens">
+    <table>
+        <thead>
+            <tr>
+                <th class="@ViewBag.FirstNameSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_FirstName_Name, "Index", new { sortOrder = ViewBag.FirstNameSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.LastNameSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_LastName_Name, "Index", new { sortOrder = ViewBag.LastNameSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.StatusSortSymbol">
+                    @Html.ActionLink(FieldResource.TopTen_Status_Name, "Index", new { sortOrder = ViewBag.StatusSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.LastContactSortSymbol">
+                    @Html.ActionLink(FieldResource.TopTen_LastContact_Name, "Index", new { sortOrder = ViewBag.LastContactSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.ActualCareerStageSortSymbol">
+                    @Html.ActionLink(FieldResource.TopTen_ActualCareerStage_Name, "Index", new { sortOrder = ViewBag.ActualCareerStageSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.RoleSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_Role_Name, "Index", new { sortOrder = ViewBag.RoleSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.LyonessIdSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_LyonessId_Name, "Index", new { sortOrder = ViewBag.LyonessIdSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="8">@ViewResource.Global_NoRecord_Text.</td>
+                </tr>
+            }
+            @foreach (var i in Model)
+            {
+                <tr class="@i.FormattingClass">
+                    <td>
+                        @Html.DisplayFor(mi => i.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LastContact)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.ActualCareerStage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Role)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LyonessId)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("Edit", new { id = i.TopTenId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                        <a href="@Url.Action("Details", new { id = i.TopTenId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                        <a href="@Url.Action("Delete", new { id = i.TopTenId })" title="@ViewResource.Global_HplDeleteTitle_Text"><span class="lbt-icon30-delete"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@using (Html.BeginForm("Index", "TopTen", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { SectionId = "Paging2", List = Model })
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.TopTen_Index_HplCreateTopTenTitle_Text, "Create")</li>
+                        <li>@Html.ActionLink(ViewResource.Global_HplPrintUserIndexTitle_Text, "PrintIndex", new { sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId }, new { target = "_blank" })</li>
+                        <li>@Html.ActionLink(ViewResource.Global_HplExportTitle_Text, "Export")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

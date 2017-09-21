@@ -1,0 +1,11 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.ManualPlayer
+
+@{
+    ViewBag.Title = ViewResource.Manual_PlayerUnknown_Title_Text;
+}
+
+<h2 style="text-align: center;">@Html.DisplayFor(m => m.Title)</h2>
+<div class="error">
+    <p class="error">@ViewResource.Manual_PlayerUnknown_Message_Text</p>
+</div>

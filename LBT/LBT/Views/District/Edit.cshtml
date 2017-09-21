@@ -1,0 +1,39 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.DistrictEdit
+
+@{
+    ViewBag.Title = ViewResource.District_Edit_Title_Text;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(m => m.DistrictId)
+
+    <fieldset>
+        <legend>@ViewResource.District_Form_Legend_Text</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Title, new { @class = "required" })
+                @Html.EditorFor(m => m.Title)
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToDistrictIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,16 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.PageSizingPartialModelView
+
+@foreach (string key in Model.RouteValueDictionary.Keys)
+{
+    <input type="hidden" name="@key" value="@Model.RouteValueDictionary[key]"/>
+}
+
+<section class="@Model.SectionClass">
+        <div class="float-right">
+            <div>
+                @ViewResource.Global_PageCount_Text: @Html.DropDownList("PageSize", null, new { @onchange = "$('form#filter').submit();" })
+            </div>
+        </div>
+        <div class="clear-fix"></div>
+</section> 

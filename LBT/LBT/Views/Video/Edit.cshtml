@@ -1,0 +1,75 @@
+﻿@using LBT.Extensions
+@using LBT.Resources
+@model LBT.ModelViews.VideoEdit
+
+@{
+    ViewBag.Title = ViewResource.Video_Edit_Title_Text;
+}
+
+@using (Html.BeginForm("Edit", "Video", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary()
+    @Html.HiddenFor(m => m.VideoId)
+
+    <fieldset>
+        <legend>@ViewResource.Video_Form_Legend_Text</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Title, new { @class = "required" })
+                @Html.EditorFor(m => m.Title)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.File)
+                @Html.TextBoxFor(m => m.File, new { type = "file", accept = Model.AcceptedExtensions, @style = "width: 700px;" })<br />
+                @Html.DisplayFor(m => m.RelativeFilePath)<br />
+                @Html.DisplayFor(m => m.VideoFileInfoText)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.EmailSubject, new { @class = "required" })
+                @Html.EditorFor(m => m.EmailSubject)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.EmailBody, new { @class = "required" })
+                @ViewResource.Video_EmailBodyHint_Text<br />
+                @Html.TextAreaFor(m => m.EmailBody, new { @rows = "10" })
+            </li>
+            <li>
+                @Html.LabelFor(m => m.EmailSenderBody, new { @class = "required" })
+                @ViewResource.Video_EmailSenderBodyHint_Text<br />
+                @Html.TextAreaFor(m => m.EmailSenderBody, new { @rows = "10" })
+            </li>
+            <li>
+                @Html.LabelFor(m => m.UserIds)
+                @Html.RadioButtonFor(m => m.AllUsers, true)
+                @Html.DisplayNameFor(m => m.AllUsers)<br />
+                @Html.RadioButtonFor(m => m.AllUsers, false)
+                @ViewResource.Video_UserIdsLabel_Text:<br />
+                @Html.MultiSelectBox("UserIds", new { id = "UserIdsMultiSelectBox", @style = "width: 350px;", size = "10" })
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToVideoIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            LBT.ApplyVideoUsers();
+        });
+    </script>
+}

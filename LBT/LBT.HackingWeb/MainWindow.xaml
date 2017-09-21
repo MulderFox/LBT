@@ -1,0 +1,20 @@
+﻿<Window x:Class="LBT.HackingWeb.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LBT.HackingWeb" Height="567" Width="525" MinWidth="525" MinHeight="464" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="URL:" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="34"/>
+        <TextBox x:Name="TxtUrl" Margin="78,10,10,0" TextWrapping="Wrap" ToolTip="Vložte URL" Height="23" VerticalAlignment="Top" Text="http://czechlyons.eu"/>
+        <Label Content="Login:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtLogin" Height="23" Margin="78,44,94,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="beda"/>
+        <CheckBox x:Name="CbxRandomizeUser" Content="Randomize" Margin="0,47,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="79"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtPassword" Height="23" Margin="78,75,94,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CbxRandomizePassword" Content="Randomize" Margin="0,78,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="79" IsChecked="True"/>
+        <Button x:Name="BtnHack" Content="Hack" Margin="0,107,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="BtnHack_Click"/>
+        <Label Content="Partial Result:" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtPartialResult" Margin="10,163,10,0" TextWrapping="Wrap" IsReadOnly="True" VerticalAlignment="Top" Height="37"/>
+        <Label Content="Result:" HorizontalAlignment="Left" Margin="10,205,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtResult" Margin="10,236,10,10" TextWrapping="Wrap" IsReadOnly="True" VerticalScrollBarVisibility="Visible"/>
+    </Grid>
+</Window>

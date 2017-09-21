@@ -1,0 +1,65 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.BankAccountDetails
+
+@{
+    ViewBag.Title = ViewResource.BankAccount_Details_Title_Text;
+}
+
+<fieldset>
+    <legend>@ViewResource.BankAccount_Form_Legend_Text</legend>
+    <ol>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.Title):</b>
+            @Html.DisplayFor(m => m.Title)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.Owner):</b>
+            @Html.DisplayFor(m => m.Owner)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.BankAccountTypeLocalizedText):</b>
+            @Html.DisplayFor(m => m.BankAccountTypeLocalizedText)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.AccountId):</b>
+            @Html.DisplayFor(m => m.AccountId)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.IBAN):</b>
+            @Html.DisplayFor(m => m.IBAN)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.SWIFT):</b>
+            @Html.DisplayFor(m => m.SWIFT)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.CurrencyType):</b>
+            @Html.DisplayFor(m => m.CurrencyType)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.Token):</b>
+            @Html.DisplayFor(m => m.Token)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.ValidTo):</b>
+            @Html.DisplayFor(m => m.ValidTo)
+        </li>
+    </ol>
+</fieldset>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(@ViewResource.Global_HplEditTitle_Text, "Edit", new { id = Model.BankAccountId })</li>
+                        <li>@Html.ActionLink(@ViewResource.Global_HplDeleteTitle_Text, "Delete", new { id = Model.BankAccountId })</li>
+                        <li>@Html.ActionLink(@ViewResource.Global_HplBackToBankAccountIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

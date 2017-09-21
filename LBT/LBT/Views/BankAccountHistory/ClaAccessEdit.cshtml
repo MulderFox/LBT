@@ -1,0 +1,75 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.BankAccountHistoryClaAccess
+
+@{
+    ViewBag.Title = ViewResource.BankAccountHistory_ClaAccessEdit_Title_Text;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(m => m.BankAccountHistoryId)
+
+    <fieldset>
+        <legend>@ViewResource.BankAccountHistory_FormAccess_Legend_Text</legend>
+        <ol>
+            <li>
+                <b>@Html.DisplayNameFor(m => m.Date):</b>
+                @Html.DisplayFor(m => m.Date)
+            </li>
+            <li>
+                <b>@Html.DisplayNameFor(m => m.BankAccount.BankAccountTypeLocalizedText):</b>
+                @Html.DisplayFor(m => m.BankAccount.BankAccountTypeLocalizedText)
+            </li>
+            <li>
+                <b>@Html.DisplayNameFor(m => m.BankAccount.Title):</b>
+                @Html.DisplayFor(m => m.BankAccount.Title)
+            </li>
+            <li>
+                <b>@Html.DisplayNameFor(m => m.BankAccount.Owner):</b>
+                @Html.DisplayFor(m => m.BankAccount.Owner)
+            </li>
+            <li>
+                <b>@Html.DisplayNameFor(m => m.Exchange):</b>
+                @Html.DisplayFor(m => m.Exchange) / @Html.DisplayFor(m => m.BankCode) (@Html.DisplayFor(m => m.BankName))
+            </li>
+            <li>
+                <b>@Html.DisplayNameFor(m => m.Ks):</b>
+                @Html.DisplayFor(m => m.Ks)
+            </li>
+            <li>
+                <b>@Html.LabelFor(m => m.Ss)</b>
+                @Html.EditorFor(m => m.Ss)
+            </li>
+            <li>
+                <b>@Html.LabelFor(m => m.Vs)</b>
+                @Html.EditorFor(m => m.Vs)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.AmmountView, new { @class = "required" })
+                @Html.EditorFor(m => m.AmmountView) @Html.DisplayFor(m => m.Currency)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Note)
+                @Html.TextAreaFor(m => m.Note)
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToBankAccountHistoryClaAccessIndex_Text, "ClaAccessIndex")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

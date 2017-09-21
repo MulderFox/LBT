@@ -1,0 +1,11 @@
+Vážení uživatelé CLA
+
+Od pondìlí 3.11.2014 pøicházejí další zásadní zmìny v CLA aplikaci.
+
+    1. Placené akce v CLA obsahují i povinnì specifický symbol, lidé na nìj nejsou zvyklí a zapomínají na nìj. Je nutné pøi platbách uvádìt i specifický symbol.
+    2. Je nová doména www.czechlyons.com – je už aktivní a pùvodní adresa lbt.aspone.cz je pøesmìrována na nový web. Nic ostatního se nemìní. Už to neoznamuje chybu certifikátu. Pro jistotu doporuèuji smazat historii v prohlížeèi, který si mùže pamatovat starou adresu ovìøování certifikátu.
+    3. Rezervace na placených akcích jsou pouze na 5 dnù a pøi nezaplacení dojde k odhlášení. V rezervaèním emailu toto od zítra bude uvedeno také.
+
+Tento email byl vygenerován automaticky a neodpovídejte na nìj.
+
+Hezký den Czech Lyons Tým

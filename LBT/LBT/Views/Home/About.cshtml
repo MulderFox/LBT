@@ -1,0 +1,13 @@
+﻿@using LBT.Resources
+
+@{
+    ViewBag.Title = ViewResource.Home_About_Title_Text;
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+<section>
+    @Html.Raw(ViewResource.Home_About_PageContent_Text)
+</section>

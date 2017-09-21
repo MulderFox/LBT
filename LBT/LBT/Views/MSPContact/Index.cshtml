@@ -1,0 +1,81 @@
+﻿@*@model PagedList.IPagedList<MSPContact>
+@using LBT.Resource
+@using PagedList.Mvc;
+@using LBT.Models;
+
+@{
+    ViewBag.Title = "Kontakty MSP";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Vytvořit nový", "Create") |  @Html.ActionLink("Nasdílet své kontakty MSP", "Index", "SharedMSPContacts")
+</p>
+
+@using (Html.BeginForm("Index", "MSPContact", FormMethod.Get))
+{
+    <p>
+        Filtr podle názvu společnosti:
+        <br />
+        @Html.TextBox("SearchString", ViewBag.CurrentFilter as String)
+        <input type="submit" value="Hledat" />
+    </p>
+    <p>
+        Kontakty uživatele: @Html.DropDownList("FilteredUserId", null, new { @onchange = "$(this).closest('form').submit();" })
+    </p>
+}
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayName(ViewResource.ICODisplayName)
+        </th>
+        <th>
+            @Html.ActionLink(ViewResource.CompanyNameDisplayName, "Index", new { sortOrder = ViewBag.CompanyNameSortParm, currentFilter = ViewBag.CurrentFilter, filteredUserId = ViewBag.SelectedFilteredUserId })
+        </th>
+        <th>
+            @Html.DisplayName(ViewResource.ContactDeadDisplayName)
+        </th>
+        <th>
+            @Html.DisplayName(ViewResource.MspActiveDisplayName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ICO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactDead)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MSPActive)
+            </td>
+            <td>
+                @if (ViewBag.IsRegistrar)
+                {
+                    @Html.ActionLink("Upravit", "Edit", new { id = item.MSPContactId })
+                    @: |
+                }
+                @Html.ActionLink("Detail", "Details", new { id = item.MSPContactId })
+                @if (ViewBag.IsRegistrar)
+                {
+                    @: |
+                    @Html.ActionLink("Smazat", "Delete", new { id = item.MSPContactId })
+                }
+            </td>
+        </tr>
+    }
+
+</table>
+
+Stránka @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber). z @Model.PageCount stránek.
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, filteredUserId = ViewBag.SelectedFilteredUserId }))*@

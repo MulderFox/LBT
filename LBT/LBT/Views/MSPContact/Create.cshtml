@@ -1,0 +1,145 @@
+﻿@*@model LBT.Models.MSPContact
+@using LBT.Extensions
+@using LBT.Resource
+@using LBT.Resources
+
+@{
+    ViewBag.Title = "Vytvořit kontakt MSP";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Kontakt MSP</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(model => model.ICO)
+                @Html.EditorFor(model => model.ICO)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.CompanyName)
+                @Html.EditorFor(model => model.CompanyName)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.ContactPerson)
+                @Html.EditorFor(model => model.ContactPerson)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.Address)
+                @Html.TextAreaFor(model => model.Address)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.DistrictId)
+                @Html.DropDownList("DistrictId", ViewResource.DistrictDropDownListTitle)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.PhoneNumberPrefix1Id)
+                @Html.DropDownList("PhoneNumberPrefix1Id")
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.PhoneNumber1)
+                @Html.EditorFor(model => model.PhoneNumber1)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.PhoneNumberPrefix2Id)
+                @Html.DropDownList("PhoneNumberPrefix2Id", ListItemsResource.PhoneNumberPrefix2Id_DropDownListTitle)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.PhoneNumber2)
+                @Html.EditorFor(model => model.PhoneNumber2)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.Email1)
+                @Html.EditorFor(model => model.Email1)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.Email2)
+                @Html.EditorFor(model => model.Email2)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.FirstContacted)
+                @Html.CalenderTextBoxFor(model => model.FirstContacted)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.Presented)
+                @Html.CalenderTextBoxFor(model => model.Presented)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.BusinessInfoParticipated)
+                @Html.CalenderTextBoxFor(model => model.BusinessInfoParticipated)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.BusinessInfoLocation)
+                @Html.TextAreaFor(model => model.BusinessInfoLocation)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.TeamMeetingParticipated)
+                @Html.CalenderTextBoxFor(model => model.TeamMeetingParticipated)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.TeamMeetingLocation)
+                @Html.TextAreaFor(model => model.TeamMeetingLocation)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.Registrated)
+                @Html.CalenderTextBoxFor(model => model.Registrated)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.PremiumMembershipGranted)
+                @Html.CalenderTextBoxFor(model => model.PremiumMembershipGranted)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.Potential)
+                @Html.EditorFor(model => model.Potential)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.MobileApplicationInstalledAndTrained)
+                @Html.EditorFor(model => model.MobileApplicationInstalledAndTrained)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.ContactDead)
+                @Html.EditorFor(model => model.ContactDead)
+            </li>
+
+            <li>
+                @Html.LabelFor(model => model.MSPActive)
+                @Html.EditorFor(model => model.MSPActive)
+            </li>
+        </ol>
+        <input type="submit" value="Vytvořit" />
+    </fieldset>
+}
+
+<section id="ControlPanel">
+    <p>
+        <a href="@Url.Action("Index")" title="Návrat na seznam kontaktů MSP"><span class="lbt-icon30-back"></span></a>
+    </p>
+</section>*@

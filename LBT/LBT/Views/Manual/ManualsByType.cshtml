@@ -1,0 +1,74 @@
+﻿@using LBT.ModelViews
+@using LBT.Resources
+@model ManualsByTypeIndex
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+@using (Html.BeginForm("ManualsByType", "Manual", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { List = Model.Manuals })
+}
+
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+<section class="List">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_Title_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Manuals.Any())
+            {
+                <tr>
+                    <td colspan="2">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model.Manuals)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(mi => i.Title)
+                    </td>
+                    <td class="buttons">
+                        @if (i.CanRead)
+                        {
+                            <a href="@Url.Action("PlayerToken", new { token = i.Token })" target="_blank" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                        }
+
+                        @if (i.CanDownload)
+                        {
+                            <a href="@Url.Action("DownloadToken", new { token = i.Token })" title="@ViewResource.Global_HplSaveTitle_Text"><span class="lbt-icon30-save"></span></a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @using (Html.BeginForm("ManualsByType", "Manual", FormMethod.Get))
+    {
+        @Html.Partial("_PagingPartial", new PagingPartialModelView { SectionId = "Paging2", List = Model.Manuals })
+    }
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToHomeIndex_Text, "Index", "Home")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

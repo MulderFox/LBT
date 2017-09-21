@@ -1,0 +1,169 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.CheckPolicies
+
+@{
+    ViewBag.Title = ViewResource.Account_CheckPolicies_Title_Text;
+}
+
+<p>
+    @Html.Raw(ViewResource.Account_CheckPolicies_Message_Text)
+</p>
+
+<h1>@ViewResource.Account_CheckPolicies_PersonalDataTitle_Text</h1>
+
+<section id="detailAdvancedForm">
+    <table class="Main">
+        <tbody>
+            <tr>
+                <td colspan="2" class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    @Html.DisplayNameFor(m => m.UserProfile.UserName):
+                                    <b>@Html.DisplayFor(m => m.UserProfile.UserName)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.UserProfile.Role):
+                                    <b>@Html.DisplayFor(m => m.UserProfile.Role)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 1.5em; font-weight: bold;" colspan="2">
+                                    @Html.DisplayFor(m => m.UserProfile.Title)
+                                    @Html.DisplayFor(m => m.UserProfile.LastName)
+                                    @Html.DisplayFor(m => m.UserProfile.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.UserProfile.LyonessId):
+                                    <b>@Html.DisplayFor(m => m.UserProfile.LyonessId)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    @Html.DisplayNameFor(m => m.UserProfile.City):
+                                    <b>@Html.DisplayFor(m => m.UserProfile.City)</b>
+                                </td>
+                                <td style="width: 30%">
+                                    @Html.DisplayNameFor(m => m.UserProfile.District):
+                                    <b>@Html.DisplayFor(m => m.UserProfile.District.Title)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.UserProfile.LastAccessed):
+                                    <b>@Html.DisplayFor(m => m.UserProfile.LastAccessed)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="title">@ViewResource.Global_ContactsTitle_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.UserProfile.PhoneNumber1):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.UserProfile.PhoneNumberPrefix1.Title) @Html.DisplayFor(m => m.UserProfile.PhoneNumber1)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.UserProfile.PhoneNumber2):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.UserProfile.PhoneNumberPrefix2.Title) @Html.DisplayFor(m => m.UserProfile.PhoneNumber2)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.UserProfile.Email1):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.UserProfile.Email1)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.UserProfile.Email2):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.UserProfile.Email2)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.UserProfile.Skype):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.UserProfile.Skype)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="title">@ViewResource.Global_BillingInformationTitle_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="rawHtml">@Html.Raw(Model.UserProfile.BillingInformation)</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+@using (Html.BeginForm("CheckIsPoliciesAccepted", "Account"))
+{
+    @Html.AntiForgeryToken()
+
+    <section id="confirmPolicies">
+        <fieldset>
+            <legend>@ViewResource.Account_CheckPolicies_PrivacyAgreementLegend_Text</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>@Html.LabelFor(m => m.ConfirmTermsAndConditions, new { @class = "required" })</th>
+                        <td>@Html.CheckBoxFor(m => m.ConfirmTermsAndConditions, new { @class = "ConfirmTermsAndConditions" })</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.LabelFor(m => m.ConfirmPersonalData, new { @class = "required" })</th>
+                        <td>@Html.CheckBoxFor(m => m.ConfirmPersonalData, new { @class = "ConfirmPersonalData" })</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.LabelFor(m => m.ConfirmContacts, new { @class = "required" })</th>
+                        <td>@Html.CheckBoxFor(m => m.ConfirmContacts, new { @class = "ConfirmContacts" })</td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" id="iNext" value="@ViewResource.Global_BtnContinueTitle_Text" />
+        </fieldset>
+    </section>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            $("#iNext").click(function () {
+                return LBT.CheckPrivacy(".ConfirmTermsAndConditions", ".ConfirmPersonalData", ".ConfirmContacts", "@Html.Raw(ValidationResource.Account_CheckPolicies_NotCompletePrivacy_ErrorMessage)");
+            });
+        });
+    </script>
+}

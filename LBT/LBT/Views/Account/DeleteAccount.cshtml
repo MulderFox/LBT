@@ -1,0 +1,41 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.CheckPolicies
+
+@{
+    ViewBag.Title = ViewResource.Account_DeleteAccount_Title_Text;
+}
+
+<p>
+    @Html.Raw(ViewResource.Account_DeleteAccount_ConfirmMessage_Text)
+</p>
+
+@using (Html.BeginForm("CheckIsPoliciesAccepted", "Account"))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.ViewData)
+
+    <section id="confirmPolicies">
+        <fieldset>
+            <legend>@ViewResource.Account_DeleteAccount_Legend_Text</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>@Html.LabelFor(m => m.ConfirmDeleteAccount, new { @class = "required" })</th>
+                        <td>@Html.CheckBoxFor(m => m.ConfirmDeleteAccount, new { @class = "ConfirmDeleteAccount" })</td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" id="iNext" value="@ViewResource.Global_BtnContinueTitle_Text" />
+        </fieldset>
+    </section>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            $("#iNext").click(function () {
+                return LBT.CheckDeleteAccount(".ConfirmDeleteAccount", "@Html.Raw(ViewResource.Account_DeleteAccount_ConfirmDeleteAccountQuestion_Text)");
+            });
+        });
+    </script>
+}

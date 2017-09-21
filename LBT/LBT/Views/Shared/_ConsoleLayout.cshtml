@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - CLA</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/PagedList")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="body">
+        <section class="content-wrapper-print main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper-print clear-fix">
+            <div class="float-left">
+                <p>CLA &copy; @DateTime.Now.Year Zdeněk Mikeska</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

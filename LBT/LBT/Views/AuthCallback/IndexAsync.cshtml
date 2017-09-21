@@ -1,0 +1,9 @@
+﻿@using LBT.Resources
+
+@{
+    ViewBag.Title = ViewResource.AuthCallback_IndexAsync_Title_Text;
+}
+
+<div>
+    @Html.Raw(String.Format(ViewResource.AuthCallback_IndexAsync_Message_Text, ViewBag.Error ?? String.Empty))
+</div>

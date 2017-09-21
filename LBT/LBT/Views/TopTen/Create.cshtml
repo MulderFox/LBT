@@ -1,0 +1,49 @@
+﻿@using LBT.Extensions
+@using LBT.Resources
+@model LBT.ModelViews.TopTenEdit
+
+@{
+    ViewBag.Title = ViewResource.TopTen_Create_Title_Text;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>@ViewResource.TopTen_Legend_Text</legend>
+
+        <ol>
+            <li>
+                @Html.LabelFor(model => model.ToUserId, new { @class = "required" })
+                @Html.DropDownList("ToUserId", ListItemsResource.UserProfile_DropDownListTitle)
+            </li>
+            <li>
+                @Html.LabelFor(model => model.Status, new { @class = "required" })
+                @Html.DropDownList("Status", ListItemsResource.Status_DropDownListTitle)
+            </li>
+            <li>
+                @Html.LabelFor(model => model.LastContact, new { @class = "required" })
+                @Html.CalenderTextBoxFor(model => model.LastContact)
+            </li>
+        </ol>
+
+        <input type="submit" value="@ViewResource.Global_BtnCreateTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToTopTenIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

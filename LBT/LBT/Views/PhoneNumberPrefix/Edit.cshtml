@@ -1,0 +1,51 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.PhoneNumberPrefixEdit
+
+@{
+    ViewBag.Title = ViewResource.PhoneNumberPrefix_Edit_Title_Text;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.PhoneNumberPrefixId)
+
+    <fieldset>
+        <legend>@ViewResource.PhoneNumberPrefix_Legend_Text</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(model => model.Title, new { @class = "required" })
+                @Html.EditorFor(model => model.Title)
+            </li>
+            <li>
+                @Html.LabelFor(model => model.MatchRegex)
+                @Html.EditorFor(model => model.MatchRegex)
+            </li>
+            <li>
+                @Html.LabelFor(model => model.ReplaceRegex)
+                @Html.EditorFor(model => model.ReplaceRegex)
+            </li>
+            <li>
+                @Html.LabelFor(model => model.ExportablePrefix)
+                @Html.EditorFor(model => model.ExportablePrefix)
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToPhoneNumberPrefixIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

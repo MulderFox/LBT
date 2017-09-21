@@ -1,0 +1,20 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.FilteringPartialModelView
+
+@foreach (string key in Model.RouteValueDictionary.Keys)
+{
+    <input type="hidden" name="@key" value="@Model.RouteValueDictionary[key]"/>
+}
+
+<section id="@Model.SectionId">
+    <div class="float-left">
+        @ViewResource.Global_FilterBy_Text @Html.DropDownList("SearchStringAccording") : @Html.TextBox("SearchString", ViewBag.CurrentFilter as String)
+        <input type="submit" value="@ViewResource.Global_HplSearchTitle_Text" style="font-size: 0.9em;" />
+    </div>
+    <div class="float-right">
+        <div>
+            @ViewResource.Global_FilterByUser_Text: @Html.DropDownList("FilteredUserId", null, new { @onchange = "$(this).closest('form').submit();" })
+        </div>
+    </div>
+    <div class="clear-fix"></div>
+</section>

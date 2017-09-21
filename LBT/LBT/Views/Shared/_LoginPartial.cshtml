@@ -1,0 +1,15 @@
+﻿@using LBT.Resources
+
+@if (Request.IsAuthenticated) {
+    <text>
+        @ViewResource.Global_Welcome_Text, @Html.ActionLink(User.Identity.Name, "Settings", "Account", null, new { @class = "username", title = "Spravovat" })!
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">@ViewResource.Global_Logout_Text</a>
+        }
+    </text>
+} else {
+    <ul>
+        <li>@Html.ActionLink(ViewResource.Global_HplLoginTitle_Text, "Login", "Account", null, new { id = "loginLink" })</li>
+    </ul>
+}

@@ -1,0 +1,48 @@
+﻿@using LBT.Resources
+@model LBT.Models.Currency
+
+@{
+    ViewBag.Title = ViewResource.Currency_Delete_Title_Text;
+}
+
+<p>@ViewResource.Global_DeleteConfirmationQuestion_Text</p>
+
+<section id="deleteForm">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+    
+        <fieldset>
+            <legend>@ViewResource.Currency_Form_Legend_Text</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(m => m.CurrencyType):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(m => m.CurrencyType)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" autofocus value="@ViewResource.Global_BtnDeleteTitle_Text" />
+        </fieldset>
+    }
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToCurrencyIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

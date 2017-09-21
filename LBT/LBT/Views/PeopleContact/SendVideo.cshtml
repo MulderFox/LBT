@@ -1,0 +1,44 @@
+﻿@using LBT.ModelViews
+@using LBT.Resources
+@model PeopleContactSendVideo
+
+@{
+    ViewBag.Title = ViewResource.PeopleContact_SendVideo_Title_Text;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.PeopleContactId)
+
+    <fieldset>
+        <legend>@ViewResource.Global_SendVideoLegend_Text</legend>
+        <ol>
+            <li>
+                <b>@Html.DisplayNameFor(m => m.FullName):</b>
+                @Html.DisplayFor(m => m.FullName)
+            </li>
+            <li>
+                @Html.LabelFor(model => model.VideoId, new { @class = "required" })
+                @Html.DropDownList("VideoId", ListItemsResource.Video_DropDownListTitle)
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnSendTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, "Details", new { id = Model.PeopleContactId })</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

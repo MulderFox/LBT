@@ -1,0 +1,61 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.ManualEdit
+
+@{
+    ViewBag.Title = ViewResource.Manual_Edit_Title_Text;
+}
+
+@using (Html.BeginForm("Edit", "Manual", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(m => m.ManualId)
+
+    <fieldset>
+        <legend>@ViewResource.Manual_Form_Legend_Text</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Title, new { @class = "required" })
+                @Html.EditorFor(m => m.Title)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ManualTypeId, new { @class = "required" })
+                @Html.DropDownList("ManualTypeId", ListItemsResource.ManualType_DropDownListTitle)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.File, new { @class = "required" })
+                @Html.TextBoxFor(m => m.File, new { type = "file", accept = Model.AcceptedExtensions, @style = "width: 700px;" })<br />
+                @Html.DisplayFor(m => m.RelativeFilePath)<br />
+                @Html.DisplayFor(m => m.ManualFileInfoText)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Order, new { @class = "required" })
+                @Html.EditorFor(m => m.Order)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.IsDownloadable)
+                @Html.EditorFor(m => m.IsDownloadable)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.IsAccessForAuthGuest)
+                @Html.EditorFor(m => m.IsAccessForAuthGuest)
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToManualIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

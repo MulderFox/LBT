@@ -1,0 +1,83 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.MeetingAttendeeDetails
+
+@{
+    ViewBag.Title = ViewResource.MeetingAttendee_Details_Title_Text;
+}
+
+<section id="detailAdvancedForm">
+    <table class="Main">
+        <tbody>
+            <tr>
+                <td class="Box-last">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @FieldResource.Global_FirstName_Name:
+                                    <b>@if (Model.AttendeeId.HasValue)
+                                       {
+                                           @Html.DisplayFor(model => model.Attendee.FirstName)
+@:
+                                           @Html.DisplayFor(model => model.Attendee.LastName)
+                                       }
+                                       else
+                                       {
+                                           @Html.DisplayFor(model => model.UserAttendee.FirstName)
+@:
+                                           @Html.DisplayFor(model => model.UserAttendee.LastName)
+                                       }</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @FieldResource.Global_LyonessId_Name:
+                                    <b>@(Model.AttendeeId.HasValue ? Html.DisplayFor(model => model.Attendee.LyonessId) : Html.DisplayFor(model => model.UserAttendee.LyonessId))</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <dl>
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.BankAccountHistoryNote):
+                                        </dt>
+                                        <dd>
+                                            @Html.DisplayFor(model => model.BankAccountHistoryNote)
+                                        </dd>
+                                    </dl>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <dl>
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.Note):
+                                        </dt>
+                                        <dd>
+                                            <div class="rawHtml">@Html.Raw(Model.Note)</div>
+                                        </dd>
+                                    </dl>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, (string)ViewBag.ReturnAction, (string)ViewBag.ReturnController, new { id = ViewBag.ActionId }, null)</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

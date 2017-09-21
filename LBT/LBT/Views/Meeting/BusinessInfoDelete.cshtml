@@ -1,0 +1,56 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.MeetingBusinessInfoEdit
+
+@{
+    ViewBag.Title = @ViewResource.Meeting_BusinessInfoDelete_Title_Text;
+}
+
+<p>@ViewResource.Global_DeleteConfirmationQuestion_Text</p>
+
+<section id="deleteForm">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+    
+        <fieldset>
+            <legend>@ViewResource.Meeting_BusinessInfo_Legend_Text</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(m => m.City):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(m => m.City)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(m => m.Date):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(m => m.Date)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" autofocus value="@ViewResource.Global_BtnDeleteTitle_Text" />
+        </fieldset>
+    }
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, "BusinessInfoIndex")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

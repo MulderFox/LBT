@@ -1,0 +1,526 @@
+﻿@using LBT.Extensions
+@using LBT.ModelViews
+@using LBT.Models
+@using LBT.Resources
+@model PeopleContactEdit
+
+@{
+    ViewBag.Title = ViewResource.PeopleContact_Edit_Title_Text;
+}
+
+<section id="createForm">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        @Html.HiddenFor(model => model.PeopleContactId)
+        @Html.HiddenFor(model => model.RegistrarId)
+        @Html.HiddenFor(model => model.Created)
+        @Html.HiddenFor(model => model.WorkflowState)
+
+        <fieldset>
+            <legend>@ViewResource.Global_UserLegend_Text</legend>
+            <table class="Main">
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="Box">
+                            <table class="PeopleContactEditFields">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <label>@Html.DisplayNameFor(model => model.Title),</label>
+                                            <label class="required">@Html.DisplayNameFor(model => model.LastName), @Html.DisplayNameFor(model => model.FirstName):</label>
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.TextBoxFor(model => model.Title, new { style = "width: 100px;" })
+                                            @Html.TextBoxFor(model => model.LastName, new { style = "width: 200px;" })
+                                            @Html.TextBoxFor(model => model.FirstName, new { style = "width: 200px;" })
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(model => model.Potential):
+                                        </th>
+                                        <td>
+                                            @Html.EditorFor(model => model.Potential)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.City, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(model => model.City)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(model => model.DistrictId, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.DropDownList("DistrictId", ListItemsResource.District_DropDownListTitle)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(model => model.ContactDead):
+                                        </th>
+                                        <td>
+                                            @Html.EditorFor(model => model.ContactDead)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="Box">
+                            <table class="PeopleContactEditFields">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="6">
+                                            <span class="title">@ViewResource.Global_ContactsTitle_Text:</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.PhoneNumber1):
+                                        </th>
+                                        <td>
+                                            @Html.DropDownList("PhoneNumberPrefix1Id")
+                                            @Html.TextBoxFor(model => model.PhoneNumber1, new { style = "width:100px;" })
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(model => model.Email1):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(model => model.Email1)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(model => model.Skype):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(model => model.Skype)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.PhoneNumber2):
+                                        </th>
+                                        <td>
+                                            @Html.DropDownList("PhoneNumberPrefix2Id", ListItemsResource.PhoneNumberPrefix2Id_DropDownListTitle)
+                                            @Html.TextBoxFor(model => model.PhoneNumber2, new { style = "width:100px;" })
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(model => model.Email2):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.TextBoxFor(model => model.Email2)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="BoxStatus" colspan="2">
+                            <table id="confirmPolicies">
+                                <tbody>
+                                    <tr>
+                                        <th>@Html.LabelFor(m => m.ConfirmTermsAndConditions, new { @class = "required" })</th>
+                                        <td>@Html.CheckBoxFor(m => m.ConfirmTermsAndConditions, new { @class = "ConfirmTermsAndConditions" })</td>
+                                    </tr>
+                                    <tr>
+                                        <th>@Html.LabelFor(m => m.ConfirmPersonalData, new { @class = "required" })</th>
+                                        <td>@Html.CheckBoxFor(m => m.ConfirmPersonalData, new { @class = "ConfirmPersonalData" })</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="BoxStatus">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="4">
+                                            <span class="title">@ViewResource.PeopleContact_WorkflowTitle_Text:
+                                                @if (Model.WorkflowState == WorkflowState.Stopped)
+                                                {
+                                                    @ViewResource.PeopleContact_WorkflowStopped_Text
+                                                }
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.FirstContacted):
+                                        </th>
+                                        <td>
+                                            @switch (Model.WorkflowState)
+                                            {
+                                                case WorkflowState.Idle:
+                                                    @Html.CalenderTextBoxFor(model => model.FirstContacted)
+                                                    break;
+
+                                                case WorkflowState.Stopped:
+                                                    <b>@Html.DisplayFor(model => model.FirstContacted)</b>
+                                                    @Html.HiddenFor(model => model.FirstContacted)
+                                                    break;
+
+                                                default:
+                                                    <b>@Html.DisplayFor(model => model.FirstContacted)</b> <a href="@Url.Action("EditFirstContacted", new { id = Model.PeopleContactId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                                                    @Html.HiddenFor(model => model.FirstContacted)
+                                                    break;
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.Presented):
+                                        </th>
+                                        <td>
+                                            @switch (Model.WorkflowState)
+                                            {
+                                                case WorkflowState.Idle:
+                                                    @Html.CalenderTextBoxFor(model => model.Presented)
+                                                    break;
+
+                                                case WorkflowState.Stopped:
+                                                    <b>@Html.DisplayFor(model => model.Presented)</b>
+                                                    @Html.HiddenFor(model => model.Presented)
+                                                    break;
+
+                                                default:
+                                                    <b>@Html.DisplayFor(model => model.Presented)</b> <a href="@Url.Action("EditPresented", new { id = Model.PeopleContactId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                                                    @Html.HiddenFor(model => model.Presented)
+                                                    break;
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.TrackingEmailSent):
+                                        </th>
+                                        <td>
+                                            @switch (Model.WorkflowState)
+                                            {
+                                                case WorkflowState.Idle:
+                                                case WorkflowState.Stopped:
+                                                    <b>@Html.DisplayFor(model => model.TrackingEmailSent)</b> 
+                                                    @Html.HiddenFor(model => model.TrackingEmailSent)
+                                                    break;
+
+                                                case WorkflowState.Finished:
+                                                    <b>@Html.DisplayFor(model => model.TrackingEmailSent)</b> <a href="@Url.Action("EditTrackingEmailSent", new { id = Model.PeopleContactId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                                                    @Html.HiddenFor(model => model.TrackingEmailSent)
+                                                    break;
+
+                                                default:
+                                                    @Html.EditorFor(model => model.TrackingEmailSent)
+                                                    break;
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.SecondContacted):
+                                        </th>
+                                        <td>
+                                            @switch (Model.WorkflowState)
+                                            {
+                                                case WorkflowState.Presented:
+                                                case WorkflowState.BusinessInfoParticipated:
+                                                    @Html.CalenderTextBoxFor(model => model.SecondContacted)
+                                                    break;
+
+                                                case WorkflowState.Idle:
+                                                case WorkflowState.Stopped:
+                                                    <b>@Html.DisplayFor(model => model.SecondContacted)</b>
+                                                    @Html.HiddenFor(model => model.SecondContacted)
+                                                    break;
+
+                                                default:
+                                                    <b>@Html.DisplayFor(model => model.SecondContacted)</b> <a href="@Url.Action("EditSecondContacted", new { id = Model.PeopleContactId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                                                    @Html.HiddenFor(model => model.SecondContacted)
+                                                    break;
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.SecondMeeting):
+                                        </th>
+                                        <td>
+                                            @switch (Model.WorkflowState)
+                                            {
+                                                case WorkflowState.SecondContacted:
+                                                case WorkflowState.SecondContactedAndBusinessInfoParticipated:
+                                                    @Html.CalenderTextBoxFor(model => model.SecondMeeting)
+                                                    break;
+
+                                                case WorkflowState.Idle:
+                                                case WorkflowState.Presented:
+                                                case WorkflowState.BusinessInfoParticipated:
+                                                case WorkflowState.Stopped:
+                                                    <b>@Html.DisplayFor(model => model.SecondMeeting)</b>
+                                                    @Html.HiddenFor(model => model.SecondMeeting)
+                                                    break;
+
+                                                default:
+                                                    <b>@Html.DisplayFor(model => model.SecondMeeting)</b> <a href="@Url.Action("EditSecondMeeting", new { id = Model.PeopleContactId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                                                    @Html.HiddenFor(model => model.SecondMeeting)
+                                                    break;
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.SecondTrackingEmailSent):
+                                        </th>
+                                        <td>
+                                            @switch (Model.WorkflowState)
+                                            {
+                                                case WorkflowState.Idle:
+                                                case WorkflowState.Presented:
+                                                case WorkflowState.Stopped:
+                                                    <b>@Html.DisplayFor(model => model.SecondTrackingEmailSent)</b>
+                                                    @Html.HiddenFor(model => model.SecondTrackingEmailSent)
+                                                    break;
+
+                                                case WorkflowState.Finished:
+                                                    <b>@Html.DisplayFor(model => model.SecondTrackingEmailSent)</b> <a href="@Url.Action("EditSecondTrackingEmailSent", new { id = Model.PeopleContactId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                                                    @Html.HiddenFor(model => model.SecondTrackingEmailSent)
+                                                    break;
+
+                                                default:
+                                                    @Html.EditorFor(model => model.SecondTrackingEmailSent)
+                                                    break;
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.BusinessInfoParticipated):
+                                        </th>
+                                        <td>
+                                            @switch (Model.WorkflowState)
+                                            {
+                                                case WorkflowState.Presented:
+                                                case WorkflowState.SecondContacted:
+                                                    @Html.CalenderTextBoxFor(model => model.BusinessInfoParticipated)
+                                                    break;
+
+                                                case WorkflowState.Idle:
+                                                case WorkflowState.Stopped:
+                                                    <b>@Html.DisplayFor(model => model.BusinessInfoParticipated)</b>
+                                                    @Html.HiddenFor(model => model.BusinessInfoParticipated)
+                                                    break;
+
+                                                default:
+                                                    <b>@Html.DisplayFor(model => model.BusinessInfoParticipated)</b> <a href="@Url.Action("EditBusinessInfoParticipated", new { id = Model.PeopleContactId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                                                    @Html.HiddenFor(model => model.BusinessInfoParticipated)
+                                                    break;
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.ThirdMeeting):
+                                        </th>
+                                        <td>
+                                            @switch (Model.WorkflowState)
+                                            {
+                                                case WorkflowState.BusinessInfoParticipated:
+                                                case WorkflowState.SecondContactedAndBusinessInfoParticipated:
+                                                    @Html.CalenderTextBoxFor(model => model.ThirdMeeting)
+                                                    break;
+
+                                                case WorkflowState.Idle:
+                                                case WorkflowState.Presented:
+                                                case WorkflowState.SecondContacted:
+                                                case WorkflowState.Stopped:
+                                                    <b>@Html.DisplayFor(model => model.ThirdMeeting)</b>
+                                                    @Html.HiddenFor(model => model.ThirdMeeting)
+                                                    break;
+
+                                                default:
+                                                    <b>@Html.DisplayFor(model => model.ThirdMeeting)</b> <a href="@Url.Action("EditThirdMeeting", new { id = Model.PeopleContactId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                                                    @Html.HiddenFor(model => model.ThirdMeeting)
+                                                    break;
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.TeamMeetingParticipated):
+                                        </th>
+                                        <td>
+                                            @switch (Model.WorkflowState)
+                                            {
+                                                case WorkflowState.Stopped:
+                                                    <b>@Html.DisplayFor(model => model.TeamMeetingParticipated)</b>
+                                                    @Html.HiddenFor(model => model.TeamMeetingParticipated)
+                                                    break;
+
+                                                default:
+                                                    @Html.CalenderTextBoxFor(model => model.TeamMeetingParticipated)
+                                                    break;
+                                            }
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="BoxStatus">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="4">
+                                            <span class="title">@ViewResource.Global_StatusTitle_Text:</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.Registrated):
+                                        </th>
+                                        <td>
+                                            @Html.CalenderTextBoxFor(model => model.Registrated)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.LyonessId):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(model => model.LyonessId, new { style = "width: 200px;" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.PremiumMembershipGranted):
+                                        </th>
+                                        <td>
+                                            @Html.CalenderTextBoxFor(model => model.PremiumMembershipGranted)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.AccessGranted):
+                                        </th>
+                                        <td>
+                                            @Html.CalenderTextBoxFor(model => model.AccessGranted)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.MoneyToPurchaseAccountSended):
+                                        </th>
+                                        <td>
+                                            @Html.EditorFor(model => model.MoneyToPurchaseAccountSended)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.MobileApplicationInstalledAndTrained):
+                                        </th>
+                                        <td>
+                                            @Html.EditorFor(model => model.MobileApplicationInstalledAndTrained)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.LoyaltySystemExplained):
+                                        </th>
+                                        <td>
+                                            @Html.EditorFor(model => model.LoyaltySystemExplained)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.AbleToPurchase):
+                                        </th>
+                                        <td>
+                                            @Html.EditorFor(model => model.AbleToPurchase)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.AutoCashback):
+                                        </th>
+                                        <td>
+                                            @Html.EditorFor(model => model.AutoCashback)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.ShoppingPlanBackSet):
+                                        </th>
+                                        <td>
+                                            @Html.EditorFor(model => model.ShoppingPlanBackSet)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(model => model.OwnUnitsContained):
+                                        </th>
+                                        <td>
+                                            @Html.EditorFor(model => model.OwnUnitsContained)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="BoxStatus-last">
+                            @Html.LabelFor(model => model.Tasks):<br />
+                            @Html.TextAreaFor(model => model.Tasks, new { @rows = "10" })
+                        </td>
+                        <td class="BoxStatus-last">
+                            @Html.LabelFor(model => model.Note):<br />
+                            @Html.TextAreaFor(model => model.Note, new { @rows = "10" })
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+        </fieldset>
+    }
+</section>
+
+<div id="popup">
+    <span class="button b-close"><span>X</span></span>
+    <div class="content"></div>
+</div>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToPeopleContactIndex_Text, "Index")</li>
+                        @if (Model.WorkflowState != WorkflowState.Stopped)
+                        {
+                            <li><a href="#" onclick="javascript: StopWorkflow(@Model.PeopleContactId); return false;">@ViewResource.PeopleContact_HplStopWorkflowTitle_Text</a></li>          
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink(ViewResource.PeopleContact_HplStartWorkflowTitle_Text, "StartWorkflow", new { id = Model.PeopleContactId })</li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            LBT.ApplyTinyMCE();
+            LBT.ApplyPeopleContactEditFieldEvents();
+        });
+        function StopWorkflow(id) {
+            var url = '@Url.Action("StopWorkflow")' + "?id=" + id;
+            var onCloseUrl = '@Url.Action("Index", "Task")';
+            LBT.StopWorkflow(url, onCloseUrl);
+        }
+    </script>
+}

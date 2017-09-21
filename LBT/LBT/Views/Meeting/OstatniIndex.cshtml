@@ -1,0 +1,137 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resources
+@model PagedList.IPagedList<MeetingOstatniIndex>
+
+@{
+    ViewBag.Title = ViewResource.Meeting_OstatniIndex_Title_Text;
+}
+
+@using (Html.BeginForm("OstatniIndex", "Meeting", FormMethod.Get))
+{
+    @Html.Partial("_FilteringPartial", new FilteringPartialModelView())
+
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { ActionName = "OstatniIndex", List = Model })
+}
+
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+<section id="List">
+    <table>
+        <thead>
+            <tr>
+                <th class="@ViewBag.MeetingTitleTypeSortSymbol">
+                    @Html.ActionLink(FieldResource.Meeting_Type_Name, "OstatniIndex", new { sortOrder = ViewBag.MeetingTitleTypeSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.CitySortSymbol">
+                    @Html.ActionLink(FieldResource.Global_City_Name, "OstatniIndex", new { sortOrder = ViewBag.CitySortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.DateSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_Date_Name, "OstatniIndex", new { sortOrder = ViewBag.DateSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th>
+                    @FieldResource.Meeting_Day_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Time_Name
+                </th>
+                <th class="@ViewBag.AddressLine1SortSymbol">
+                    @Html.ActionLink(FieldResource.Meeting_AddressLine1_Name, "OstatniIndex", new { sortOrder = ViewBag.AddressLine1SortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.OrganizerSortSymbol">
+                    @Html.ActionLink(FieldResource.Meeting_Organizer_Name, "OstatniIndex", new { sortOrder = ViewBag.OrganizerSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th>
+                    @FieldResource.Meeting_Price_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_FreeCapacity_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Lecturer_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="11">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(mi => i.MeetingTitleType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Day)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Street)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Organizer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.FreeCapacity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Lecturer)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("OstatniDetails", new { id = i.MeetingId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                        @if (i.Access == Access.Write)
+                        {
+                            <a href="@Url.Action("OstatniEdit", new { id = i.MeetingId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                            <a href="@Url.Action("OstatniDelete", new { id = i.MeetingId })" title="@ViewResource.Global_HplDeleteTitle_Text"><span class="lbt-icon30-delete"></span></a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@using (Html.BeginForm("OstatniIndex", "Meeting", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { SectionId = "Paging2", ActionName = "OstatniIndex", List = Model })
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplCreateMeetingTitle_Text, "OstatniCreate")</li>
+                        @if (ViewBag.ShowShowAll)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Global_HplShowAllMeetingsTitle_Text, "OstatniIndex", new { showAll = true })</li>
+                        }
+                        @if (ViewBag.ShowAvailable)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Global_HplShowAvailableMeetingsTitle_Text, "OstatniIndex", new { showAll = false })</li>
+                        }
+                        <li>@Html.ActionLink(ViewResource.Global_HplPrintListTitle_Text, "OstatniPrintIndex", new { showAll = ViewBag.IsShowAll, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording }, new { target = "_blank" })</li>
+                        <li>@Html.ActionLink(ViewResource.Global_HplMeetingArchiveTitle_Text, "OstatniArchiveIndex")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

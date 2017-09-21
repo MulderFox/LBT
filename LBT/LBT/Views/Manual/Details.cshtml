@@ -1,0 +1,52 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.ManualDetail
+
+@{
+    ViewBag.Title = ViewResource.Manual_Details_Title_Text;
+}
+
+<fieldset>
+    <legend>@ViewResource.Manual_Form_Legend_Text</legend>
+    <ol>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.Title):</b>
+            @Html.DisplayFor(m => m.Title)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.ManualTypeTitle):</b>
+            @Html.DisplayFor(m => m.ManualTypeTitle)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.Order):</b>
+            @Html.DisplayFor(m => m.Order)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.IsDownloadable)</b>
+            @Html.DisplayFor(m => m.IsDownloadable)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(m => m.IsAccessForAuthGuest)</b>
+            @Html.DisplayFor(m => m.IsAccessForAuthGuest)
+        </li>
+        <li style="margin-top: 1em;">
+            <a href="@Model.Url" target="_blank" title="@ViewResource.Manual_Details_PlayerUrl_Text">@ViewResource.Manual_Details_PlayerUrl_Text</a>
+        </li>
+    </ol>
+</fieldset>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(@ViewResource.Global_HplEditTitle_Text, "Edit", new { id = Model.ManualId })</li>
+                        <li>@Html.ActionLink(@ViewResource.Global_HplDeleteTitle_Text, "Delete", new { id = Model.ManualId })</li>
+                        <li>@Html.ActionLink(@ViewResource.Global_HplBackToManualIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

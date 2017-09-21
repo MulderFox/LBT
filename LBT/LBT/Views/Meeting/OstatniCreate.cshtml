@@ -1,0 +1,181 @@
+﻿@using LBT.Extensions
+@using LBT.Resources
+@model LBT.ModelViews.MeetingOstatniEdit
+
+@{
+    ViewBag.Title = ViewResource.Meeting_OstatniCreate_Title_Text;
+}
+
+<section id="createForm">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <fieldset>
+            <legend>@ViewResource.Meeting_Ostatni_Legend_Text</legend>
+            <table class="Main">
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="Box-last">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.MeetingTitleTypeId, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.DropDownList("MeetingTitleTypeId", ListItemsResource.MeetingTitleType_DropDownListTitle)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(m => m.Date, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.CalenderTextBoxFor(m => m.Date)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(m => m.StartTime, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.EditorFor(m => m.StartTime)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(m => m.FinishTime, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.EditorFor(m => m.FinishTime)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.City, new { @class = "required" }):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.EditorFor(m => m.City)
+                                        </td>
+                                        <th colspan="2">
+                                            @Html.LabelFor(m => m.MeetingKind, new { @class = "required" }):
+                                        </th>
+                                        <td colspan="2">@ListItemsResource.MeetingKind_Public
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.AddressLine1, new { @class = "required" }):
+                                        </th>
+                                        <td colspan="7">
+                                            @Html.EditorFor(m => m.AddressLine1)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.Capacity, new { @class = "required" }):
+                                        </th>
+                                        <td colspan="7">
+                                            @Html.EditorFor(m => m.Capacity)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.BankAccountId):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.DropDownList("BankAccountId", ListItemsResource.BankAccount_DropDownListTitle)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(model => model.Price):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.EditorFor(model => model.Price)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(model => model.SecondBankAccountId):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.DropDownList("SecondBankAccountId", ListItemsResource.BankAccount_DropDownListTitle)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(model => model.SecondPrice):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.EditorFor(model => model.SecondPrice)
+                                        </td>
+                                    </tr><tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.Lecturer, new { @class = "required" }):
+                                        </th>
+                                        <td colspan="2">
+                                            @Html.EditorFor(m => m.Lecturer)
+                                        </td>
+                                        <th colspan="2">
+                                            @Html.LabelFor(m => m.RegisterDeadline):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.CalenderTextBoxFor(m => m.RegisterDeadline)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.MainLeaderId, new { @class = "required" }):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.DropDownList("MainLeaderId", ListItemsResource.MainLeader_DropDownListTitle)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(m => m.SecondaryLeaderId):
+                                        </th>
+                                        <td colspan="3">
+                                            @Html.DropDownList("SecondaryLeaderId", ListItemsResource.SecondaryLeader_DropDownListTitle)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.Private):
+                                        </th>
+                                        <td colspan="7">
+                                            @Html.CheckBoxFor(m => m.Private)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.Note, new { @class = "required" }):<br />                                            
+                                        </th>
+                                        <td colspan="7">
+                                            @Html.TextAreaFor(m => m.Note, new { @rows = "10" })
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+        </fieldset>
+    }
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, "OstatniIndex")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            LBT.ApplyTinyMCE();
+        });
+    </script>
+}

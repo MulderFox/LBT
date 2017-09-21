@@ -1,0 +1,18 @@
+﻿@using PagedList.Mvc;
+@using LBT.Resources
+@model LBT.ModelViews.SignUnsignPagingPartialModelView
+
+@foreach (string key in Model.RouteValueDictionary.Keys)
+{
+    <input type="hidden" name="@key" value="@Model.RouteValueDictionary[key]"/>
+}
+
+<section class="@Model.SectionClass">
+    <div class="float-left">
+        @Html.PagedListPager(Model.List, pagerPage => Url.Action(Model.ActionName, Model.GetRouteValueDictionary(pagerPage, ViewBag.CurrentPage ?? 1, ViewBag.CurrentSort, ViewBag.PageSizeCount, ViewBag.CurrentFilter, ViewBag.CurrentFilterAccording, ViewBag.SignedCurrentSort, ViewBag.CurrentSignedPage ?? 1)))
+    </div>
+    <div class="float-left center">
+        @String.Format(ViewResource.Global_PageSummary_Text, Model.Page, Model.PageCount, Model.TotalItemCount)
+    </div>
+    <div class="clear-fix"></div>
+</section>

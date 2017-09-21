@@ -1,0 +1,36 @@
+﻿@using LBT.Resources
+
+@{
+    ViewBag.Title = ViewResource.PeopleContact_ImportSummary_Title_Text;
+}
+
+@if(ViewBag.Success)
+{
+    <p class="message-success">
+        @ViewResource.PeopleContact_ImportSummary_SuccessImport_Text
+    </p>
+}
+else
+{
+    <p class="message-error">
+        @ViewResource.PeopleContact_ImportSummary_UnsuccessImport_Text
+    </p>
+}
+
+<pre style="overflow-x: auto;">@ViewBag.Message</pre>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, "Import")</li>
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToPeopleContactIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

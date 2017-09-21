@@ -1,0 +1,91 @@
+﻿@using LBT.ModelViews
+@using LBT.Resources
+@model PagedList.IPagedList<BankAccountHistoryIndex>
+
+@{
+    ViewBag.Title = ViewResource.BankAccountHistory_Index_Title_Text;
+}
+
+@using (Html.BeginForm("Index", "BankAccountHistory", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { List = Model, RouteValues = new { meetingId = ViewBag.MeetingId } })
+}
+
+<section id="Classification">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_Date_Name
+                </th>
+                <th>
+                    @FieldResource.BankAccount_BankAccountType_Name
+                </th>
+                <th>
+                    @FieldResource.BankAccountHistory_Ss_Name
+                </th>
+                <th>
+                    @FieldResource.BankAccountHistory_Vs_Name
+                </th>
+                <th>
+                    @FieldResource.BankAccountHistory_Ammount_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="6">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td class="item-title">
+                        @Html.DisplayFor(m => i.Date)
+                    </td>
+                    <td class="item-title">
+                        @Html.DisplayFor(m => i.BankAccount.BankAccountTypeLocalizedAcronym)
+                    </td>
+                    <td class="item-title">
+                        @Html.DisplayFor(m => i.Ss)
+                    </td>
+                    <td class="item-title">
+                        @Html.DisplayFor(m => i.Vs)
+                    </td>
+                    <td class="item-title">
+                        @Html.DisplayFor(m => i.Ammount) @Html.DisplayFor(m => i.Currency)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("Edit", new { id = i.BankAccountHistoryId, meetingId = ViewBag.MeetingId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                        <a href="@Url.Action("Details", new { id = i.BankAccountHistoryId, meetingId = ViewBag.MeetingId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                        <a href="@Url.Action("Delete", new { id = i.BankAccountHistoryId, meetingId = ViewBag.MeetingId })" title="@ViewResource.Global_HplDeleteTitle_Text"><span class="lbt-icon30-delete"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@using (Html.BeginForm("Index", "BankAccountHistory", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { SectionId = "Paging2", List = Model, RouteValues = new { meetingId = ViewBag.MeetingId } })
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.BankAccountHistory_Index_HplMeetingDetailsTitle_Text, (string)ViewBag.MeetingAction, "Meeting", new { id = ViewBag.MeetingId }, null)</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+

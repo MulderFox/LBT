@@ -1,0 +1,99 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resources
+@model MeetingMspEveningDetail
+
+<section id="detailAdvancedForm">
+    <table class="Main MspEveningFormatting">
+        <tbody>
+            <tr>
+                <td class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.MeetingType):
+                                    <b>@ListItemsResource.MeetingType_MspEvening</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.Date):
+                                    <b>@Html.DisplayFor(m => m.Date)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.StartTime):
+                                    <b>@Html.DisplayFor(m => m.StartTime)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.FinishTime):
+                                    <b>@Html.DisplayFor(m => m.FinishTime)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    @Html.DisplayNameFor(m => m.City):
+                                    <b>@Html.DisplayFor(m => m.City)</b>
+                                </td>
+                                <td colspan="2">
+                                    @Html.DisplayNameFor(m => m.MeetingKind):
+                                    <b>@ListItemsResource.MeetingKind_MSP</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    @Html.DisplayNameFor(m => m.AddressLine1):
+                                    <b>@Html.DisplayFor(m => m.AddressLine1)</b>
+                                </td>
+                                <td colspan="2">
+                                    @Html.DisplayNameFor(m => m.Organizer):
+                                    <b>@Html.DisplayFor(m => m.Organizer)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.FreeCapacity):
+                                    <b>@Html.DisplayFor(m => m.FreeCapacity)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.Capacity):
+                                    <b>@Html.DisplayFor(m => m.Capacity)</b>
+                                </td>
+                                <td colspan="2">
+                                    @Html.DisplayNameFor(m => m.MainLeader):
+                                    <b>@Html.DisplayFor(m => m.MainLeader)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    &nbsp;
+                                </td>
+                                <td colspan="2">
+                                    @Html.DisplayNameFor(m => m.SecondaryLeader):
+                                    <b>@Html.DisplayFor(m => m.SecondaryLeader)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="Box BoxLongText">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b>@Html.DisplayNameFor(m => m.Lecturer):</b>
+                                    @Html.DisplayFor(m => m.Lecturer)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>@Html.DisplayNameFor(m => m.Note):</b>
+                                    <div class="rawHtml">@Html.Raw(Model.Note)</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

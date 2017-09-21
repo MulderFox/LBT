@@ -1,0 +1,396 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Invoice</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        div.PdfMain {
+            font-family: Verdana;
+            font-size: 10pt;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 571pt;
+        }
+
+        .PdfMain table {
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        .PdfMain thead {
+            display: table-header-group;
+        }
+
+        .PdfMain th {
+            font-weight: normal;
+            text-align: left;
+        }
+
+        .PdfMain tr {
+            vertical-align: top;
+        }
+        
+        table.body {
+            border: solid black 1px;
+            height: 807pt;
+        }
+
+        table.body td {
+            padding: 0.5em 1em;
+        }
+        
+        .Company {
+            font-size: 11pt;
+            font-weight: bold;
+        }
+        
+        .InvoiceNumber {
+            font-size: 11pt;
+            font-weight: bold;
+            text-align: right;
+        }
+        
+        .ContractorCell {
+            border-right: solid black 1px;
+            width: 50%;
+        }
+        
+        .Contractor, .CustomerLabel, .AccountNumberLabel {
+            font-size: 9pt;
+        }
+        
+        .ContractorAddress {
+            white-space: pre;
+            padding-top: 0.5em;
+            padding-bottom: 1em;
+            font-weight: bold;
+        }
+        
+        .AccountInfo {
+            height: 46pt;
+            line-height: 1.5em;
+        }
+        
+        .VS, .KS {
+            display: block;
+            float: right;
+            padding-right: 1em;
+        }
+        
+        .Order {
+            display: block;
+            float: right;
+            padding-right: 6em;
+        }
+        
+        .CustomerCell {
+            border-top: solid black 3px;
+            border-right: solid black 2px;
+            border-left: solid black 2px;
+            height: 120pt;
+        }
+        
+        .CustomerIcDic {
+            display: block;
+            float: right;
+            padding-right: 9em;
+        }
+        
+        .CustomerAddress {
+            clear: both;
+            white-space: pre;
+            padding-top: 1.5em;
+            padding-bottom: 1em;
+            font-weight: bold;
+            height: 73pt;
+            overflow: hidden;
+            padding-left: 2em;
+        }
+        
+        .AccountCell {
+            height: 20pt;
+        }
+        
+        .AccountNumber {
+            border: solid black 3px;
+            border-right: solid black 1px;
+            width: 160pt;
+            text-align: right;
+            padding-top: 2pt !important;
+            padding-bottom: 2pt !important;
+        }
+        
+        .CustomerAddressBlankCell {
+            border-right: solid black 2px;
+            border-bottom: solid black 3px;
+            border-left: solid black 2px;
+            padding: 0;
+        }
+        
+        .DateRow {
+            height: 70pt;
+        }
+        
+        .DateCell {
+            padding-top: 1em;
+            border-right: solid black 1px;
+            border-bottom: solid black 1px;
+        }
+        
+        .DateBlock {
+            float:left;
+            width: 164pt;
+        }
+        
+        .DateValueBlock {
+            float:left;
+        }
+        
+        .DateValueFirstLine {
+            width: 60pt;
+            border: solid black 1px;
+            padding: 0 1em;
+            text-align: right;
+        }
+        
+        .DateValueSecondLine {
+            width: 60pt;
+            border: solid black 1px;
+            border-top: none;
+            padding: 0 1em;
+            text-align: right;
+        }
+        
+        .DateValueOtherLine {
+            width: 60pt;
+            padding: 0 1em;
+            text-align: right;
+        }
+        
+        .OtherCustomer {
+            font-size: 9pt;
+            border-bottom: solid black 1px;
+        }
+        
+        .HeaderRow {
+            height: 30pt;
+        }
+        
+        .OrderNote {
+            padding-top: 1em;
+            border-bottom: solid black 1px;
+        }
+        
+        .OrderPrice {
+            padding-top: 1em;
+            text-align: right;
+            border-bottom: solid black 1px;
+        }
+        
+        .NoteRow {
+            height: 44pt;
+        }
+        
+        .NoteCell {
+            padding-top: 1em;
+            font-size: 11pt;
+            border-bottom: solid black 1px;
+        }
+        
+        .PriceRow {
+            height: 28pt;
+        }
+        
+        .PriceSummary {
+            padding-top: 1em;
+        }
+        
+        .Price {
+            padding-top: 1em;
+            text-align: right;
+        }
+        
+        .TotalRow {
+            height: 26pt;
+        }
+        
+        .TotalCell {
+            font-size: 11pt;
+            font-weight: bold;
+            border-bottom: solid black 1px;
+        }
+        
+        .Total {
+            font-size: 11pt;
+            font-weight: bold;
+            text-align: right;
+            border-bottom: solid black 1px;
+        }
+        
+        .ExclamationRow {
+            height: 30pt;
+        }
+        
+        .ExclamationCell {
+            font-size: 11pt;
+        }
+        
+        .OtherNoteRow {
+            height: 233pt;
+        }
+        
+        .Issued {
+            float: left;
+        }
+        
+        .IssuedValue {
+            float: left;
+            font-size: 9pt;
+            padding-left: 1em;
+        }
+        
+        .Clearing {
+            clear: both;
+        }
+        
+        .NotifyRow {
+            height: 32pt;
+        }
+        
+        .NotifyCell {
+            font-size: 7pt;
+            white-space: pre-line;
+            border-bottom: solid black 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="PdfMain">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="Company">CL s.r.o.</td>
+                    <td class="InvoiceNumber">FAKTURA č. {InvoiceNumber}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="body">
+            <tbody>
+                <tr>
+                    <td class="ContractorCell" colspan="2" rowspan="2">
+                        <div class="Contractor">Dodavatel</div>
+                        <div class="ContractorAddress">CL s.r.o.
+Zlatnická 1127/4
+110 00 Praha 1</div>
+                        <div>IČ: 03979539</div>
+                        <div>DIČ: CZ03979539</div>
+                    </td>
+                    <td class="AccountInfo">
+                        <div>Variabilní symbol: <span class="VS">{VS}</span></div>
+                        <div>Konstantní symbol: <span class="KS">0308</span></div>
+                        <div>Objednávka č.:<span class="Order">ze dne:</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="CustomerCell">
+                        <div class="CustomerLabel">Odběratel<span class="CustomerIcDic">IČ: {ICO}<br />DIČ: {DIC}</span></div>
+                        <div class="CustomerAddress">{Address}</div>
+                    </td>
+                </tr>
+                <tr class="AccountCell">
+                    <td class="AccountNumberLabel">
+                        Číslo účtu:<br />
+                        IBAN:<br />
+                        SWIFT:
+                    </td>
+                    <td class="AccountNumber">
+                        {AccountId}<br />
+                        {IBAN}<br />
+                        {SWIFT}
+                    </td>
+                    <td class="CustomerAddressBlankCell">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr class="DateRow">
+                    <td colspan="2" class="DateCell">
+                        <div class="DateBlock">
+                            Datum vystavení:<br />
+                            Datum splatnosti:<br />
+                            Firma není plátce DPH.<br />
+                            Forma úhrady:
+                        </div>
+                        <div class="DateValueBlock">
+                            <div class="DateValueFirstLine">{Date}</div>
+                            <div class="DateValueSecondLine">{Date}</div>
+                            <div class="DateValueOtherLine">&nbsp;</div>
+                            <div class="DateValueOtherLine">Zálohou</div>
+                        </div>
+                    </td>
+                    <td class="OtherCustomer">
+                        Konečný příjemce:
+                    </td>
+                </tr>
+                <tr class="HeaderRow">
+                    <td colspan="2" class="OrderNote">
+                        Označení dodávky
+                    </td>
+                    <td class="OrderPrice">
+                        {Currency} Celkem
+                    </td>
+                </tr>
+                <tr class="NoteRow">
+                    <td colspan="3" class="NoteCell">
+                        Fakturujeme Vám roční poplatek za používání aplikace CL.
+                    </td>
+                </tr>
+                <tr class="PriceRow">
+                    <td colspan="2" class="PriceSummary">
+                        Celkem
+                    </td>
+                    <td class="Price">
+                        {Price},00
+                    </td>
+                </tr>
+                <tr class="TotalRow">
+                    <td colspan="2" class="TotalCell">
+                        CELKEM K ÚHRADĚ
+                    </td>
+                    <td class="Total">
+                        {Price},00
+                    </td>
+                </tr>
+                <tr class="ExclamationRow">
+                    <td colspan="3" class="ExclamationCell">
+                        NEPLAŤTE - faktura již uhrazena
+                    </td>
+                </tr>
+                <tr class="OtherNoteRow">
+                    <td colspan="3">
+                        <div class="Issued">Vystavil:</div>
+                        <div class="IssuedValue">CLA System<br />Czechlyons.office@gmail.com</div>
+                        <div class="Clearing"></div>
+                    </td>
+                </tr>
+                <tr class="NotifyRow">
+                    <td colspan="3" class="NotifyCell">
+                        Dovolujeme si Vás upozornit, že v případě nedodržení data splatnosti uvedeného na faktuře Vám budeme účtovat úrok z prodlení v dohodnuté, resp. zákonné výši a smluvní pokutu (byla-li sjednána).
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Převzal:
+                    </td>
+                    <td>
+                        Razítko:
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,270 @@
+﻿@using LBT.Extensions
+@using LBT.Resources
+@model LBT.ModelViews.Register
+
+@{
+    ViewBag.Title = @ViewResource.Account_Register_Title_Text;
+}
+
+<section id="createForm">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <fieldset>
+            <legend>@ViewResource.Global_UserLegend_Text</legend>
+            <table class="Main">
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="Box">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.UserName, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.UserName)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(m => m.LyonessId, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.LyonessId)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label>@Html.DisplayNameFor(m => m.Title),</label>
+                                            <label class="required">@Html.DisplayNameFor(m => m.LastName), @Html.DisplayNameFor(m => m.FirstName):</label>
+                                        </th>
+                                        <td colspan="2">
+                                            @Html.TextBoxFor(m => m.Title, new { style = "width: 100px;" })
+                                            @Html.TextBoxFor(m => m.LastName)
+                                            @Html.TextBoxFor(m => m.FirstName)
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.City, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.City)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(m => m.DistrictId, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.DropDownList("DistrictId", ListItemsResource.District_DropDownListTitle)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="Box">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="6">
+                                            <span class="title">@ViewResource.Global_ContactsTitle_Text:</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.PhoneNumber1, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.DropDownList("PhoneNumberPrefix1Id")
+                                            @Html.TextBoxFor(m => m.PhoneNumber1, new { style = "width:100px;" })
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(m => m.Email1, new { @class = "required" }):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.Email1)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(m => m.Skype):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.Skype)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.PhoneNumber2):
+                                        </th>
+                                        <td>
+                                            @Html.DropDownList("PhoneNumberPrefix2Id", ListItemsResource.PhoneNumberPrefix2Id_DropDownListTitle)
+                                            @Html.TextBoxFor(m => m.PhoneNumber2, new { style = "width:100px;" })
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(m => m.Email2):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.Email2)
+                                        </td>
+                                        <th>
+                                            @Html.LabelFor(m => m.SmsEmail):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.SmsEmail)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="Box">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3">
+                                            <span class="title">@ViewResource.Global_GoogleCalendarTitle_Text:</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.GoogleCredentialsJson):
+                                        </th>
+                                        <td colspan="2">
+                                            @Html.TextAreaFor(m => m.GoogleCredentialsJson, new { style = "width: 900px;" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.GoogleCalendarId):
+                                        </th>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.GoogleCalendarId)
+                                        </td>
+                                        <td>
+                                            <button type="button" onclick="ValidateGoogleCredentialsJson(); return false;">@ViewResource.Global_BtnValidateTitle_Text</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="Box">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="6">
+                                            <span class="title">@ViewResource.Global_ApplicationAccessTitle_Text:</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            @Html.LabelFor(m => m.CurrencyType, new { @class = "required" }):
+                                        </th>
+                                        <td colspan="5">
+                                            @Html.DropDownList("CurrencyType", ListItemsResource.CurrencyType_DropDownListTitle)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="BoxStatus">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="4">
+                                            <span class="title">@ViewResource.Global_StatusTitle_Text:</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(m => m.PremiumMembershipGranted):
+                                        </th>
+                                        <td>
+                                            @Html.CalenderTextBoxFor(m => m.PremiumMembershipGranted)
+                                        </td>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(m => m.MspCoach):
+                                        </th>
+                                        <td>
+                                            @Html.CheckBoxFor(m => m.MspCoach)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <td></td>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(m => m.Ca):
+                                        </th>
+                                        <td>
+                                            @Html.CheckBoxFor(m => m.Ca)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <td></td>
+                                        <th>
+                                            <span class="lbt-icon16-info"></span>&nbsp;@Html.LabelFor(m => m.Presenting):
+                                        </th>
+                                        <td>
+                                            @Html.CheckBoxFor(m => m.Presenting)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="BoxStatus-last">
+                            @Html.LabelFor(m => m.Tasks):<br />
+                            @Html.TextAreaFor(m => m.Tasks, new { @rows = "10" })
+                        </td>
+                        <td class="BoxStatus-last">
+                            @Html.LabelFor(m => m.Note):<br />
+                            @Html.TextAreaFor(m => m.Note, new { @rows = "10" })
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="@ViewResource.Global_BtnCreateTitle_Text" />
+        </fieldset>
+    }
+</section>
+
+@Html.Partial("_GoogleValidationPopupPartial")
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(@ViewResource.Global_HplBackToUserProfileIndex_Text, "Index", "UserProfile")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/tinymce")
+    <script type="text/javascript">
+        $(function () {
+            LBT.ApplyTinyMCE();
+        });
+
+        function ValidateGoogleCredentialsJson() {
+            var testGoogleCredentialsJsonCookieKey = "@LBT.Helpers.Cookie.TestGoogleCredentialsJsonCookieKey";
+            var testGoogleCalendarIdCookieKey = "@LBT.Helpers.Cookie.TestGoogleCalendarIdCookieKey";
+            var url = '@Url.Action("ValidateAsync", "UserProfile", new { startValidation = true })';
+            LBT.ValidateGoogleCredentialsJson(testGoogleCredentialsJsonCookieKey, testGoogleCalendarIdCookieKey, url);
+        }
+    </script>
+}

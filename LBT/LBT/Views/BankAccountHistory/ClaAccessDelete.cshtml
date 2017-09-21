@@ -1,0 +1,96 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.BankAccountHistoryClaAccess
+
+@{
+    ViewBag.Title = ViewResource.BankAccountHistory_ClaAccessDelete_Title_Text;
+}
+
+<p>@ViewResource.Global_DeleteConfirmationQuestion_Text</p>
+
+<section id="deleteForm">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+    
+        <fieldset>
+            <legend>@ViewResource.BankAccountHistory_FormAccess_Legend_Text</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(m => m.Date):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(m => m.Date)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(m => m.Ammount):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(m => m.Ammount) @Html.DisplayFor(m => m.Currency)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(m => m.Exchange):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(m => m.Exchange) / @Html.DisplayFor(m => m.BankCode) (@Html.DisplayFor(m => m.BankName))
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(m => m.Ks):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(m => m.Ks)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(m => m.Ss):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(m => m.Ss)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(m => m.Vs):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(m => m.Vs)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(m => m.Note):
+                        </th>
+                        <td>
+                            @Html.DisplayFor(m => m.Note)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" autofocus value="@ViewResource.Global_BtnDeleteTitle_Text" />
+        </fieldset>
+    }
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToBankAccountHistoryClaAccessIndex_Text, "ClaAccessIndex")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

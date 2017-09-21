@@ -1,0 +1,81 @@
+﻿@using LBT.ModelViews
+@using LBT.Resources
+@model SharedContactsCreate
+
+@{
+    ViewBag.Title = ViewResource.SharedContacts_Create_Title_Text;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    @Html.HiddenFor(model => model.ToUserId)
+
+    <fieldset>
+        <legend>@ViewResource.Global_SharedContactsLegend_Title</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(model => model.ToUserId, new { @class = "required" })
+            </li>
+            <li>
+                <dl>
+                    <dt>
+                        @Html.RadioButton("RadioToUserId", "RadioToUplineUserId", true)
+                        @ViewResource.SharedContacts_Create_ToUplineUser_Text:
+                    </dt>
+                    <dd>
+                        @Html.DropDownList("ToUplineUserId", ListItemsResource.UserProfile_DropDownListTitle)
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>
+                        @Html.RadioButton("RadioToUserId", "RadioToDownlineUserId")
+                        @ViewResource.SharedContact_Create_ToDownlineUser_Text:
+                    </dt>
+                    <dd>
+                        @Html.DropDownList("ToDownlineUserId", ListItemsResource.UserProfile_DropDownListTitle)
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>
+                        @Html.RadioButton("RadioToUserId", "RadioToAnyUserId")
+                        @ViewResource.SharedContact_Create_ToAnyUser_Text:
+                    </dt>
+                    <dd>
+                        @Html.DropDownList("ToAnyUserId", ListItemsResource.UserProfile_DropDownListTitle)
+                    </dd>
+                </dl>
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnCreateTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToSharedContactIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            LBT.ApplyCreateSharedContacts();
+        });
+    </script>
+}

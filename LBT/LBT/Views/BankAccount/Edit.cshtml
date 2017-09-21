@@ -1,0 +1,76 @@
+﻿@using LBT.Extensions
+@using LBT.Resources
+@model LBT.ModelViews.BankAccountEdit
+
+@{
+    ViewBag.Title = ViewResource.BankAccount_Edit_Title_Text;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(m => m.BankAccountId)
+
+    <fieldset>
+        <legend>@ViewResource.BankAccount_Form_Legend_Text</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Title, new { @class = "required" })
+                @Html.EditorFor(m => m.Title)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Owner, new { @class = "required" })
+                @Html.EditorFor(m => m.Owner)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.BankAccountType, new { @class = "required" })
+                @Html.DropDownList("BankAccountType", ListItemsResource.BankAccountType_DropDownListTitle)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.AccountId, new { @class = "required" })
+                @Html.EditorFor(m => m.AccountId)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.IBAN, new { @class = "required" })
+                @Html.TextBoxFor(m => m.IBAN, new { style = "width: 760px;" })
+            </li>
+            <li>
+                @Html.LabelFor(m => m.SWIFT, new { @class = "required" })
+                @Html.EditorFor(m => m.SWIFT)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.CurrencyType, new { @class = "required" })
+                @Html.DropDownList("CurrencyType", ListItemsResource.CurrencyType_DropDownListTitle)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Token, new { @class = "required" })
+                @Html.TextBoxFor(m => m.Token, new { style = "width: 300px;" })
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ValidTo, new { @class = "required" })
+                @Html.CalenderTextBoxFor(m => m.ValidTo)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.UserIds)
+                @Html.MultiSelectBox("UserIds", new {@style="width: 350px;", size="10"})
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToBankAccountIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,57 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.TeamDetails
+
+@{
+    ViewBag.Title = ViewResource.Team_Details_Title_Text;
+}
+
+<fieldset>
+    <legend>@ViewResource.Team_Legend_Text</legend>
+    <ol>
+        <li>
+            <b>@Html.DisplayNameFor(model => model.Title):</b>
+            @Html.DisplayFor(model => model.Title)
+        </li>
+        <li>
+            <b>@Html.DisplayNameFor(model => model.OwnerFullName):</b>
+            @Html.DisplayFor(model => model.OwnerFullName)
+        </li>
+    </ol>
+
+    <table class="Main">
+        <tbody>
+            <tr>
+                <td class="BoxStatus-last">
+                    @Html.DisplayNameFor(model => model.Task):<br />
+                    <div class="rawHtml">@Html.Raw(Model.Task)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="BoxStatus-last">
+                    @Html.DisplayNameFor(model => model.Note):<br />
+                    <div class="rawHtml">@Html.Raw(Model.Note)</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</fieldset>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        @if (Model.AllowEdit)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Global_HplEditTitle_Text, "Edit", new { id = Model.TeamId })</li>                            
+                            <li>@Html.ActionLink(ViewResource.Global_HplDeleteTitle_Text, "Delete", new { id = Model.TeamId })</li>
+                        }
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToTeamIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

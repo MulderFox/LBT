@@ -1,0 +1,1425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6061C50B-CFD3-4988-8BCD-5460CBBD1FF4}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LBT</RootNamespace>
+    <AssemblyName>LBT</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Glimpse.Ado">
+      <HintPath>..\packages\Glimpse.Ado.1.7.1\lib\net45\Glimpse.Ado.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.AspNet">
+      <HintPath>..\packages\Glimpse.AspNet.1.9.0\lib\net45\Glimpse.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Core">
+      <HintPath>..\packages\Glimpse.1.8.5\lib\net45\Glimpse.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.EF5">
+      <HintPath>..\packages\Glimpse.EF5.1.6.2\lib\net45\Glimpse.EF5.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Mvc4">
+      <HintPath>..\packages\Glimpse.Mvc4.1.5.3\lib\net40\Glimpse.Mvc4.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>..\packages\Google.Apis.1.7.0-beta\lib\net40\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth">
+      <HintPath>..\packages\Google.Apis.Auth.1.7.0-beta\lib\net40\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.Mvc4">
+      <HintPath>..\packages\Google.Apis.Auth.Mvc.1.7.0-beta\lib\net40\Google.Apis.Auth.Mvc4.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices">
+      <HintPath>..\packages\Google.Apis.Auth.1.7.0-beta\lib\net40\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Calendar.v3, Version=1.7.0.73, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.Calendar.v3.1.7.0.73-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.Calendar.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>..\packages\Google.Apis.Core.1.7.0-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices">
+      <HintPath>..\packages\Google.Apis.1.7.0-beta\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\net45\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\net45\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\lib\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MoreLinq, Version=1.1.17511.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\morelinq.1.1.0\lib\net35\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.18.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.18.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Zlib.Portable">
+      <HintPath>..\packages\Zlib.Portable.1.9.2\lib\portable-net4+sl4+wp71+win8\Zlib.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\ErrorConfig.cs" />
+    <Compile Include="Cache\ManualCache.cs" />
+    <Compile Include="Cache\ManualTypeCache.cs" />
+    <Compile Include="Cache\LazyMailCache.cs" />
+    <Compile Include="Cache\VideoTokenCache.cs" />
+    <Compile Include="Cache\PropertiesBagCache.cs" />
+    <Compile Include="Cache\VideoCache.cs" />
+    <Compile Include="Cache\VideoUserCache.cs" />
+    <Compile Include="Controllers\BulkMailController.cs" />
+    <Compile Include="Controllers\ManualController.cs" />
+    <Compile Include="Controllers\ManualTypeController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\TaskController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
+    <Compile Include="Extensions\ValidationExtensions.cs" />
+    <Compile Include="ModelViews\TaskModelView.cs" />
+    <Compile Include="Services\HttpResponseBaseService.cs" />
+    <Compile Include="Filters\PreventDirectAccessAttribute.cs" />
+    <Compile Include="Filters\SetAutomaticLogoutAttribute.cs" />
+    <Compile Include="Migrations\201512090743260_UpgradeV2-1-9-30.cs" />
+    <Compile Include="Migrations\201512090743260_UpgradeV2-1-9-30.Designer.cs">
+      <DependentUpon>201512090743260_UpgradeV2-1-9-30.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601181242070_UpgradeV2-1-10-31.cs" />
+    <Compile Include="Migrations\201601181242070_UpgradeV2-1-10-31.Designer.cs">
+      <DependentUpon>201601181242070_UpgradeV2-1-10-31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601270758036_UpgradeV2-1-11-32.cs" />
+    <Compile Include="Migrations\201601270758036_UpgradeV2-1-11-32.Designer.cs">
+      <DependentUpon>201601270758036_UpgradeV2-1-11-32.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602030735545_UpgradeV2-1-12-33.cs" />
+    <Compile Include="Migrations\201602030735545_UpgradeV2-1-12-33.Designer.cs">
+      <DependentUpon>201602030735545_UpgradeV2-1-12-33.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Manual.cs" />
+    <Compile Include="Models\ManualType.cs" />
+    <Compile Include="Models\LazyMail.cs" />
+    <Compile Include="ModelViews\BulkMailModelView.cs" />
+    <Compile Include="ModelViews\BaseModelViewPopulate.cs" />
+    <Compile Include="ModelViews\ManualModelView.cs" />
+    <Compile Include="ModelViews\ManualTypeModelView.cs" />
+    <Compile Include="Services\ffMpeg\Converter.cs" />
+    <Compile Include="Services\ffMpeg\OutputPackage.cs" />
+    <Compile Include="Services\ffMpeg\VideoFile.cs" />
+    <Compile Include="Services\RangeFileContentResult.cs" />
+    <Compile Include="Services\RangeFilePathResult.cs" />
+    <Compile Include="Services\RangeFileResult.cs" />
+    <Compile Include="Handlers\StreamVideoHandler.cs" />
+    <Compile Include="Handlers\StreamVideoRouteHandler.cs" />
+    <Compile Include="Migrations\201510041725061_UpgradeV2-1-3-24.cs" />
+    <Compile Include="Migrations\201510041725061_UpgradeV2-1-3-24.Designer.cs">
+      <DependentUpon>201510041725061_UpgradeV2-1-3-24.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510060639336_UpgradeV2-1-5-26.cs" />
+    <Compile Include="Migrations\201510060639336_UpgradeV2-1-5-26.Designer.cs">
+      <DependentUpon>201510060639336_UpgradeV2-1-5-26.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510251059594_UpgradeV2-1-7-28.cs" />
+    <Compile Include="Migrations\201510251059594_UpgradeV2-1-7-28.Designer.cs">
+      <DependentUpon>201510251059594_UpgradeV2-1-7-28.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511160913491_UpgradeV2-1-8-29.cs" />
+    <Compile Include="Migrations\201511160913491_UpgradeV2-1-8-29.Designer.cs">
+      <DependentUpon>201511160913491_UpgradeV2-1-8-29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PropertiesBag.cs" />
+    <Compile Include="Models\Video.cs" />
+    <Compile Include="Models\VideoToken.cs" />
+    <Compile Include="Models\VideoUser.cs" />
+    <Compile Include="ModelViews\StreamVideoModelView.cs" />
+    <Compile Include="ModelViews\VideoModelView.cs" />
+    <Compile Include="Resources\FieldResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FieldResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\GoogleCalendarResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoogleCalendarResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ListItemsResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListItemsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\MailResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MailResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SmsResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ValidationResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ViewResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Cache\BankAccountCache.cs" />
+    <Compile Include="Cache\BankAccountHistoryCache.cs" />
+    <Compile Include="Cache\BaseCache.cs" />
+    <Compile Include="Cache\PhoneNumberPrefixCache.cs" />
+    <Compile Include="Cache\DistrictCache.cs" />
+    <Compile Include="Cache\StatisticsCache.cs" />
+    <Compile Include="Cache\TeamCache.cs" />
+    <Compile Include="Cache\MeetingTitleTypeCache.cs" />
+    <Compile Include="Cache\SharedContactsCache.cs" />
+    <Compile Include="Cache\CurrencyCache.cs" />
+    <Compile Include="Cache\MeetingAttendeeCache.cs" />
+    <Compile Include="Cache\MeetingCache.cs" />
+    <Compile Include="Cache\PeopleContactCache.cs" />
+    <Compile Include="Cache\TopTenCache.cs" />
+    <Compile Include="Cache\UserProfileCache.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuthCallbackController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BankAccountHistoryController.cs" />
+    <Compile Include="Controllers\BankAccountController.cs" />
+    <Compile Include="Controllers\BaseControllerPopulate.cs" />
+    <Compile Include="Controllers\CurrencyController.cs" />
+    <Compile Include="Controllers\MeetingAttendeeController.cs" />
+    <Compile Include="Controllers\MeetingTitleTypeController.cs" />
+    <Compile Include="Controllers\DistrictController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MeetingController.cs" />
+    <Compile Include="Controllers\MSPContactController.cs" />
+    <Compile Include="Controllers\PeopleContactController.cs" />
+    <Compile Include="Controllers\PhoneNumberPrefixController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\SharedContactsController.cs" />
+    <Compile Include="Controllers\SharedMSPContactsController.cs" />
+    <Compile Include="Controllers\StatisticsController.cs" />
+    <Compile Include="Controllers\TaskSchedulerController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Controllers\TopTenController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="DAL\ReleaseContext.cs" />
+    <Compile Include="DAL\DebugContext.cs" />
+    <Compile Include="DAL\DefaultContext.cs" />
+    <Compile Include="Extensions\Comparers.cs" />
+    <Compile Include="Extensions\HTMLHelperExtensions.cs" />
+    <Compile Include="Extensions\TEnumExtensions.cs" />
+    <Compile Include="Filters\CheckIsPoliciesAcceptedAttribute.cs" />
+    <Compile Include="Filters\SetLanguageAttribute.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Filters\RequireLBTHttpsAttribute.cs" />
+    <Compile Include="GlimpseSecurityPolicy.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Currency.cs" />
+    <Compile Include="Helpers\CustomModelBinder.cs" />
+    <Compile Include="Helpers\Grammar.cs" />
+    <Compile Include="Helpers\HtmlToText.cs" />
+    <Compile Include="Helpers\JQuery.cs" />
+    <Compile Include="Helpers\NewtonsonJsonSerializer.cs" />
+    <Compile Include="Helpers\RFC3339DateTimeConverter.cs" />
+    <Compile Include="Helpers\InternetRequest.cs" />
+    <Compile Include="Migrations\201405081844354_Upgrade5.cs" />
+    <Compile Include="Migrations\201405081844354_Upgrade5.Designer.cs">
+      <DependentUpon>201405081844354_Upgrade5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405090738093_UpgradeV1-0-7-7.cs" />
+    <Compile Include="Migrations\201405090738093_UpgradeV1-0-7-7.Designer.cs">
+      <DependentUpon>201405090738093_UpgradeV1-0-7-7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405160733544_UpgradeV2-0-0-9.cs" />
+    <Compile Include="Migrations\201405160733544_UpgradeV2-0-0-9.Designer.cs">
+      <DependentUpon>201405160733544_UpgradeV2-0-0-9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406060925469_UpgradeV2-0-1-10.cs" />
+    <Compile Include="Migrations\201406060925469_UpgradeV2-0-1-10.Designer.cs">
+      <DependentUpon>201406060925469_UpgradeV2-0-1-10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406120810007_UpgradeV2-0-2-12.cs" />
+    <Compile Include="Migrations\201406120810007_UpgradeV2-0-2-12.Designer.cs">
+      <DependentUpon>201406120810007_UpgradeV2-0-2-12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407041301135_UpgradeV2-0-3-13.cs" />
+    <Compile Include="Migrations\201407041301135_UpgradeV2-0-3-13.Designer.cs">
+      <DependentUpon>201407041301135_UpgradeV2-0-3-13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407181757186_UpgradeV2-0-3-13-Pre2.cs" />
+    <Compile Include="Migrations\201407181757186_UpgradeV2-0-3-13-Pre2.Designer.cs">
+      <DependentUpon>201407181757186_UpgradeV2-0-3-13-Pre2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408092144081_UpgradeV2-0-4-14.cs" />
+    <Compile Include="Migrations\201408092144081_UpgradeV2-0-4-14.Designer.cs">
+      <DependentUpon>201408092144081_UpgradeV2-0-4-14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408261824408_UpgradeV2-0-5-15.cs" />
+    <Compile Include="Migrations\201408261824408_UpgradeV2-0-5-15.Designer.cs">
+      <DependentUpon>201408261824408_UpgradeV2-0-5-15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409050919229_UpgradeV2-0-6-16.cs" />
+    <Compile Include="Migrations\201409050919229_UpgradeV2-0-6-16.Designer.cs">
+      <DependentUpon>201409050919229_UpgradeV2-0-6-16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409190805046_UpgradeV2-0-6-16-Pre2.cs" />
+    <Compile Include="Migrations\201409190805046_UpgradeV2-0-6-16-Pre2.Designer.cs">
+      <DependentUpon>201409190805046_UpgradeV2-0-6-16-Pre2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410080956417_Upgradev2-0-6-16-Pre3.cs" />
+    <Compile Include="Migrations\201410080956417_Upgradev2-0-6-16-Pre3.Designer.cs">
+      <DependentUpon>201410080956417_Upgradev2-0-6-16-Pre3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410140719381_UpgradeV2-0-6-16-Pre4.cs" />
+    <Compile Include="Migrations\201410140719381_UpgradeV2-0-6-16-Pre4.Designer.cs">
+      <DependentUpon>201410140719381_UpgradeV2-0-6-16-Pre4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412240029088_UpgradeV2-1-0-21.cs" />
+    <Compile Include="Migrations\201412240029088_UpgradeV2-1-0-21.Designer.cs">
+      <DependentUpon>201412240029088_UpgradeV2-1-0-21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501290841416_UpgradeV2-1-0-21-Pre2.cs" />
+    <Compile Include="Migrations\201501290841416_UpgradeV2-1-0-21-Pre2.Designer.cs">
+      <DependentUpon>201501290841416_UpgradeV2-1-0-21-Pre2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502110802373_UpgradeV2-1-0-21-Pre4.cs" />
+    <Compile Include="Migrations\201502110802373_UpgradeV2-1-0-21-Pre4.Designer.cs">
+      <DependentUpon>201502110802373_UpgradeV2-1-0-21-Pre4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503050812492_UpgradeV2-1-0-21-Pre5.cs" />
+    <Compile Include="Migrations\201503050812492_UpgradeV2-1-0-21-Pre5.Designer.cs">
+      <DependentUpon>201503050812492_UpgradeV2-1-0-21-Pre5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505070610272_UpgradeV2-1-0-21-Pre6.cs" />
+    <Compile Include="Migrations\201505070610272_UpgradeV2-1-0-21-Pre6.Designer.cs">
+      <DependentUpon>201505070610272_UpgradeV2-1-0-21-Pre6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509090728277_UpgradeV2-1-1-22.cs" />
+    <Compile Include="Migrations\201509090728277_UpgradeV2-1-1-22.Designer.cs">
+      <DependentUpon>201509090728277_UpgradeV2-1-1-22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509180715262_UpgradeV2-1-2-23.cs" />
+    <Compile Include="Migrations\201509180715262_UpgradeV2-1-2-23.Designer.cs">
+      <DependentUpon>201509180715262_UpgradeV2-1-2-23.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BankAccount.cs" />
+    <Compile Include="Models\BankAccountHistory.cs" />
+    <Compile Include="Models\BankAccountUser.cs" />
+    <Compile Include="Models\TeamMember.cs" />
+    <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\Currency.cs" />
+    <Compile Include="Models\MeetingTitleType.cs" />
+    <Compile Include="Models\Meeting.cs" />
+    <Compile Include="Models\MeetingAttendee.cs" />
+    <Compile Include="ModelViews\BankAccountHistoryModelView.cs" />
+    <Compile Include="ModelViews\BankAccountModelView.cs" />
+    <Compile Include="Models\Statistics.cs" />
+    <Compile Include="Models\TopTen.cs" />
+    <Compile Include="ModelViews\AccountModelView.cs" />
+    <Compile Include="ModelViews\BaseModelView.cs" />
+    <Compile Include="ModelViews\DistrictModelView.cs" />
+    <Compile Include="ModelViews\MeetingAttendeeModelView.cs" />
+    <Compile Include="ModelViews\MeetingTitleTypeModelView.cs" />
+    <Compile Include="ModelViews\PhoneNumberPrefixModelView.cs" />
+    <Compile Include="ModelViews\SharedContactsModelView.cs" />
+    <Compile Include="ModelViews\SignUnsignFilteringPartialModelView.cs" />
+    <Compile Include="ModelViews\SignUnsignPagingPartialModelView.cs" />
+    <Compile Include="ModelViews\PageSizingPartialModelView.cs" />
+    <Compile Include="ModelViews\FilteringPartialModelView.cs" />
+    <Compile Include="ModelViews\PagingPartialModelView.cs" />
+    <Compile Include="ModelViews\StatisticsModelView.cs" />
+    <Compile Include="ModelViews\CurrencyModelView.cs" />
+    <Compile Include="ModelViews\MeetingModelView.cs" />
+    <Compile Include="ModelViews\PeopleContactModelView.cs" />
+    <Compile Include="ModelViews\TeamModelView.cs" />
+    <Compile Include="ModelViews\TopTenModelView.cs" />
+    <Compile Include="ModelViews\UserProfileModelView.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Cookie.cs" />
+    <Compile Include="Helpers\Url.cs" />
+    <Compile Include="Migrations\201401290813320_GoogleApi.cs" />
+    <Compile Include="Migrations\201401290813320_GoogleApi.Designer.cs">
+      <DependentUpon>201401290813320_GoogleApi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402131755348_Upgrade2.cs" />
+    <Compile Include="Migrations\201402131755348_Upgrade2.Designer.cs">
+      <DependentUpon>201402131755348_Upgrade2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402180927107_Statistics.cs" />
+    <Compile Include="Migrations\201402180927107_Statistics.Designer.cs">
+      <DependentUpon>201402180927107_Statistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402191413023_Upgrade3.cs" />
+    <Compile Include="Migrations\201402191413023_Upgrade3.Designer.cs">
+      <DependentUpon>201402191413023_Upgrade3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403291941267_Upgrade4.cs" />
+    <Compile Include="Migrations\201403291941267_Upgrade4.Designer.cs">
+      <DependentUpon>201403291941267_Upgrade4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\FileService.cs" />
+    <Compile Include="Services\GoogleApis\AppFlowMetadata.cs" />
+    <Compile Include="Helpers\Cryptography.cs" />
+    <Compile Include="Services\GoogleApis\Calendar.cs" />
+    <Compile Include="Helpers\Logger.cs" />
+    <Compile Include="Helpers\Mail.cs" />
+    <Compile Include="Helpers\Regex.cs" />
+    <Compile Include="Migrations\201312201146238_InitialCreate.cs" />
+    <Compile Include="Migrations\201312201146238_InitialCreate.Designer.cs">
+      <DependentUpon>201312201146238_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201401062107540_Upgrade.cs" />
+    <Compile Include="Migrations\201401062107540_Upgrade.Designer.cs">
+      <DependentUpon>201401062107540_Upgrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201401131826067_SharedMSPContacts.cs" />
+    <Compile Include="Migrations\201401131826067_SharedMSPContacts.Designer.cs">
+      <DependentUpon>201401131826067_SharedMSPContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201401181840001_OptimizedModels.cs" />
+    <Compile Include="Migrations\201401181840001_OptimizedModels.Designer.cs">
+      <DependentUpon>201401181840001_OptimizedModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201401221833542_Upgrade1.cs" />
+    <Compile Include="Migrations\201401221833542_Upgrade1.Designer.cs">
+      <DependentUpon>201401221833542_Upgrade1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\ConfigurationSeed.cs" />
+    <Compile Include="Models\SharedMSPContact.cs" />
+    <Compile Include="Models\MSPContact.cs" />
+    <Compile Include="Models\District.cs" />
+    <Compile Include="Models\PeopleContact.cs" />
+    <Compile Include="Models\PhoneNumberPrefix.cs" />
+    <Compile Include="Models\UserProfile.cs" />
+    <Compile Include="Models\SharedContact.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\GoogleApis\FileDataStore.cs" />
+    <Compile Include="Services\GoogleApis\GoogleClientJson.cs" />
+    <Compile Include="Services\GoogleApis\GoogleClientJsonWeb.cs" />
+    <Compile Include="Services\LyconetService\CsvPeopleContactData.cs" />
+    <Compile Include="Services\LyconetService\CsvTopTen.cs" />
+    <Compile Include="Services\LyconetService\CsvPeopleContact.cs" />
+    <Compile Include="Services\LyconetService\CsvTopTenData.cs" />
+    <Compile Include="Services\LyconetService\LyconetService.cs" />
+    <Compile Include="Services\RangeFileStreamResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ChangeLog.txt" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\loader.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Content\themes\base\jquery.bpopup.css" />
+    <Content Include="ErrorPages\403.4.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <EmbeddedResource Include="Migrations\201510041725061_UpgradeV2-1-3-24.resx">
+      <DependentUpon>201510041725061_UpgradeV2-1-3-24.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510060639336_UpgradeV2-1-5-26.resx">
+      <DependentUpon>201510060639336_UpgradeV2-1-5-26.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510251059594_UpgradeV2-1-7-28.resx">
+      <DependentUpon>201510251059594_UpgradeV2-1-7-28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511160913491_UpgradeV2-1-8-29.resx">
+      <DependentUpon>201511160913491_UpgradeV2-1-8-29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512090743260_UpgradeV2-1-9-30.resx">
+      <DependentUpon>201512090743260_UpgradeV2-1-9-30.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601181242070_UpgradeV2-1-10-31.resx">
+      <DependentUpon>201601181242070_UpgradeV2-1-10-31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601270758036_UpgradeV2-1-11-32.resx">
+      <DependentUpon>201601270758036_UpgradeV2-1-11-32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602030735545_UpgradeV2-1-12-33.resx">
+      <DependentUpon>201602030735545_UpgradeV2-1-12-33.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ViewResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ViewResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\PublishProfiles\Debug %28filesystem%29.pubxml" />
+    <None Include="Properties\PublishProfiles\Debug.pubxml" />
+    <None Include="Properties\PublishProfiles\Debug %28Windows Azure%29.pubxml" />
+    <None Include="Properties\PublishProfiles\Release %28Windows Azure%29.pubxml" />
+    <None Include="Properties\PublishProfiles\Release %28filesystem%29.pubxml" />
+    <None Include="Migrations\Procedure Refresh Top Ten Roles.sql" />
+    <None Include="Migrations\Procedure Get Downline Users Without Top Ten Contacts.sql" />
+    <None Include="Migrations\Procedure Get Leaded User Ids.sql" />
+    <None Include="Migrations\Procedure Cascade Remove Meeting.sql" />
+    <None Include="Migrations\Procedure Get Upline Users.sql" />
+    <None Include="Migrations\Function Get Uplines.sql" />
+    <None Include="Migrations\Function Get Downlines.sql" />
+    <None Include="Migrations\Procedure Cascade Remove People Contact.sql" />
+    <None Include="Migrations\DeleteAll.sql" />
+    <None Include="Migrations\Procedure Get Downline Users All.sql" />
+    <None Include="Migrations\Procedure Get Notification New Blocked CLA Users.sql" />
+    <None Include="Migrations\Procedure Get Notification CLA Users.sql" />
+    <None Include="Migrations\Procedure Get CLA Access Users.sql" />
+    <None Include="Migrations\Procedure Get CLA Access Trial Users.sql" />
+    <None Include="Migrations\Procedure Get Admins.sql" />
+    <None Include="Migrations\Fix DB V2-1-0-21%283%29.sql" />
+    <None Include="Migrations\Fix DB V2-1-0-21%282%29.sql" />
+    <None Include="Migrations\Procedure Set Payments For Access.sql" />
+    <None Include="Migrations\Function Get End Of Today.sql" />
+    <None Include="Migrations\Function Get Downlines Without Owner.sql" />
+    <None Include="Migrations\Fix DB V2-1-0-21%281%29.sql" />
+    <None Include="Migrations\Procedure Cascade Remove Bank Account.sql" />
+    <None Include="Migrations\Procedure Set Notification Cla Users.sql" />
+    <None Include="Migrations\Function Get Downlines And Uplines.sql" />
+    <None Include="Migrations\Procedure Get Meeting Archive Index.sql" />
+    <None Include="Migrations\Fix DB V2-1-0-21%284%29.sql" />
+    <None Include="Migrations\Procedure Get Meeting Filtered Archive Index.sql" />
+    <None Include="Migrations\Procedure Get Meeting Filtered Index.sql" />
+    <None Include="Migrations\Procedure Get Meeting Index.sql" />
+    <None Include="Migrations\Procedure Cascade Remove Team.sql" />
+    <None Include="Migrations\Fix DB V2-1-0-21%285%29.sql" />
+    <None Include="Migrations\Procedure Cascade Remove User Profile.sql" />
+    <None Include="Migrations\Procedure Get Meeting Index For User.sql" />
+    <None Include="Migrations\Procedure Expire Video Tokens.sql" />
+    <None Include="Migrations\Procedure Cascade Remove Video.sql" />
+    <None Include="Migrations\Procedure Cascade Remove Archived Meeting.sql" />
+    <Content Include="MediaServer\converters\ffmpeg.exe" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Resources\ValidationResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\GoogleCalendarResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GoogleCalendarResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ListItemsResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ListItemsResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MailResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MailResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SmsResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SmsResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\FieldResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FieldResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ViewResource.cs-CZ.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ViewResource.en-US.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\FieldResource.cs-CZ.resx">
+      <LastGenOutput>FieldResource.cs-CZ.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\FieldResource.en-US.resx">
+      <SubType>Designer</SubType>
+      <LastGenOutput>FieldResource.en-US.designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\GoogleCalendarResource.cs-CZ.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\GoogleCalendarResource.en-US.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ListItemsResource.cs-CZ.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ListItemsResource.en-US.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MailResource.cs-CZ.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MailResource.en-US.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SmsResource.cs-CZ.resx" />
+    <EmbeddedResource Include="Resources\SmsResource.en-US.resx" />
+    <EmbeddedResource Include="Resources\ValidationResource.cs-CZ.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ValidationResource.en-US.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407041301135_UpgradeV2-0-3-13.resx">
+      <DependentUpon>201407041301135_UpgradeV2-0-3-13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407181757186_UpgradeV2-0-3-13-Pre2.resx">
+      <DependentUpon>201407181757186_UpgradeV2-0-3-13-Pre2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408092144081_UpgradeV2-0-4-14.resx">
+      <DependentUpon>201408092144081_UpgradeV2-0-4-14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408261824408_UpgradeV2-0-5-15.resx">
+      <DependentUpon>201408261824408_UpgradeV2-0-5-15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409050919229_UpgradeV2-0-6-16.resx">
+      <DependentUpon>201409050919229_UpgradeV2-0-6-16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409190805046_UpgradeV2-0-6-16-Pre2.resx">
+      <DependentUpon>201409190805046_UpgradeV2-0-6-16-Pre2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410080956417_Upgradev2-0-6-16-Pre3.resx">
+      <DependentUpon>201410080956417_Upgradev2-0-6-16-Pre3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410140719381_UpgradeV2-0-6-16-Pre4.resx">
+      <DependentUpon>201410140719381_UpgradeV2-0-6-16-Pre4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412240029088_UpgradeV2-1-0-21.resx">
+      <DependentUpon>201412240029088_UpgradeV2-1-0-21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501290841416_UpgradeV2-1-0-21-Pre2.resx">
+      <DependentUpon>201501290841416_UpgradeV2-1-0-21-Pre2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502110802373_UpgradeV2-1-0-21-Pre4.resx">
+      <DependentUpon>201502110802373_UpgradeV2-1-0-21-Pre4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503050812492_UpgradeV2-1-0-21-Pre5.resx">
+      <DependentUpon>201503050812492_UpgradeV2-1-0-21-Pre5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505070610272_UpgradeV2-1-0-21-Pre6.resx">
+      <DependentUpon>201505070610272_UpgradeV2-1-0-21-Pre6.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Images\icons16.png" />
+    <Content Include="Images\icons30.png" />
+    <Content Include="Images\none.png" />
+    <None Include="Migrations\Procedure Refresh Statistics.sql" />
+    <None Include="Migrations\Procedure Cascade Remove User.sql" />
+    <None Include="Migrations\Procedure Get User Profile Index Tree For Admin.sql" />
+    <None Include="Migrations\Procedure Get User Profile Index Tree.sql" />
+    <None Include="Migrations\Procedure Get Upline Users Without Shared Contacts.sql" />
+    <None Include="Migrations\Procedure Get User Profile Index.sql" />
+    <None Include="Migrations\Procedure Get User Profile Index For Admin.sql" />
+    <None Include="Migrations\Procedure Get Downline Users Without Shared Contacts.sql" />
+    <None Include="Migrations\Procedure Get Any Users Without Shared Contacts.sql" />
+    <None Include="Migrations\Function Get Leader Downline Users.sql" />
+    <None Include="Migrations\Function Get Downline Users.sql" />
+    <Content Include="app_offline_.htm" />
+    <None Include="Resources\MultiSelectListBoxTemplate.js" />
+    <None Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <None Include="Resources\Invoice.html" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.bpopup.js" />
+    <Content Include="Scripts\jquery.bpopup.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-cs.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-3.3.0.debug.js" />
+    <Content Include="Scripts\knockout-3.3.0.js" />
+    <Content Include="Scripts\lbt-2.1.13.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\lbt-localizedResources-cs-CZ-2.1.5.js" />
+    <Content Include="Scripts\lbt-localizedResources-en-US-2.1.5.js" />
+    <Content Include="Scripts\lbt-localizedResources-2.1.5.js" />
+    <Content Include="Scripts\purl.js" />
+    <Content Include="Scripts\tinymce\langs\cs.js" />
+    <Content Include="Scripts\tinymce\langs\de.js" />
+    <Content Include="Scripts\tinymce\langs\en_GB.js" />
+    <Content Include="Scripts\tinymce\langs\readme.md" />
+    <Content Include="Scripts\tinymce\license.txt" />
+    <Content Include="Scripts\tinymce\plugins\advlist\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\anchor\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autolink\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autosave\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\bbcode\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\charmap\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\code\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\colorpicker\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\contextmenu\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\directionality\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\example\dialog.html" />
+    <Content Include="Scripts\tinymce\plugins\example\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\example_dependency\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullpage\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\hr\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\image\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\importcss\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\layer\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\legacyoutput\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\link\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\lists\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="Scripts\tinymce\plugins\media\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\noneditable\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\paste\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\preview\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\print\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\save\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\spellchecker\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\tabfocus\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\table\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\template\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textcolor\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textpattern\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.js" />
+    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Scripts\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="Scripts\tinymce\themes\modern\theme.js" />
+    <Content Include="Scripts\tinymce\themes\modern\theme.min.js" />
+    <Content Include="Scripts\tinymce\tinymce.js" />
+    <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Store\Info.txt" />
+    <Content Include="Store\Manuals\Info.txt" />
+    <Content Include="Videos\Info.txt" />
+    <Content Include="Videos\VideoNotFound.mp4" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\Site-2.1.13.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\District\Index.cshtml" />
+    <Content Include="Views\District\Create.cshtml" />
+    <Content Include="Views\District\Edit.cshtml" />
+    <Content Include="Views\District\Delete.cshtml" />
+    <Content Include="Views\PhoneNumberPrefix\Index.cshtml" />
+    <Content Include="Views\PhoneNumberPrefix\Create.cshtml" />
+    <Content Include="Views\PhoneNumberPrefix\Edit.cshtml" />
+    <Content Include="Views\PhoneNumberPrefix\Delete.cshtml" />
+    <Content Include="Views\UserProfile\Index.cshtml" />
+    <Content Include="Views\UserProfile\Details.cshtml" />
+    <Content Include="Views\UserProfile\Edit.cshtml" />
+    <Content Include="Views\UserProfile\Delete.cshtml" />
+    <Content Include="Views\PeopleContact\Index.cshtml" />
+    <Content Include="Views\PeopleContact\Details.cshtml" />
+    <Content Include="Views\PeopleContact\Create.cshtml" />
+    <Content Include="Views\PeopleContact\Edit.cshtml" />
+    <Content Include="Views\PeopleContact\Delete.cshtml" />
+    <Content Include="Views\MSPContact\Index.cshtml" />
+    <Content Include="Views\MSPContact\Details.cshtml" />
+    <Content Include="Views\MSPContact\Create.cshtml" />
+    <Content Include="Views\MSPContact\Edit.cshtml" />
+    <Content Include="Views\MSPContact\Delete.cshtml" />
+    <Content Include="Views\SharedContacts\Index.cshtml" />
+    <Content Include="Views\SharedContacts\Create.cshtml" />
+    <Content Include="Views\SharedContacts\Delete.cshtml" />
+    <Content Include="Views\SharedMSPContacts\Index.cshtml" />
+    <Content Include="Views\SharedMSPContacts\Create.cshtml" />
+    <Content Include="Views\SharedMSPContacts\Delete.cshtml" />
+    <Content Include="Views\AuthCallback\IndexAsync.cshtml" />
+    <Content Include="Views\UserProfile\Validate.cshtml" />
+    <Content Include="Views\Shared\_PopupLayout.cshtml" />
+    <Content Include="Views\Account\PasswordRecovery.cshtml" />
+    <Content Include="Views\Shared\_PrintLayout.cshtml" />
+    <Content Include="Views\PeopleContact\PrintDetails.cshtml" />
+    <Content Include="Views\PeopleContact\PrintIndex.cshtml" />
+    <Content Include="Views\PeopleContact\EditTask.cshtml" />
+    <Content Include="Views\PeopleContact\EditTaskEmpty.cshtml" />
+    <Content Include="Views\PeopleContact\EditTaskSummary.cshtml" />
+    <Content Include="Views\UserProfile\PrintIndex.cshtml" />
+    <Content Include="Views\Shared\_ConsoleLayout.cshtml" />
+    <Content Include="Views\UserProfile\RefreshStatistics.cshtml" />
+    <Content Include="Views\TaskScheduler\CheckTasks.cshtml" />
+    <Content Include="Views\Account\Settings.cshtml" />
+    <Content Include="Views\UserProfile\IndexTree.cshtml" />
+    <Content Include="Views\UserProfile\Locked.cshtml" />
+    <Content Include="Views\UserProfile\Unlocked.cshtml" />
+    <Content Include="Views\PeopleContact\MultipleCreate.cshtml" />
+    <Content Include="Views\Statistics\Index.cshtml" />
+    <Content Include="Views\PeopleContact\StopWorkflowEmpty.cshtml" />
+    <Content Include="Views\PeopleContact\StopWorkflow.cshtml" />
+    <Content Include="Views\PeopleContact\StopWorkflowSummary.cshtml" />
+    <Content Include="Views\TaskScheduler\ExecuteHourlyJobs.cshtml" />
+    <Content Include="Views\TopTen\Index.cshtml" />
+    <Content Include="Views\TopTen\Details.cshtml" />
+    <Content Include="Views\TopTen\Create.cshtml" />
+    <Content Include="Views\TopTen\Edit.cshtml" />
+    <Content Include="Views\TopTen\Delete.cshtml" />
+    <Content Include="Views\TopTen\PrintIndex.cshtml" />
+    <Content Include="Views\TopTen\PrintDetails.cshtml" />
+    <Content Include="Views\Meeting\Dashboard.cshtml" />
+    <Content Include="Views\Meeting\BusinessInfoIndex.cshtml" />
+    <Content Include="Views\Meeting\BusinessInfoPrintIndex.cshtml" />
+    <Content Include="Views\Meeting\BusinessInfoCreate.cshtml" />
+    <Content Include="Views\Meeting\BusinessInfoEdit.cshtml" />
+    <Content Include="Views\Meeting\BusinessInfoDelete.cshtml" />
+    <Content Include="Views\Meeting\BusinessInfoDetails.cshtml" />
+    <Content Include="Views\Meeting\BusinessInfoPrintDetail.cshtml" />
+    <Content Include="Views\Meeting\BusinessInfoSignUnsign.cshtml" />
+    <Content Include="Views\Meeting\BusinessInfoArchiveIndex.cshtml" />
+    <Content Include="Views\Meeting\BusinessInfoArchiveDetails.cshtml" />
+    <Content Include="Views\PeopleContact\Import.cshtml" />
+    <Content Include="Views\PeopleContact\ImportSummary.cshtml" />
+    <Content Include="Views\Meeting\MspEveningIndex.cshtml" />
+    <Content Include="Views\Meeting\MspEveningDetails.cshtml" />
+    <Content Include="Views\Meeting\MspEveningCreate.cshtml" />
+    <Content Include="Views\Meeting\MspEveningEdit.cshtml" />
+    <Content Include="Views\Meeting\MspEveningDelete.cshtml" />
+    <Content Include="Views\Meeting\MspEveningPrintIndex.cshtml" />
+    <Content Include="Views\Meeting\MspEveningSignUnsign.cshtml" />
+    <Content Include="Views\Meeting\MspEveningPrintDetail.cshtml" />
+    <Content Include="Views\Meeting\MspEveningArchiveIndex.cshtml" />
+    <Content Include="Views\Meeting\MspEveningArchiveDetails.cshtml" />
+    <Content Include="Views\MeetingTitleType\Index.cshtml" />
+    <Content Include="Views\MeetingTitleType\Create.cshtml" />
+    <Content Include="Views\MeetingTitleType\Edit.cshtml" />
+    <Content Include="Views\MeetingTitleType\Delete.cshtml" />
+    <Content Include="Views\Meeting\OstatniIndex.cshtml" />
+    <Content Include="Views\Meeting\OstatniCreate.cshtml" />
+    <Content Include="Views\Meeting\OstatniEdit.cshtml" />
+    <Content Include="Views\Meeting\OstatniDelete.cshtml" />
+    <Content Include="Views\Meeting\OstatniDetails.cshtml" />
+    <Content Include="Views\Meeting\OstatniPrintIndex.cshtml" />
+    <Content Include="Views\Meeting\OstatniSignUnsign.cshtml" />
+    <Content Include="Views\Meeting\OstatniPrintDetail.cshtml" />
+    <Content Include="Views\Meeting\OstatniArchiveIndex.cshtml" />
+    <Content Include="Views\Meeting\OstatniArchiveDetails.cshtml" />
+    <Content Include="Views\Meeting\SetkaniTymuIndex.cshtml" />
+    <Content Include="Views\Meeting\SetkaniTymuCreate.cshtml" />
+    <Content Include="Views\Meeting\SetkaniTymuEdit.cshtml" />
+    <Content Include="Views\Meeting\SetkaniTymuPrintIndex.cshtml" />
+    <Content Include="Views\Meeting\SetkaniTymuDetails.cshtml" />
+    <Content Include="Views\BankAccountHistory\Index.cshtml" />
+    <Content Include="Views\BankAccountHistory\Edit.cshtml" />
+    <Content Include="Views\BankAccountHistory\Delete.cshtml" />
+    <Content Include="Views\BankAccountHistory\Details.cshtml" />
+    <Content Include="Views\Meeting\SetkaniTymuSignUnsign.cshtml" />
+    <Content Include="Views\Meeting\SetkaniTymuUserSignUnsign.cshtml" />
+    <Content Include="Views\MeetingAttendee\Edit.cshtml" />
+    <Content Include="Views\Meeting\SetkaniTymuDelete.cshtml" />
+    <Content Include="Views\Meeting\SetkaniTymuPrintDetail.cshtml" />
+    <Content Include="Views\Meeting\SetkaniTymuArchiveIndex.cshtml" />
+    <Content Include="Views\Meeting\SetkaniTymuArchiveDetails.cshtml" />
+    <Content Include="Views\Meeting\SkoleniDavidaKotaskaArchiveDetails.cshtml" />
+    <Content Include="Views\Meeting\SkoleniDavidaKotaskaArchiveIndex.cshtml" />
+    <Content Include="Views\Meeting\SkoleniDavidaKotaskaCreate.cshtml" />
+    <Content Include="Views\Meeting\SkoleniDavidaKotaskaDelete.cshtml" />
+    <Content Include="Views\Meeting\SkoleniDavidaKotaskaDetails.cshtml" />
+    <Content Include="Views\Meeting\SkoleniDavidaKotaskaEdit.cshtml" />
+    <Content Include="Views\Meeting\SkoleniDavidaKotaskaIndex.cshtml" />
+    <Content Include="Views\Meeting\SkoleniDavidaKotaskaPrintDetail.cshtml" />
+    <Content Include="Views\Meeting\SkoleniDavidaKotaskaPrintIndex.cshtml" />
+    <Content Include="Views\Meeting\SkoleniDavidaKotaskaSignUnsign.cshtml" />
+    <Content Include="Views\Meeting\SkoleniDavidaKotaskaUserSignUnsign.cshtml" />
+    <Content Include="Views\MeetingAttendee\Details.cshtml" />
+    <Content Include="Views\TaskScheduler\Test.cshtml" />
+    <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\BankAccount\Index.cshtml" />
+    <Content Include="Views\BankAccount\Create.cshtml" />
+    <Content Include="Views\BankAccount\Edit.cshtml" />
+    <Content Include="Views\BankAccount\Delete.cshtml" />
+    <Content Include="Views\BankAccount\Details.cshtml" />
+    <Content Include="Views\Currency\Index.cshtml" />
+    <Content Include="Views\Currency\Create.cshtml" />
+    <Content Include="Views\Currency\Edit.cshtml" />
+    <Content Include="Views\Currency\Delete.cshtml" />
+    <Content Include="Views\BankAccountHistory\ClaAccessIndex.cshtml" />
+    <Content Include="Views\BankAccountHistory\ClaAccessEdit.cshtml" />
+    <Content Include="Views\BankAccountHistory\ClaAccessDetails.cshtml" />
+    <Content Include="Views\BankAccountHistory\ClaAccessDelete.cshtml" />
+    <Content Include="Views\Team\Index.cshtml" />
+    <Content Include="Views\Team\Create.cshtml" />
+    <Content Include="Views\Team\Edit.cshtml" />
+    <Content Include="Views\Team\Details.cshtml" />
+    <Content Include="Views\Team\EditNote.cshtml" />
+    <Content Include="Views\Team\Delete.cshtml" />
+    <Content Include="Views\Account\CheckPolicies.cshtml" />
+    <Content Include="Views\Account\DeleteAccount.cshtml" />
+    <Content Include="Views\Meeting\OstatniUserSignUnsign.cshtml" />
+    <Content Include="Views\Shared\_GoogleValidationPopupPartial.cshtml" />
+    <Content Include="Views\Shared\_PagingPartial.cshtml" />
+    <Content Include="Views\Shared\_PopupPartial.cshtml" />
+    <Content Include="Views\Meeting\_BusinessInfoDetails.cshtml" />
+    <Content Include="Web_TEST.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web_PROD.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\_FilteringPartial.cshtml" />
+    <Content Include="Views\Meeting\_UserFilteringPartial.cshtml" />
+    <Content Include="Views\Meeting\_PageSizingPartial.cshtml" />
+    <Content Include="Views\Meeting\_SignUnsignPagingPartial.cshtml" />
+    <Content Include="Views\Meeting\_SignUnsignFilteringPartial.cshtml" />
+    <Content Include="Views\Meeting\_MspEveningDetails.cshtml" />
+    <Content Include="Views\Meeting\_OstatniDetails.cshtml" />
+    <Content Include="Views\Meeting\_UserSignUnsignPagingPartial.cshtml" />
+    <Content Include="Views\Meeting\_SetkaniTymuDetails.cshtml" />
+    <Content Include="Views\Meeting\_SkoleniDavidaKotaskaDetails.cshtml" />
+    <Content Include="Views\PeopleContact\_PeopleContactFilteringPartial.cshtml" />
+    <Content Include="Views\Meeting\WebinarIndex.cshtml" />
+    <Content Include="Views\Meeting\WebinarCreate.cshtml" />
+    <Content Include="Views\Meeting\WebinarEdit.cshtml" />
+    <Content Include="Views\Meeting\WebinarDelete.cshtml" />
+    <Content Include="Views\Meeting\WebinarDetails.cshtml" />
+    <Content Include="Views\Meeting\_WebinarDetails.cshtml" />
+    <Content Include="Views\Meeting\WebinarPrintIndex.cshtml" />
+    <Content Include="Views\Meeting\WebinarSignUnsign.cshtml" />
+    <Content Include="Views\Meeting\WebinarPrintDetail.cshtml" />
+    <Content Include="Views\Meeting\WebinarArchiveIndex.cshtml" />
+    <Content Include="Views\Meeting\WebinarArchiveDetails.cshtml" />
+    <Content Include="Views\Shared\Error403.cshtml" />
+    <Content Include="Views\Shared\Error404.cshtml" />
+    <Content Include="Views\Shared\GenericHttpError.cshtml" />
+    <Content Include="Views\Shared\_ErrorLayout.cshtml" />
+    <Content Include="Views\Account\CheckBillingInformation.cshtml" />
+    <Content Include="Views\TaskScheduler\ExecuteDailyJobs.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\Video\Create.cshtml" />
+    <Content Include="Views\Video\Edit.cshtml" />
+    <Content Include="Views\Video\Details.cshtml" />
+    <Content Include="Views\Video\Delete.cshtml" />
+    <Content Include="Views\PeopleContact\SendVideo.cshtml" />
+    <Content Include="Views\Video\Player.cshtml" />
+    <Content Include="Views\BulkMail\Create.cshtml" />
+    <Content Include="Views\ManualType\Index.cshtml" />
+    <Content Include="Views\ManualType\Create.cshtml" />
+    <Content Include="Views\ManualType\Edit.cshtml" />
+    <Content Include="Views\ManualType\Delete.cshtml" />
+    <Content Include="Views\Manual\Index.cshtml" />
+    <Content Include="Views\Manual\Create.cshtml" />
+    <Content Include="Views\Manual\Edit.cshtml" />
+    <Content Include="Views\Manual\Delete.cshtml" />
+    <Content Include="Views\Manual\Details.cshtml" />
+    <Content Include="Views\Manual\PlayerUnknown.cshtml" />
+    <Content Include="Views\Manual\PlayerVideo.cshtml" />
+    <Content Include="Views\Manual\ManualsByType.cshtml" />
+    <Content Include="Store\Všeobecné obchodní podmínky CLA.pdf" />
+    <Content Include="Views\Meeting\BusinessInfoUserSignUnsign.cshtml" />
+    <Content Include="Views\Task\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201405081844354_Upgrade5.resx">
+      <DependentUpon>201405081844354_Upgrade5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405090738093_UpgradeV1-0-7-7.resx">
+      <DependentUpon>201405090738093_UpgradeV1-0-7-7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405160733544_UpgradeV2-0-0-9.resx">
+      <DependentUpon>201405160733544_UpgradeV2-0-0-9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406060925469_UpgradeV2-0-1-10.resx">
+      <DependentUpon>201406060925469_UpgradeV2-0-1-10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406120810007_UpgradeV2-0-2-12.resx">
+      <DependentUpon>201406120810007_UpgradeV2-0-2-12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312201146238_InitialCreate.resx">
+      <DependentUpon>201312201146238_InitialCreate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401062107540_Upgrade.resx">
+      <DependentUpon>201401062107540_Upgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401131826067_SharedMSPContacts.resx">
+      <DependentUpon>201401131826067_SharedMSPContacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401181840001_OptimizedModels.resx">
+      <DependentUpon>201401181840001_OptimizedModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401221833542_Upgrade1.resx">
+      <DependentUpon>201401221833542_Upgrade1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401290813320_GoogleApi.resx">
+      <DependentUpon>201401290813320_GoogleApi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402131755348_Upgrade2.resx">
+      <DependentUpon>201402131755348_Upgrade2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402180927107_Statistics.resx">
+      <DependentUpon>201402180927107_Statistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402191413023_Upgrade3.resx">
+      <DependentUpon>201402191413023_Upgrade3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403291941267_Upgrade4.resx">
+      <DependentUpon>201403291941267_Upgrade4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509090728277_UpgradeV2-1-1-22.resx">
+      <DependentUpon>201509090728277_UpgradeV2-1-1-22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509180715262_UpgradeV2-1-2-23.resx">
+      <DependentUpon>201509180715262_UpgradeV2-1-2-23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{B691E011-1797-432E-907A-4D8C69339129}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CDO">
+      <Guid>{CD000000-8B95-11D1-82DB-00C04FB1625D}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50214</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48665/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

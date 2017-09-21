@@ -1,0 +1,86 @@
+﻿@using LBT.ModelViews
+@using LBT.Resources
+@model PagedList.IPagedList<BankAccountIndex>
+
+@{
+    ViewBag.Title = ViewResource.BankAccount_Index_Title_Text;
+}
+
+@using (Html.BeginForm("Index", "BankAccount", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { List = Model })
+}
+
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+<section class="List">
+    <table>
+        <thead>
+            <tr>
+                <th class="@ViewBag.TitleSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_Title_Name, "Index", new { sortOrder = ViewBag.TitleSortParam, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.BankAccountTypeSortSymbol">
+                    @Html.ActionLink(FieldResource.BankAccount_BankAccountType_Name, "Index", new { sortOrder = ViewBag.BankAccountTypeSortParam, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.CurrencyTypeSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_Currency_Name, "Index", new { sortOrder = ViewBag.CurrencyTypeSortParam, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.ValidToSortSymbol">
+                    @Html.ActionLink(FieldResource.BankAccount_ValidTo_Name, "Index", new { sortOrder = ViewBag.ValidToSortParam, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="5">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(m => i.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => i.BankAccountTypeLocalizedAcronym)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => i.CurrencyType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => i.ValidTo)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("Edit", new { id = i.BankAccountId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                        <a href="@Url.Action("Details", new { id = i.BankAccountId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                        <a href="@Url.Action("Delete", new { id = i.BankAccountId })" title="@ViewResource.Global_HplDeleteTitle_Text"><span class="lbt-icon30-delete"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@using (Html.BeginForm("Index", "BankAccount", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { SectionId = "Paging2", List = Model })
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplCreateTitle_Text, "Create")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

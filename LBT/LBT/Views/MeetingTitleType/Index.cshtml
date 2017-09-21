@@ -1,0 +1,73 @@
+﻿@using LBT.ModelViews
+@using LBT.Resources
+@model PagedList.IPagedList<MeetingTitleTypeIndex>
+
+@{
+    ViewBag.Title = ViewResource.MeetingTitleType_Index_Title_Text;
+}
+
+@using (Html.BeginForm("Index", "MeetingTitleType", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { List = Model })
+}
+
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+<section class="List">
+    <table>
+        <thead>
+            <tr>
+                <th class="@ViewBag.TitleSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_Title_Name, "Index", new { sortOrder = ViewBag.TitleSortParam, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.MeetingTypeSortSymbol">
+                    @Html.ActionLink(FieldResource.Meeting_MeetingType_Name, "Index", new { sortOrder = ViewBag.MeetingTypeSortParam, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="3">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(mi => i.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.MeetingTypeCzechText)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("Edit", new { id = i.MeetingTitleTypeId })" title="@ViewResource.Global_BtnEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                        <a href="@Url.Action("Delete", new { id = i.MeetingTitleTypeId })" title="@ViewResource.Global_BtnDeleteTitle_Text"><span class="lbt-icon30-delete"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @using (Html.BeginForm("Index", "MeetingTitleType", FormMethod.Get))
+    {
+        @Html.Partial("_PagingPartial", new PagingPartialModelView { List = Model, SectionId = "Paging2" })
+    }
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplCreateTitle_Text, "Create")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

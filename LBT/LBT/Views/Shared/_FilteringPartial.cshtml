@@ -1,0 +1,30 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.FilteringPartialModelView
+
+@foreach (string key in Model.RouteValueDictionary.Keys)
+{
+    <input type="hidden" name="@key" value="@Model.RouteValueDictionary[key]"/>
+}
+
+<section id="@Model.SectionId">
+    <div class="float-left">
+        @if(Model.ShowFiltering)
+        {
+            @ViewResource.Global_FilterBy_Text @Html.Raw("&nbsp;") @Html.DropDownList("SearchStringAccording") @Html.Raw(" : ") @Html.TextBox("SearchString", ViewBag.CurrentFilter as String)
+            <input type="submit" value="@ViewResource.Global_HplSearchTitle_Text" style="font-size: 0.9em;" />            
+        }
+    </div>
+    @if (Model.ShowSwitchToIndexTree)
+    {
+        <div class="float-right">
+            <a href="@Url.Action(Model.IndexTreeActionName)" onclick="SwitchToIndexTree();">@ViewResource.Global_HplIndexTreeTitle_Text</a>
+        </div>  
+    }
+    @if (Model.ShowSwitchToIndex)
+    {
+        <div class="float-right">
+            <a href="@Url.Action(Model.IndexActionName)" onclick="SwitchToIndex();">@ViewResource.Global_HplIndexTitle_Text</a>
+        </div>
+    }
+    <div class="clear-fix"></div>
+</section>

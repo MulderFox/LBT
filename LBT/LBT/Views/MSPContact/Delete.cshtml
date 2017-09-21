@@ -1,0 +1,44 @@
+﻿@*@using LBT.Resource
+@using LBT.Resources
+@model LBT.Models.MSPContact
+
+@{
+    ViewBag.Title = "Smazat kontakt MSP";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>@ViewResource.Global_DeleteConfirmationQuestion_Text</p>
+
+<fieldset>
+    <legend>Kontakt MSP</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ICO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ICO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Address)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" autofocus value="Smazat" /> |
+        @Html.ActionLink("Návrat na seznam kontaktů MSP", "Index")
+    </p>
+}*@

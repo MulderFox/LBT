@@ -1,0 +1,479 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.DashboardIndex
+
+@{
+    ViewBag.Title = ViewResource.Meeting_Dashboard_Title_Text;
+}
+
+<h4>@ViewResource.Meeting_Dashboard_Title_Text</h4>
+
+<ul>
+    <li>@Html.ActionLink(ListItemsResource.MeetingType_Lgs, "BusinessInfoIndex")</li>
+    <li>@Html.ActionLink(ListItemsResource.MeetingType_Webinar, "WebinarIndex")</li>
+    <li>@Html.ActionLink(ListItemsResource.MeetingType_SetkaniTymu, "SetkaniTymuIndex")</li>
+    <li>@Html.ActionLink(ListItemsResource.MeetingType_MspEvening, "MspEveningIndex")</li>
+    <li>@Html.ActionLink(ListItemsResource.MeetingType_SkoleniDavidaKotaska, "SkoleniDavidaKotaskaIndex")</li>
+    <li>@Html.ActionLink(ListItemsResource.MeetingType_Ostatni, "OstatniIndex")</li>
+</ul>
+
+<h4>@ViewResource.Meeting_Dashboard_NearestBusinessInfo_Text</h4>
+
+<section class="List Dashboard">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_City_Name
+                </th>
+                <th>
+                    @FieldResource.Global_Date_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Day_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Time_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_AddressLine1_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Organizer_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_FreeCapacity_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Lecturer_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.MeetingBusinessInfoIndex == null)
+            {
+                <tr>
+                    <td colspan="9">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            else
+            {
+                <tr class="BusinessInfoFormatting">
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingBusinessInfoIndex.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingBusinessInfoIndex.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingBusinessInfoIndex.Day)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingBusinessInfoIndex.Time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingBusinessInfoIndex.Street)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingBusinessInfoIndex.Organizer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingBusinessInfoIndex.FreeCapacity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingBusinessInfoIndex.Lecturer)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("BusinessInfoDetails", new { id = Model.MeetingBusinessInfoIndex.MeetingId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+<h4>@ViewResource.Meeting_Dashboard_NearestWebinar_Text</h4>
+
+<section class="List Dashboard">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_Date_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Day_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Time_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Organizer_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_FillCapacity_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Lecturer_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.MeetingWebinarIndex == null)
+            {
+                <tr>
+                    <td colspan="7">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            else
+            {
+                <tr class="BusinessInfoFormatting">
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingWebinarIndex.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingWebinarIndex.Day)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingWebinarIndex.Time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingWebinarIndex.Organizer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingWebinarIndex.FillCapacity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingWebinarIndex.Lecturer)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("WebinarDetails", new { id = Model.MeetingWebinarIndex.MeetingId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+<h4>@ViewResource.Meeting_Dashboard_NearestTeamMeeting_Text</h4>
+
+<section class="List Dashboard">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Meeting_Type_Name
+                </th>
+                <th>
+                    @FieldResource.Global_City_Name
+                </th>
+                <th>
+                    @FieldResource.Global_Date_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Day_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Time_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_AddressLine1_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Organizer_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_FreeCapacity_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Lecturer_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.MeetingSetkaniTymuIndex == null)
+            {
+                <tr>
+                    <td colspan="10">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            else
+            {
+                <tr class="SetkaniTymuFormatting">
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSetkaniTymuIndex.MeetingTitleType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSetkaniTymuIndex.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSetkaniTymuIndex.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSetkaniTymuIndex.Day)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSetkaniTymuIndex.Time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSetkaniTymuIndex.Street)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSetkaniTymuIndex.Organizer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSetkaniTymuIndex.FreeCapacity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSetkaniTymuIndex.Lecturer)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("SetkaniTymuDetails", new { id = Model.MeetingSetkaniTymuIndex.MeetingId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+<h4>@ViewResource.Meeting_Dashboard_NearestMSPEventing_Text</h4>
+
+<section class="List Dashboard">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_City_Name
+                </th>
+                <th>
+                    @FieldResource.Global_Date_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Day_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Time_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_AddressLine1_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Organizer_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_FreeCapacity_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Lecturer_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.MeetingMspEveningIndex == null)
+            {
+                <tr>
+                    <td colspan="9">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            else
+            {
+                <tr class="MspEveningFormatting">
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingMspEveningIndex.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingMspEveningIndex.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingMspEveningIndex.Day)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingMspEveningIndex.Time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingMspEveningIndex.Street)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingMspEveningIndex.Organizer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingMspEveningIndex.FreeCapacity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingMspEveningIndex.Lecturer)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("MspEveningDetails", new { id = Model.MeetingMspEveningIndex.MeetingId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+<h4>@ViewResource.Meeting_Dashboard_NearestDavidKotasekTraining_Text</h4>
+
+<section class="List Dashboard">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_Title_Name
+                </th>
+                <th>
+                    @FieldResource.Global_City_Name
+                </th>
+                <th>
+                    @FieldResource.Global_Date_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Day_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Time_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_AddressLine1_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Organizer_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_FreeCapacity_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Lecturer_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.MeetingSkoleniDavidaKotaskaIndex == null)
+            {
+                <tr>
+                    <td colspan="10">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            else
+            {
+                <tr class="SkoleniDavidaKotaskaFormatting">
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSkoleniDavidaKotaskaIndex.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSkoleniDavidaKotaskaIndex.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSkoleniDavidaKotaskaIndex.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSkoleniDavidaKotaskaIndex.Day)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSkoleniDavidaKotaskaIndex.Time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSkoleniDavidaKotaskaIndex.Street)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSkoleniDavidaKotaskaIndex.Organizer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSkoleniDavidaKotaskaIndex.FreeCapacity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingSkoleniDavidaKotaskaIndex.Lecturer)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("SkoleniDavidaKotaskaDetails", new { id = Model.MeetingSkoleniDavidaKotaskaIndex.MeetingId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+<h4>@ViewResource.Meeting_Dashboard_NearestOthers_Text</h4>
+
+<section class="List Dashboard">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Meeting_Type_Name
+                </th>
+                <th>
+                    @FieldResource.Global_City_Name
+                </th>
+                <th>
+                    @FieldResource.Global_Date_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Day_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Time_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_AddressLine1_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Organizer_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_FreeCapacity_Name
+                </th>
+                <th>
+                    @FieldResource.Meeting_Lecturer_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.MeetingOstatniIndex == null)
+            {
+                <tr>
+                    <td colspan="10">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingOstatniIndex.MeetingTitleType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingOstatniIndex.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingOstatniIndex.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingOstatniIndex.Day)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingOstatniIndex.Time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingOstatniIndex.Street)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingOstatniIndex.Organizer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingOstatniIndex.FreeCapacity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => Model.MeetingOstatniIndex.Lecturer)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("OstatniDetails", new { id = Model.MeetingOstatniIndex.MeetingId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

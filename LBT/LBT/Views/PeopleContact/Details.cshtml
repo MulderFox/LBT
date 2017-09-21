@@ -1,0 +1,346 @@
+﻿@using LBT.Models
+@using LBT.Resources
+@model LBT.ModelViews.PeopleContactDetails
+
+@{
+    ViewBag.Title = ViewResource.PeopleContact_Details_Title_Text;
+}
+
+<p class="message-success">@ViewBag.StatusMessage</p>
+
+<section id="detailAdvancedForm">
+    <table class="Main">
+        <tbody>
+            <tr>
+                <td colspan="2" class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="font-size: 1.5em; font-weight: bold;" colspan="2">
+                                    @Html.DisplayFor(m => m.Title)
+                                    @Html.DisplayFor(m => m.LastName)
+                                    @Html.DisplayFor(m => m.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.Potential):
+                                    <b>@Html.DisplayFor(m => m.Potential)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    @Html.DisplayNameFor(m => m.City):
+                                    <b>@Html.DisplayFor(m => m.City)</b>
+                                </td>
+                                <td style="width: 30%">
+                                    @Html.DisplayNameFor(m => m.District):
+                                    <b>@Html.DisplayFor(m => m.District.Title)</b>
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(m => m.ContactDead):
+                                    <b style="position: relative; top: 3px;">@Html.DisplayFor(m => m.ContactDead)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="6">
+                                    <span class="title">@ViewResource.Global_ContactsTitle_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.PhoneNumber1):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.PhoneNumberPrefix1.Title)
+                                    @Html.DisplayFor(m => m.PhoneNumber1)
+                                </td>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.Email1):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.Email1)
+                                </td>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.Skype):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.Skype)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.PhoneNumber2):
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(m => m.PhoneNumberPrefix2.Title)
+                                    @Html.DisplayFor(m => m.PhoneNumber2)
+                                </td>
+                                <th>
+                                    @Html.DisplayNameFor(m => m.Email2):
+                                </th>
+                                <td colspan="3">
+                                    @Html.DisplayFor(m => m.Email2)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="BoxStatus">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="title">@ViewResource.PeopleContact_WorkflowTitle_Text:
+                                        @if (Model.WorkflowState == WorkflowState.Stopped)
+                                        {
+                                            @ViewResource.PeopleContact_WorkflowStopped_Text
+                                        }
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.FirstContacted):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(m => m.FirstContacted)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.Presented):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(m => m.Presented)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.TrackingEmailSent):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(m => m.TrackingEmailSent)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.SecondContacted):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(m => m.SecondContacted)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.SecondMeeting):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(m => m.SecondMeeting)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.SecondTrackingEmailSent):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(m => m.SecondTrackingEmailSent)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.BusinessInfoParticipated):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(m => m.BusinessInfoParticipated)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.ThirdMeeting):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(m => m.ThirdMeeting)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.TeamMeetingParticipated):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(m => m.TeamMeetingParticipated)</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td class="BoxStatus">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="title">@ViewResource.Global_StatusTitle_Text:</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.Registrated):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(m => m.Registrated)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.LyonessId):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(m => m.LyonessId)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.PremiumMembershipGranted):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(m => m.PremiumMembershipGranted)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.AccessGranted):
+                                </td>
+                                <td style="text-align: center;">
+                                    <b>@Html.DisplayFor(m => m.AccessGranted)</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.MoneyToPurchaseAccountSended):
+                                </td>
+                                <td style="text-align: center;">
+                                    @Html.DisplayFor(m => m.MoneyToPurchaseAccountSended)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.MobileApplicationInstalledAndTrained):
+                                </td>
+                                <td style="text-align: center;">
+                                    @Html.DisplayFor(m => m.MobileApplicationInstalledAndTrained)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.LoyaltySystemExplained):
+                                </td>
+                                <td style="text-align: center;">
+                                    @Html.DisplayFor(m => m.LoyaltySystemExplained)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.AbleToPurchase):
+                                </td>
+                                <td style="text-align: center;">
+                                    @Html.DisplayFor(m => m.AbleToPurchase)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.AutoCashback):
+                                </td>
+                                <td style="text-align: center;">
+                                    @Html.DisplayFor(m => m.AutoCashback)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.ShoppingPlanBackSet):
+                                </td>
+                                <td style="text-align: center;">
+                                    @Html.DisplayFor(m => m.ShoppingPlanBackSet)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="lbt-icon16-info"></span>&nbsp;@Html.DisplayNameFor(m => m.OwnUnitsContained):
+                                </td>
+                                <td style="text-align: center;">
+                                    @Html.DisplayFor(m => m.OwnUnitsContained)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="BoxStatus-last">
+                    @Html.DisplayNameFor(m => m.Tasks):<br />
+                    <div class="rawHtml">@Html.Raw(Model.Tasks)</div>
+                </td>
+                <td class="BoxStatus-last">
+                    @Html.DisplayNameFor(m => m.Note):<br />
+                    <div class="rawHtml">@Html.Raw(Model.Note)</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        @if (ViewBag.IsRegistrar)
+                        {
+                            <li>@Html.ActionLink(ViewResource.Global_HplEditTitle_Text, "Edit", new { id = Model.PeopleContactId })</li>
+                            <li>@Html.ActionLink(ViewResource.Global_HplDeleteTitle_Text, "Delete", new { id = Model.PeopleContactId })</li>
+                        }
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, "Index")</li>
+                        <li>@Html.ActionLink(ViewResource.PeopleContact_HplPrintDetailsTitle_Text, "PrintDetails", new { id = Model.PeopleContactId }, new { target = "_blank" })</li>
+                        <li>@Html.ActionLink(ViewResource.PeopleContact_HplRegisterPeopleContactTitle_Text, "RegisterPeopleContact", "Account", new { id = Model.PeopleContactId }, null)</li>
+                        @if (Model.WorkflowState != WorkflowState.Stopped)
+                        {
+                            <li><a href="#" onclick="javascript: StopWorkflow(@Model.PeopleContactId); return false;">@ViewResource.PeopleContact_HplStopWorkflowTitle_Text</a></li>          
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink(ViewResource.PeopleContact_HplStartWorkflowTitle_Text, "StartWorkflow", new { id = Model.PeopleContactId })</li>
+                        }
+                        @if (Model.SendVideo)
+                        {
+                            <li>@Html.ActionLink(ViewResource.PeopleContact_HplSendVideoTitle_Text, "SendVideo", new { id = Model.PeopleContactId })</li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+<div id="popup">
+    <span class="button b-close"><span>X</span></span>
+    <div class="content"></div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        function StopWorkflow(id) {
+            var url = '@Url.Action("StopWorkflow")' + "?id=" + id;
+            var onCloseUrl = '@Url.Action("Index", "Task")';
+            LBT.StopWorkflow(url, onCloseUrl);
+        }
+    </script>
+}

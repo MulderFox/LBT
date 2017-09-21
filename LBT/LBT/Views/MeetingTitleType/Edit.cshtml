@@ -1,0 +1,45 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.MeetingTitleTypeEdit
+
+@{
+    ViewBag.Title = ViewResource.MeetingTitleType_Edit_Title_Text;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    @Html.HiddenFor(model => model.MeetingTitleTypeId)
+
+    <fieldset>
+        <legend>@ViewResource.Global_MeetingTitleTypeLegend_Text</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(model => model.Title, new { @class = "required" })
+                @Html.EditorFor(model => model.Title)
+            </li>
+            <li>
+                <b>@Html.DisplayNameFor(model => model.MeetingTypeCzechText):</b>
+                @Html.DisplayFor(model => model.MeetingTypeCzechText)
+                @Html.HiddenFor(model => model.MeetingType)
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToMeetingTitleTypeIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

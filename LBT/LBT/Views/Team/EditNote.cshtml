@@ -1,0 +1,59 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.TeamEditNote
+
+@{
+    ViewBag.Title = ViewResource.Team_EditNote_Title_Text;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.TeamId)
+
+    <fieldset>
+        <legend>@ViewResource.Team_Legend_Text</legend>
+        <ol>
+            <li>
+                <b>@Html.DisplayNameFor(model => model.Title):</b>
+                @Html.DisplayFor(model => model.Title)
+            </li>
+            <li>
+                <b>@Html.DisplayNameFor(model => model.Owner):</b>
+                @Html.DisplayFor(model => model.Owner)
+            </li>
+            <li>
+                @Html.DisplayNameFor(model => model.Task):<br />
+                <div class="rawHtml">@Html.Raw(Model.Task)</div>
+            </li>
+            <li>
+                @Html.LabelFor(model => model.Note)
+                @Html.TextAreaFor(model => model.Note, new { @rows = "10" })
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Global_BtnSaveTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackToTeamIndex_Text, "Index")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            LBT.ApplyTinyMCE();
+        });
+    </script>
+}

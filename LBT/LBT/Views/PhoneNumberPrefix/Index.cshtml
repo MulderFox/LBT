@@ -1,0 +1,59 @@
+﻿@using LBT.ModelViews
+@using LBT.Resources
+@model PagedList.IPagedList<PhoneNumberPrefixIndex>
+
+@{
+    ViewBag.Title = ViewResource.PhoneNumberPrefix_Index_Title_Text;
+}
+
+@using (Html.BeginForm("Index", "PhoneNumberPrefix", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { List = Model })    
+}
+
+<section id="PhoneNumberPrefix">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @FieldResource.Global_Title_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td class="item-title">
+                        @Html.DisplayFor(mi => i.Title)
+                    </td>
+                    <td class="buttons">
+                        <a href="@Url.Action("Edit", new { id = i.PhoneNumberPrefixId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>
+                        <a href="@Url.Action("Delete", new { id = i.PhoneNumberPrefixId })" title="@ViewResource.Global_HplDeleteTitle_Text"><span class="lbt-icon30-delete"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@using (Html.BeginForm("Index", "PhoneNumberPrefix", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView { List = Model })    
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplCreateTitle_Text, "Create")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

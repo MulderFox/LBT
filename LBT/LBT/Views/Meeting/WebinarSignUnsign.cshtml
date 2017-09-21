@@ -1,0 +1,199 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resources
+@model MeetingWebinarSignUnsign
+
+@{
+    ViewBag.Title = ViewResource.Meeting_WebinarSignUnsign_Title_Text;
+}
+
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+@Html.Partial("_WebinarDetails")
+
+@using (Html.BeginForm("WebinarSignUnsign", "Meeting", FormMethod.Get, new { id = "filter" }))
+{
+    @Html.Partial("_UserFilteringPartial", new FilteringPartialModelView())
+
+    @Html.Partial("_PageSizingPartial", new PageSizingPartialModelView())    
+}
+
+<h3>@ViewResource.Global_MeetingListAttendees_Text</h3>
+
+@Html.Partial("_SignUnsignPagingPartial", new SignUnsignPagingPartialModelView { ActionName = "WebinarSignUnsign", List = Model.SignedAttendees, PagingRouteValueName = "signedPage" })
+
+<section class="List">
+    <table>
+        <thead>
+            <tr>
+                <th class="@ViewBag.SignedFirstNameSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_FirstName_Name, "WebinarSignUnsign", new { filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount, signedPage = ViewBag.CurrentSignedPage, signedSortOrder = ViewBag.SignedFirstNameSortParam, currentFilterAccording = ViewBag.CurrentFilterAccording, currentFilter = ViewBag.CurrentFilter, page = ViewBag.CurrentPage, sortOrder = ViewBag.CurrentSort })
+                </th>
+                <th class="@ViewBag.SignedLastNameSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_LastName_Name, "WebinarSignUnsign", new { filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount, signedPage = ViewBag.CurrentSignedPage, signedSortOrder = ViewBag.SignedLastNameSortParam, currentFilterAccording = ViewBag.CurrentFilterAccording, currentFilter = ViewBag.CurrentFilter, page = ViewBag.CurrentPage, sortOrder = ViewBag.CurrentSort })
+                </th>
+                <th class="@ViewBag.SignedCitySortSymbol">
+                    @Html.ActionLink(FieldResource.Meeting_Residence_Name, "WebinarSignUnsign", new { filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount, signedPage = ViewBag.CurrentSignedPage, signedSortOrder = ViewBag.SignedCitySortParam, currentFilterAccording = ViewBag.CurrentFilterAccording, currentFilter = ViewBag.CurrentFilter, page = ViewBag.CurrentPage, sortOrder = ViewBag.CurrentSort })
+                </th>
+                <th>
+                    @FieldResource.Meeting_Unsign_Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.SignedAttendees.Any())
+            {
+                <tr>
+                    <td colspan="4">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model.SignedAttendees)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(mi => i.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.City)
+                    </td>
+                    <td>
+                        <a class="UnsignButton" href="@Url.Action("WebinarUnsign", new { id = Model.MeetingId, attendeeId = i.AttendeeId, currentFilterAccording = ViewBag.CurrentFilterAccording, currentFilter = ViewBag.CurrentFilter, filteredUserId = ViewBag.SelectedFilteredUserId })" title="@ViewResource.Global_HplUnsignTitle_Text"><span class="lbt-icon30-delete"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@Html.Partial("_SignUnsignPagingPartial", new SignUnsignPagingPartialModelView { SectionClass = "Paging2", ActionName = "WebinarSignUnsign", List = Model.SignedAttendees, PagingRouteValueName = "signedPage" })
+
+<h3>@ViewResource.Global_MeetingUserAttendee_Text</h3>
+
+<section class="List">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(m => m.UserAttendee.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.UserAttendee.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.UserAttendee.City)
+                </th>
+                <th>
+                    @(Model.UserAttendee.Signed
+                          ? FieldResource.Meeting_Unsign_Name
+                          : FieldResource.Meeting_Sign_Name)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => m.UserAttendee.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.UserAttendee.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.UserAttendee.City)
+                </td>
+                <td>
+                    @if (Model.UserAttendee.Signed)
+                    {
+                        <a class="UnsignButton" href="@Url.Action("WebinarUnsignUser", new { id = Model.MeetingId, attendeeId = Model.UserAttendee.AttendeeId, currentFilterAccording = ViewBag.CurrentFilterAccording, currentFilter = ViewBag.CurrentFilter, filteredUserId = ViewBag.SelectedFilteredUserId })" title="@ViewResource.Global_HplUnsignTitle_Text"><span class="lbt-icon30-delete"></span></a>                        
+                    }
+                    else
+                    {
+                        <a class="SignButton" href="@Url.Action("WebinarSignUser", new { id = Model.MeetingId, attendeeId = Model.UserAttendee.AttendeeId, currentFilterAccording = ViewBag.CurrentFilterAccording, currentFilter = ViewBag.CurrentFilter, filteredUserId = ViewBag.SelectedFilteredUserId })" title="@ViewResource.Global_HplSignTitle_Text"><span class="lbt-icon30-plus"></span></a>                        
+                    }
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<h3>@ViewResource.Global_ContactList_Text</h3>
+
+@using (Html.BeginForm("WebinarSignUnsign", "Meeting", FormMethod.Get, new { id = "filter2" }))
+{
+    @Html.Partial("_SignUnsignFilteringPartial", new SignUnsignFilteringPartialModelView { RouteValues = new { filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount, signedPage = ViewBag.CurrentSignedPage, signedSortOrder = ViewBag.SignedCurrentSort, sortOrder = ViewBag.CurrentSort } })
+}
+
+@Html.Partial("_SignUnsignPagingPartial", new SignUnsignPagingPartialModelView { ActionName = "WebinarSignUnsign", List = Model.Attendees })
+
+<section class="List">
+    <table>
+        <thead>
+            <tr>
+                <th class="@ViewBag.FirstNameSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_FirstName_Name, "WebinarSignUnsign", new { filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount, signedPage = ViewBag.CurrentSignedPage, signedSortOrder = ViewBag.SignedCurrentSort, currentFilterAccording = ViewBag.CurrentFilterAccording, currentFilter = ViewBag.CurrentFilter, page = ViewBag.CurrentPage, sortOrder = ViewBag.FirstNameSortParam })
+                </th>
+                <th class="@ViewBag.LastNameSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_LastName_Name, "WebinarSignUnsign", new { filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount, signedPage = ViewBag.CurrentSignedPage, signedSortOrder = ViewBag.SignedCurrentSort, currentFilterAccording = ViewBag.CurrentFilterAccording, currentFilter = ViewBag.CurrentFilter, page = ViewBag.CurrentPage, sortOrder = ViewBag.LastNameSortParam })
+                </th>
+                <th class="@ViewBag.CitySortSymbol">
+                    @Html.ActionLink(FieldResource.Meeting_Residence_Name, "WebinarSignUnsign", new { filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount, signedPage = ViewBag.CurrentSignedPage, signedSortOrder = ViewBag.SignedCurrentSort, currentFilterAccording = ViewBag.CurrentFilterAccording, currentFilter = ViewBag.CurrentFilter, page = ViewBag.CurrentPage, sortOrder = ViewBag.CitySortParam })
+                </th>
+                <th>
+                    @FieldResource.Meeting_Sign_Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Attendees.Any())
+            {
+                <tr>
+                    <td colspan="4">@ViewResource.Global_NoRecord_Text</td>
+                </tr>
+            }
+            @foreach (var i in Model.Attendees)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(mi => i.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.City)
+                    </td>
+                    <td>
+                        <a class="SignButton" href="@Url.Action("WebinarSign", new { id = Model.MeetingId, attendeeId = i.AttendeeId, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId })" title="@ViewResource.Global_HplSignTitle_Text"><span class="lbt-icon30-plus"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@Html.Partial("_SignUnsignPagingPartial", new SignUnsignPagingPartialModelView { ActionName = "WebinarSignUnsign", List = Model.Attendees })
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, "WebinarDetails", new { id = Model.MeetingId })</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            var scrollTopCookie = '@LBT.Helpers.Cookie.ScrollTopCookieKey';
+            LBT.ApplyScrollPosition(scrollTopCookie);
+        });
+    </script>
+}

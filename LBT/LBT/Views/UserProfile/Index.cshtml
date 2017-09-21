@@ -1,0 +1,142 @@
+﻿@using LBT.ModelViews;
+@using LBT.Resources
+@model PagedList.IPagedList<UserProfileIndex>
+
+@{
+    ViewBag.Title = ViewResource.UserProfile_Index_Title_Text;
+}
+
+@using (Html.BeginForm("Index", "UserProfile", FormMethod.Get))
+{
+    @Html.Partial("_FilteringPartial", new FilteringPartialModelView{ShowSwitchToIndexTree = true})
+
+    @Html.Partial("_PagingPartial", new PagingPartialModelView{List = Model})
+}
+
+<p class="message-success">@ViewBag.SuccessMessage</p>
+<p class="message-error">@ViewBag.StatusMessage</p>
+
+<section id="UserProfiles">
+    <table>
+        <thead>
+            <tr>
+                <th class="@ViewBag.LastNameSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_LastName_Name, "Index", new { sortOrder = ViewBag.LastNameSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.FirstNameSortSymbol">
+                    @Html.ActionLink(FieldResource.Global_FirstName_Name, "Index", new { sortOrder = ViewBag.FirstNameSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.CitySortSymbol" style="width: 100px;">
+                    @Html.ActionLink(FieldResource.Global_City_Name, "Index", new { sortOrder = ViewBag.CitySortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th class="@ViewBag.LyonessIdSortSymbol" style="width: 100px;">
+                    @Html.ActionLink(FieldResource.Global_LyonessId_Name, "Index", new { sortOrder = ViewBag.LyonessIdSortParam, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId, pageSize = ViewBag.PageSizeCount })
+                </th>
+                <th>
+                    @FieldResource.Global_PhoneNumber1_Name
+                </th>
+                <th>
+                    @FieldResource.Global_Email1_Name
+                </th>
+                <th>
+                    @FieldResource.Global_Role_Name
+                </th>
+                <th>
+                    @FieldResource.UserProfile_PeopleContactCount_Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="8">@ViewResource.Global_NoRecord_Text.</td>
+                </tr>
+            }
+            @foreach (var i in Model)
+            {
+                <tr class="@i.FormattingClass">
+                    <td>
+                        @Html.DisplayFor(mi => i.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.CityIndexView)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.LyonessId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.PrimaryPhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.Email1IndexView)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.RoleAcronym)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(mi => i.PeopleContactCount)
+                    </td>
+                    <td class="buttons">
+                        @if (i.IsEditable)
+                        {
+                            <a href="@Url.Action("Edit", new { id = i.UserId })" title="@ViewResource.Global_HplEditTitle_Text"><span class="lbt-icon30-edit"></span></a>                            
+                        }
+                        <a href="@Url.Action("Details", new { id = i.UserId })" title="@ViewResource.Global_HplDetailsTitle_Text"><span class="lbt-icon30-details"></span></a>
+                        @if (i.IsPromotable)
+                        {
+                            <a href="@Url.Action("Promote", new { id = i.UserId, returnUrl = "Index" })" title="@ViewResource.Global_HplPromoteTitle_Text"><span class="lbt-icon30-promote"></span></a>
+                        }
+                        @if (ViewBag.IsAdmin)
+                        {
+                            <a href="@Url.Action("Delete", new { id = i.UserId })" title="@ViewResource.Global_HplDeleteTitle_Text"><span class="lbt-icon30-delete"></span></a>
+                        }
+                        @if (i.Active)
+                        {
+                            <a href="@Url.Action("Locked", new { id = i.UserId })" title="@ViewResource.UserProfile_HplLockTitle_Text"><span class="lbt-icon30-unlock"></span></a>
+                        }
+                        @if (!i.Active)
+                        {
+                            <a href="@Url.Action("Unlocked", new { id = i.UserId })" title="@ViewResource.UserProfile_HplUnlockTitle_Text"><span class="lbt-icon30-lock"></span></a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+@using (Html.BeginForm("Index", "UserProfile", FormMethod.Get))
+{
+    @Html.Partial("_PagingPartial", new PagingPartialModelView{SectionId = "Paging2", List = Model})
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.UserProfile_HplRegisterAccountTitle_Text, "Register", "Account")</li>
+                        <li>@Html.ActionLink(ViewResource.Global_HplPrintUserIndexTitle_Text, "PrintIndex", new { sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, currentFilterAccording = ViewBag.CurrentFilterAccording, filteredUserId = ViewBag.SelectedFilteredUserId }, new { target = "_blank" })</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        function SwitchToIndexTree() {
+            var switchToUserProfileIndexTreeCookieKey = '@LBT.Helpers.Cookie.SwitchToUserProfileIndexTreeCookieKey';
+            var isDefaultView = true;
+            LBT.SwitchToIndexTree(switchToUserProfileIndexTreeCookieKey, isDefaultView);
+        }
+    </script>
+}

@@ -1,0 +1,75 @@
+﻿@using LBT.Resources
+@model IEnumerable<LBT.ModelViews.PeopleContactIndex>
+
+@{
+    ViewBag.Title = ViewResource.PeopleContact_PrintIndex_Title_Text;
+}
+
+<h1>@ViewBag.Title</h1>
+
+<section id="PeopleContacts">
+    <table>
+        <tr>
+            <th>
+                @FieldResource.Global_FirstName_Name
+            </th>
+            <th>
+                @FieldResource.Global_LastName_Name
+            </th>
+            <th>
+                @FieldResource.Global_City_Name
+            </th>
+            <th>
+                @FieldResource.Global_PhoneNumber1_Name
+            </th>
+            <th>
+                @FieldResource.Global_Email1_Name
+            </th>
+            <th>
+                @FieldResource.Global_Skype_Name
+            </th>
+            <th>
+                @FieldResource.Contact_Potential_Name
+            </th>
+        </tr>
+
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(mi => i.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => i.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => i.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => i.PhoneNumber1)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => i.Email1)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => i.Skype)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => i.Potential)
+                </td>
+            </tr>
+        }
+    </table>
+</section>
+
+<p>
+    @ViewBag.IsListCuttedMessage
+</p>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            window.print();
+        });
+    </script>
+}

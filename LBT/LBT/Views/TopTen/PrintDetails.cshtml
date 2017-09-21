@@ -1,0 +1,210 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.TopTenDetails
+
+@{
+    ViewBag.Title = ViewResource.TopTen_PrintDetails_Title_Text;
+}
+
+<section id="detailAdvancedFormPrint">
+    <div class="float-left" style="font-size: 1.4em; margin-right: 50px;">
+        @ViewResource.TopTen_PrintDetails_Header_Text
+    </div>
+    <div class="float-left" style="font-size: 0.8em;">
+        @Html.DisplayNameFor(m => m.RoleLocalized): @Html.DisplayFor(m => m.RoleLocalized)
+    </div>
+    <div class="clear-fix"></div>
+    <table class="Main">
+        <tbody>
+            <tr>
+                <td class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th class="Data">@Html.DisplayNameFor(m => m.ToUser.LastName), @Html.DisplayNameFor(m => m.ToUser.FirstName)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.ToUser.LyonessId)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@FieldResource.Global_PhoneNumber1Short_Name</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.ToUser.Email1)</th>
+                            </tr>
+                            <tr>
+                                <td class="DataBox">
+                                    @Html.DisplayFor(m => m.ToUser.Title)
+                                    @Html.DisplayFor(m => m.ToUser.LastName)
+                                    @Html.DisplayFor(m => m.ToUser.FirstName)
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @Html.DisplayFor(m => m.ToUser.LyonessId)
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @Html.DisplayFor(m => m.ToUser.PhoneNumberPrefix1.Title)
+                                    @Html.DisplayFor(m => m.ToUser.PhoneNumber1)
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBoxSmall">
+                                    @Html.DisplayFor(m => m.ToUser.Email1)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="Box">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th class="Data">@Html.DisplayNameFor(m => m.TrainingPhone)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.TrainingVideo)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.TrainingBiPresentation)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.TrainingStLecture)</th>
+                            </tr>
+                            <tr>
+                                <td class="DataBox">
+                                    @if (Model.TrainingPhone)
+                                    {
+                                        <span class="lbt-icon30-ok"></span>
+                                    }
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @if (Model.TrainingVideo)
+                                    {
+                                        <span class="lbt-icon30-ok"></span>
+                                    }
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @if (Model.TrainingBiPresentation)
+                                    {
+                                        <span class="lbt-icon30-ok"></span>
+                                    }
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @if (Model.TrainingStLecture)
+                                    {
+                                        <span class="lbt-icon30-ok"></span>
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="Data">@Html.DisplayNameFor(m => m.Od1)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.Od2)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.Rhetoric)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.TeamLeadershipping)</th>
+                            </tr>
+                            <tr>
+                                <td class="DataBox">
+                                    @if (Model.Od1)
+                                    {
+                                        <span class="lbt-icon30-ok"></span>
+                                    }
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @if (Model.Od2)
+                                    {
+                                        <span class="lbt-icon30-ok"></span>
+                                    }
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @if (Model.Rhetoric)
+                                    {
+                                        <span class="lbt-icon30-ok"></span>
+                                    }
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @if (Model.TeamLeadershipping)
+                                    {
+                                        <span class="lbt-icon30-ok"></span>
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="Data">@Html.DisplayNameFor(m => m.ConductingMeetings)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.Sns)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.AdditionalTraining)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.ActualCareerStage)</th>
+                            </tr>
+                            <tr>
+                                <td class="DataBox">
+                                    @if (Model.ConductingMeetings)
+                                    {
+                                        <span class="lbt-icon30-ok"></span>
+                                    }
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @if (Model.Sns)
+                                    {
+                                        <span class="lbt-icon30-ok"></span>
+                                    }
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @if (Model.AdditionalTraining)
+                                    {
+                                        <span class="lbt-icon30-ok"></span>
+                                    }
+                                </td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBox">
+                                    @Model.ActualCareerStage
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="Box-last">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th class="Data">@Html.DisplayNameFor(m => m.ShortTermCareerGoal)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.LongTermCareerGoal)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.Tasks)</th>
+                                <td class="Space">&nbsp;</td>
+                                <th class="Data">@Html.DisplayNameFor(m => m.Note)</th>
+                            </tr>
+                            <tr>
+                                <td class="DataBoxNoteTextArea">@Model.ShortTermCareerGoal &nbsp;</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBoxNoteTextArea">@Model.LongTermCareerGoal &nbsp;</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBoxNoteTextArea">@Html.Raw(Model.Tasks) &nbsp;</td>
+                                <td class="Space">&nbsp;</td>
+                                <td class="DataBoxNoteTextArea">@Html.Raw(Model.Note) &nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            window.print();
+        });
+    </script>
+}

@@ -1,0 +1,50 @@
+﻿@using LBT.Resources
+@model LBT.ModelViews.LocalPassword
+
+@{
+    ViewBag.Title = ViewResource.Account_Manage_Title_Text;
+}
+
+<p>@ViewResource.Account_Manage_LoggedAs_Text <strong>@User.Identity.Name</strong>.</p>
+
+<p class="message-success">@ViewBag.StatusMessage</p>
+
+@using (Html.BeginForm("Manage", "Account"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>@ViewResource.Account_Manage_Legend_Text</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.OldPassword, new { @class = "required" })
+                @Html.PasswordFor(m => m.OldPassword)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.NewPassword, new { @class = "required" })
+                @Html.PasswordFor(m => m.NewPassword)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "required" })
+                @Html.PasswordFor(m => m.ConfirmPassword)
+            </li>
+        </ol>
+        <input type="submit" value="@ViewResource.Account_Manage_BtnChangePasswordTitle_Text" />
+    </fieldset>
+}
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Global_HplBackTitle_Text, "Settings")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

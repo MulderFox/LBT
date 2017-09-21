@@ -1,0 +1,55 @@
+﻿@using LBT.Extensions
+@using LBT.Resources
+@model LBT.ModelViews.Login
+
+@{
+    ViewBag.Title = @ViewResource.Account_Login_Title_Text;
+}
+
+<p class="message-success">@ViewBag.StatusMessage</p>
+
+<section id="loginForm">
+    @using (Html.BeginForm(new { ViewBag.ReturnUrl, ViewBag.LCID }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.MyValidationSummary()
+
+        <fieldset>
+            <legend>@ViewResource.Global_SignFormLegend_Text</legend>
+            <ol>
+                <li>
+                    @Html.LabelFor(m => m.LCID, new { @class = "required" })
+                    @Html.DropDownList("LCIDDropDownList", null, new { @onchange = "LBT.SendLcidRequest($(this).val());" })
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.UserName, new { @class = "required" })
+                    @Html.TextBoxFor(m => m.UserName)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.Password, new { @class = "required" })
+                    @Html.PasswordFor(m => m.Password)
+                </li>
+                <li>
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                </li>
+            </ol>
+            <input type="submit" value="@ViewResource.Account_Login_BtnSignInTitle_Text" />
+        </fieldset>
+    }
+</section>
+
+@section navigation2
+{
+    <div id="navigation2">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <nav>
+                    <ul class="menu2">
+                        <li>@Html.ActionLink(ViewResource.Account_Login_HplPasswordRecoveryTitle_Text, "PasswordRecovery", new { ViewBag.LCID })</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

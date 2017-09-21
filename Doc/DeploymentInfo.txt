@@ -1,0 +1,41 @@
+﻿Deployment Info pro LBT_120
+===========================
+
+Jedná se o aktualizaci aplikace LBT. Není podmínkou minimální verze aplikace.
+
+
+
+Příprava prostředí
+------------------
+
+1.) Přejmenujte na serveru soubor app_offline_.htm na app_offline.htm.
+2.) Záloha databáze:
+    a) Pomocí SQL Server Management Studio vyberte zdrojovou databázi.
+    b) Pravým tlačítkem na databázi vyberte Tasks => Generate Scripts... => Next
+    c) Selected specific database objects => zaškrtni Tables (zruš výběr tabulky __MigrationHistory) => Next
+    d) Advanced
+        - Script USE DATABASE => False
+        - Types of data to script => Data only
+    e) Nastavte správnou cestu File name. => Next => Next => Finish
+    f) Otevřete vygenerovaný SQL soubor.
+    g) Na první místo vložte řádek: set dateformat 'ymd'
+
+
+
+Instalace LBT
+-------------
+
+1.) Odstranit složky bin, Content, ErrorPages, Images, Scripts, Views.
+2.) Zkopírovat složku LBT do příslušného inetpub.
+3.) Přejmenovat Web_*.config (podle příslušného serveru) na web.config.
+4.) Odstranit soubor app_offline.htm
+5.) Přejít na stránku a provést recyklaci poolu:
+    a) PROD: https://ks.aspone.cz/153200/CP-Customer-Website-Settings.aspx?q=lbt.aspone.cz
+    b) TEST: https://ks.aspone.cz/153200/CP-Customer-Website-Settings.aspx?q=lbttest.aspone.cz
+
+
+
+Rollback
+--------
+
+1.) Nasadit předchozí verzi LBT.
