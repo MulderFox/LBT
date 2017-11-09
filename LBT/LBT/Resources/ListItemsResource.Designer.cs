@@ -124,6 +124,24 @@ namespace LBT.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BI MSP Wrk Lead.
+        /// </summary>
+        public static string BankAccountType_BiOrMspEveningOrWorkshopsOrLeaders {
+            get {
+                return ResourceManager.GetString("BankAccountType_BiOrMspEveningOrWorkshopsOrLeaders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BI, MSP Evening, Workshopy nebo Leaders.
+        /// </summary>
+        public static string BankAccountType_BiOrMspEveningOrWorkshopsOrLeaders_LongName {
+            get {
+                return ResourceManager.GetString("BankAccountType_BiOrMspEveningOrWorkshopsOrLeaders_LongName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to David Kotásek.
         /// </summary>
         public static string BankAccountType_DavidKotasekTraining {
@@ -151,24 +169,6 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LGS MSP Wrk Lead.
-        /// </summary>
-        public static string BankAccountType_LgsOrMspEveningOrWorkshopsOrLeaders {
-            get {
-                return ResourceManager.GetString("BankAccountType_LgsOrMspEveningOrWorkshopsOrLeaders", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to LGS, MSP Evening, Workshopy nebo Leaders.
-        /// </summary>
-        public static string BankAccountType_LgsOrMspEveningOrWorkshopsOrLeaders_LongName {
-            get {
-                return ResourceManager.GetString("BankAccountType_LgsOrMspEveningOrWorkshopsOrLeaders_LongName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Ostatní.
         /// </summary>
         public static string BankAccountType_Others {
@@ -187,7 +187,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Setkání týmu, LGS.
+        ///   Looks up a localized string similar to Setkání týmu, Business Info.
         /// </summary>
         public static string BankAccountType_TeamMeeting {
             get {
@@ -304,6 +304,15 @@ namespace LBT.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Business Info.
+        /// </summary>
+        public static string MeetingType_Bi {
+            get {
+                return ResourceManager.GetString("MeetingType_Bi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vyberte typ akce.
         /// </summary>
         public static string MeetingType_DropDownListTitle {
@@ -318,15 +327,6 @@ namespace LBT.Resources {
         public static string MeetingType_Leaders {
             get {
                 return ResourceManager.GetString("MeetingType_Leaders", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to LGS seminář.
-        /// </summary>
-        public static string MeetingType_Lgs {
-            get {
-                return ResourceManager.GetString("MeetingType_Lgs", resourceCulture);
             }
         }
         

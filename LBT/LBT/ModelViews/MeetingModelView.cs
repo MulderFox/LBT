@@ -153,8 +153,8 @@ namespace LBT.ModelViews
         public static MeetingBusinessInfoIndex GetNearestMeeting(DefaultContext db, bool isAdmin, int userId)
         {
             var meetings = (IEnumerable<MeetingCache.MeetingCacheBusinessInfo>)(isAdmin
-                                                                                     ? MeetingCache.GetIndexForAdmin(db, MeetingType.Lgs)
-                                                                                     : MeetingCache.GetIndexForUser(db, MeetingType.Lgs, userId, false));
+                                                                                     ? MeetingCache.GetIndexForAdmin(db, MeetingType.BusinessInfo)
+                                                                                     : MeetingCache.GetIndexForUser(db, MeetingType.BusinessInfo, userId, false));
             MeetingCache.MeetingCacheBusinessInfo meeting = meetings.OrderBy(m => m.Started).FirstOrDefault();
             if (meeting == null)
                 return null;
@@ -169,12 +169,12 @@ namespace LBT.ModelViews
             if (!getArchive)
             {
                 meetings = isAdmin
-                               ? (IEnumerable<MeetingCache.MeetingCacheBusinessInfo>)MeetingCache.GetIndexForAdmin(db, MeetingType.Lgs)
-                               : (IEnumerable<MeetingCache.MeetingCacheBusinessInfo>)MeetingCache.GetIndexForUser(db, MeetingType.Lgs, userId, showAll);
+                               ? (IEnumerable<MeetingCache.MeetingCacheBusinessInfo>)MeetingCache.GetIndexForAdmin(db, MeetingType.BusinessInfo)
+                               : (IEnumerable<MeetingCache.MeetingCacheBusinessInfo>)MeetingCache.GetIndexForUser(db, MeetingType.BusinessInfo, userId, showAll);
             }
             else
             {
-                meetings = (IEnumerable<MeetingCache.MeetingCacheBusinessInfo>)MeetingCache.GetArchiveIndex(db, MeetingType.Lgs, isAdmin, userId);
+                meetings = (IEnumerable<MeetingCache.MeetingCacheBusinessInfo>)MeetingCache.GetArchiveIndex(db, MeetingType.BusinessInfo, isAdmin, userId);
             }
 
             MeetingCache.ProcessSearchingAndSorting(ref meetings, searchString, searchStringAccording, sortOrder);
@@ -690,14 +690,14 @@ namespace LBT.ModelViews
         {
             City = meeting.City;
             AddressLine1 = meeting.AddressLine1;
-            MeetingType = MeetingType.Lgs;
+            MeetingType = MeetingType.BusinessInfo;
             MeetingKind = MeetingKind.Public;
             Date = meeting.Started.Date;
         }
 
         public static MeetingBusinessInfoEdit GetModelView(Meeting meeting)
         {
-            if (meeting == null || meeting.MeetingType != MeetingType.Lgs)
+            if (meeting == null || meeting.MeetingType != MeetingType.BusinessInfo)
                 return null;
 
             var meetingBusinessInfo = new MeetingBusinessInfoEdit(meeting);
@@ -710,9 +710,9 @@ namespace LBT.ModelViews
             DateTime finished = DateTime.Parse($"{Date.ToString("yyyy-MM-dd")}T{FinishTime}");
 
             Meeting meeting = GetCommonModel(userId);
-            meeting.Title = ListItemsResource.MeetingType_Lgs;
+            meeting.Title = ListItemsResource.MeetingType_Bi;
             meeting.MeetingKind = MeetingKind.Public;
-            meeting.MeetingType = MeetingType.Lgs;
+            meeting.MeetingType = MeetingType.BusinessInfo;
             meeting.Started = started;
             meeting.Finished = finished;
             meeting.City = City;
@@ -1586,12 +1586,12 @@ namespace LBT.ModelViews
         public MeetingBusinessInfoDetail(Meeting meeting, DefaultContext db, int userId, bool isAdmin)
             : base(meeting, db, userId, isAdmin)
         {
-            if (meeting == null || meeting.MeetingType != MeetingType.Lgs)
+            if (meeting == null || meeting.MeetingType != MeetingType.BusinessInfo)
                 return;
 
             City = meeting.City;
             AddressLine1 = meeting.AddressLine1;
-            MeetingType = MeetingType.Lgs;
+            MeetingType = MeetingType.BusinessInfo;
             MeetingKind = MeetingKind.Public;
             Date = meeting.Started.Date;
             StartTime = meeting.Started.ToString("HH:mm");

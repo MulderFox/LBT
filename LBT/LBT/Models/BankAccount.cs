@@ -10,7 +10,7 @@ namespace LBT.Models
     {
         ApplicationAccess = 0,
         TeamMeeting = 1,
-        LgsOrMspEveningOrWorkshopsOrLeaders = 2,
+        BusinessInfoOrMspEveningOrWorkshopsOrLeaders = 2,
         DavidKotasekTraining = 3,
         Others = 4
     }
@@ -47,8 +47,8 @@ namespace LBT.Models
                     case BankAccountType.TeamMeeting:
                         return ListItemsResource.BankAccountType_TeamMeeting;
 
-                    case BankAccountType.LgsOrMspEveningOrWorkshopsOrLeaders:
-                        return ListItemsResource.BankAccountType_LgsOrMspEveningOrWorkshopsOrLeaders;
+                    case BankAccountType.BusinessInfoOrMspEveningOrWorkshopsOrLeaders:
+                        return ListItemsResource.BankAccountType_BiOrMspEveningOrWorkshopsOrLeaders;
 
                     case BankAccountType.DavidKotasekTraining:
                         return ListItemsResource.BankAccountType_DavidKotasekTraining;
@@ -104,8 +104,8 @@ namespace LBT.Models
                 case BankAccountType.TeamMeeting:
                     return ListItemsResource.BankAccountType_TeamMeeting_LongName;
 
-                case BankAccountType.LgsOrMspEveningOrWorkshopsOrLeaders:
-                    return ListItemsResource.BankAccountType_LgsOrMspEveningOrWorkshopsOrLeaders_LongName;
+                case BankAccountType.BusinessInfoOrMspEveningOrWorkshopsOrLeaders:
+                    return ListItemsResource.BankAccountType_BiOrMspEveningOrWorkshopsOrLeaders_LongName;
 
                 case BankAccountType.DavidKotasekTraining:
                     return ListItemsResource.BankAccountType_DavidKotasekTraining_LongName;

@@ -1859,7 +1859,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Akce LGS semináře.
+        ///   Looks up a localized string similar to Akce Business Info.
         /// </summary>
         public static string Meeting_BusinessInfo_Legend_Text {
             get {
@@ -1868,7 +1868,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Detail archivní akce LGS semináře.
+        ///   Looks up a localized string similar to Detail archivní akce Business Info.
         /// </summary>
         public static string Meeting_BusinessInfoArchiveDetails_Title_Text {
             get {
@@ -1877,7 +1877,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Návrat na akce LGS semináře.
+        ///   Looks up a localized string similar to Návrat na akce Business Info.
         /// </summary>
         public static string Meeting_BusinessInfoArchiveIndex_HplBackTitle_Text {
             get {
@@ -1886,7 +1886,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Akce - Archiv LGS semináře.
+        ///   Looks up a localized string similar to Akce - Archiv Business Info.
         /// </summary>
         public static string Meeting_BusinessInfoArchiveIndex_Title_Text {
             get {
@@ -1895,7 +1895,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vytvořit novou akci LGS semináře.
+        ///   Looks up a localized string similar to Vytvořit novou akci Business Info.
         /// </summary>
         public static string Meeting_BusinessInfoCreate_Title_Text {
             get {
@@ -1904,7 +1904,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Smazat akci LGS semináře.
+        ///   Looks up a localized string similar to Smazat akci Business Info.
         /// </summary>
         public static string Meeting_BusinessInfoDelete_Title_Text {
             get {
@@ -1922,7 +1922,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Detail akce LGS semináře.
+        ///   Looks up a localized string similar to Detail akce Business Info.
         /// </summary>
         public static string Meeting_BusinessInfoDetails_Title_Text {
             get {
@@ -1940,7 +1940,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upravit akci LGS semináře.
+        ///   Looks up a localized string similar to Upravit akci Business Info.
         /// </summary>
         public static string Meeting_BusinessInfoEdit_Title_Text {
             get {
@@ -1949,7 +1949,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Akce - LGS semináře.
+        ///   Looks up a localized string similar to Akce - Business Info.
         /// </summary>
         public static string Meeting_BusinessInfoIndex_Title_Text {
             get {
@@ -1958,7 +1958,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Detail akce LGS semináře.
+        ///   Looks up a localized string similar to Detail akce Business Info.
         /// </summary>
         public static string Meeting_BusinessInfoPrintDetail_Title_Text {
             get {
@@ -1967,7 +1967,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Akce - LGS semináře.
+        ///   Looks up a localized string similar to Akce - Business Info.
         /// </summary>
         public static string Meeting_BusinessInfoPrintIndex_Title_Text {
             get {
@@ -1976,7 +1976,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Přihlášení/Odhlášení na akci LGS semináře.
+        ///   Looks up a localized string similar to Přihlášení/Odhlášení na akci Business Info.
         /// </summary>
         public static string Meeting_BusinessInfoSignUnsign_Title_Text {
             get {
@@ -2003,7 +2003,7 @@ namespace LBT.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nejbližší akce LGS semináře.
+        ///   Looks up a localized string similar to Nejbližší akce Business Info.
         /// </summary>
         public static string Meeting_Dashboard_NearestBusinessInfo_Text {
             get {

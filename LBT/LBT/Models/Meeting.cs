@@ -17,7 +17,7 @@ namespace LBT.Models
 
     public enum MeetingType
     {
-        Lgs = 0,
+        BusinessInfo = 0,
         SetkaniTymu = 1,
         WorkshopyBi = 2,
         Leaders = 3,
@@ -192,8 +192,8 @@ namespace LBT.Models
         {
             switch (meetingType)
             {
-                case MeetingType.Lgs:
-                    return ListItemsResource.MeetingType_Lgs;
+                case MeetingType.BusinessInfo:
+                    return ListItemsResource.MeetingType_Bi;
 
                 case MeetingType.SetkaniTymu:
                     return ListItemsResource.MeetingType_SetkaniTymu;

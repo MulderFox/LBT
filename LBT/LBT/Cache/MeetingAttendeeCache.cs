@@ -217,7 +217,7 @@ namespace LBT.Cache
             {
                 switch (meetingType)
                 {
-                    case MeetingType.Lgs:
+                    case MeetingType.BusinessInfo:
                     case MeetingType.Webinar:
                     case MeetingType.MspEvening:
                     case MeetingType.Ostatni:

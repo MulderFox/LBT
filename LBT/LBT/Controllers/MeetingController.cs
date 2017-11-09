@@ -34,7 +34,7 @@ namespace LBT.Controllers
 
         public ActionResult BusinessInfoIndex(string sortOrder, string currentFilter, string currentFilterAccording, string searchString, string searchStringAccording, int? page, bool showAll = false, int pageSize = PageSize)
         {
-            var pagedRows = (IPagedList<MeetingBusinessInfoIndex>)ProcessIndex(showAll, MeetingType.Lgs, false, sortOrder,
+            var pagedRows = (IPagedList<MeetingBusinessInfoIndex>)ProcessIndex(showAll, MeetingType.BusinessInfo, false, sortOrder,
                                                                                 currentFilter, currentFilterAccording,
                                                                                 searchString, searchStringAccording,
                                                                                 page,
@@ -110,7 +110,7 @@ namespace LBT.Controllers
 
             if (ModelState.IsValid)
             {
-                MeetingCache.Insert(Db, MeetingType.Lgs, UserId, meetingBusinessInfoEdit);
+                MeetingCache.Insert(Db, MeetingType.BusinessInfo, UserId, meetingBusinessInfoEdit);
                 return RedirectToAction("BusinessInfoIndex");
             }
 
@@ -792,7 +792,7 @@ namespace LBT.Controllers
 
         public ActionResult BusinessInfoDetails(string sortOrder, int id = 0)
         {
-            var meetingBusinessInfoDetail = (MeetingBusinessInfoDetail)ProcessDetails(MeetingType.Lgs, id, sortOrder);
+            var meetingBusinessInfoDetail = (MeetingBusinessInfoDetail)ProcessDetails(MeetingType.BusinessInfo, id, sortOrder);
             if (!meetingBusinessInfoDetail.IsValid || meetingBusinessInfoDetail.IsArchive)
             {
                 return RedirectToAccessDenied();
@@ -959,7 +959,7 @@ namespace LBT.Controllers
         {
             var meetingSignUnsign =
                 (MeetingBusinessInfoSignUnsign)
-                ProcessSignUnsign(MeetingType.Lgs, sortOrder, currentFilter, currentFilterAccording,
+                ProcessSignUnsign(MeetingType.BusinessInfo, sortOrder, currentFilter, currentFilterAccording,
                                   searchString, searchStringAccording, page, signedSortOrder, signedPage, pageSize,
                                   filteredUserId, id);
 
@@ -977,7 +977,7 @@ namespace LBT.Controllers
         {
             var meetingUserSignUsign =
                 (MeetingBusinessInfoUserSignUnsign)
-                ProcessUserSignUnsign(MeetingType.Lgs, sortOrder, currentFilter, currentFilterAccording,
+                ProcessUserSignUnsign(MeetingType.BusinessInfo, sortOrder, currentFilter, currentFilterAccording,
                                       searchString, searchStringAccording, page, signedSortOrder, signedPage, pageSize,
                                       id);
 
@@ -1340,7 +1340,7 @@ namespace LBT.Controllers
 
             try
             {
-                MeetingAttendeeCache.UnsignAttendee(Db, id, attendeeId, UserId, MeetingType.Lgs, IsAdmin);
+                MeetingAttendeeCache.UnsignAttendee(Db, id, attendeeId, UserId, MeetingType.BusinessInfo, IsAdmin);
             }
             catch (Exception e)
             {
@@ -1354,7 +1354,7 @@ namespace LBT.Controllers
         {
             try
             {
-                MeetingAttendeeCache.UnsignUserAttendee(Db, id, attendeeId, UserId, MeetingType.Lgs, IsAdmin);
+                MeetingAttendeeCache.UnsignUserAttendee(Db, id, attendeeId, UserId, MeetingType.BusinessInfo, IsAdmin);
             }
             catch (Exception e)
             {
@@ -1624,7 +1624,7 @@ namespace LBT.Controllers
 
             try
             {
-                MeetingAttendeeCache.UnsignUserAttendee(Db, id, attendeeId, UserId, MeetingType.Lgs, IsAdmin);
+                MeetingAttendeeCache.UnsignUserAttendee(Db, id, attendeeId, UserId, MeetingType.BusinessInfo, IsAdmin);
             }
             catch (Exception e)
             {
@@ -1731,7 +1731,7 @@ namespace LBT.Controllers
 
         public ActionResult BusinessInfoPrintDetail(int id, string sortOrder)
         {
-            var meetingBusinessInfoDetail = (MeetingBusinessInfoDetail)ProcessDetails(MeetingType.Lgs, id, sortOrder);
+            var meetingBusinessInfoDetail = (MeetingBusinessInfoDetail)ProcessDetails(MeetingType.BusinessInfo, id, sortOrder);
             if (!meetingBusinessInfoDetail.IsValid)
             {
                 return RedirectToAccessDenied();
@@ -1836,7 +1836,7 @@ namespace LBT.Controllers
             int meetingId = 0;
             try
             {
-                MeetingAttendeeCache.UnsignMeetingAttendee(Db, id, UserId, MeetingType.Lgs, IsAdmin, ref meetingId);
+                MeetingAttendeeCache.UnsignMeetingAttendee(Db, id, UserId, MeetingType.BusinessInfo, IsAdmin, ref meetingId);
             }
             catch (Exception e)
             {
@@ -2008,7 +2008,7 @@ namespace LBT.Controllers
         [Authorize(Roles = LeadingRoles)]
         public ActionResult BusinessInfoArchiveIndex(string sortOrder, string currentFilter, string currentFilterAccording, string searchString, string searchStringAccording, int? page, bool showAll = false, int pageSize = PageSize)
         {
-            var pagedRows = (IPagedList<MeetingBusinessInfoIndex>)ProcessIndex(showAll, MeetingType.Lgs, true, sortOrder,
+            var pagedRows = (IPagedList<MeetingBusinessInfoIndex>)ProcessIndex(showAll, MeetingType.BusinessInfo, true, sortOrder,
                                                                               currentFilter, currentFilterAccording,
                                                                               searchString, searchStringAccording,
                                                                               page,
@@ -2074,7 +2074,7 @@ namespace LBT.Controllers
         [Authorize(Roles = LeadingRoles)]
         public ActionResult BusinessInfoArchiveDetails(string sortOrder, int id = 0)
         {
-            var meetingBusinessInfoDetail = (MeetingBusinessInfoDetail)ProcessDetails(MeetingType.Lgs, id, sortOrder);
+            var meetingBusinessInfoDetail = (MeetingBusinessInfoDetail)ProcessDetails(MeetingType.BusinessInfo, id, sortOrder);
             if (!meetingBusinessInfoDetail.IsValid || !meetingBusinessInfoDetail.IsArchive)
             {
                 return RedirectToAccessDenied();
@@ -2151,7 +2151,7 @@ namespace LBT.Controllers
             string[] sortingNames;
             switch (meetingType)
             {
-                case MeetingType.Lgs:
+                case MeetingType.BusinessInfo:
                 case MeetingType.SkoleniDavidaKotaska:
                 case MeetingType.MspEvening:
                     sortingNames = new[] { BaseCache.DateField, BaseCache.CityField, BaseCache.AddressLine1Field, BaseCache.OrganizerField };
@@ -2183,7 +2183,7 @@ namespace LBT.Controllers
             object pagedRows;
             switch (meetingType)
             {
-                case MeetingType.Lgs:
+                case MeetingType.BusinessInfo:
                     IEnumerable<MeetingBusinessInfoIndex> meetingBusinessInfoIndices = MeetingBusinessInfoIndex.GetIndexRows(Db, UserId, IsAdmin, showAll, getArchive, searchString, searchStringAccording, sortOrder);
                     pagedRows = meetingBusinessInfoIndices.ToPagedList(pageNumber, pageSize);
                     break;
@@ -2229,7 +2229,7 @@ namespace LBT.Controllers
             object meetingDetail;
             switch (meetingType)
             {
-                case MeetingType.Lgs:
+                case MeetingType.BusinessInfo:
                     meetingDetail = new MeetingBusinessInfoDetail(meeting, Db, UserId, IsAdmin, sortOrder);
                     break;
 
@@ -2279,7 +2279,7 @@ namespace LBT.Controllers
             object meetingSignUnsign;
             switch (meetingType)
             {
-                case MeetingType.Lgs:
+                case MeetingType.BusinessInfo:
                     var meetingBusinessInfoSignUnsign = new MeetingBusinessInfoSignUnsign(meeting, Db, id, IsAdmin, filteredUserId, searchString, searchStringAccording, sortOrder, signedSortOrder, pageNumber, pageSize, signedPageNumber);
                     if (!meetingBusinessInfoSignUnsign.IsValid || !IsSignUnsignAccess(meetingBusinessInfoSignUnsign.MainLeaderId, meetingBusinessInfoSignUnsign.SecondaryLeaderId, meetingBusinessInfoSignUnsign.Finished))
                     {
@@ -2366,7 +2366,7 @@ namespace LBT.Controllers
             object meetingUserSignUnsign;
             switch (meetingType)
             {
-                case MeetingType.Lgs:
+                case MeetingType.BusinessInfo:
                     var meetingBusinessInfoUserSignUnsign = new MeetingBusinessInfoUserSignUnsign(meeting, Db, id, IsAdmin, UserId, searchString, searchStringAccording, sortOrder, signedSortOrder, pageNumber, pageSize, signedPageNumber);
                     if (!meetingBusinessInfoUserSignUnsign.IsValid || !IsSignUnsignAccess(meetingBusinessInfoUserSignUnsign.MainLeaderId, meetingBusinessInfoUserSignUnsign.SecondaryLeaderId, meetingBusinessInfoUserSignUnsign.Finished))
                     {

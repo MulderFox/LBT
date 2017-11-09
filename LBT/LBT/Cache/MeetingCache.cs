@@ -15,7 +15,7 @@ namespace LBT.Cache
         {
             switch (meeting.MeetingType)
             {
-                case MeetingType.Lgs:
+                case MeetingType.BusinessInfo:
                     return "BusinessInfoDetails";
 
                 case MeetingType.SetkaniTymu:
@@ -133,8 +133,8 @@ namespace LBT.Cache
         {
             switch (meetingType)
             {
-                case MeetingType.Lgs:
-                    MeetingCacheBusinessInfo[] meetingCacheBusinessInfos = db.Database.SqlQuery<MeetingCacheBusinessInfo>(String.Format(GetMeetingIndexProcedureTemplate, (int)MeetingType.Lgs)).ToArray();
+                case MeetingType.BusinessInfo:
+                    MeetingCacheBusinessInfo[] meetingCacheBusinessInfos = db.Database.SqlQuery<MeetingCacheBusinessInfo>(String.Format(GetMeetingIndexProcedureTemplate, (int)MeetingType.BusinessInfo)).ToArray();
                     return meetingCacheBusinessInfos;
 
                 case MeetingType.Webinar:
@@ -167,8 +167,8 @@ namespace LBT.Cache
             string procedureTemplate = showAll ? GetMeetingIndexForUserProcedureTemplate : GetMeetingFilteredIndexProcedureTemplate;
             switch (meetingType)
             {
-                case MeetingType.Lgs:
-                    MeetingCacheBusinessInfo[] meetingCacheBusinessInfos = db.Database.SqlQuery<MeetingCacheBusinessInfo>(String.Format(procedureTemplate, (int)MeetingType.Lgs, userId)).ToArray();
+                case MeetingType.BusinessInfo:
+                    MeetingCacheBusinessInfo[] meetingCacheBusinessInfos = db.Database.SqlQuery<MeetingCacheBusinessInfo>(String.Format(procedureTemplate, (int)MeetingType.BusinessInfo, userId)).ToArray();
                     return meetingCacheBusinessInfos;
 
                 case MeetingType.Webinar:
@@ -206,10 +206,10 @@ namespace LBT.Cache
         {
             switch (meetingType)
             {
-                case MeetingType.Lgs:
+                case MeetingType.BusinessInfo:
                     MeetingCacheBusinessInfo[] meetingCacheBusinessInfos = isAdmin
-                        ? db.Database.SqlQuery<MeetingCacheBusinessInfo>(String.Format(GetMeetingArchiveIndexProcedureTemplate, (int)MeetingType.Lgs)).ToArray()
-                        : db.Database.SqlQuery<MeetingCacheBusinessInfo>(String.Format(GetMeetingFilteredArchiveIndexProcedureTemplate, (int)MeetingType.Lgs, userId)).ToArray();
+                        ? db.Database.SqlQuery<MeetingCacheBusinessInfo>(String.Format(GetMeetingArchiveIndexProcedureTemplate, (int)MeetingType.BusinessInfo)).ToArray()
+                        : db.Database.SqlQuery<MeetingCacheBusinessInfo>(String.Format(GetMeetingFilteredArchiveIndexProcedureTemplate, (int)MeetingType.BusinessInfo, userId)).ToArray();
                     return meetingCacheBusinessInfos;
 
                 case MeetingType.Webinar:
@@ -252,7 +252,7 @@ namespace LBT.Cache
             Meeting meeting;
             switch (meetingType)
             {
-                case MeetingType.Lgs:
+                case MeetingType.BusinessInfo:
                     meeting = ((MeetingBusinessInfoEdit)iMeetingEdit).GetModel(userId);
                     break;
 

@@ -211,11 +211,11 @@ namespace LBT.Migrations
                 BankAccountType bankAccountType;
                 switch (meeting.MeetingType)
                 {
-                    case MeetingType.Lgs:
+                    case MeetingType.BusinessInfo:
                     case MeetingType.WorkshopyBi:
                     case MeetingType.Leaders:
                     case MeetingType.MspEvening:
-                        bankAccountType = BankAccountType.LgsOrMspEveningOrWorkshopsOrLeaders;
+                        bankAccountType = BankAccountType.BusinessInfoOrMspEveningOrWorkshopsOrLeaders;
                         break;
 
                     case MeetingType.SetkaniTymu:

@@ -755,51 +755,51 @@ Poznámka platby: {4}</value>
     <comment>/MeetingTitleType/Index</comment>
   </data>
   <data name="Meeting_BusinessInfoArchiveDetails_Title_Text" xml:space="preserve">
-    <value>Detail archivní akce LGS semináře</value>
+    <value>Detail archivní akce Business Info</value>
     <comment>/Meeting/BusinessInfoArchiveDetails</comment>
   </data>
   <data name="Meeting_BusinessInfoArchiveIndex_HplBackTitle_Text" xml:space="preserve">
-    <value>Návrat na akce LGS semináře</value>
+    <value>Návrat na akce Business Info</value>
     <comment>/Meeting/BusinessInfoArchiveIndex</comment>
   </data>
   <data name="Meeting_BusinessInfoArchiveIndex_Title_Text" xml:space="preserve">
-    <value>Akce - Archiv LGS semináře</value>
+    <value>Akce - Archiv Business Info</value>
     <comment>/Meeting/BusinessInfoArchiveIndex</comment>
   </data>
   <data name="Meeting_BusinessInfoCreate_Title_Text" xml:space="preserve">
-    <value>Vytvořit novou akci LGS semináře</value>
+    <value>Vytvořit novou akci Business Info</value>
     <comment>/Meeting/BusinessInfoCreate</comment>
   </data>
   <data name="Meeting_BusinessInfoDelete_Title_Text" xml:space="preserve">
-    <value>Smazat akci LGS semináře</value>
+    <value>Smazat akci Business Info</value>
     <comment>/Meeting/BusinessInfoDelete</comment>
   </data>
   <data name="Meeting_BusinessInfoDetails_Title_Text" xml:space="preserve">
-    <value>Detail akce LGS semináře</value>
+    <value>Detail akce Business Info</value>
     <comment>/Meeting/BusinessInfoDetails</comment>
   </data>
   <data name="Meeting_BusinessInfoEdit_Title_Text" xml:space="preserve">
-    <value>Upravit akci LGS semináře</value>
+    <value>Upravit akci Business Info</value>
     <comment>/Meeting/BusinessInfoEdit</comment>
   </data>
   <data name="Meeting_BusinessInfoIndex_Title_Text" xml:space="preserve">
-    <value>Akce - LGS semináře</value>
+    <value>Akce - Business Info</value>
     <comment>/Meeting/BusinessInfoIndex</comment>
   </data>
   <data name="Meeting_BusinessInfoPrintDetail_Title_Text" xml:space="preserve">
-    <value>Detail akce LGS semináře</value>
+    <value>Detail akce Business Info</value>
     <comment>/Meeting/BusinessInfoPrintDetail</comment>
   </data>
   <data name="Meeting_BusinessInfoPrintIndex_Title_Text" xml:space="preserve">
-    <value>Akce - LGS semináře</value>
+    <value>Akce - Business Info</value>
     <comment>/Meeting/BusinessInfoPrintIndex</comment>
   </data>
   <data name="Meeting_BusinessInfoSignUnsign_Title_Text" xml:space="preserve">
-    <value>Přihlášení/Odhlášení na akci LGS semináře</value>
+    <value>Přihlášení/Odhlášení na akci Business Info</value>
     <comment>/Meeting/BusinessInfoSignUnsign</comment>
   </data>
   <data name="Meeting_BusinessInfo_Legend_Text" xml:space="preserve">
-    <value>Akce LGS semináře</value>
+    <value>Akce Business Info</value>
     <comment>All webpages</comment>
   </data>
   <data name="Meeting_ContactListInfo_Text" xml:space="preserve">
@@ -807,7 +807,7 @@ Poznámka platby: {4}</value>
     <comment>All webpages</comment>
   </data>
   <data name="Meeting_Dashboard_NearestBusinessInfo_Text" xml:space="preserve">
-    <value>Nejbližší akce LGS semináře</value>
+    <value>Nejbližší akce Business Info</value>
     <comment>/Meeting/Dashboard</comment>
   </data>
   <data name="Meeting_Dashboard_NearestDavidKotasekTraining_Text" xml:space="preserve">

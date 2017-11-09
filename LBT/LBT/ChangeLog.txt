@@ -1,4 +1,9 @@
-﻿LBT 2.1.18.1
+﻿LBT 2.1.121.1
+=============
+mod: Změna názvu LGS Semináře na Business Info
+
+
+LBT 2.1.18.1
 ============
 fix: Bugs.
 mod: Přidat IBAN/SWIFT k detailu akce u cizích účtů.

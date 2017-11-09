@@ -136,6 +136,13 @@
   <data name="BankAccountType_ApplicationAccess_LongName" xml:space="preserve">
     <value>Přístup do aplikace</value>
   </data>
+  <data name="BankAccountType_BiOrMspEveningOrWorkshopsOrLeaders" xml:space="preserve">
+    <value>BI MSP Wrk Lead</value>
+    <comment>Číselník typů bankovních účtů</comment>
+  </data>
+  <data name="BankAccountType_BiOrMspEveningOrWorkshopsOrLeaders_LongName" xml:space="preserve">
+    <value>BI, MSP Evening, Workshopy nebo Leaders</value>
+  </data>
   <data name="BankAccountType_DavidKotasekTraining" xml:space="preserve">
     <value>David Kotásek</value>
     <comment>Číselník typů bankovních účtů</comment>
@@ -146,13 +153,6 @@
   <data name="BankAccountType_DropDownListTitle" xml:space="preserve">
     <value>Vyberte typ bankovního účtu</value>
   </data>
-  <data name="BankAccountType_LgsOrMspEveningOrWorkshopsOrLeaders" xml:space="preserve">
-    <value>LGS MSP Wrk Lead</value>
-    <comment>Číselník typů bankovních účtů</comment>
-  </data>
-  <data name="BankAccountType_LgsOrMspEveningOrWorkshopsOrLeaders_LongName" xml:space="preserve">
-    <value>LGS, MSP Evening, Workshopy nebo Leaders</value>
-  </data>
   <data name="BankAccountType_Others" xml:space="preserve">
     <value>Ostatní</value>
     <comment>Číselník typů bankovních účtů</comment>
@@ -161,7 +161,7 @@
     <value>Ostatní</value>
   </data>
   <data name="BankAccountType_TeamMeeting" xml:space="preserve">
-    <value>Setkání týmu, LGS</value>
+    <value>Setkání týmu, Business Info</value>
     <comment>Číselník typů bankovních účtů</comment>
   </data>
   <data name="BankAccountType_TeamMeeting_LongName" xml:space="preserve">
@@ -203,14 +203,14 @@
   <data name="MeetingTitleType_DropDownListTitle" xml:space="preserve">
     <value>Vyberte název akce</value>
   </data>
+  <data name="MeetingType_Bi" xml:space="preserve">
+    <value>Business Info</value>
+  </data>
   <data name="MeetingType_DropDownListTitle" xml:space="preserve">
     <value>Vyberte typ akce</value>
   </data>
   <data name="MeetingType_Leaders" xml:space="preserve">
     <value>Leaders</value>
-  </data>
-  <data name="MeetingType_Lgs" xml:space="preserve">
-    <value>LGS seminář</value>
   </data>
   <data name="MeetingType_MspEvening" xml:space="preserve">
     <value>MSP Evening</value>
